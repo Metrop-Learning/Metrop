@@ -59,8 +59,9 @@ function textVerified(){
     for(let i = 0; i <= listCity.length-1;i++){
       let error_margin = checkDiff(input,listCity[i].name)
       if(error_margin <= 1){
-        for(let i = 0; i <= foundedCity.length-1;i++){
-          if(foundedCity[i] == listCity[i].name){
+        console.log(i + "\n" + listCity[i].name)
+        for(let j = 0; j <= foundedCity.length-1;j++){
+          if(foundedCity[j] == listCity[i].name){
             document.getElementById('errorText').style.color = "rgb(241, 186, 109)"
             document.getElementById('errorText').innerHTML = "Tu as déja trouvée : " + listCity[i].name
             return
