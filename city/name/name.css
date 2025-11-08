@@ -96,3 +96,6 @@ progress{
     text-align: center;
     align-content: center;
 }
+#intArea{
+    visibility: hidden;
+}
