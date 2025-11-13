@@ -1,5 +1,4 @@
-import '../quiz/Megacity.js';
-import { listCityDefault } from '../quiz/Megacity.js';
+import data from '../quiz/Megacity.json' with { type: "json" };
 // Map init
 const map = L.map("map", { minZoom: 3, maxZoom: 8 }).setView(
   [48.8566, 2.3522],
@@ -7,7 +6,7 @@ const map = L.map("map", { minZoom: 3, maxZoom: 8 }).setView(
 ); 
 
 let dist;
-let listCity = listCityDefault;
+let listCity = data.listCity;
 
 // **********
 // *Map icon*

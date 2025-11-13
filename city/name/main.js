@@ -1,6 +1,5 @@
-import '../quiz/Megacity.js';
-import { listCityDefault } from '../quiz/Megacity.js';
-let listCity = listCityDefault;
+import { listCityDefault } from '../quiz/Megacity.json' with { type: "json" };
+let listCity = data.listCity;
 let foundedCity = []
 
 // ****************************
