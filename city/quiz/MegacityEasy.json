@@ -1,0 +1,99 @@
+{
+    "listCity": [
+        {
+            "name": "Los Angeles",
+            "country": "États-Unis d'Amérique",
+            "lat": 34.052235,
+            "lng": -118.243683
+        },
+        {
+            "name": "New York",
+            "country": "États-Unis d'Amérique",
+            "lat": 40.712776,
+            "lng": -74.005974
+        },
+        {
+            "name": "Mexico",
+            "country": "Mexique",
+            "lat": 19.432608,
+            "lng": -99.133209
+        },
+        {
+            "name": "São Paulo",
+            "country": "Brésil",
+            "lat": -23.55052,
+            "lng": -46.633308
+        },
+        {
+            "name": "Le Caire",
+            "country": "Égypte",
+            "lat": 30.04442,
+            "lng": 31.235712
+        },
+        {
+            "name": "Lagos",
+            "country": "Nigeria",
+            "lat": 6.524379,
+            "lng": 3.379206
+        },
+        {
+            "name": "Osaka",
+            "country": "Japon",
+            "lat": 34.693737,
+            "lng": 135.502167
+        },
+        {
+            "name": "Tokyo",
+            "country": "Japon",
+            "lat": 35.689487,
+            "lng": 139.691711
+        },
+        {
+            "name": "Séoul",
+            "country": "Corée du Sud",
+            "lat": 37.5665,
+            "lng": 126.9780
+        },
+        {
+            "name": "Mumbai",
+            "country": "Inde",
+            "lat": 19.075983,
+            "lng": 72.877655
+        },
+        {
+            "name": "Jakarta",
+            "country": "Indonésie",
+            "lat": -6.208763,
+            "lng": 106.845599
+        },
+        {
+            "name": "Manille",
+            "country": "Philippines",
+            "lat": 14.599512,
+            "lng": 120.984222
+        },
+        {
+            "name": "Shanghai",
+            "country": "Chine",
+            "lat": 31.230416,
+            "lng": 121.473701
+        },
+        {
+            "name": "Pékin",
+            "country": "Chine",
+            "lat": 39.904202,
+            "lng": 116.407394
+        }
+    ],
+    "cardInfo": {
+        "Title": "Mégalopoles [Facile]",
+        "Text": "Les ville les plus peuplée au monde",
+        "lang": "FR",
+        "pictureURL": "None"
+    },
+    "type": [
+        "place",
+        "name",
+        "guess"
+    ]
+}

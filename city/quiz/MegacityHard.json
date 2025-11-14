@@ -1,0 +1,363 @@
+{
+    "listCity": [
+        {
+            "name": "Santiago",
+            "country": "Chili",
+            "lat": -33.4489,
+            "lng": -70.6693
+        },
+        {
+            "name": "Riyad",
+            "country": "Arabie Saoudite",
+            "lat": 24.7136,
+            "lng": 46.6753
+        },
+        {
+            "name": "Hong Kong",
+            "country": "Chine",
+            "lat": 22.3193,
+            "lng": 114.1694
+        },
+        {
+            "name": "Washington",
+            "country": "États-Unis",
+            "lat": 38.9072,
+            "lng": -77.0369
+        },
+        {
+            "name": "Khartoum",
+            "country": "Soudan",
+            "lat": 15.5007,
+            "lng": 32.5599
+        },
+        {
+            "name": "Dar es Salaam",
+            "country": "Tanzanie",
+            "lat": -6.7924,
+            "lng": 39.2083
+        },
+        {
+            "name": "Shenyang",
+            "country": "Chine",
+            "lat": 41.8057,
+            "lng": 123.4315
+        },
+        {
+            "name": "Ahmedabad",
+            "country": "Inde",
+            "lat": 23.0225,
+            "lng": 72.5714
+        },
+        {
+            "name": "Pune",
+            "country": "Inde",
+            "lat": 18.5204,
+            "lng": 73.8567
+        },
+        {
+            "name": "Nankin",
+            "country": "Chine",
+            "lat": 32.0603,
+            "lng": 118.7969
+        },
+        {
+            "name": "Kuala Lumpur",
+            "country": "Malaisie",
+            "lat": 3.1390,
+            "lng": 101.6869
+        },
+        {
+            "name": "Luanda",
+            "country": "Angola",
+            "lat": -8.8390,
+            "lng": 13.2894
+        },
+        {
+            "name": "Chicago",
+            "country": "États-Unis",
+            "lat": 41.8781,
+            "lng": -87.6298
+        },
+        {
+            "name": "Nagoya",
+            "country": "Japon",
+            "lat": 35.1815,
+            "lng": 136.9066
+        },
+        {
+            "name": "Hangzhou",
+            "country": "Chine",
+            "lat": 30.2741,
+            "lng": 120.1551
+        },
+        {
+            "name": "Bogota",
+            "country": "Colombie",
+            "lat": 4.7110,
+            "lng": -74.0721
+        },
+        {
+            "name": "Lima",
+            "country": "Pérou",
+            "lat": -12.0464,
+            "lng": -77.0428
+        },
+        {
+            "name": "Tianjin",
+            "country": "Chine",
+            "lat": 39.3434,
+            "lng": 117.3616
+        },
+        {
+            "name": "Hyderabad",
+            "country": "Inde",
+            "lat": 17.3850,
+            "lng": 78.4867
+        },
+        {
+            "name": "Dongguan",
+            "country": "Chine",
+            "lat": 23.0207,
+            "lng": 113.7518
+        },
+        {
+            "name": "Paris",
+            "country": "France",
+            "lat": 48.8566,
+            "lng": 2.3522
+        },
+        {
+            "name": "Londres",
+            "country": "Royaume-Uni",
+            "lat": 51.5074,
+            "lng": -0.1278
+        },
+        {
+            "name": "Chongqing",
+            "country": "Chine",
+            "lat": 29.4316,
+            "lng": 106.9123
+        },
+        {
+            "name": "Lahore",
+            "country": "Pakistan",
+            "lat": 31.5204,
+            "lng": 74.3587
+        },
+        {
+            "name": "Xi'an",
+            "country": "Chine",
+            "lat": 34.3416,
+            "lng": 108.9398
+        },
+        {
+            "name": "Chennai (Madris)",
+            "country": "Inde",
+            "lat": 13.0827,
+            "lng": 80.2707
+        },
+        {
+            "name": "Wuhan",
+            "country": "Chine",
+            "lat": 30.5928,
+            "lng": 114.3055
+        },
+        {
+            "name": "Rio de Janeiro",
+            "country": "Brésil",
+            "lat": -22.9068,
+            "lng": -43.1729
+        },
+        {
+            "name": "Kinshasa",
+            "country": "République Démocratique du Congo",
+            "lat": -4.4419,
+            "lng": 15.2663
+        },
+        {
+            "name": "Téhéran",
+            "country": "Iran",
+            "lat": 35.6892,
+            "lng": 51.3890
+        },
+        {
+            "name": "Istanbul",
+            "country": "Turquie",
+            "lat": 41.0082,
+            "lng": 28.9784
+        },
+        {
+            "name": "Johannesbourg",
+            "country": "Afrique du Sud",
+            "lat": -26.2041,
+            "lng": 28.0473
+        },
+        {
+            "name": "Osaka-Kobe-Kyoto",
+            "country": "Japon",
+            "lat": 34.6937,
+            "lng": 135.5023
+        },
+        {
+            "name": "Ho Chi Minh Ville",
+            "country": "Vietnam",
+            "lat": 10.8231,
+            "lng": 106.6297
+        },
+        {
+            "name": "Los Angeles",
+            "country": "États-Unis",
+            "lat": 34.0522,
+            "lng": -118.2437
+        },
+        {
+            "name": "Bangalore",
+            "country": "Inde",
+            "lat": 12.9716,
+            "lng": 77.5946
+        },
+        {
+            "name": "Karachi",
+            "country": "Pakistan",
+            "lat": 24.8607,
+            "lng": 67.0011
+        },
+        {
+            "name": "Lagos",
+            "country": "Nigéria",
+            "lat": 6.5244,
+            "lng": 3.3792
+        },
+        {
+            "name": "Buenos Aires",
+            "country": "Argentine",
+            "lat": -34.6037,
+            "lng": -58.3816
+        },
+        {
+            "name": "Moscou",
+            "country": "Russie",
+            "lat": 55.7558,
+            "lng": 37.6173
+        },
+        {
+            "name": "Shenzhen",
+            "country": "Chine",
+            "lat": 22.5431,
+            "lng": 114.0579
+        },
+        {
+            "name": "Bangkok",
+            "country": "Thaïlande",
+            "lat": 13.7563,
+            "lng": 100.5018
+        },
+        {
+            "name": "Beijing (Pékin)",
+            "country": "Chine",
+            "lat": 39.9042,
+            "lng": 116.4074
+        },
+        {
+            "name": "Dacca",
+            "country": "Bangladesh",
+            "lat": 23.8103,
+            "lng": 90.4125
+        },
+        {
+            "name": "Le Caire",
+            "country": "Égypte",
+            "lat": 30.0444,
+            "lng": 31.2357
+        },
+        {
+            "name": "Chengdu",
+            "country": "Chine",
+            "lat": 30.5728,
+            "lng": 104.0668
+        },
+        {
+            "name": "New York - Newark",
+            "country": "États-Unis",
+            "lat": 40.7128,
+            "lng": -74.0060
+        },
+        {
+            "name": "Calcutta",
+            "country": "Inde",
+            "lat": 22.5726,
+            "lng": 88.3639
+        },
+        {
+            "name": "Mexico",
+            "country": "Mexique",
+            "lat": 19.4326,
+            "lng": -99.1332
+        },
+        {
+            "name": "Séoul",
+            "country": "Corée du Sud",
+            "lat": 37.5665,
+            "lng": 126.9780
+        },
+        {
+            "name": "Sao Paulo",
+            "country": "Brésil",
+            "lat": -23.5505,
+            "lng": -46.6333
+        },
+        {
+            "name": "Shanghai",
+            "country": "Chine",
+            "lat": 31.2304,
+            "lng": 121.4737
+        },
+        {
+            "name": "Manille",
+            "country": "Philippines",
+            "lat": 14.5995,
+            "lng": 120.9842
+        },
+        {
+            "name": "Mumbai",
+            "country": "Inde",
+            "lat": 19.0760,
+            "lng": 72.8777
+        },
+        {
+            "name": "Canton",
+            "country": "Chine",
+            "lat": 23.1291,
+            "lng": 113.2644
+        },
+        {
+            "name": "Delhi",
+            "country": "Inde",
+            "lat": 28.7041,
+            "lng": 77.1025
+        },
+        {
+            "name": "Jakarta",
+            "country": "Indonésie",
+            "lat": -6.2088,
+            "lng": 106.8456
+        },
+        {
+            "name": "Tokyo - Yokohama",
+            "country": "Japon",
+            "lat": 35.6762,
+            "lng": 139.6503
+        }
+    ],
+    "cardInfo": {
+        "Title": "Mégalopoles [Expert]",
+        "Text": "Les mégapoles (étendues aux agglomérations de plus de 7 millions d’habitants)",
+        "lang": "FR",
+        "pictureURL": "None"
+    },
+    "type": [
+        "place",
+        "name",
+        "guess"
+    ]
+}

@@ -1,4 +1,20 @@
-import data from '../quiz/Megacity.json' with { type: "json" };
+const params = new URLSearchParams(window.location.search);
+const jsonName = params.get("json");
+console.log(jsonName)
+
+async function loadJSON() {
+    try {
+        const response = await fetch(`../quiz/${jsonName}`);
+        const data = await response.json();
+        console.log("Contenu reçu:", data);
+        return data;
+    } catch (e) {
+        console.error("Erreur:", e);
+    }
+}
+
+const data = await loadJSON();
+
 // Map init
 const map = L.map("map", { minZoom: 3, maxZoom: 8 }).setView(
   [48.8566, 2.3522],

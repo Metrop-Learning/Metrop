@@ -198,5 +198,16 @@
       "lat": 23.12911,
       "lng": 113.264385
     }
+  ],
+  "cardInfo":{
+    "Title":"Mégalopoles [Intermédiaire]",
+    "Text":"Les ville les plus peuplée au monde",
+    "lang":"FR",
+    "pictureURL":"None"
+  },
+  "type":[
+    "place",
+    "name",
+    "guess"
   ]
 }
