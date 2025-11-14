@@ -1,6 +1,6 @@
 import data from './data/jsonList.json' with { type: "json" };
 
-const ver =  [0,5,1,"a"]
+const ver =  [0,5,1,"b"]
 const verAPI = [0,1]
 console.info("Metrop ver\n"+ver[0]+"."+ver[1]+"."+ver[2]+"."+ver[3]+"\nMetrop API ver\n"+verAPI[0]+"."+verAPI[1])
 

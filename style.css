@@ -85,18 +85,25 @@
   }
 }
 
+body{
+  overflow-x: hidden;
+}
+
 .btn:hover {
     transform: scale(1.1);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 .quizList{
     width: 100%;
-    height: 480px;
+    height: auto;
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 20px;
+    overflow-x: auto;          
+  white-space: nowrap;
     padding-left: 20px;
+        scroll-behavior: smooth;
 }
 
 .title-icon {
@@ -114,8 +121,15 @@
 }
 
 .card{
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+  white-space: normal;
+  flex: 0 0 auto;
     width: 240px;
-    height: 440px;
+    height: 100%;
+    padding-bottom: 1%;
+    padding-top: 1%;
     border-radius: 10px;
     display: flex;         
   flex-direction: column;
