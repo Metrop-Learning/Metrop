@@ -28,7 +28,7 @@
           learningID: learnID,
           return: base + "/learning_prgm",
         });
-        window.location.replace(`/city/place/index.html?${params}`);
+        window.location.replace(base + `/city/place/index.html?${params}`);
       }
       function nameIt(jsonName,learnID) {
         const params = new URLSearchParams({
@@ -36,7 +36,7 @@
           learningID: learnID,
           return: base + "/learning_prgm",
         });
-        window.location.replace(`/city/name/index.html?${params}`);
+        window.location.replace(base + `/city/name/index.html?${params}`);
       }
       function guessIt(jsonName,learnID) {
         const params = new URLSearchParams({
@@ -44,7 +44,7 @@
           learningID: learnID,
           return: base + "/learning_prgm",
         });
-        window.location.replace(`/city/guess/index.html?${params}`);
+        window.location.replace(base + `/city/guess/index.html?${params}`);
       }
       function lessonIt(jsonName,learnID) {
         const params = new URLSearchParams({
@@ -52,7 +52,7 @@
           learningID: learnID,
           return: base + "/learning_prgm",
         });
-        window.location.replace(`/city/lesson/index.html?${params}`);
+        window.location.replace(base + `/city/lesson/index.html?${params}`);
       }
       if (
         window.matchMedia &&
