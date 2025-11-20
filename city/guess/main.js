@@ -1,9 +1,9 @@
 const params = new URLSearchParams(window.location.search);
 const jsonName = params.get("json");
 const learningID = parseInt(params.get("learningID"));
-const returned = params.get("return");
+const base = window.location.pathname.replace(/\/[^\/]*$/, '');
+const returned = base + params.get("return");
 const posi = parseInt(localStorage.getItem(jsonName + "_learn"));
-
 async function loadJSON() {
   try {
     const response = await fetch(`../quiz/${jsonName}`);

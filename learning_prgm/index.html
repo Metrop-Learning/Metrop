@@ -13,11 +13,12 @@
   </head>
   <body>
     <script>
+      const base = window.location.pathname.replace(/\/[^\/]*$/, '');
       function placeOnMap(jsonName,learnID) {
         const params = new URLSearchParams({
           json: jsonName,
           learningID: learnID,
-          return: "/learning_prgm",
+          return: base + "/learning_prgm",
         });
         window.location.replace(`/city/place/index.html?${params}`);
       }
@@ -25,7 +26,7 @@
         const params = new URLSearchParams({
           json: jsonName,
           learningID: learnID,
-          return: "/learning_prgm",
+          return: base + "/learning_prgm",
         });
         window.location.replace(`/city/name/index.html?${params}`);
       }
@@ -33,7 +34,7 @@
         const params = new URLSearchParams({
           json: jsonName,
           learningID: learnID,
-          return: "/learning_prgm",
+          return: base + "/learning_prgm",
         });
         window.location.replace(`/city/guess/index.html?${params}`);
       }
@@ -41,7 +42,7 @@
         const params = new URLSearchParams({
           json: jsonName,
           learningID: learnID,
-          return: "/learning_prgm",
+          return: base + "/learning_prgm",
         });
         window.location.replace(`/city/lesson/index.html?${params}`);
       }

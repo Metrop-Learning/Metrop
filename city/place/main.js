@@ -1,7 +1,8 @@
 const params = new URLSearchParams(window.location.search);
 const jsonName = params.get("json");
 const learningID = parseInt(params.get("learningID"));
-const returned = params.get("return")
+const base = window.location.pathname.replace(/\/[^\/]*$/, '');
+const returned = base + params.get("return")
 console.log(jsonName)
 console.log(learningID)
 console.log(returned)
