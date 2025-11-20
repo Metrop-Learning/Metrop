@@ -1,7 +1,14 @@
 const params = new URLSearchParams(window.location.search);
 const jsonName = params.get("json");
 const learningID = parseInt(params.get("learningID"));
-const base = window.location.pathname.replace(/\/[^\/]*$/, '');
+let base;
+if (window.location.hostname.includes("github.io")) {
+    base = "/Metrop";
+}
+else{
+    base = ""
+}
+    console.log(base);
 const returned = base + params.get("return");
 const posi = parseInt(localStorage.getItem(jsonName + "_learn"))
 async function loadJSON() {

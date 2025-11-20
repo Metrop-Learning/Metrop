@@ -1,7 +1,13 @@
 const params = new URLSearchParams(window.location.search);
 const jsonName = params.get("json");
 const learningID = parseInt(params.get("learningID"));
-const base = window.location.pathname.replace(/\/[^\/]*$/, '');
+let base;
+if (window.location.hostname.includes("github.io")) {
+    base = "/Metrop";
+}
+else{
+    base = ""
+}
 const returned = base + params.get("return")
 console.log(jsonName)
 console.log(learningID)
