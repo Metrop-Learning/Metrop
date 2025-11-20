@@ -89,11 +89,305 @@
         "Title": "Mégalopoles [Facile]",
         "Text": "Les ville les plus peuplée au monde",
         "lang": "FR",
-        "pictureURL": "None"
+        "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Skyscrapers_Shinjuku_25_January_2004_rev.jpg"
     },
     "type": [
         "place",
         "name",
         "guess"
+    ],
+    "learning":[
+        {
+            "type":"header",
+            "name":"Amérique"
+        },
+        {
+            "type":"lesson",
+            "name":"Les ville d'amérique",
+            "listID":[
+              "São Paulo",
+              "Mexico",
+              "New York",
+              "Los Angeles"
+            ]
+        },
+        {
+            "type":"placeCity",
+            "name":"Place les ville",
+            "listID":[
+              "São Paulo",
+              "Mexico",
+              "New York",
+              "Los Angeles"
+            ]
+        },
+        {
+            "type":"name",
+            "name":"Nomme les ville",
+            "listID":[
+              "São Paulo",
+              "Mexico",
+              "New York",
+              "Los Angeles"
+            ]
+        },
+        {
+            "type":"guessFromPosi",
+            "name":"Trouve les ville",
+            "listID":[
+              "São Paulo",
+              "Mexico",
+              "New York",
+              "Los Angeles"
+            ]
+        },
+        {
+            "type":"header",
+            "name":"Amérique et Afrique"
+        },
+        {
+            "type":"lesson",
+            "name":"Les ville d'amérique et d'afrique",
+            "listID":[
+              "São Paulo",
+              "Mexico",
+              "New York",
+              "Los Angeles",
+              "Lagos",
+              "Le Caire"
+            ]
+        },
+        {
+            "type":"placeCity",
+            "name":"Place les ville",
+            "listID":[
+              "São Paulo",
+              "Mexico",
+              "New York",
+              "Los Angeles",
+              "Lagos",
+              "Le Caire"
+            ]
+        },
+        {
+            "type":"name",
+            "name":"Nomme les ville",
+            "listID":[
+              "São Paulo",
+              "Mexico",
+              "New York",
+              "Los Angeles",
+              "Lagos",
+              "Le Caire"
+            ]
+        },
+        {
+            "type":"guessFromPosi",
+            "name":"Trouve les ville",
+            "listID":[
+              "São Paulo",
+              "Mexico",
+              "New York",
+              "Los Angeles",
+              "Lagos",
+              "Le Caire"
+            ]
+        },
+        {
+            "type":"header",
+            "name":"Asie de l'est"
+        },
+        {
+            "type":"lesson",
+            "name":"Les ville d'asie de l'est",
+            "listID":[
+              "Pékin",
+              "Shanghai",
+              "Séoul",
+              "Tokyo",
+              "Osaka"
+            ]
+        },
+        {
+            "type":"placeCity",
+            "name":"Place les ville",
+            "listID":[
+              "Pékin",
+              "Shanghai",
+              "Séoul",
+              "Tokyo",
+              "Osaka"
+            ]
+        },
+        {
+            "type":"name",
+            "name":"Nomme les ville",
+            "listID":[
+              "Pékin",
+              "Shanghai",
+              "Séoul",
+              "Tokyo",
+              "Osaka"
+            ]
+        },
+        {
+            "type":"guessFromPosi",
+            "name":"Trouve les ville",
+            "listID":[
+              "Pékin",
+              "Shanghai",
+              "Séoul",
+              "Tokyo",
+              "Osaka"
+            ]
+        },
+        {
+            "type":"header",
+            "name":"Asie"
+        },
+        {
+            "type":"lesson",
+            "name":"Les ville d'asie",
+            "listID":[
+              "Pékin",
+              "Shanghai",
+              "Séoul",
+              "Tokyo",
+              "Osaka",
+              "Jakarta",
+              "Manille",
+              "Mumbai"
+            ]
+        },
+        {
+            "type":"placeCity",
+            "name":"Place les ville",
+            "listID":[
+              "Pékin",
+              "Shanghai",
+              "Séoul",
+              "Tokyo",
+              "Osaka",
+              "Jakarta",
+              "Manille",
+              "Mumbai"
+            ]
+        },
+        {
+            "type":"name",
+            "name":"Nomme les ville",
+            "listID":[
+              "Pékin",
+              "Shanghai",
+              "Séoul",
+              "Tokyo",
+              "Osaka",
+              "Jakarta",
+              "Manille",
+              "Mumbai"
+            ]
+        },
+        {
+            "type":"guessFromPosi",
+            "name":"Trouve les ville",
+            "listID":[
+              "Pékin",
+              "Shanghai",
+              "Séoul",
+              "Tokyo",
+              "Osaka",
+              "Jakarta",
+              "Manille",
+              "Mumbai"
+            ]
+        },
+        {
+            "type":"header",
+            "name":"Le monde"
+        },
+        {
+            "type":"lesson",
+            "name":"Les ville du monde",
+            "listID":[
+              "São Paulo",
+              "Mexico",
+              "New York",
+              "Los Angeles",
+              "Lagos",
+              "Le Caire",
+              "Pékin",
+              "Shanghai",
+              "Séoul",
+              "Tokyo",
+              "Osaka",
+              "Jakarta",
+              "Manille",
+              "Mumbai"
+            ]
+        },
+        {
+            "type":"placeCity",
+            "name":"Place les ville",
+            "listID":[
+              "São Paulo",
+              "Mexico",
+              "New York",
+              "Los Angeles",
+              "Lagos",
+              "Le Caire",
+              "Pékin",
+              "Shanghai",
+              "Séoul",
+              "Tokyo",
+              "Osaka",
+              "Jakarta",
+              "Manille",
+              "Mumbai"
+            ]
+        },
+        {
+            "type":"name",
+            "name":"Nomme les ville",
+            "listID":[
+              "São Paulo",
+              "Mexico",
+              "New York",
+              "Los Angeles",
+              "Lagos",
+              "Le Caire",
+              "Pékin",
+              "Shanghai",
+              "Séoul",
+              "Tokyo",
+              "Osaka",
+              "Jakarta",
+              "Manille",
+              "Mumbai"
+            ]
+        },
+        {
+            "type":"guessFromPosi",
+            "name":"Trouve les ville",
+            "listID":[
+              "São Paulo",
+              "Mexico",
+              "New York",
+              "Los Angeles",
+              "Lagos",
+              "Le Caire",
+              "Pékin",
+              "Shanghai",
+              "Séoul",
+              "Tokyo",
+              "Osaka",
+              "Jakarta",
+              "Manille",
+              "Mumbai"
+            ]
+        },
+        {
+            "type":"end",
+            "name":"Fin"
+        }
     ]
 }

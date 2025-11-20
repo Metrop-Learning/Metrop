@@ -257,11 +257,11 @@
         },
         {
             "type":"header",
-            "name":"Amerique du nord"
+            "name":"Amérique du nord"
         },
         {
             "type":"lesson",
-            "name":"Les ville d'amerique du nord",
+            "name":"Les ville d'amérique du nord",
             "listID":[
               "Los Angeles",
               "New York",
@@ -297,11 +297,11 @@
         },
         {
             "type":"header",
-            "name":"Amerique du sud"
+            "name":"Amérique du sud"
         },
         {
             "type":"lesson",
-            "name":"Les ville d'amerique du sud",
+            "name":"Les ville d'amérique du sud",
             "listID":[
               "Bogotá",
               "Rio de Janeiro",
@@ -341,11 +341,11 @@
         },
         {
             "type":"header",
-            "name":"Amerique"
+            "name":"Amérique"
         },
         {
             "type":"lesson",
-            "name":"Les ville d'amerique",
+            "name":"Les ville d'amérique",
             "listID":[
               "Los Angeles",
               "New York",
@@ -905,8 +905,8 @@
             ]
         },
         {
-            "type":"header",
-            "name":"Termminer"
+            "type":"end",
+            "name":"Fin"
         }
     ]
 }

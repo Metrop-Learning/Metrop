@@ -76,7 +76,7 @@ if (
   window.matchMedia &&
   window.matchMedia("(prefers-color-scheme: dark)").matches
 ) {
-    document.getElementById('info').style.color = '#ffffff'
+    document.getElementById('menu').style.color = '#ffffff'
     document.getElementById('map').style.backgroundColor = '#000000ff'
     document.body.style.backgroundColor = '#1a1a1aff'
 
@@ -118,8 +118,8 @@ function shuffle(list) {
 listCity = shuffle(listCity);
 localStorage.setItem("CITY",JSON.stringify(listCity))
 
-if (!isNaN(listCity.length - 1) && (listCity.length - 1) > 0) {
-        document.getElementById('prgs').max = (listCity.length - 1);
+if (!isNaN(listCity.length) && (listCity.length) > 0) {
+        document.getElementById('prgs').max = (listCity.length);
 }
 if (!isNaN(0) && 0 >= 0 && 0 <= document.getElementById('prgs').max) {
     document.getElementById('prgs').value = 0;

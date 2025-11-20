@@ -5,6 +5,7 @@ let progress = parseInt(localStorage.getItem(jsonName + "_learn"))
 progress = Number.isInteger(progress) ? progress : 0;
 localStorage.setItem(jsonName + "_learn",progress)
 
+
 async function loadJSON() {
     try {
         const response = await fetch(`../city/quiz/${jsonName}`);
@@ -103,7 +104,22 @@ for(let i = 0; i < learningPath.length; i++){
                 localStorage.setItem(jsonName + "_learn",i + 1)
                 progress += 1
             }
+            if(progress < i){
+                div.style.backgroundColor = "#6464641c"
+            }
             div.innerHTML += '<svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#000000"><path d="M226.67-80q-27 0-46.84-19.83Q160-119.67 160-146.67v-666.66q0-27 19.83-46.84Q199.67-880 226.67-880h506.66q27 0 46.84 19.83Q800-840.33 800-813.33v666.66q0 27-19.83 46.84Q760.33-80 733.33-80H226.67Zm0-66.67h506.66v-666.66h-66.66V-571q0 9.33-8.34 14.17-8.33 4.83-17 .16L585-590q-8.06-4.67-16.53-4.67T552-590l-56.33 33.33q-8.67 4.67-16.84-.16-8.16-4.84-8.16-14.17v-242.33h-244v666.66Zm0 0v-666.66 666.66Zm244-424.33q0 9.33 8.16 14.17 8.17 4.83 16.84.16L552-590q8.07-4.67 16.53-4.67 8.47 0 17.14 4.67l55.66 33.33q8.67 4.67 17-.16 8.34-4.84 8.34-14.17 0 10.26-8.34 14.96-8.33 4.71-17-.63L585-589.33q-8.06-5.34-16.53-5.34T552-589.33l-56.33 32.66q-8.67 5.34-16.84.63-8.16-4.7-8.16-14.96Z"/></svg>'
+        }
+        if(data.learning[i].type == "end"){
+            div = document.createElement('div');
+            div.className = 'cardName';
+            div.style.marginRight = "50px";
+            if(progress == i && !window.matchMedia('(prefers-color-scheme: dark)').matches){
+                div.style.backgroundColor = "#ff9900ff"
+            }
+            else if(progress == i){
+                //div.style.backgroundColor = "#ad6800ff"
+            }
+            div.innerHTML += '<svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#000000"><path d="M380-733.33h66.67V-800H380v66.67Zm133.33 0V-800H580v66.67h-66.67ZM380-466.67v-66.66h66.67v66.66H380ZM646.67-600v-66.67h66.66V-600h-66.66Zm0 133.33v-66.66h66.66v66.66h-66.66Zm-133.34 0v-66.66H580v66.66h-66.67Zm133.34-266.66V-800h66.66v66.67h-66.66Zm-200 66.66v-66.66h66.66v66.66h-66.66ZM279.88-160q-14.21 0-23.71-9.58-9.5-9.59-9.5-23.75v-573.34q0-14.16 9.61-23.75 9.62-9.58 23.84-9.58 14.21 0 23.78 9.58 9.56 9.59 9.56 23.75v33.34H380v66.66h-66.67V-600H380v66.67h-66.67v340q0 14.16-9.61 23.75-9.62 9.58-23.84 9.58ZM580-533.33V-600h66.67v66.67H580Zm-133.33 0V-600h66.66v66.67h-66.66ZM380-600v-66.67h66.67V-600H380Zm133.33 0v-66.67H580V-600h-66.67ZM580-666.67v-66.66h66.67v66.66H580Z"/></svg>'
         }
     } else {
         console.error('METROP DATA API\n---\nNEEDED DATA MISSING (FATAL ERROR) : "type"\nIN : '+ jsonName +' under "learning" properties \n---\ntype are needed to choose a card type.\nThis is a Fatal Error.\n---\nDocumentation : https://github.com/Metrop-Learning/Metrop/blob/main/documentaion/data.md\n---', learningPath[i]);
