@@ -40,7 +40,7 @@ if (
     document.getElementById('map').style.backgroundColor = '#000000ff'
     document.body.style.backgroundColor = '#1a1a1aff'
 } else {
-        document.getElementById('info').style.color = '#000000ff'
+        document.getElementById('name').style.color = '#000000ff'
         document.getElementById('map').style.backgroundColor = '#ffffffff'
         document.body.style.backgroundColor = '#ffffffff'
 }
