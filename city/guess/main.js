@@ -1,3 +1,4 @@
+import * as util from "../asset/common"
 const params = new URLSearchParams(window.location.search);
 const jsonName = params.get("json");
 const learningID = parseInt(params.get("learningID"));
@@ -32,59 +33,6 @@ if (learningID == -1) {
   console.log(listCity);
 }
 
-// **********
-// *Map icon*
-// **********
-
-const redIcon = L.icon({
-  iconUrl:
-    "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png",
-  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41],
-});
-
-const greenIcon = L.icon({
-  iconUrl:
-    "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png",
-  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41],
-});
-
-const orangeIcon = L.icon({
-  iconUrl:
-    "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-orange.png",
-  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41],
-});
-
-const greyIcon = L.icon({
-  iconUrl:
-    "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-grey.png",
-  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41],
-});
-
-const blueIcon = L.icon({
-  iconUrl:
-    "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png",
-  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41],
-});
 
 // ****************************
 // *Dark/Light mode + map load*
@@ -124,15 +72,7 @@ if (
 // *random city order*
 // *******************
 
-function shuffle(list) {
-  const arr = [...list];
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
-  return arr;
-}
-listCity = shuffle(listCity);
+listCity = util.shuffle(listCity);
 localStorage.setItem("CITY", JSON.stringify(listCity));
 
 if (!isNaN(listCity.length) && listCity.length > 0) {
@@ -150,7 +90,7 @@ let actual;
 //point every city :
 for (let i = 0; i < listCity.length; i++) {
   const marker = L.marker([listCity[i].lat, listCity[i].lng], {
-    icon: greyIcon,
+    icon: util.greyIcon,
   }).addTo(map);
   markers.push(marker);
 }
@@ -162,7 +102,7 @@ function showCity() {
   if (markers[posilist]) {
     map.removeLayer(markers[posilist]);
     actual = L.marker([listCity[posilist].lat, listCity[posilist].lng], {
-      icon: blueIcon,
+      icon: util.blueIcon,
     }).addTo(map);
     map.setView([listCity[posilist].lat, listCity[posilist].lng], 6);
   }
@@ -286,12 +226,12 @@ function textVerified() {
   let error_margin = checkDiff(input, listCity[posilist].name);
   if (error_margin <= 2) {
     console.log(posilist + "\n" + listCity[posilist].name);
-    let icon = orangeIcon;
+    let icon = util.orangeIcon;
     document.getElementById("errorText").style.color = "rgb(241, 186, 109)";
     if (error_margin <= 1 && loseStrick <= 1) {
       document.getElementById("errorText").style.color =
         "rgba(109, 241, 118, 1)";
-      icon = greenIcon;
+      icon = util.greenIcon;
     }
     document.getElementById("errorText").innerHTML =
       "Tu as trouvée : " + listCity[posilist].name;
@@ -363,7 +303,7 @@ function textVerified() {
     markers[posilist - 1] = L.marker(
       [listCity[posilist - 1].lat, listCity[posilist - 1].lng],
       {
-        icon: redIcon,
+        icon: util.redIcon,
       }
     )
       .addTo(map)

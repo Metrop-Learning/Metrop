@@ -201,7 +201,7 @@
   ],
   "cardInfo":{
     "Title":"Mégalopoles [Intermédiaire]",
-    "Text":"Les ville les plus peuplée au monde",
+    "Text":"Les villesles plus peuplée au monde",
     "lang":"FR",
     "pictureURL":"None"
   },
@@ -217,7 +217,7 @@
         },
         {
             "type":"lesson",
-            "name":"Les ville d'europe",
+            "name":"Les villesd'europe",
             "listID":[
               "Londres",
               "Paris",
@@ -227,7 +227,7 @@
         },
         {
             "type":"placeCity",
-            "name":"Place les ville",
+            "name":"Place les villes",
             "listID":[
               "Londres",
               "Paris",
@@ -237,7 +237,7 @@
         },
         {
             "type":"name",
-            "name":"Nomme les ville",
+            "name":"Nomme les villes",
             "listID":[
               "Londres",
               "Paris",
@@ -247,7 +247,7 @@
         },
         {
             "type":"guessFromPosi",
-            "name":"Trouve les ville",
+            "name":"Trouve les villes",
             "listID":[
               "Londres",
               "Paris",
@@ -261,7 +261,7 @@
         },
         {
             "type":"lesson",
-            "name":"Les ville d'amérique du nord",
+            "name":"Les villesd'amérique du nord",
             "listID":[
               "Los Angeles",
               "New York",
@@ -270,7 +270,7 @@
         },
         {
             "type":"placeCity",
-            "name":"Place les ville",
+            "name":"Place les villes",
             "listID":[
               "Los Angeles",
               "New York",
@@ -279,7 +279,7 @@
         },
         {
             "type":"name",
-            "name":"Nomme les ville",
+            "name":"Nomme les villes",
             "listID":[
               "Los Angeles",
               "New York",
@@ -288,7 +288,7 @@
         },
         {
             "type":"guessFromPosi",
-            "name":"Trouve les ville",
+            "name":"Trouve les villes",
             "listID":[
               "Los Angeles",
               "New York",
@@ -301,7 +301,7 @@
         },
         {
             "type":"lesson",
-            "name":"Les ville d'amérique du sud",
+            "name":"Les villesd'amérique du sud",
             "listID":[
               "Bogotá",
               "Rio de Janeiro",
@@ -311,7 +311,7 @@
         },
         {
             "type":"placeCity",
-            "name":"Place les ville",
+            "name":"Place les villes",
             "listID":[
               "Bogotá",
               "Rio de Janeiro",
@@ -321,7 +321,7 @@
         },
         {
             "type":"name",
-            "name":"Nomme les ville",
+            "name":"Nomme les villes",
             "listID":[
               "Bogotá",
               "Rio de Janeiro",
@@ -331,7 +331,7 @@
         },
         {
             "type":"guessFromPosi",
-            "name":"Trouve les ville",
+            "name":"Trouve les villes",
             "listID":[
               "Bogotá",
               "Rio de Janeiro",
@@ -345,7 +345,7 @@
         },
         {
             "type":"lesson",
-            "name":"Les ville d'amérique",
+            "name":"Les villesd'amérique",
             "listID":[
               "Los Angeles",
               "New York",
@@ -358,7 +358,7 @@
         },
         {
             "type":"placeCity",
-            "name":"Place les ville",
+            "name":"Place les villes",
             "listID":[
               "Los Angeles",
               "New York",
@@ -371,7 +371,7 @@
         },
         {
             "type":"name",
-            "name":"Nomme les ville",
+            "name":"Nomme les villes",
             "listID":[
               "Los Angeles",
               "New York",
@@ -384,7 +384,7 @@
         },
         {
             "type":"guessFromPosi",
-            "name":"Trouve les ville",
+            "name":"Trouve les villes",
             "listID":[
               "Los Angeles",
               "New York",
@@ -401,7 +401,7 @@
         },
         {
             "type":"lesson",
-            "name":"Les ville d'afrique",
+            "name":"Les villesd'afrique",
             "listID":[
               "Le Caire",
               "Lagos",
@@ -411,7 +411,7 @@
         },
         {
             "type":"placeCity",
-            "name":"Place les ville",
+            "name":"Place les villes",
             "listID":[
               "Le Caire",
               "Lagos",
@@ -421,7 +421,7 @@
         },
         {
             "type":"name",
-            "name":"Nomme les ville",
+            "name":"Nomme les villes",
             "listID":[
               "Le Caire",
               "Lagos",
@@ -431,7 +431,7 @@
         },
         {
             "type":"guessFromPosi",
-            "name":"Trouve les ville",
+            "name":"Trouve les villes",
             "listID":[
               "Le Caire",
               "Lagos",
@@ -446,7 +446,7 @@
         },
         {
             "type":"lesson",
-            "name":"Les ville d'inde",
+            "name":"Les villesd'inde",
             "listID":[
               "Delhi",
               "Mumbai",
@@ -457,7 +457,7 @@
         },
         {
             "type":"placeCity",
-            "name":"Place les ville",
+            "name":"Place les villes",
             "listID":[
               "Delhi",
               "Mumbai",
@@ -468,7 +468,7 @@
         },
         {
             "type":"name",
-            "name":"Nomme les ville",
+            "name":"Nomme les villes",
             "listID":[
               "Delhi",
               "Mumbai",
@@ -479,7 +479,7 @@
         },
         {
             "type":"guessFromPosi",
-            "name":"Trouve les ville",
+            "name":"Trouve les villes",
             "listID":[
               "Delhi",
               "Mumbai",
@@ -494,7 +494,7 @@
         },
         {
             "type":"lesson",
-            "name":"Les ville d'asie du sud",
+            "name":"Les villesd'asie du sud",
             "listID":[
               "Delhi",
               "Mumbai",
@@ -508,7 +508,7 @@
         },
         {
             "type":"placeCity",
-            "name":"Place les ville",
+            "name":"Place les villes",
             "listID":[
               "Delhi",
               "Mumbai",
@@ -522,7 +522,7 @@
         },
         {
             "type":"name",
-            "name":"Nomme les ville",
+            "name":"Nomme les villes",
             "listID":[
               "Delhi",
               "Mumbai",
@@ -536,7 +536,7 @@
         },
         {
             "type":"guessFromPosi",
-            "name":"Trouve les ville",
+            "name":"Trouve les villes",
             "listID":[
               "Delhi",
               "Mumbai",
@@ -554,7 +554,7 @@
         },
         {
             "type":"lesson",
-            "name":"Les ville d'asie pacifique",
+            "name":"Les villesd'asie pacifique",
             "listID":[
               "Jakarta",
               "Manille",
@@ -564,7 +564,7 @@
         },
         {
             "type":"placeCity",
-            "name":"Place les ville",
+            "name":"Place les villes",
             "listID":[
               "Jakarta",
               "Manille",
@@ -574,7 +574,7 @@
         },
         {
             "type":"name",
-            "name":"Nomme les ville",
+            "name":"Nomme les villes",
             "listID":[
               "Jakarta",
               "Manille",
@@ -584,7 +584,7 @@
         },
         {
             "type":"guessFromPosi",
-            "name":"Trouve les ville",
+            "name":"Trouve les villes",
             "listID":[
               "Jakarta",
               "Manille",
@@ -598,7 +598,7 @@
         },
         {
             "type":"lesson",
-            "name":"Les ville de chine",
+            "name":"Les villesde chine",
             "listID":[
               "Shanghai",
               "Pékin",
@@ -610,7 +610,7 @@
         },
         {
             "type":"placeCity",
-            "name":"Place les ville",
+            "name":"Place les villes",
             "listID":[
               "Shanghai",
               "Pékin",
@@ -622,7 +622,7 @@
         },
         {
             "type":"name",
-            "name":"Nomme les ville",
+            "name":"Nomme les villes",
             "listID":[
               "Shanghai",
               "Pékin",
@@ -634,7 +634,7 @@
         },
         {
             "type":"guessFromPosi",
-            "name":"Trouve les ville",
+            "name":"Trouve les villes",
             "listID":[
               "Shanghai",
               "Pékin",
@@ -650,7 +650,7 @@
         },
         {
             "type":"lesson",
-            "name":"Les ville d'asie",
+            "name":"Les villesd'asie",
             "listID":[
               "Shanghai",
               "Pékin",
@@ -674,7 +674,7 @@
         },
         {
             "type":"placeCity",
-            "name":"Place les ville",
+            "name":"Place les villes",
             "listID":[
               "Shanghai",
               "Pékin",
@@ -698,7 +698,7 @@
         },
         {
             "type":"name",
-            "name":"Nomme les ville",
+            "name":"Nomme les villes",
             "listID":[
               "Shanghai",
               "Pékin",
@@ -722,7 +722,7 @@
         },
         {
             "type":"guessFromPosi",
-            "name":"Trouve les ville",
+            "name":"Trouve les villes",
             "listID":[
               "Shanghai",
               "Pékin",
@@ -750,7 +750,7 @@
         },
         {
             "type":"lesson",
-            "name":"Les ville du monde",
+            "name":"Les villesdu monde",
             "listID":[
               "Shanghai",
               "Pékin",
@@ -789,7 +789,7 @@
         },
         {
             "type":"placeCity",
-            "name":"Place les ville",
+            "name":"Place les villes",
             "listID":[
               "Shanghai",
               "Pékin",
@@ -828,7 +828,7 @@
         },
         {
             "type":"name",
-            "name":"Nomme les ville",
+            "name":"Nomme les villes",
             "listID":[
               "Shanghai",
               "Pékin",
@@ -867,7 +867,7 @@
         },
         {
             "type":"guessFromPosi",
-            "name":"Trouve les ville",
+            "name":"Trouve les villes",
             "listID":[
               "Shanghai",
               "Pékin",

@@ -87,7 +87,7 @@
     ],
     "cardInfo": {
         "Title": "Mégalopoles [Facile]",
-        "Text": "Les ville les plus peuplée au monde",
+        "Text": "Les villesles plus peuplée au monde",
         "lang": "FR",
         "pictureURL": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Skyscrapers_Shinjuku_25_January_2004_rev.jpg"
     },
@@ -103,7 +103,7 @@
         },
         {
             "type":"lesson",
-            "name":"Les ville d'amérique",
+            "name":"Les villesd'amérique",
             "listID":[
               "São Paulo",
               "Mexico",
@@ -113,7 +113,7 @@
         },
         {
             "type":"placeCity",
-            "name":"Place les ville",
+            "name":"Place les villes",
             "listID":[
               "São Paulo",
               "Mexico",
@@ -123,7 +123,7 @@
         },
         {
             "type":"name",
-            "name":"Nomme les ville",
+            "name":"Nomme les villes",
             "listID":[
               "São Paulo",
               "Mexico",
@@ -133,7 +133,7 @@
         },
         {
             "type":"guessFromPosi",
-            "name":"Trouve les ville",
+            "name":"Trouve les villes",
             "listID":[
               "São Paulo",
               "Mexico",
@@ -147,7 +147,7 @@
         },
         {
             "type":"lesson",
-            "name":"Les ville d'amérique et d'afrique",
+            "name":"Les villesd'amérique et d'afrique",
             "listID":[
               "São Paulo",
               "Mexico",
@@ -159,7 +159,7 @@
         },
         {
             "type":"placeCity",
-            "name":"Place les ville",
+            "name":"Place les villes",
             "listID":[
               "São Paulo",
               "Mexico",
@@ -171,7 +171,7 @@
         },
         {
             "type":"name",
-            "name":"Nomme les ville",
+            "name":"Nomme les villes",
             "listID":[
               "São Paulo",
               "Mexico",
@@ -183,7 +183,7 @@
         },
         {
             "type":"guessFromPosi",
-            "name":"Trouve les ville",
+            "name":"Trouve les villes",
             "listID":[
               "São Paulo",
               "Mexico",
@@ -199,7 +199,7 @@
         },
         {
             "type":"lesson",
-            "name":"Les ville d'asie de l'est",
+            "name":"Les villesd'asie de l'est",
             "listID":[
               "Pékin",
               "Shanghai",
@@ -210,7 +210,7 @@
         },
         {
             "type":"placeCity",
-            "name":"Place les ville",
+            "name":"Place les villes",
             "listID":[
               "Pékin",
               "Shanghai",
@@ -221,7 +221,7 @@
         },
         {
             "type":"name",
-            "name":"Nomme les ville",
+            "name":"Nomme les villes",
             "listID":[
               "Pékin",
               "Shanghai",
@@ -232,7 +232,7 @@
         },
         {
             "type":"guessFromPosi",
-            "name":"Trouve les ville",
+            "name":"Trouve les villes",
             "listID":[
               "Pékin",
               "Shanghai",
@@ -247,7 +247,7 @@
         },
         {
             "type":"lesson",
-            "name":"Les ville d'asie",
+            "name":"Les villesd'asie",
             "listID":[
               "Pékin",
               "Shanghai",
@@ -261,7 +261,7 @@
         },
         {
             "type":"placeCity",
-            "name":"Place les ville",
+            "name":"Place les villes",
             "listID":[
               "Pékin",
               "Shanghai",
@@ -275,7 +275,7 @@
         },
         {
             "type":"name",
-            "name":"Nomme les ville",
+            "name":"Nomme les villes",
             "listID":[
               "Pékin",
               "Shanghai",
@@ -289,7 +289,7 @@
         },
         {
             "type":"guessFromPosi",
-            "name":"Trouve les ville",
+            "name":"Trouve les villes",
             "listID":[
               "Pékin",
               "Shanghai",
@@ -307,7 +307,7 @@
         },
         {
             "type":"lesson",
-            "name":"Les ville du monde",
+            "name":"Les villesdu monde",
             "listID":[
               "São Paulo",
               "Mexico",
@@ -327,7 +327,7 @@
         },
         {
             "type":"placeCity",
-            "name":"Place les ville",
+            "name":"Place les villes",
             "listID":[
               "São Paulo",
               "Mexico",
@@ -347,7 +347,7 @@
         },
         {
             "type":"name",
-            "name":"Nomme les ville",
+            "name":"Nomme les villes",
             "listID":[
               "São Paulo",
               "Mexico",
@@ -367,7 +367,7 @@
         },
         {
             "type":"guessFromPosi",
-            "name":"Trouve les ville",
+            "name":"Trouve les villes",
             "listID":[
               "São Paulo",
               "Mexico",

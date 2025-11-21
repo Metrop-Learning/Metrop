@@ -1,3 +1,4 @@
+import * as util from "../asset/common"
 const params = new URLSearchParams(window.location.search);
 const jsonName = params.get("json");
 const learningID = parseInt(params.get("learningID"));
@@ -182,7 +183,7 @@ function checkDiff(str1,str2){
   return dp[m][n];
 }
 
-let intCityList = shuffle(data.listCity);
+let intCityList = util.shuffle(data.listCity);
 let indexInt = 0
 
 
@@ -197,15 +198,6 @@ function intmaker(){
   }
   document.getElementById('intField').innerText = intDisplay(choosenInt.name);
   document.getElementById('intArea').style.visibility = 'visible';
-}
-
-function shuffle(list) {
-  const arr = [...list]; 
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
-  return arr;
 }
 
 function searchFounded(a){

@@ -1,7 +1,7 @@
 import data from './data/jsonList.json' with { type: "json" };
 
-const ver =  [0,6,1,"a"]
-const verAPI = [0,2]
+const ver =  [0,6,3,"a"]
+const verAPI = [0,3]
 console.info("Metrop ver\n"+ver[0]+"."+ver[1]+"."+ver[2]+"."+ver[3]+"\nMetrop API ver\n"+verAPI[0]+"."+verAPI[1])
 
 //Set up
@@ -25,6 +25,7 @@ for(let i = 0; i < cardList.length; i++){
 
 async function cityListSetUp(nameJson){
     const obj = await loadJSON(nameJson);
+    if (obj == undefined) return
     const wikimediaImageRegex = /^https:\/\/upload\.wikimedia\.org\/[^\s]+\.(?:jpg|jpeg|png|gif|svg|webp)$/;
     let img;
     let title;
@@ -115,6 +116,6 @@ async function loadJSON(jsonName) {
         //console.log("Contenu reçu:", datat);
         return datat;
     } catch (e) {
-        console.error("Erreur:", e);
+        console.error('METROP DATA API\n---\nIMPORT ERROR\nIN : '+ jsonName +' \n---\n'+ e +'\n---\nDocumentation : https://github.com/Metrop-Learning/Metrop/blob/main/documentaion/data.md\n---')
     }
 }
