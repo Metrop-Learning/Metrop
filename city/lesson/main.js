@@ -1,4 +1,4 @@
-import * as util from "../asset/common"
+import * as util from "../asset/common.js"
 const params = new URLSearchParams(window.location.search);
 const jsonName = params.get("json");
 const learningID = parseInt(params.get("learningID"));
@@ -95,7 +95,7 @@ document.getElementById("next").addEventListener("click", () => {
 //point every city :
 for(let i = 0; i < listCity.length; i++){
   const marker = L.marker([listCity[i].lat, listCity[i].lng], {
-    icon: greyIcon,
+    icon: util.greyIcon,
   }).addTo(map)
   markers.push(marker);
 }
@@ -109,7 +109,7 @@ function showCity() {
   if(markers[posilist]){
     map.removeLayer(markers[posilist])
     actual = L.marker([listCity[posilist].lat, listCity[posilist].lng], {
-    icon: blueIcon,
+    icon: util.blueIcon,
   }).addTo(map)
   map.setView([listCity[posilist].lat, listCity[posilist].lng], 6);}
   }
@@ -189,7 +189,7 @@ function next(){
   posilist++;
         showCity();
         markers[posilist - 1] = L.marker([listCity[posilist - 1].lat, listCity[posilist - 1].lng], {
-    icon: greyIcon,
+    icon: util.greyIcon,
   })
     .addTo(map)
     .bindPopup(`<b>${listCity[posilist].name}</b>`)

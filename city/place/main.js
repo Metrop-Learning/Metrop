@@ -1,4 +1,4 @@
-import * as util from "../asset/common"
+import * as util from "../asset/common.js"
 const params = new URLSearchParams(window.location.search);
 const jsonName = params.get("json");
 const learningID = parseInt(params.get("learningID"));
