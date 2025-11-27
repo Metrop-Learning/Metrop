@@ -1,0 +1,158 @@
+{
+    "listCity": [
+        {
+            "name": "Paris",
+            "country": "France",
+            "lat": 48.860,
+            "lng": 2.340
+        },
+        {
+            "name": "Lyon",
+            "country": "France",
+            "lat": 45.760,
+            "lng": 4.830
+        },
+        {
+            "name": "Marseille",
+            "country": "France",
+            "lat": 43.310,
+            "lng": 5.370
+        },
+        {
+            "name": "Nice",
+            "country": "France",
+            "lat": 43.700,
+            "lng": 7.270
+        },
+        {
+            "name": "Toulon",
+            "country": "France",
+            "lat": 43.130,
+            "lng": 5.920
+        },
+        {
+            "name": "Ajaccio",
+            "country": "France",
+            "lat": 41.920,
+            "lng": 8.738
+        },
+        {
+            "name": "Montpellier",
+            "country": "France",
+            "lat": 43.610,
+            "lng": 3.870
+        },
+        {
+            "name": "Toulouse",
+            "country": "France",
+            "lat": 43.620,
+            "lng": 1.450
+        },
+        {
+            "name": "Bordeaux",
+            "country": "France",
+            "lat": 44.840,
+            "lng": -0.580
+        },
+        {
+            "name": "Grenoble",
+            "country": "France",
+            "lat": 45.190,
+            "lng": 5.720
+        },
+        {
+            "name": "Saint-Étienne",
+            "country": "France",
+            "lat": 45.430,
+            "lng": 4.390
+        },
+        {
+            "name": "Clermont-Ferrand",
+            "country": "France",
+            "lat": 45.780,
+            "lng": 3.080
+        },
+        {
+            "name": "Dijon",
+            "country": "France",
+            "lat": 47.330,
+            "lng": 5.030
+        },
+        {
+            "name": "Nancy",
+            "country": "France",
+            "lat": 48.690,
+            "lng": 6.170
+        },
+        {
+            "name": "Metz",
+            "country": "France",
+            "lat": 49.120,
+            "lng": 6.180
+        },
+        {
+            "name": "Strasbourg",
+            "country": "France",
+            "lat": 48.580,
+            "lng": 7.760
+        },
+        {
+            "name": "Lille",
+            "country": "France",
+            "lat": 50.640,
+            "lng": 3.070
+        },
+        {
+            "name": "Rouen",
+            "country": "France",
+            "lat": 49.440,
+            "lng": 1.080
+        },
+        {
+            "name": "Orléans",
+            "country": "France",
+            "lat": 47.900,
+            "lng": 1.900
+        },
+        {
+            "name": "Tours",
+            "country": "France",
+            "lat": 47.380,
+            "lng": 0.690
+        },
+        {
+            "name": "Nantes",
+            "country": "France",
+            "lat": 47.230,
+            "lng": -1.570
+        },
+        {
+            "name": "Rennes",
+            "country": "France",
+            "lat": 48.110,
+            "lng": -1.680
+        },
+        {
+            "name": "Brest",
+            "country": "France",
+            "lat": 48.390,
+            "lng": -4.500
+        },
+              { "name": "Pointe-à-Pitre", "country": "France", "lat": 16.241, "lng": -61.535 },
+                { "name": "Fort-de-France", "country": "France", "lat": 14.610, "lng": -61.070 },
+                  { "name": "Saint-Denis", "country": "France", "lat": -20.880, "lng": 55.450 }
+                  
+    ]
+,
+"cardInfo": {
+    "Title": "Metropole Française",
+    "Text": "Les metropole française",
+    "lang": "FR",
+    "pictureURL": "None"
+},
+"type": [
+    "place",
+    "name",
+    "guess"
+]
+}

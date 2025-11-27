@@ -2,6 +2,7 @@
     "city":[
         "Megacity.json",
         "MegacityEasy.json",
-        "MegacityHard.json"
+        "MegacityHard.json",
+        "MetroCityFrance.json"
     ]
 }
