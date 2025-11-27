@@ -11,13 +11,13 @@ for(let i = 0; i < data.city.length; i++){
     await cityListSetUp(data.city[i]);
 }
 const regex = /[\[\uFF3B]\s*(.*?)\s*[\]\uFF3D]/;
-cardList.sort((a, b) => {
-  const niveauA = a[0].match(regex)[1];
-  const niveauB = b[0].match(regex)[1];
+//cardList.sort((a, b) => {
+ // const niveauA = a[0].match(regex)[1];
+  // const niveauB = b[0].match(regex)[1];
 
-  const ordre = ["Facile", "Intermédiaire", "Expert"];
-  return ordre.indexOf(niveauA) - ordre.indexOf(niveauB);
-});
+  //const ordre = ["Facile", "Intermédiaire", "Expert"];
+ // return ordre.indexOf(niveauA) - ordre.indexOf(niveauB);
+//fix});
 for(let i = 0; i < cardList.length; i++){
     document.getElementById('cityQuizList').appendChild(cardList[i][1]);
 }

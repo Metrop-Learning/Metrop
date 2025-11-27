@@ -138,21 +138,34 @@
             "lat": 48.390,
             "lng": -4.500
         },
-              { "name": "Pointe-à-Pitre", "country": "France", "lat": 16.241, "lng": -61.535 },
-                { "name": "Fort-de-France", "country": "France", "lat": 14.610, "lng": -61.070 },
-                  { "name": "Saint-Denis", "country": "France", "lat": -20.880, "lng": 55.450 }
-                  
+        {
+            "name": "Pointe-à-Pitre",
+            "country": "France",
+            "lat": 16.241,
+            "lng": -61.535
+        },
+        {
+            "name": "Fort-de-France",
+            "country": "France",
+            "lat": 14.610,
+            "lng": -61.070
+        },
+        {
+            "name": "Saint-Denis",
+            "country": "France",
+            "lat": -20.880,
+            "lng": 55.450
+        }
+    ],
+    "cardInfo": {
+        "Title": "Metropole Française",
+        "Text": "Les metropole française",
+        "lang": "FR",
+        "pictureURL": "None"
+    },
+    "type": [
+        "place",
+        "name",
+        "guess"
     ]
-,
-"cardInfo": {
-    "Title": "Metropole Française",
-    "Text": "Les metropole française",
-    "lang": "FR",
-    "pictureURL": "None"
-},
-"type": [
-    "place",
-    "name",
-    "guess"
-]
 }
