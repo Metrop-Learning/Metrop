@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <title>Metrop test</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+        #map { height: 100vh; }
+    </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<script>
+// ---------------------
+// INITIALISATION
+// ---------------------
+var map = L.map('map').setView([20, 0], 2);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution:
+        "© OpenStreetMap | Boundaries: osm-boundaries.com | Made by Jimmxyz"
+}).addTo(map);
+
+// ---------------------
+// STYLES
+// ---------------------
+const defaultStyle = {
+    color: "blue",
+    weight: 1,
+    fillColor: "#66ccff",
+    fillOpacity: 0.25
+};
+
+const highlightStyle = {
+    color: "yellow",
+    weight: 2,
+    fillColor: "orange",
+    fillOpacity: 0.55
+};
+
+// ---------------------
+// TABLEAU DES PAYS AVEC LEUR OSM ID
+// (Admin Level 2 = frontières des pays)
+// ---------------------
+const countries = {
+    fr: { id: 2202162, name: "France" },
+    de: { id: 51477,   name: "Allemagne" },
+    es: { id: 1311341, name: "Espagne" },
+    lv: { id: 72594,   name: "Lettonie" }
+};
+
+// ---------------------
+// CHARGER UN PAYS DEPUIS OSM-BOUNDARIES
+// ---------------------
+async function loadCountry(countryCode) {
+    const country = countries[countryCode];
+    const url = `https://osm-boundaries.com/Download/Boundary/${country.id}?t=geojson`;
+
+    console.log("Fetching:", url);
+
+    const geo = await fetch(url).then(r => r.json());
+
+    L.geoJSON(geo, {
+        style: () => defaultStyle,
+        onEachFeature: function (feat, layer) {
+
+            // Tooltip (nom du pays)
+            layer.bindTooltip(country.name, {
+                sticky: true,
+                direction: "auto"
+            });
+
+            // Highlight on hover
+            layer.on("mouseover", () => layer.setStyle(highlightStyle));
+            layer.on("mouseout", () => layer.setStyle(defaultStyle));
+        }
+    }).addTo(map);
+}
+
+// ---------------------
+// CHARGEMENT
+// ---------------------
+Object.keys(countries).forEach(c => loadCountry(c));
+</script>
+
+</body>
+</html>

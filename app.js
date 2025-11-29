@@ -1,7 +1,8 @@
 import data from './data/jsonList.json' with { type: "json" };
 
-const ver =  [0,6,3,"a"]
-const verAPI = [0,3]
+const ver =  [0,6,4,"a"]
+const verAPI = [0,4]
+document.getElementById('verText').innerText = "Metrop Version " + ver[0] + "." + ver[1] + "." + ver[2] + "." + ver[3] + " (API : " + verAPI[0] + "." + verAPI[1] + ")"
 console.info("Metrop ver\n"+ver[0]+"."+ver[1]+"."+ver[2]+"."+ver[3]+"\nMetrop API ver\n"+verAPI[0]+"."+verAPI[1])
 
 //Set up
@@ -11,13 +12,31 @@ for(let i = 0; i < data.city.length; i++){
     await cityListSetUp(data.city[i]);
 }
 const regex = /[\[\uFF3B]\s*(.*?)\s*[\]\uFF3D]/;
-//cardList.sort((a, b) => {
- // const niveauA = a[0].match(regex)[1];
-  // const niveauB = b[0].match(regex)[1];
 
-  //const ordre = ["Facile", "Intermédiaire", "Expert"];
- // return ordre.indexOf(niveauA) - ordre.indexOf(niveauB);
-//fix});
+const normalize = (str) =>
+  str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+
+cardList.sort((a, b) => {
+  const textA = a[0];
+  const textB = b[0];
+
+  // 1. get title before []
+  const titreA = textA.split("[")[0].trim();
+  const titreB = textB.split("[")[0].trim();
+
+  const titreCompare = normalize(titreA).localeCompare(normalize(titreB));
+  if (titreCompare !== 0) return titreCompare;
+
+  // 2. Same title → sort by []
+  const mA = textA.match(regex);
+  const mB = textB.match(regex);
+
+  const niveauA = mA?.[1] ?? "__NO_LEVEL__";
+  const niveauB = mB?.[1] ?? "__NO_LEVEL__";
+
+  const ordre = ["__NO_LEVEL__", "Facile", "Intermédiaire", "Expert"];
+  return ordre.indexOf(niveauA) - ordre.indexOf(niveauB);
+});
 for(let i = 0; i < cardList.length; i++){
     document.getElementById('cityQuizList').appendChild(cardList[i][1]);
 }
@@ -119,3 +138,36 @@ async function loadJSON(jsonName) {
         console.error('METROP DATA API\n---\nIMPORT ERROR\nIN : '+ jsonName +' \n---\n'+ e +'\n---\nDocumentation : https://github.com/Metrop-Learning/Metrop/blob/main/documentaion/data.md\n---')
     }
 }
+
+
+
+const slider = document.querySelector('.quizList');
+
+let isDown = false;
+let startX;
+let scrollLeft;
+
+slider.addEventListener('mousedown', (e) => {
+  isDown = true;
+  slider.classList.add('active');
+  startX = e.pageX - slider.offsetLeft;
+  scrollLeft = slider.scrollLeft;
+});
+
+slider.addEventListener('mouseleave', () => {
+  isDown = false;
+    slider.classList.remove('active');
+});
+
+slider.addEventListener('mouseup', () => {
+  isDown = false;
+    slider.classList.remove('active');
+});
+
+slider.addEventListener('mousemove', (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - slider.offsetLeft;
+  const walk = (x - startX) * 1.5; // speed
+  slider.scrollLeft = scrollLeft - walk;
+});

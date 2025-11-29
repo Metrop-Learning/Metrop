@@ -30,6 +30,17 @@ let listCity;
 if(learningID == -1){
   listCity = data.listCity;
 }
+else if(data.learning[learningID].listID == "auto"){
+  let lastHeader = -1
+  for(let i = 0; i <= learningID;i++){
+    if(data.learning[i].listID && data.learning[i].listID != "auto"){
+      lastHeader = i
+    }
+  }
+  if(lastHeader == -1) throw "Metrop Error : No list city";
+  listCity = data.listCity.filter(item => data.learning[lastHeader].listID.includes(item.name));
+  console.log(lastHeader)
+}
 else{
   listCity = data.listCity.filter(item => data.learning[learningID].listID.includes(item.name));
   console.log(listCity)

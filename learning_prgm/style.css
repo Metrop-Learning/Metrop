@@ -126,6 +126,11 @@ body{
     margin-right: 20px;
         scroll-behavior: smooth;
     padding-bottom: 20px;
+    user-select: none;
+          cursor: grab;
+}
+.quizList:active{
+  cursor: grabbing;
 }
 
 .title-icon {
@@ -143,6 +148,7 @@ body{
 }
 
 .card {
+  cursor: pointer;
   width: 150px;
   height: 150px;
   border-radius: 50%;
