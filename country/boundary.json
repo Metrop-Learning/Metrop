@@ -1,0 +1,106 @@
+{
+    "EU": {
+        "get": {
+            "FRA": {
+                "content": "Data:France.map",
+                "get": {
+                    "ARA": {
+                        "content": "Data:France/Region/Auvergne-Rhône-Alpes.map"
+                    },
+                    "BRE": {
+                        "content": "Data:France/Region/Bretagne.map"
+                    },
+                    "PDL": {
+                        "content": "Data:France/Region/Pays de la Loire.map"
+                    },
+                    "NAQ": {
+                        "content": "Data:France/Region/Nouvelle-Aquitaine.map"
+                    },
+                    "OCC": {
+                        "content": "Data:France/Region/Occitanie.map"
+                    },
+                    "PAC": {
+                        "content": "Data:France/Region/ Provence-Alpes-Côte d'Azur.map"
+                    },
+                    "COR": {
+                        "content": "Data:France/Region/Corse.map"
+                    },
+                    "BFC": {
+                        "content": "Data:France/Region/Bourgogne-Franche-Comté.map"
+                    },
+                    "CVL": {
+                        "content": "Data:France/Region/Centre-Val de Loire.map"
+                    },
+                    "IDF": {
+                        "content": "Data:France/Region/Île-de-France.map"
+                    },
+                    "NOR": {
+                        "content": "Data:France/Region/Normandie.map"
+                    },
+                    "HDF": {
+                        "content": "Data:France/Region/Hauts-de-France.map"
+                    },
+                    "GES": {
+                        "content": "Data:France/Region/Grand Est.map"
+                    }
+                }
+            },
+            "DEU": {
+                "content": "Data:Germany.map"
+            },
+            "CHE": {
+                "content": "Data:Switzerland.map"
+            },
+            "ITA": {
+                "content": "Data:Italy.map"
+            },
+            "ESP": {
+                "content":"Data:Spain.map"
+            },
+            "PRT":{
+                "content":"Data:Portugal.map"
+            },
+            "UK":{
+                "content":"Data:United Kingdom.map"
+            },
+            "IMN":{
+                "content":"Data:Isle of Man.map"
+            },
+            "JEY":{
+                "content":"Data:Jersey.map"
+            },
+            "GGY":{
+                "content":"Data:Guernsey.map"
+            },
+            "IRL":{
+                "content":"Data:Ireland.map"
+            },
+            "ISL":{
+                "content":"Data:Iceland.map"
+            },
+            "BEL":{
+                "content":"Data:Belgium.map"
+            },
+            "NLD":{
+                "content":"Data:Maps_of_the_Netherlands.map"
+            },
+            "LUX":{
+                "content":"Data:Luxembourg.map"
+            },
+            "DNK":{
+                "content":"Data:Denmark.map"
+            },
+            "SWE":{
+                "content":"Data:Sweden.map"
+            },
+            "NOR":{
+                "content":"Data:Norway.map"
+            }
+        }
+    },
+    "AS": {},
+    "SA": {},
+    "NA": {},
+    "AF": {},
+    "OC": {}
+}

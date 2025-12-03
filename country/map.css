@@ -1,0 +1,67 @@
+#map {
+    height: 70vh;
+    width: 100%;
+    border-radius: 10px;
+}
+*{
+    font-family: "Momo Trust Display", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+}
+.btn {
+    background-color: rgb(81, 81, 227);
+    border: 0;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: normal;
+    font-variation-settings:
+        "wdth" 100,
+        "YTLC" 500;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease,
+        opacity 0.3s ease;
+}
+
+@media (prefers-color-scheme: light) {
+    .btn {
+        background-color: rgb(81, 81, 227);
+        color: white;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .btn {
+        background-color: rgb(44, 44, 150);
+        color: rgb(230, 230, 230);
+    }
+}
+
+.btn:hover:not(:disabled) {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+    filter: grayscale(60%);
+}
+@media (prefers-color-scheme: light) {
+    progress {
+  accent-color: rgb(81, 81, 227);
+}
+}
+
+@media (prefers-color-scheme: dark) {
+    progress {
+  accent-color: rgb(44, 44, 150);
+}
+}
