@@ -24,6 +24,17 @@ let listCity;
 if(learningID == -1){
   listCity = data.listCity;
 }
+else if(data.learning[learningID].listID == "auto"){
+  let lastHeader = -1
+  for(let i = 0; i <= learningID;i++){
+    if(data.learning[i].listID && data.learning[i].listID != "auto"){
+      lastHeader = i
+    }
+  }
+  if(lastHeader == -1) throw "Metrop Error : No list city";
+  listCity = data.listCity.filter(item => data.learning[lastHeader].listID.includes(item.name));
+  console.log(lastHeader)
+}
 else{
   listCity = data.listCity.filter(item => data.learning[learningID].listID.includes(item.name));
   console.log(listCity)
@@ -95,7 +106,7 @@ document.getElementById('nameArea').addEventListener('keydown', function(event) 
 function textVerified(){
     let input = document.getElementById('nameArea').value;
     for(let i = 0; i <= listCity.length-1;i++){
-      let error_margin = checkDiff(input,listCity[i].name)
+      let error_margin = util.checkDiff(input,listCity[i].name)
       if(error_margin <= 1){
         console.log(i + "\n" + listCity[i].name)
         for(let j = 0; j <= foundedCity.length-1;j++){
@@ -159,29 +170,6 @@ function textVerified(){
     return
 }
 
-function checkDiff(str1,str2){
-  if(!str1 || !str2) return
-  let a = str1.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-  let b = str2.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-  const m = a.length, n = b.length;
-  const dp = Array.from({ length: m + 1 }, () => Array(n + 1).fill(0));
-
-  for (let i = 0; i <= m; i++) dp[i][0] = i;
-  for (let j = 0; j <= n; j++) dp[0][j] = j;
-
-  for (let i = 1; i <= m; i++) {
-    for (let j = 1; j <= n; j++) {
-      const cost = a[i - 1] === b[j - 1] ? 0 : 1;
-      dp[i][j] = Math.min(
-        dp[i - 1][j] + 1,     
-        dp[i][j - 1] + 1,     
-        dp[i - 1][j - 1] + cost
-      );
-    }
-  }
-
-  return dp[m][n];
-}
 
 let intCityList = util.shuffle(data.listCity);
 let indexInt = 0
@@ -234,7 +222,7 @@ function intDisplay(str){
   let checkDifAfter = lastInt;
   for(let i = 0; i < divised.length; i++){
     console.log(rng)  
-    if(checkDiff(divised[i],rng) == 0){
+    if(util.checkDiff(divised[i],rng) == 0){
         lastInt[i] = divised[i];
       }
   }

@@ -30,6 +30,17 @@ let listCity;
 if(learningID == -1){
   listCity = data.listCity;
 }
+else if(data.learning[learningID].listID == "auto"){
+  let lastHeader = -1
+  for(let i = 0; i <= learningID;i++){
+    if(data.learning[i].listID && data.learning[i].listID != "auto"){
+      lastHeader = i
+    }
+  }
+  if(lastHeader == -1) throw "Metrop Error : No list city";
+  listCity = data.listCity.filter(item => data.learning[lastHeader].listID.includes(item.name));
+  console.log(lastHeader)
+}
 else{
   listCity = data.listCity.filter(item => data.learning[learningID].listID.includes(item.name));
   console.log(listCity)
@@ -116,54 +127,7 @@ function showCity() {
 
 showCity();
 
-
-function intmaker(){
-  let choosenInt = listCity[posilist]; 
-  document.getElementById('intField').innerText = intDisplay(choosenInt.name);
-  document.getElementById('intArea').style.visibility = 'visible';
-}
-
-let lastInt = []
-
-function intDisplay(str){
-  let divised = str.split("");
-  //init
-  if(lastInt.length == 0){
-    for(let i = 0; i < divised.length; i++){
-      lastInt.push("_")
-    }
-  }
-  //continue
-  let alpha = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
-  let rng =  alpha[Math.floor(Math.random() * alpha.length)];
-  let noEternal = 50
-  while (!str.normalize("NFD").toLowerCase().includes(rng) || lastInt.join("").normalize("NFD").toLowerCase().includes(rng)){
-    rng =  alpha[Math.floor(Math.random() * alpha.length)];
-    noEternal--
-    if(noEternal <= 0){
-      break
-    }
-  }
-
-  for(let i = 0; i < divised.length; i++){
-    console.log(rng)  
-    if(checkDiff(divised[i],rng) == 0){
-        lastInt[i] = divised[i];
-      }
-  }
-
-
-  let returnedInt = ""
-  for(let i = 0; i < lastInt.length; i++){
-      returnedInt += lastInt[i] + " "
-  }
-  return returnedInt
-}
-
 document.getElementById("back").disabled = false;
-
-//init
-let loseStrick = 0;
 
 function back() {
   const params = new URLSearchParams({

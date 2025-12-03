@@ -213,516 +213,331 @@
   "learning":[
         {
             "type":"header",
-            "name":"Europe"
+            "name":"Europe",
+            "listID":[
+              "Londres",
+              "Paris",
+              "Istanbul",
+              "Moscou"
+            ]
         },
         {
             "type":"lesson",
             "name":"Les villesd'europe",
-            "listID":[
-              "Londres",
-              "Paris",
-              "Istanbul",
-              "Moscou"
-            ]
+            "listID":"auto"
         },
         {
             "type":"placeCity",
             "name":"Place les villes",
-            "listID":[
-              "Londres",
-              "Paris",
-              "Istanbul",
-              "Moscou"
-            ]
+            "listID":"auto"
         },
         {
             "type":"name",
             "name":"Nomme les villes",
-            "listID":[
-              "Londres",
-              "Paris",
-              "Istanbul",
-              "Moscou"
-            ]
+            "listID":"auto"
         },
         {
             "type":"guessFromPosi",
             "name":"Trouve les villes",
-            "listID":[
-              "Londres",
-              "Paris",
-              "Istanbul",
-              "Moscou"
-            ]
+            "listID":"auto"
         },
         {
             "type":"header",
-            "name":"Amérique du nord"
+            "name":"Amérique du nord",
+            "listID":[
+              "Los Angeles",
+              "New York",
+              "Mexico"
+            ]
         },
         {
             "type":"lesson",
             "name":"Les villesd'amérique du nord",
-            "listID":[
-              "Los Angeles",
-              "New York",
-              "Mexico"
-            ]
+            "listID":"auto"
         },
         {
             "type":"placeCity",
             "name":"Place les villes",
-            "listID":[
-              "Los Angeles",
-              "New York",
-              "Mexico"
-            ]
+            "listID":"auto"
         },
         {
             "type":"name",
             "name":"Nomme les villes",
-            "listID":[
-              "Los Angeles",
-              "New York",
-              "Mexico"
-            ]
+            "listID":"auto"
         },
         {
             "type":"guessFromPosi",
             "name":"Trouve les villes",
-            "listID":[
-              "Los Angeles",
-              "New York",
-              "Mexico"
-            ]
+            "listID":"auto"
         },
         {
             "type":"header",
-            "name":"Amérique du sud"
+            "name":"Amérique du sud",
+            "listID":[
+              "Bogotá",
+              "Rio de Janeiro",
+              "São Paulo",
+              "Buenos Aires"
+            ]
         },
         {
             "type":"lesson",
             "name":"Les villesd'amérique du sud",
-            "listID":[
-              "Bogotá",
-              "Rio de Janeiro",
-              "São Paulo",
-              "Buenos Aires"
-            ]
+            "listID":"auto"
         },
         {
             "type":"placeCity",
             "name":"Place les villes",
-            "listID":[
-              "Bogotá",
-              "Rio de Janeiro",
-              "São Paulo",
-              "Buenos Aires"
-            ]
+            "listID":"auto"
         },
         {
             "type":"name",
             "name":"Nomme les villes",
-            "listID":[
-              "Bogotá",
-              "Rio de Janeiro",
-              "São Paulo",
-              "Buenos Aires"
-            ]
+            "listID":"auto"
         },
         {
             "type":"guessFromPosi",
             "name":"Trouve les villes",
+            "listID":"auto"
+        },
+        {
+            "type":"header",
+            "name":"Amérique",
             "listID":[
+              "Los Angeles",
+              "New York",
+              "Mexico",
               "Bogotá",
               "Rio de Janeiro",
               "São Paulo",
               "Buenos Aires"
             ]
-        },
-        {
-            "type":"header",
-            "name":"Amérique"
         },
         {
             "type":"lesson",
             "name":"Les villesd'amérique",
-            "listID":[
-              "Los Angeles",
-              "New York",
-              "Mexico",
-              "Bogotá",
-              "Rio de Janeiro",
-              "São Paulo",
-              "Buenos Aires"
-            ]
+            "listID":"auto"
         },
         {
             "type":"placeCity",
             "name":"Place les villes",
-            "listID":[
-              "Los Angeles",
-              "New York",
-              "Mexico",
-              "Bogotá",
-              "Rio de Janeiro",
-              "São Paulo",
-              "Buenos Aires"
-            ]
+            "listID":"auto"
         },
         {
             "type":"name",
             "name":"Nomme les villes",
-            "listID":[
-              "Los Angeles",
-              "New York",
-              "Mexico",
-              "Bogotá",
-              "Rio de Janeiro",
-              "São Paulo",
-              "Buenos Aires"
-            ]
+            "listID":"auto"
         },
         {
             "type":"guessFromPosi",
             "name":"Trouve les villes",
-            "listID":[
-              "Los Angeles",
-              "New York",
-              "Mexico",
-              "Bogotá",
-              "Rio de Janeiro",
-              "São Paulo",
-              "Buenos Aires"
-            ]
+            "listID":"auto"
         },
         {
             "type":"header",
-            "name":"Afrique"
+            "name":"Afrique",
+            "listID":[
+              "Le Caire",
+              "Lagos",
+              "Khartoum",
+              "Kinshasa"
+            ]
         },
         {
             "type":"lesson",
             "name":"Les villesd'afrique",
-            "listID":[
-              "Le Caire",
-              "Lagos",
-              "Khartoum",
-              "Kinshasa"
-            ]
+            "listID":"auto"
         },
         {
             "type":"placeCity",
             "name":"Place les villes",
-            "listID":[
-              "Le Caire",
-              "Lagos",
-              "Khartoum",
-              "Kinshasa"
-            ]
+            "listID":"auto"
         },
         {
             "type":"name",
             "name":"Nomme les villes",
-            "listID":[
-              "Le Caire",
-              "Lagos",
-              "Khartoum",
-              "Kinshasa"
-            ]
+            "listID":"auto"
         },
         {
             "type":"guessFromPosi",
             "name":"Trouve les villes",
-            "listID":[
-              "Le Caire",
-              "Lagos",
-              "Khartoum",
-              "Kinshasa"
-            ]
+            "listID":"auto"
         }
         ,
         {
             "type":"header",
-            "name":"Inde"
+            "name":"Inde",
+            "listID":[
+              "Delhi",
+              "Mumbai",
+              "Bangalore",
+              "Chennai",
+              "Calcutta"
+            ]
         },
         {
             "type":"lesson",
             "name":"Les villesd'inde",
-            "listID":[
-              "Delhi",
-              "Mumbai",
-              "Bangalore",
-              "Chennai",
-              "Calcutta"
-            ]
+            "listID":"auto"
         },
         {
             "type":"placeCity",
             "name":"Place les villes",
-            "listID":[
-              "Delhi",
-              "Mumbai",
-              "Bangalore",
-              "Chennai",
-              "Calcutta"
-            ]
+            "listID":"auto"
         },
         {
             "type":"name",
             "name":"Nomme les villes",
-            "listID":[
-              "Delhi",
-              "Mumbai",
-              "Bangalore",
-              "Chennai",
-              "Calcutta"
-            ]
+            "listID":"auto"
         },
         {
             "type":"guessFromPosi",
             "name":"Trouve les villes",
+            "listID":"auto"
+        },
+        {
+            "type":"header",
+            "name":"Asie du sud",
             "listID":[
               "Delhi",
               "Mumbai",
               "Bangalore",
               "Chennai",
-              "Calcutta"
+              "Calcutta",
+              "Dacca",
+              "Karachi",
+              "Lahore"
             ]
-        },
-        {
-            "type":"header",
-            "name":"Asie du sud"
         },
         {
             "type":"lesson",
             "name":"Les villesd'asie du sud",
-            "listID":[
-              "Delhi",
-              "Mumbai",
-              "Bangalore",
-              "Chennai",
-              "Calcutta",
-              "Dacca",
-              "Karachi",
-              "Lahore"
-            ]
+            "listID":"auto"
         },
         {
             "type":"placeCity",
             "name":"Place les villes",
-            "listID":[
-              "Delhi",
-              "Mumbai",
-              "Bangalore",
-              "Chennai",
-              "Calcutta",
-              "Dacca",
-              "Karachi",
-              "Lahore"
-            ]
+            "listID":"auto"
         },
         {
             "type":"name",
             "name":"Nomme les villes",
-            "listID":[
-              "Delhi",
-              "Mumbai",
-              "Bangalore",
-              "Chennai",
-              "Calcutta",
-              "Dacca",
-              "Karachi",
-              "Lahore"
-            ]
+            "listID":"auto"
         },
         {
             "type":"guessFromPosi",
             "name":"Trouve les villes",
-            "listID":[
-              "Delhi",
-              "Mumbai",
-              "Bangalore",
-              "Chennai",
-              "Calcutta",
-              "Dacca",
-              "Karachi",
-              "Lahore"
-            ]
+            "listID":"auto"
         },
         {
             "type":"header",
-            "name":"Asie Pacifique"
+            "name":"Asie Pacifique",
+            "listID":[
+              "Jakarta",
+              "Manille",
+              "Osaka",
+              "Tokyo"
+            ]
         },
         {
             "type":"lesson",
             "name":"Les villesd'asie pacifique",
-            "listID":[
-              "Jakarta",
-              "Manille",
-              "Osaka",
-              "Tokyo"
-            ]
+            "listID":"auto"
         },
         {
             "type":"placeCity",
             "name":"Place les villes",
-            "listID":[
-              "Jakarta",
-              "Manille",
-              "Osaka",
-              "Tokyo"
-            ]
+            "listID":"auto"
         },
         {
             "type":"name",
             "name":"Nomme les villes",
-            "listID":[
-              "Jakarta",
-              "Manille",
-              "Osaka",
-              "Tokyo"
-            ]
+            "listID":"auto"
         },
         {
             "type":"guessFromPosi",
             "name":"Trouve les villes",
-            "listID":[
-              "Jakarta",
-              "Manille",
-              "Osaka",
-              "Tokyo"
-            ]
+            "listID":"auto"
         },
         {
             "type":"header",
-            "name":"Chine"
+            "name":"Chine",
+            "listID":[
+              "Shanghai",
+              "Pékin",
+              "Tianjin",
+              "Chongqing",
+              "Shenzhen",
+              "Guangzhou"
+            ]
         },
         {
             "type":"lesson",
             "name":"Les villesde chine",
-            "listID":[
-              "Shanghai",
-              "Pékin",
-              "Tianjin",
-              "Chongqing",
-              "Shenzhen",
-              "Guangzhou"
-            ]
+            "listID":"auto"
         },
         {
             "type":"placeCity",
             "name":"Place les villes",
-            "listID":[
-              "Shanghai",
-              "Pékin",
-              "Tianjin",
-              "Chongqing",
-              "Shenzhen",
-              "Guangzhou"
-            ]
+            "listID":"auto"
         },
         {
             "type":"name",
             "name":"Nomme les villes",
-            "listID":[
-              "Shanghai",
-              "Pékin",
-              "Tianjin",
-              "Chongqing",
-              "Shenzhen",
-              "Guangzhou"
-            ]
+            "listID":"auto"
         },
         {
             "type":"guessFromPosi",
             "name":"Trouve les villes",
+            "listID":"auto"
+        },
+        {
+            "type":"header",
+            "name":"Asie",
             "listID":[
               "Shanghai",
               "Pékin",
               "Tianjin",
               "Chongqing",
               "Shenzhen",
-              "Guangzhou"
+              "Guangzhou",
+              "Jakarta",
+              "Manille",
+              "Osaka",
+              "Tokyo",
+              "Delhi",
+              "Mumbai",
+              "Bangalore",
+              "Chennai",
+              "Calcutta",
+              "Dacca",
+              "Karachi",
+              "Lahore"
             ]
-        },
-        {
-            "type":"header",
-            "name":"Asie"
         },
         {
             "type":"lesson",
             "name":"Les villesd'asie",
-            "listID":[
-              "Shanghai",
-              "Pékin",
-              "Tianjin",
-              "Chongqing",
-              "Shenzhen",
-              "Guangzhou",
-              "Jakarta",
-              "Manille",
-              "Osaka",
-              "Tokyo",
-              "Delhi",
-              "Mumbai",
-              "Bangalore",
-              "Chennai",
-              "Calcutta",
-              "Dacca",
-              "Karachi",
-              "Lahore"
-            ]
+            "listID":"auto"
         },
         {
             "type":"placeCity",
             "name":"Place les villes",
-            "listID":[
-              "Shanghai",
-              "Pékin",
-              "Tianjin",
-              "Chongqing",
-              "Shenzhen",
-              "Guangzhou",
-              "Jakarta",
-              "Manille",
-              "Osaka",
-              "Tokyo",
-              "Delhi",
-              "Mumbai",
-              "Bangalore",
-              "Chennai",
-              "Calcutta",
-              "Dacca",
-              "Karachi",
-              "Lahore"
-            ]
+            "listID":"auto"
         },
         {
             "type":"name",
             "name":"Nomme les villes",
-            "listID":[
-              "Shanghai",
-              "Pékin",
-              "Tianjin",
-              "Chongqing",
-              "Shenzhen",
-              "Guangzhou",
-              "Jakarta",
-              "Manille",
-              "Osaka",
-              "Tokyo",
-              "Delhi",
-              "Mumbai",
-              "Bangalore",
-              "Chennai",
-              "Calcutta",
-              "Dacca",
-              "Karachi",
-              "Lahore"
-            ]
+            "listID":"auto"
         },
         {
             "type":"guessFromPosi",
             "name":"Trouve les villes",
+            "listID":"auto"
+        },
+        {
+            "type":"header",
+            "name":"Monde",
             "listID":[
               "Shanghai",
               "Pékin",
@@ -741,168 +556,43 @@
               "Calcutta",
               "Dacca",
               "Karachi",
-              "Lahore"
+              "Lahore",
+              "Le Caire",
+              "Lagos",
+              "Khartoum",
+              "Kinshasa",
+              "Los Angeles",
+              "New York",
+              "Mexico",
+              "Bogotá",
+              "Rio de Janeiro",
+              "São Paulo",
+              "Buenos Aires",
+              "Londres",
+              "Paris",
+              "Istanbul",
+              "Moscou"  
             ]
-        },
-        {
-            "type":"header",
-            "name":"Monde"
         },
         {
             "type":"lesson",
             "name":"Les villesdu monde",
-            "listID":[
-              "Shanghai",
-              "Pékin",
-              "Tianjin",
-              "Chongqing",
-              "Shenzhen",
-              "Guangzhou",
-              "Jakarta",
-              "Manille",
-              "Osaka",
-              "Tokyo",
-              "Delhi",
-              "Mumbai",
-              "Bangalore",
-              "Chennai",
-              "Calcutta",
-              "Dacca",
-              "Karachi",
-              "Lahore",
-              "Le Caire",
-              "Lagos",
-              "Khartoum",
-              "Kinshasa",
-              "Los Angeles",
-              "New York",
-              "Mexico",
-              "Bogotá",
-              "Rio de Janeiro",
-              "São Paulo",
-              "Buenos Aires",
-              "Londres",
-              "Paris",
-              "Istanbul",
-              "Moscou"  
-            ]
+            "listID":"auto"
         },
         {
             "type":"placeCity",
             "name":"Place les villes",
-            "listID":[
-              "Shanghai",
-              "Pékin",
-              "Tianjin",
-              "Chongqing",
-              "Shenzhen",
-              "Guangzhou",
-              "Jakarta",
-              "Manille",
-              "Osaka",
-              "Tokyo",
-              "Delhi",
-              "Mumbai",
-              "Bangalore",
-              "Chennai",
-              "Calcutta",
-              "Dacca",
-              "Karachi",
-              "Lahore",
-              "Le Caire",
-              "Lagos",
-              "Khartoum",
-              "Kinshasa",
-              "Los Angeles",
-              "New York",
-              "Mexico",
-              "Bogotá",
-              "Rio de Janeiro",
-              "São Paulo",
-              "Buenos Aires",
-              "Londres",
-              "Paris",
-              "Istanbul",
-              "Moscou"  
-            ]
+            "listID":"auto"
         },
         {
             "type":"name",
             "name":"Nomme les villes",
-            "listID":[
-              "Shanghai",
-              "Pékin",
-              "Tianjin",
-              "Chongqing",
-              "Shenzhen",
-              "Guangzhou",
-              "Jakarta",
-              "Manille",
-              "Osaka",
-              "Tokyo",
-              "Delhi",
-              "Mumbai",
-              "Bangalore",
-              "Chennai",
-              "Calcutta",
-              "Dacca",
-              "Karachi",
-              "Lahore",
-              "Le Caire",
-              "Lagos",
-              "Khartoum",
-              "Kinshasa",
-              "Los Angeles",
-              "New York",
-              "Mexico",
-              "Bogotá",
-              "Rio de Janeiro",
-              "São Paulo",
-              "Buenos Aires",
-              "Londres",
-              "Paris",
-              "Istanbul",
-              "Moscou"  
-            ]
+            "listID":"auto"
         },
         {
             "type":"guessFromPosi",
             "name":"Trouve les villes",
-            "listID":[
-              "Shanghai",
-              "Pékin",
-              "Tianjin",
-              "Chongqing",
-              "Shenzhen",
-              "Guangzhou",
-              "Jakarta",
-              "Manille",
-              "Osaka",
-              "Tokyo",
-              "Delhi",
-              "Mumbai",
-              "Bangalore",
-              "Chennai",
-              "Calcutta",
-              "Dacca",
-              "Karachi",
-              "Lahore",
-              "Le Caire",
-              "Lagos",
-              "Khartoum",
-              "Kinshasa",
-              "Los Angeles",
-              "New York",
-              "Mexico",
-              "Bogotá",
-              "Rio de Janeiro",
-              "São Paulo",
-              "Buenos Aires",
-              "Londres",
-              "Paris",
-              "Istanbul",
-              "Moscou"  
-            ]
+            "listID":"auto"
         },
         {
             "type":"end",
