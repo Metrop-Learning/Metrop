@@ -4,5 +4,8 @@
         "MegacityEasy.json",
         "MegacityHard.json",
         "MetroCityFrance.json"
+    ],
+    "country":[
+        "FranceRegionMetropolitaine.json"
     ]
 }

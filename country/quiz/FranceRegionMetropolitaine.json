@@ -1,0 +1,69 @@
+{
+  "listCountry":[
+    {
+      "name":"Auvergne-Rhône-Alpes",
+      "id":"EU-FRA-ARA"
+    },
+    {
+      "name":"Bourgogne-Franche-Comté",
+      "id":"EU-FRA-BFC"
+    },
+    {
+      "name":"Bretagne",
+      "id":"EU-FRA-BRE"
+    },
+    {
+      "name":"Centre-Val de Loire",
+      "id":"EU-FRA-CVL"
+    },
+    {
+      "name":"Corse",
+      "id":"EU-FRA-COR"
+    },
+    {
+      "name":"Grand Est",
+      "id":"EU-FRA-GES"
+    },
+    {
+      "name":"Hauts-de-France",
+      "id":"EU-FRA-HDF"
+    },
+    {
+      "name":"Île-de-France",
+      "id":"EU-FRA-IDF"
+    },
+    {
+      "name":"Normandie",
+      "id":"EU-FRA-NOR"
+    },
+    {
+      "name":"Nouvelle-Aquitaine",
+      "id":"EU-FRA-NAQ"
+    },
+    {
+      "name":"Occitanie",
+      "id":"EU-FRA-OCC"
+    },
+    {
+      "name":"Pays de la Loire",
+      "id":"EU-FRA-PDL"
+    },
+    {
+      "name":"Provence-Alpes-Côte d'Azur",
+      "id":"EU-FRA-PAC"
+    }
+  ],
+  "cardInfo":{
+    "Title":"Region de France Métropolitaine",
+    "Text":"Les 13 region de France Métropolitaine",
+    "lang":"FR",
+    "pictureURL":"None",
+    "option":{
+            "tryMax":2,
+            "EliminateSelected":true
+        }
+  },
+  "type":[
+    "placeTerritory"
+  ]
+}

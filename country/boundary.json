@@ -42,6 +42,21 @@
                     },
                     "GES": {
                         "content": "Data:France/Region/Grand Est.map"
+                    },
+                    "GLP":{
+                        "content":"Data:Guadeloupe.map"
+                    },
+                    "GUF":{
+                        "content":"Data:Guyane francaise.map"
+                    },
+                    "MTQ":{
+                        "content":"Data:Martinique.map"
+                    },
+                    "REU":{
+                        "content":"Data:La Reunion.map"
+                    },
+                    "MYT":{
+                        "content":"Data:Mayotte.map"
                     }
                 }
             },
@@ -82,7 +97,7 @@
                 "content":"Data:Belgium.map"
             },
             "NLD":{
-                "content":"Data:Maps_of_the_Netherlands.map"
+                "content":"Data:Nederland.map"
             },
             "LUX":{
                 "content":"Data:Luxembourg.map"

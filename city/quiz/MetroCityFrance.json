@@ -162,7 +162,7 @@
         "Text": "Les metropole française",
         "lang": "FR",
         "pictureURL": "None",
-        "placeOption":{
+        "option":{
             "rangeError":300,
             "rangeErrorAccepted":100
         }

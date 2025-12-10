@@ -1,17 +1,17 @@
 
 |Country Name|Region Name|Code|
 |---|---|---|
-|France||FRA|
-|France|Auvergne Rhone Alpe|FRA-ARA|
-|France|Bourgogne-Franche-Comté|FRA-BFC|
-|France|Bretagne|FRA-BRE|
-|France|Centre-Val de Loire|FRA-CVL|
-|France|Corse|FRA-COR|
-|France|Grand Est|FRA-GES|
-|France|Hauts-de-France|FRA-HDF|
-|France|Île-de-France|FRA-IDF|
-|France|Normandie|FRA-NOR|
-|France|Nouvelle-Aquitaine|FRA-NAQ|
-|France|Occitanie|FRA-OCC|
-|France|Pays de la Loire|FRA-PDL|
-|France|Provence-Alpes-Côte d'Azur|FRA-PAC
+|France||EU-FRA|
+|France|Auvergne Rhone Alpe|EU-FRA-ARA|
+|France|Bourgogne-Franche-Comté|EU-FRA-BFC|
+|France|Bretagne|EU-FRA-BRE|
+|France|Centre-Val de Loire|EU-FRA-CVL|
+|France|Corse|EU-FRA-COR|
+|France|Grand Est|EU-FRA-GES|
+|France|Hauts-de-France|EU-FRA-HDF|
+|France|Île-de-France|EU-FRA-IDF|
+|France|Normandie|EU-FRA-NOR|
+|France|Nouvelle-Aquitaine|EU-FRA-NAQ|
+|France|Occitanie|EU-FRA-OCC|
+|France|Pays de la Loire|EU-FRA-PDL|
+|France|Provence-Alpes-Côte d'Azur|EU-FRA-PAC
