@@ -1,6 +1,6 @@
 import data from './data/jsonList.json' with { type: "json" };
 
-const ver =  [0,7,0,"a"]
+const ver =  [0,7,1,"a"]
 const verAPI = [0,4]
 document.getElementById('verText').innerText = "Metrop Version " + ver[0] + "." + ver[1] + "." + ver[2] + "." + ver[3] + " (API : " + verAPI[0] + "." + verAPI[1] + ")"
 console.info("Metrop ver\n"+ver[0]+"."+ver[1]+"."+ver[2]+"."+ver[3]+"\nMetrop API ver\n"+verAPI[0]+"."+verAPI[1])
@@ -84,9 +84,6 @@ cardList.sort((a, b) => {
 for(let i = 0; i < cardList.length; i++){
     document.getElementById('countryQuizList').appendChild(cardList[i][1]);
 }
-
-
-
 
 async function cityListSetUp(nameJson,type){
     const obj = await loadJSON(nameJson,type);

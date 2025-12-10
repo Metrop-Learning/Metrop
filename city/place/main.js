@@ -7,6 +7,19 @@ console.log(jsonName)
 console.log(learningID)
 console.log(returned)
 
+let normalQuit = true;
+
+window.addEventListener('beforeunload', function (e) {
+      if(normalQuit == false){
+        // The modern browser 
+      const message = "Êtes-vous sûr de vouloir quitter cette page ?";
+      
+      e.preventDefault();
+      e.returnValue = message; // Chrome, Edge
+      return message; // Firefox
+    }
+});
+
 async function loadJSON() {
     try {
         const response = await fetch(`../quiz/${jsonName}`);
@@ -23,7 +36,7 @@ const data = await loadJSON();
 // Map init
 const map = L.map("map", { minZoom: 3, maxZoom: 8 }).setView(
   [48.8566, 2.3522],
-  5
+  3
 ); 
 
 let dist;
@@ -49,10 +62,12 @@ else{
 // ****************************
 // *Dark/Light mode + map load*
 // ****************************
+let lineColor;
 if (
   window.matchMedia &&
   window.matchMedia("(prefers-color-scheme: dark)").matches
 ) {
+    lineColor = "white"
     document.getElementById('menu').style.color = '#ffffff'
     document.getElementById('map').style.backgroundColor = '#000000ff'
     document.body.style.backgroundColor = '#1a1a1aff'
@@ -66,6 +81,7 @@ if (
     }
   ).addTo(map);
 } else {
+        lineColor = "black"
         document.getElementById('menu').style.color = '#000000ff'
         document.getElementById('map').style.backgroundColor = '#ffffffff'
         document.body.style.backgroundColor = '#ffffffff'
@@ -106,7 +122,7 @@ document.getElementById("cityName").innerText = listCity[posilist].name;
 
 // When click
 map.on("click", function (e) {
-  if(playable == false){
+  if(playable == false || play == false){
     return
   }
   document.getElementById("btnP").disabled = false;
@@ -122,13 +138,42 @@ map.on("click", function (e) {
   console.log("Posi selected :", lat, lng);
 });
 
-
+let play = true
+let lastIsFail = false
+let playerGuess;
+let truePosition;
+let line;
 document.getElementById("btnP").addEventListener("click", () => {
-  test();
+  if(play){
+    test();
+  }
+  else{
+    play = true
+    if(lastIsFail){
+      map.removeLayer(playerGuess);
+      map.removeLayer(truePosition);
+      map.removeLayer(line);
+      L.marker([listCity[posilist - 1].lat, listCity[posilist - 1].lng], {
+        icon: util.redIcon,
+      })
+      .addTo(map)
+      .bindPopup(`<b>${listCity[posilist - 1].name}</b>`)
+      lastIsFail = false
+    }
+    document.getElementById("btnP").disabled = true;
+    document.getElementById("btnP").innerText = "Proposer cet position";
+    document.getElementById("cityName").innerText = listCity[posilist].name;
+    map.setView(
+  [48.8566, 2.3522],
+  3
+); 
+  }
 });
 
 
 function test() {
+  normalQuit = false
+  play = false
   if(playable == false){
     const params = new URLSearchParams({
       return: returned,
@@ -140,7 +185,7 @@ function test() {
   if (!isNaN(posilist+1) && posilist+1 >= 0 && posilist+1 <= document.getElementById('prgs').max) {
     document.getElementById('prgs').value = posilist + 1;
 }
-  document.getElementById("btnP").disabled = true;
+  document.getElementById("btnP").innerText = "Continuer";
   dist = distKm(
     posilat,
     posilng,
@@ -158,15 +203,28 @@ function test() {
   }
   posilist++;
   if(posilist == listCity.length){
+    normalQuit = true
     localStorage.setItem("SCORE",JSON.stringify(score))
     document.getElementById("cityName").innerText = "Terminer";
     document.getElementById("btnP").innerText = "Voir les resultat";
     document.getElementById("btnP").disabled = false;
+    document.getElementById("back").disabled = true;
     playable = false
     return
   }
-  document.getElementById("cityName").innerText = listCity[posilist].name;
 }
+
+function back() {
+  const params = new URLSearchParams({
+      json: jsonName
+  });
+  normalQuit = true
+  window.location.replace(returned + "/index.html?" + params);
+}
+document.getElementById("back").addEventListener("click", () => {
+  back();
+});
+
 
 function revealGood() {
   L.marker([listCity[posilist].lat, listCity[posilist].lng], {
@@ -191,13 +249,21 @@ function revealSemiGood() {
 }
 
 function reveal() {
-  L.marker([listCity[posilist].lat, listCity[posilist].lng], {
+  lastIsFail = true
+  playerGuess = L.marker([marker._latlng.lat, marker._latlng.lng], {
     icon: util.redIcon,
+  })
+    .addTo(map)
+    .bindPopup(`<b>Votre proposition</b>`)
+    .openPopup();
+  truePosition = L.marker([listCity[posilist].lat, listCity[posilist].lng], {
+    icon: util.greenIcon,
   })
     .addTo(map)
     .bindPopup(`<b>${listCity[posilist].name}</b>`)
     .openPopup();
-  map.setView([listCity[posilist].lat, listCity[posilist].lng], 6);
+  line = L.polyline([[marker._latlng.lat, marker._latlng.lng], [listCity[posilist].lat, listCity[posilist].lng]], {color: lineColor,dashArray: '10, 10'}).addTo(map);
+  map.fitBounds(line.getBounds());
   map.removeLayer(marker);
 }
 

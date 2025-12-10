@@ -15,6 +15,19 @@ async function loadJSON() {
     }
 }
 
+let normalQuit = true;
+
+window.addEventListener('beforeunload', function (e) {
+      if(normalQuit == false){
+        // The modern browser 
+      const message = "Êtes-vous sûr de vouloir quitter cette page ?";
+      
+      e.preventDefault();
+      e.returnValue = message; // Chrome, Edge
+      return message; // Firefox
+    }
+});
+
 let miss = 0
 let fail = 0
 let good = 0 
@@ -79,6 +92,7 @@ function back() {
   const params = new URLSearchParams({
       json: jsonName
   });
+  normalQuit = true
   window.location.replace(returned + "/index.html?" + params);
 }
 
@@ -102,9 +116,16 @@ document.getElementById('nameArea').addEventListener('keydown', function(event) 
     document.getElementById('nameArea').blur();
   }
 });
+let lastInput = ""
 
 function textVerified(){
     let input = document.getElementById('nameArea').value;
+    if(util.checkDiff(input, lastInput) == 0){
+        document.getElementById("errorText").style.color = "rgb(241, 186, 109)";
+        document.getElementById("errorText").innerHTML = "Cette entrée est trop proche de la dernière et n’est donc pas comptabilisée."
+        return
+      }
+      lastInput = input
     for(let i = 0; i <= listCity.length-1;i++){
       let error_margin = util.checkDiff(input,listCity[i].name)
       if(error_margin <= 1){
@@ -131,6 +152,8 @@ function textVerified(){
         lastInt = []
         indexInt++;
         loseStrick = 0;
+        normalQuit = false
+        document.getElementById("nameArea").value = "";
         foundedCity.push(listCity[i].name);
         if (!isNaN(foundedCity.length) && foundedCity.length >= 0 && foundedCity.length <= document.getElementById('prgs').max) {
           document.getElementById('prgs').value = foundedCity.length;
@@ -157,6 +180,7 @@ function textVerified(){
       lastInt = []
       indexInt++;
       loseStrick = 0;
+      document.getElementById("nameArea").value = "";
       foundedCity.push(intCityList[indexInt].name);
       if (!isNaN(foundedCity.length) && foundedCity.length >= 0 && foundedCity.length <= document.getElementById('prgs').max) {
         document.getElementById('prgs').value = foundedCity.length;

@@ -11,6 +11,20 @@ console.log(jsonName)
 console.log(learningID)
 console.log(returned)
 
+
+let normalQuit = true;
+
+window.addEventListener('beforeunload', function (e) {
+      if(normalQuit == false){
+        // The modern browser 
+      const message = "Êtes-vous sûr de vouloir quitter cette page ?";
+      
+      e.preventDefault();
+      e.returnValue = message; // Chrome, Edge
+      return message; // Firefox
+    }
+});
+
 async function loadJSON() {
     try {
         const response = await fetch(`../quiz/${jsonName}`);
@@ -237,6 +251,7 @@ document.getElementById("btnP").addEventListener("click", () => {
 
 function test(){
   if(selected == actual){
+    normalQuit = false
     play = -1
     document.getElementById('btnP').innerText = "Continuer"
     let old = [mainColor, mainLightColor];
@@ -256,6 +271,7 @@ function reset(){
     const params = new URLSearchParams({
       json: jsonName
   });
+  normalQuit = true
   window.location.replace(returned + "/index.html?" + params);
   }
   document.getElementById('countryName').innerText = listCountry[actual].name
@@ -268,6 +284,18 @@ function reset(){
   document.getElementById('btnP').innerText = "Proposer cet position"
   play = 0
 }
+
+function back() {
+  const params = new URLSearchParams({
+      json: jsonName
+  });
+  normalQuit = true
+  window.location.replace(returned + "/index.html?" + params);
+}
+document.getElementById("back").addEventListener("click", () => {
+  back();
+});
+
 
 function refreshStyles() {
   const defaultStyle = {

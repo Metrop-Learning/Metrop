@@ -15,6 +15,19 @@ async function loadJSON() {
   }
 }
 
+let normalQuit = true;
+
+window.addEventListener('beforeunload', function (e) {
+      if(normalQuit == false){
+        // The modern browser 
+      const message = "Êtes-vous sûr de vouloir quitter cette page ?";
+      
+      e.preventDefault();
+      e.returnValue = message; // Chrome, Edge
+      return message; // Firefox
+    }
+});
+
 const data = await loadJSON();
 
 const map = L.map("map", { minZoom: 3, maxZoom: 8 }).setView(
@@ -106,6 +119,7 @@ for (let i = 0; i < listCity.length; i++) {
 }
 
 function showCity() {
+  console.log(markers[posilist])
   if (actual) {
     map.removeLayer(actual);
   }
@@ -179,7 +193,6 @@ function intDisplay(str) {
   }
 
   for (let i = 0; i < divised.length; i++) {
-    console.log(rng);
     if (util.checkDiff(divised[i], rng) == 0) {
       lastInt[i] = divised[i];
     }
@@ -201,6 +214,7 @@ function back() {
   const params = new URLSearchParams({
     json: jsonName,
   });
+  normalQuit = true
   window.location.replace(returned + "/index.html?" + params);
 }
 
@@ -230,10 +244,17 @@ document
 let miss = 0;
 let fail = 0;
 let good = 0;
+let lastInput = ""
 
 function textVerified() {
   let input = document.getElementById("nameArea").value;
   let error_margin = util.checkDiff(input, listCity[posilist].name);
+  if(util.checkDiff(input, lastInput) == 0){
+    document.getElementById("errorText").style.color = "rgb(241, 186, 109)";
+    document.getElementById("errorText").innerHTML = "Cette entrée est trop proche de la dernière et n’est donc pas comptabilisée."
+    return
+  }
+  lastInput = input
   if (error_margin <= 2) {
     console.log(posilist + "\n" + listCity[posilist].name);
     let icon = util.orangeIcon;
@@ -254,6 +275,8 @@ function textVerified() {
     lastInt = [];
     loseStrick = 0;
     posilist++;
+    normalQuit == false
+    document.getElementById("nameArea").value = "";
     if (
       !isNaN(posilist) &&
       posilist >= 0 &&
@@ -267,6 +290,15 @@ function textVerified() {
     ) {
       document.getElementById("back").disabled = true;
       document.getElementById("continue").disabled = false;
+      showCity();
+      markers[posilist - 1] = L.marker(
+      [listCity[posilist - 1].lat, listCity[posilist - 1].lng],
+      {
+        icon: icon,
+      }
+    )
+      .addTo(map)
+      .bindPopup(`<b>${listCity[posilist].name}</b>`);
       return
     }
     showCity();
@@ -294,6 +326,7 @@ function textVerified() {
     lastInt = [];
     loseStrick = 0;
     posilist++;
+    document.getElementById("nameArea").value = "";
     if (
       !isNaN(posilist) &&
       posilist >= 0 &&
