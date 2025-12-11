@@ -182,13 +182,86 @@
                 }
             },
             "ESP": {
-                "content":"Data:Spain.map"
+                "content":"Data:Spain.map",
+                "get":{
+                    "AN":{
+                        "content":"Data:Spain/Andalusia.map"
+                    },
+                    "AR":{
+                        "content":"Data:Spain/Aragón.map"
+                    },
+                    "AS":{
+                        "content":"Data:Spain/Asturias.map"
+                    },
+                    "BA":{
+                        "content":"Data:Spain/Balearic Islands.map"
+                    },
+                    "CN":{
+                        "content":"Data:Spain/Canary Islands.map"
+                    },
+                    "CB":{
+                        "content":"Data:Spain/Cantabria.map"
+                    },
+                    "CL":{
+                        "content":"Data:Spain/Castile and León.map"
+                    },
+                    "CM":{
+                        "content":"Data:Spain/Castile-La Mancha.map"
+                    },
+                    "CT":{
+                        "content":"Data:Spain/Catalonia.map"
+                    },
+                    "EX":{
+                        "content":"Data:Spain/Extremadura.map"
+                    },
+                    "GA":{
+                        "content":"Data:Spain/Galicia.map"
+                    },
+                    "MD":{
+                        "content":"Data:Spain/Madrid.map"
+                    },
+                    "MC":{
+                        "content":"Data:Spain/Murcia.map"
+                    },
+                    "NC":{
+                        "content":"Data:Spain/Navarra.map"
+                    },
+                    "PV":{
+                        "content":"Data:Spain/Basque Country.map"
+                    },
+                    "RI":{
+                        "content":"Data:Spain/La Rioja.map"
+                    },
+                    "VC":{
+                        "content":"Data:Spain/Valencian Community.map"
+                    },
+                    "CE":{
+                        "content":"Data:Spain/Ceuta.map"
+                    },
+                    "ML":{
+                        "content":"Data:Spain/Melilla.map"
+                    }
+                }
             },
             "PRT":{
                 "content":"Data:Portugal.map"
             },
             "UK":{
-                "content":"Data:United Kingdom.map"
+                "content":"Data:United Kingdom.map",
+                "get":{
+                    "ENG":{
+                        "content":"Data:England.map"
+                    },
+                    "SCT":{
+                        "content":"Data:Scotland.map"
+                    },
+                    "WLS":{
+                        "content":"Data:Wales.map"
+                    },
+                    "NIR":{
+                        "content":"Data:Northern Ireland.map"
+                    }
+                }
             },
             "IMN":{
                 "content":"Data:Isle of Man.map"
@@ -281,7 +354,53 @@
         }
     },
     "SA": {},
-    "NA": {},
+    "NA": {
+        "get":{
+            "CAN":{
+                "get":{
+                    "ON":{
+                        "content":"Data:Canada/Ontario.map"
+                    },
+                    "QC":{
+                        "content":"Data:Canada/Québec.map"
+                    },
+                    "NB":{
+                        "content":"Data:Canada/New Brunswick.map"
+                    },
+                    "PE":{
+                        "content":"Data:Canada/Prince Edward Island.map"
+                    },
+                    "NS":{
+                        "content":"Data:Canada/Nova Scotia.map"
+                    },
+                    "NL":{
+                        "content":"Data:Canada/Newfoundland and Labrador.map"
+                    },
+                    "NU":{
+                        "content":"Data:Canada/Nunavut.map"
+                    },
+                    "NT":{
+                        "content":"Data:Canada/Northwest Territories.map"
+                    },
+                    "YT":{
+                        "content":"Data:Canada/Yukon.map"
+                    },
+                    "BC":{
+                        "content":"Data:Canada/British Columbia.map"
+                    },
+                    "AB":{
+                        "content":"Data:Canada/Alberta.map"
+                    },
+                    "SK":{
+                        "content":"Data:Canada/Saskatchewan.map"
+                    },
+                    "MB":{
+                        "content":"Data:Canada/Manitoba.map"
+                    }
+                }
+            }
+        }
+    },
     "AF": {},
     "OC": {}
 }

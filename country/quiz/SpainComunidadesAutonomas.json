@@ -1,0 +1,95 @@
+{
+  "listCountry":[
+    {
+      "name":"Andalousie",
+      "id":"EU-ESP-AN"
+    },
+    {
+      "name":"Aragon",
+      "id":"EU-ESP-AR"
+    },
+    {
+      "name":"Asturies",
+      "id":"EU-ESP-AS"
+    },
+    {
+      "name":"Îles Baléares",
+      "id":"EU-ESP-BA"
+    },
+    {
+      "name":"Îles Canaries",
+      "id":"EU-ESP-CN"
+    },
+    {
+      "name":"Cantabrie",
+      "id":"EU-ESP-CB"
+    },
+    {
+      "name":"Castille-et-León",
+      "id":"EU-ESP-CL"
+    },
+    {
+      "name":"Castille-La Manche",
+      "id":"EU-ESP-CM"
+    },
+    {
+      "name":"Catalogne",
+      "id":"EU-ESP-CT"
+    },
+    {
+      "name":"Estrémadure",
+      "id":"EU-ESP-EX"
+    },
+    {
+      "name":"Galice",
+      "id":"EU-ESP-GA"
+    },
+    {
+      "name":"Communauté de Madrid",
+      "id":"EU-ESP-MD"
+    },
+    {
+      "name":"Région de Murcie",
+      "id":"EU-ESP-MC"
+    },
+    {
+      "name":"Communauté forale de Navarre",
+      "id":"EU-ESP-NC"
+    },
+    {
+      "name":"Pays basque",
+      "id":"EU-ESP-PV"
+    },
+    {
+      "name":"La Rioja",
+      "id":"EU-ESP-RI"
+    },
+    {
+      "name":"Communauté valencienne",
+      "id":"EU-ESP-VC"
+    },
+    {
+      "name":"Ceuta",
+      "id":"EU-ESP-CE"
+    },
+    {
+      "name":"Melilla",
+      "id":"EU-ESP-ML"
+    }
+  ],
+  "cardInfo":{
+    "Title":"Les 17 communautés autonomes de l'Espagne",
+    "Text":"Les 17 communautés autonomes et les 2 Ville autonomes de l'Espagne",
+    "lang":"FR",
+    "pictureURL":"None",
+    "option":{
+            "tryMax":1,
+            "EliminateSelected":true
+        }
+  },
+  "type":[
+    "placeTerritory",
+    "shadowTerritory",
+    "guessFromPosiTerritory"
+  ]
+}

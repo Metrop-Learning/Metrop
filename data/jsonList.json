@@ -10,9 +10,12 @@
         "EuropeanUnion.json",
         "EuropeanUnionEEA.json",
         "LandGermany.json",
-        "RegionItaly.json"
+        "RegionItaly.json",
+        "UkHomeNation.json",
+        "CanadaProvince.json",
+        "SpainComunidadesAutonomas.json"
     ],
     "flag":{
-        
+
     }
 }

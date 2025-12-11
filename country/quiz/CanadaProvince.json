@@ -1,0 +1,71 @@
+{
+  "listCountry":[
+    {
+      "name":"Alberta",
+      "id":"NA-CAN-AB"
+    },
+    {
+      "name":"Colombie-Britannique ",
+      "id":"NA-CAN-BC"
+    },
+    {
+      "name":"Île-du-Prince-Édouard",
+      "id":"NA-CAN-PE"
+    },
+    {
+      "name":"Manitoba",
+      "id":"NA-CAN-MB"
+    },
+    {
+      "name":"Nouveau-Brunswick",
+      "id":"NA-CAN-NB"
+    },
+    {
+      "name":"Nouvelle-Écosse",
+      "id":"NA-CAN-NS"
+    },
+    {
+      "name":"Ontario",
+      "id":"NA-CAN-ON"
+    },
+    {
+      "name":"Québec",
+      "id":"NA-CAN-QC"
+    },
+    {
+      "name":"Saskatchewan",
+      "id":"NA-CAN-SK"
+    },
+    {
+      "name":"Terre-Neuve-et-Labrador",
+      "id":"NA-CAN-NL"
+    },
+    {
+      "name":"Nunavut",
+      "id":"NA-CAN-NU"
+    },
+    {
+      "name":"Territoires du Nord-Ouest",
+      "id":"NA-CAN-NT"
+    },
+    {
+      "name":"Yukon",
+      "id":"NA-CAN-YT"
+    }
+  ],
+  "cardInfo":{
+    "Title":"Les 13 Provinces et Territoires du Canada",
+    "Text":"Les 10 Provinces et les 3 Territoires (Yukon, Territoires du Nord-Ouest et Nunavut) du Canada",
+    "lang":"FR",
+    "pictureURL":"None",
+    "option":{
+            "tryMax":1,
+            "EliminateSelected":true
+        }
+  },
+  "type":[
+    "placeTerritory",
+    "shadowTerritory",
+    "guessFromPosiTerritory"
+  ]
+}
