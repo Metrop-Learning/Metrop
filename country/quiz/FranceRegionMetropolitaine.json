@@ -59,11 +59,13 @@
     "lang":"FR",
     "pictureURL":"None",
     "option":{
-            "tryMax":2,
+            "tryMax":1,
             "EliminateSelected":true
         }
   },
   "type":[
-    "placeTerritory"
+    "placeTerritory",
+    "shadowTerritory",
+    "guessFromPosiTerritory"
   ]
 }

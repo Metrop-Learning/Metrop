@@ -110,10 +110,64 @@
             },
             "NOR":{
                 "content":"Data:Norway.map"
+            },
+            "AUT":{
+                "content":"Data:Austria.map"
+            },
+            "BGR":{
+                "content":"Data:Bulgaria.map"
+            },
+            "HRV":{
+                "content":"Data:Croatia.map"
+            },
+            "EST":{
+                "content":"Data:Estonia.map"
+            },
+            "FIN":{
+                "content":"Data:Finland.map"
+            },
+            "GRC":{
+                "content":"Data:Greece.map"
+            },
+            "HUN":{
+                "content":"Data:Hungary.map"
+            },
+            "LVA":{
+                "content":"Data:Latvia.map"
+            },
+            "LTU":{
+                "content":"Data:Lithuania.map"
+            },
+            "MLT":{
+                "content":"Data:Malta.map"
+            },
+            "POL":{
+                "content":"Data:Poland.map"
+            },
+            "CZE":{
+                "content":"Data:Czechia.map"
+            },
+            "ROU":{
+                "content":"Data:Romania.map"
+            },
+            "SVK":{
+                "content":"Data:Slovakia.map"
+            },
+            "SVN":{
+                "content":"Data:Slovenia.map"
+            },
+            "LIE":{
+                "content":"Data:Liechtenstein.map"
             }
         }
     },
-    "AS": {},
+    "AS": {
+        "get":{
+            "CYP":{
+                "content":"Data:Cyprus.map"
+            }
+        }
+    },
     "SA": {},
     "NA": {},
     "AF": {},

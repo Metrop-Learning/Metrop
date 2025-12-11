@@ -6,6 +6,8 @@
         "MetroCityFrance.json"
     ],
     "country":[
-        "FranceRegionMetropolitaine.json"
+        "FranceRegionMetropolitaine.json",
+        "EuropeanUnion.json",
+        "EuropeanUnionEEA.json"
     ]
 }
