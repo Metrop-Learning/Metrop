@@ -137,69 +137,82 @@ let actual = 0
 let geojsonLayer = [];
 document.getElementById('countryName').innerText = listCountry[actual].name
 
-async function addABoundarie(link,ite){
-  fetch("https://commons.wikimedia.org/w/api.php?action=query&prop=revisions&titles="+link+"&rvprop=content&rvslots=main&format=json&origin=*")
-  .then(r => r.json())
-  .then(data => {
+async function addABoundarie(link, ite) {
+  let tlink;
+  if (link.split(':')[0] == "useInstead") {
+    if (link.split(':')[1] == "OSMB") {
+      tlink = "../OSMB/" + link.split(':')[2];
+    }
+  } else {
+    tlink = "https://commons.wikimedia.org/w/api.php?action=query&prop=revisions&titles=" + link + "&rvprop=content&rvslots=main&format=json&origin=*";
+  }
+
+  const response = await fetch(tlink);
+  let raw;
+
+  if (link.split(':')[0] == "useInstead" && link.split(':')[1] == "OSMB") {
+    raw = await response.json(); 
+  } else {
+    const data = await response.json();
     const page = Object.values(data.query.pages)[0];
-    const raw = page.revisions[0].slots.main["*"];
-    const parsed = JSON.parse(raw);
-    // --- GET GEOJSON ---
-    const geojson = parsed.data;
+    raw = page.revisions[0].slots.main["*"];
+    raw = JSON.parse(raw);
+  }
+  const geojson = raw.data || raw;
 
-    //style
-    const defaultStyle = {
-       color: grey,
-       weight: 2,
-       fillColor: lightGrey,
-       fillOpacity: 0.3
-     };
-     const hoverStyle = {
-       weight: 3,
-       fillOpacity: 0.5
-     };
-     const selectedStyle = {
-       color: mainColor,
-       weight: 3,
-       fillColor: mainLightColor,
-       fillOpacity: 0.6
-     };
+  // --- style ---
+  const defaultStyle = {
+    color: grey,
+    weight: 2,
+    fillColor: lightGrey,
+    fillOpacity: 0.3
+  };
+  const hoverStyle = {
+    weight: 3,
+    fillOpacity: 0.5
+  };
+  const selectedStyle = {
+    color: mainColor,
+    weight: 3,
+    fillColor: mainLightColor,
+    fillOpacity: 0.6
+  };
 
-    const layer = L.geoJSON(geojson, {
-      style: defaultStyle,
-      onEachFeature: (feature, layer) => {
-        feature.id = ite;
-        // HOVER
-        layer.on("mouseover", function () {
-          if (selectedLayer !== layer){
-            layer.lastHoverStyle = {
-              color: layer.options.color,
-              fillColor: layer.options.fillColor,
-              weight: layer.options.weight,
-              fillOpacity: layer.options.fillOpacity
-            };
-            layer.setStyle(hoverStyle);
-          }
-        });
-        layer.on("mouseout", function () {
-          if (selectedLayer !== layer) layer.setStyle(layer.lastHoverStyle);
-        });
-        // SELECT
-        layer.on("click", function () {
-          if(play == -1) return
-          selected = ite
-          document.getElementById("btnP").disabled = false;
-          if (selectedLayer) selectedLayer.setStyle(defaultStyle);
-          layer.setStyle(selectedStyle);
-          selectedLayer = layer;
-          layer.bringToFront();
-        });
-      }
-    }).addTo(map);
-    geojsonLayer.push(layer)
-  });
+  const layer = L.geoJSON(geojson, {
+    style: defaultStyle,
+    onEachFeature: (feature, layer) => {
+      feature.id = ite;
+      // HOVER
+      layer.on("mouseover", function () {
+        if (selectedLayer !== layer) {
+          layer.lastHoverStyle = {
+            color: layer.options.color,
+            fillColor: layer.options.fillColor,
+            weight: layer.options.weight,
+            fillOpacity: layer.options.fillOpacity
+          };
+          layer.setStyle(hoverStyle);
+        }
+      });
+      layer.on("mouseout", function () {
+        if (selectedLayer !== layer) layer.setStyle(layer.lastHoverStyle);
+      });
+      // SELECT
+      layer.on("click", function () {
+        if (play == -1) return;
+        selected = ite;
+        document.getElementById("btnP").disabled = false;
+        if (selectedLayer) selectedLayer.setStyle(defaultStyle);
+        layer.setStyle(selectedStyle);
+        selectedLayer = layer;
+        layer.bringToFront();
+      });
+    }
+  }).addTo(map);
+  geojsonLayer.push(layer);
 }
 
+document.getElementById('loadingBar').max = (listCountry.length);
 for(let i = 0; i < listCountry.length; i++){
   let id = listCountry[i].id
   let deep;
@@ -224,9 +237,14 @@ for(let i = 0; i < listCountry.length; i++){
   }
   let link = deep.content
   await addABoundarie(link,i)
+  console.log("Loading..." + 100*((i+1)/listCountry.length) + "%")
+  document.getElementById('loadingBar').value = i + 1;
   //addABoundarie(dataBorder.EU.get.FRA.get.ARA.content)
 }
 document.getElementById("btnP").disabled = true;
+document.getElementById("loading").style.display = "none";
+document.getElementById("menu").style.visibility = "visible";
+document.getElementById("map").style.visibility = "visible";
 
 let play = 0;
 document.getElementById("btnP").addEventListener("click", () => {

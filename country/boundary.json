@@ -61,13 +61,125 @@
                 }
             },
             "DEU": {
-                "content": "Data:Germany.map"
+                "content": "Data:Germany.map",
+                "get":{
+                    "BW":{
+                        "content":"Data:Baden-Württemberg.map"
+                    },
+                    "NI":{
+                        "content":"Data:Niedersachsen.map"
+                    },
+                    "BY":{
+                        "content":"Data:Bayern.map"
+                    },
+                    "BE":{
+                        "content":"Data:Berlin.map"
+                    },
+                    "BB":{
+                        "content":"Data:Brandenburg.map"
+                    },
+                    "HB":{
+                        "content":"Data:Bremen.map"
+                    },
+                    "HH":{
+                        "content":"Data:Hamburg.map"
+                    },
+                    "HE":{
+                        "content":"Data:Hessen.map"
+                    },
+                    "MV":{
+                        "content":"Data:Mecklenburg-Vorpommern.map"
+                    },
+                    "NW":{
+                        "content":"Data:Nordrhein-Westfalen.map"
+                    },
+                    "RP":{
+                        "content":"Data:Rheinland-Pfalz.map"
+                    },
+                    "SL":{
+                        "content":"Data:Saarland.map"
+                    },
+                    "SN":{
+                        "content":"Data:Sachsen.map"
+                    },
+                    "ST":{
+                        "content":"Data:Sachsen-Anhalt.map"
+                    },
+                    "SH":{
+                        "content":"Data:Schleswig-Holstein.map"
+                    },
+                    "TH":{
+                        "content":"Data:Thüringen.map"
+                    }
+                }
             },
             "CHE": {
                 "content": "Data:Switzerland.map"
             },
             "ITA": {
-                "content": "Data:Italy.map"
+                "content": "Data:Italy.map",
+                "get":{
+                    "ABR":{
+                        "content":"Data:Italy/Region/Abruzzo.map"
+                    },
+                    "BAS":{
+                        "content":"Data:Italy/Region/Basilicata.map"
+                    },
+                    "CAL":{
+                        "content":"Data:Italy/Region/Calabria.map"
+                    },
+                    "CAM":{
+                        "content":"Data:Italy/Region/Campania.map"
+                    },
+                    "EMR":{
+                        "content":"Data:Italy/Region/Emilia-Romagna.map"
+                    },
+                    "FVG":{
+                        "content":"Data:Italy/Region/Friuli Venezia Giulia.map"
+                    },
+                    "LAZ":{
+                        "content":"Data:Italy/Region/Lazio.map"
+                    },
+                    "LIG":{
+                        "content":"Data:Italy/Liguria.map"
+                    },
+                    "LOM":{
+                        "content":"Data:Italy/Region/Lombardy.map"
+                    },
+                    "MAR":{
+                        "content":"Data:Italy/Region/Marche.map"
+                    },
+                    "MOL":{
+                        "content":"Data:Italy/Region/Molise.map"
+                    },
+                    "UMB":{
+                        "content":"Data:Italy/Region/Umbria.map"
+                    },
+                    "PMN":{
+                        "content":"Data:Italy/Piedmont.map"
+                    },
+                    "PUG":{
+                        "content":"Data:Italy/Region/Apulia.map"
+                    },
+                    "SAR":{
+                        "content":"Data:Italy/Region/Sardinia.map"
+                    },
+                    "SIC":{
+                        "content":"Data:Italy/Region/Sicily.map"
+                    },
+                    "TOS":{
+                        "content":"Data:Italy/Region/Tuscany.map"
+                    },
+                    "TAA":{
+                        "content":"Data:Italy/Region/Trentino-South Tyrol.map"
+                    },
+                    "VAO":{
+                        "content":"useInstead:OSMB:aosta.geojson"
+                    },
+                    "VEN":{
+                        "content":"Data:Italy/Region/Veneto.map"
+                    }
+                }
             },
             "ESP": {
                 "content":"Data:Spain.map"

@@ -33,6 +33,9 @@
         background-color: rgb(81, 81, 227);
         color: white;
     }
+    #loading {
+    color: rgb(0, 0, 0);
+}
 }
 
 @media (prefers-color-scheme: dark) {
@@ -40,6 +43,9 @@
         background-color: rgb(44, 44, 150);
         color: rgb(230, 230, 230);
     }
+    #loading {
+    color: rgb(255, 255, 255);
+}
 }
 
 .btn:hover:not(:disabled) {
@@ -64,4 +70,18 @@
     progress {
   accent-color: rgb(44, 44, 150);
 }
+}
+
+/* loading */
+#map, #menu{
+    visibility: hidden;
+}
+
+#loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
 }

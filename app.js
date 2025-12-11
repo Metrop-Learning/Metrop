@@ -1,7 +1,17 @@
 import data from './data/jsonList.json' with { type: "json" };
 
-const ver =  [0,7,1,"b"]
+const ver =  [0,7,2,"a"]
 const verAPI = [0,4]
+
+if(localStorage.getItem("lastVersionUsed")){
+    let verS = localStorage.getItem("lastVersionUsed").split(".")
+    verS = [parseInt(verS[0]), parseInt(verS[1]), parseInt(verS[2]), verS[3]]
+    localStorage.setItem("lastVersionUsed",ver[0] + "." + ver[1] + "." + ver[2] + "." + ver[3])
+}
+else{
+    localStorage.setItem("lastVersionUsed",ver[0] + "." + ver[1] + "." + ver[2] + "." + ver[3])
+}
+
 document.getElementById('verText').innerText = "Metrop Version " + ver[0] + "." + ver[1] + "." + ver[2] + "." + ver[3] + " (API : " + verAPI[0] + "." + verAPI[1] + ")"
 console.info("Metrop ver\n"+ver[0]+"."+ver[1]+"."+ver[2]+"."+ver[3]+"\nMetrop API ver\n"+verAPI[0]+"."+verAPI[1])
 
@@ -20,6 +30,10 @@ document.getElementById('cityQuizList').innerHTML = "";
 let cardList = []
 for(let i = 0; i < data.city.length; i++){
     await cityListSetUp(data.city[i],"city");
+}
+if(cardList.length == 0){
+    document.getElementById('cityQuizList').innerHTML = '<div style="display: flex; flex-direction: column; align-items: center;"><svg xmlns="http://www.w3.org/2000/svg" height="75px" viewBox="0 -960 960 960" width="75px" fill="#000000"><path d="M479.98-280q14.02 0 23.52-9.48t9.5-23.5q0-14.02-9.48-23.52t-23.5-9.5q-14.02 0-23.52 9.48t-9.5 23.5q0 14.02 9.48 23.52t23.5 9.5Zm3.2-153q12.82 0 21.32-8.63 8.5-8.62 8.5-21.37v-193q0-12.75-8.68-21.38-8.67-8.62-21.5-8.62-12.82 0-21.32 8.62-8.5 8.63-8.5 21.38v193q0 12.75 8.68 21.37 8.67 8.63 21.5 8.63Zm-2.91 353q-82.74 0-155.5-31.5Q252-143 197.5-197.5t-86-127.34Q80-397.68 80-480.5t31.5-155.66Q143-709 197.5-763t127.34-85.5Q397.68-880 480.5-880t155.66 31.5Q709-817 763-763t85.5 127Q880-563 880-480.27q0 82.74-31.5 155.5Q817-252 763-197.68q-54 54.31-127 86Q563-80 480.27-80Zm.23-60Q622-140 721-239.5t99-241Q820-622 721.19-721T480-820q-141 0-240.5 98.81T140-480q0 141 99.5 240.5t241 99.5Zm-.5-340Z"/></svg><h2>Une erreur est survenue : aucune donnée trouvée.</h2></div>';
+    document.getElementById('cityQuizList').className = 'none'
 }
 const regex = /[\[\uFF3B]\s*(.*?)\s*[\]\uFF3D]/;
 
@@ -83,6 +97,40 @@ cardList.sort((a, b) => {
 });
 for(let i = 0; i < cardList.length; i++){
     document.getElementById('countryQuizList').appendChild(cardList[i][1]);
+}
+//Set up flag
+document.getElementById('flagQuizList').innerHTML = "";
+cardList = []
+for(let i = 0; i < data.flag.length; i++){
+    await cityListSetUp(data.flag[i],"flag");
+}
+if(cardList.length == 0){
+    document.getElementById('flagQuizList').innerHTML = '<div style="display: flex; flex-direction: column; align-items: center;"><svg xmlns="http://www.w3.org/2000/svg" height="75px" viewBox="0 -960 960 960" width="75px" fill="#000000"><path d="M479.98-280q14.02 0 23.52-9.48t9.5-23.5q0-14.02-9.48-23.52t-23.5-9.5q-14.02 0-23.52 9.48t-9.5 23.5q0 14.02 9.48 23.52t23.5 9.5Zm3.2-153q12.82 0 21.32-8.63 8.5-8.62 8.5-21.37v-193q0-12.75-8.68-21.38-8.67-8.62-21.5-8.62-12.82 0-21.32 8.62-8.5 8.63-8.5 21.38v193q0 12.75 8.68 21.37 8.67 8.63 21.5 8.63Zm-2.91 353q-82.74 0-155.5-31.5Q252-143 197.5-197.5t-86-127.34Q80-397.68 80-480.5t31.5-155.66Q143-709 197.5-763t127.34-85.5Q397.68-880 480.5-880t155.66 31.5Q709-817 763-763t85.5 127Q880-563 880-480.27q0 82.74-31.5 155.5Q817-252 763-197.68q-54 54.31-127 86Q563-80 480.27-80Zm.23-60Q622-140 721-239.5t99-241Q820-622 721.19-721T480-820q-141 0-240.5 98.81T140-480q0 141 99.5 240.5t241 99.5Zm-.5-340Z"/></svg><h2>Une erreur est survenue : aucune donnée trouvée.</h2></div>';
+    document.getElementById('flagQuizList').className = 'none'
+}
+cardList.sort((a, b) => {
+  const textA = a[0];
+  const textB = b[0];
+
+  // 1. get title before []
+  const titreA = textA.split("[")[0].trim();
+  const titreB = textB.split("[")[0].trim();
+
+  const titreCompare = normalize(titreA).localeCompare(normalize(titreB));
+  if (titreCompare !== 0) return titreCompare;
+
+  // 2. Same title → sort by []
+  const mA = textA.match(regex);
+  const mB = textB.match(regex);
+
+  const niveauA = mA?.[1] ?? "__NO_LEVEL__";
+  const niveauB = mB?.[1] ?? "__NO_LEVEL__";
+
+  const ordre = ["__NO_LEVEL__", "Facile", "Intermédiaire", "Expert"];
+  return ordre.indexOf(niveauA) - ordre.indexOf(niveauB);
+});
+for(let i = 0; i < cardList.length; i++){
+    document.getElementById('flagQuizList').appendChild(cardList[i][1]);
 }
 
 async function cityListSetUp(nameJson,type){
@@ -196,33 +244,35 @@ async function loadJSON(jsonName,type) {
 
 
 
-const slider = document.querySelector('.quizList');
+const sliders = document.querySelectorAll('.quizList');
 
-let isDown = false;
-let startX;
-let scrollLeft;
+sliders.forEach(slider => {
+  let isDown = false;
+  let startX;
+  let scrollLeft;
 
-slider.addEventListener('mousedown', (e) => {
-  isDown = true;
-  slider.classList.add('active');
-  startX = e.pageX - slider.offsetLeft;
-  scrollLeft = slider.scrollLeft;
-});
+  slider.addEventListener('mousedown', (e) => {
+    isDown = true;
+    slider.classList.add('active');
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  });
 
-slider.addEventListener('mouseleave', () => {
-  isDown = false;
+  slider.addEventListener('mouseleave', () => {
+    isDown = false;
     slider.classList.remove('active');
-});
+  });
 
-slider.addEventListener('mouseup', () => {
-  isDown = false;
+  slider.addEventListener('mouseup', () => {
+    isDown = false;
     slider.classList.remove('active');
-});
+  });
 
-slider.addEventListener('mousemove', (e) => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - slider.offsetLeft;
-  const walk = (x - startX) * 1.5; // speed
-  slider.scrollLeft = scrollLeft - walk;
+  slider.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 1.5; // speed
+    slider.scrollLeft = scrollLeft - walk;
+  });
 });

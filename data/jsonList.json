@@ -8,6 +8,11 @@
     "country":[
         "FranceRegionMetropolitaine.json",
         "EuropeanUnion.json",
-        "EuropeanUnionEEA.json"
-    ]
+        "EuropeanUnionEEA.json",
+        "LandGermany.json",
+        "RegionItaly.json"
+    ],
+    "flag":{
+        
+    }
 }
