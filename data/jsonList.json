@@ -13,7 +13,11 @@
         "RegionItaly.json",
         "UkHomeNation.json",
         "CanadaProvince.json",
-        "SpainComunidadesAutonomas.json"
+        "SpainComunidadesAutonomas.json",
+        "StatesOfUSA.json",
+        "StatesOfUSAporto.json",
+        "USAterritories.json",
+        "australiaIntern.json"
     ],
     "flag":{
 

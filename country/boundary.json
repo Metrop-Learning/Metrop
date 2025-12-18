@@ -357,6 +357,7 @@
     "NA": {
         "get":{
             "CAN":{
+                "content":"Data:Canada.map",
                 "get":{
                     "ON":{
                         "content":"Data:Canada/Ontario.map"
@@ -398,9 +399,217 @@
                         "content":"Data:Canada/Manitoba.map"
                     }
                 }
+            },
+            "USA":{
+                "content":"useInstead:OSMB:usa.geojson",
+                "get":{
+                    "AL":{
+                        "content":"Data:Alabama.map"
+                    },
+                    "AK":{
+                        "content":"Data:Alaska.map"
+                    },
+                    "AZ":{
+                        "content":"Data:Arizona.map"
+                    },
+                    "AR":{
+                        "content":"Data:Arkansas.map"
+                    },
+                    "CA":{
+                        "content":"Data:California.map"
+                    },
+                    "NC":{
+                        "content":"Data:NorthCarolina.map"
+                    },
+                    "SC":{
+                        "content":"Data:SouthCarolina.map"
+                    },
+                    "CO":{
+                        "content":"Data:Colorado.map"
+                    },
+                    "CT":{
+                        "content":"Data:Connecticut.map"
+                    },
+                    "ND":{
+                        "content":"Data:NorthDakota.map"
+                    },
+                    "SD":{
+                        "content":"Data:SouthDakota.map"
+                    },
+                    "DE":{
+                        "content":"Data:Delaware.map"
+                    },
+                    "FL":{
+                        "content":"Data:Florida.map"
+                    },
+                    "GA":{
+                        "content":"Data:Georgia-US.map"
+                    },
+                    "HI":{
+                        "content":"Data:Hawaii.map"
+                    },
+                    "ID":{
+                        "content":"Data:Idaho.map"
+                    },
+                    "IL":{
+                        "content":"Data:Illinois.map"
+                    },
+                    "IN":{
+                        "content":"Data:Indiana.map"
+                    },
+                    "IA":{
+                        "content":"Data:Iowa.map"
+                    },
+                    "KS":{
+                        "content":"Data:Kansas.map"
+                    },
+                    "KY":{
+                        "content":"Data:Kentucky.map"
+                    },
+                    "LA":{
+                        "content":"Data:Louisiana.map"
+                    },
+                    "ME":{
+                        "content":"Data:Maine.map"
+                    },
+                    "MD":{
+                        "content":"Data:Maryland.map"
+                    },
+                    "MA":{
+                        "content":"Data:Massachusetts.map"
+                    },
+                    "MI":{
+                        "content":"Data:Michigan.map"
+                    },
+                    "MN":{
+                        "content":"Data:Minnesota.map"
+                    },
+                    "MS":{
+                        "content":"Data:Mississippi.map"
+                    },
+                    "MO":{
+                        "content":"Data:Missouri.map"
+                    },
+                    "MT":{
+                        "content":"Data:Montana.map"
+                    },
+                    "NE":{
+                        "content":"Data:Nebraska.map"
+                    },
+                    "NV":{
+                        "content":"Data:Nevada.map"
+                    },
+                    "NH":{
+                        "content":"Data:NewHampshire.map"
+                    },
+                    "NJ":{
+                        "content":"Data:NewJersey.map"
+                    },
+                    "NY":{
+                        "content":"Data:NewYork.map"
+                    },
+                    "NM":{
+                        "content":"Data:NewMexico.map"
+                    },
+                    "OH":{
+                        "content":"Data:Ohio.map"
+                    },
+                    "OK":{
+                        "content":"Data:Oklahoma.map"
+                    },
+                    "OR":{
+                        "content":"Data:Oregon.map"
+                    },
+                    "PA":{
+                        "content":"Data:Pennsylvania.map"
+                    },
+                    "RI":{
+                        "content":"Data:RhodeIsland.map"
+                    },
+                    "TN":{
+                        "content":"Data:Tennessee.map"
+                    },
+                    "TX":{
+                        "content":"Data:Texas.map"
+                    },
+                    "UT":{
+                        "content":"Data:Utah.map"
+                    },
+                    "VT":{
+                        "content":"Data:Vermont.map"
+                    },
+                    "VA":{
+                        "content":"Data:Virginia.map"
+                    },
+                    "WV":{
+                        "content":"Data:WestVirginia.map"
+                    },
+                    "WA":{
+                        "content":"Data:Washington.map"
+                    },
+                    "WI":{
+                        "content":"Data:Wisconsin.map"
+                    },
+                    "WY":{
+                        "content":"Data:Wyoming.map"
+                    },
+                    "PRI":{
+                        "content":"useInstead:OSMB:puertoRico.geojson"
+                    },
+                    "NMI":{
+                        "content":"useInstead:OSMB:northernMarianaIslands.geojson"
+                    },
+                    "DC":{
+                        "content":"Data:DistrictofColumbia.map"
+                    },
+                    "UVI":{
+                        "content":"useInstead:OSMB:unitedStatesVirginIsland.geojson"
+                    },
+                    "GUM":{
+                        "content":"useInstead:OSMB:guam.geojson"
+                    },
+                    "ASM":{
+                        "content":"useInstead:OSMB:americanSamoa.geojson"
+                    }
+                }
             }
         }
     },
     "AF": {},
-    "OC": {}
+    "OC": {
+        "get":{
+            "AU":{
+                "content":"Data:Australia.map",
+                "get":{
+                    "SA":{
+                        "content":"Data:Australia/South Australia.map"
+                    },
+                    "WA":{
+                        "content":"Data:Australia/Western Australia.map"
+                    },
+                    "NGS":{
+                        "content":"Data:Australia/New South Wales.map"
+                    },
+                    "QLD":{
+                        "content":"Data:Australia/Queensland.map"
+                    },
+                    "TAS":{
+                        "content":"Data:Australia/Tasmania.map"
+                    },
+                    "VIC":{
+                        "content":"Data:Australia/Victoria.map"
+                    },
+                    "ACT":{
+                        "content":"Data:Australia/Australian Capital Territory.map"
+                    },
+                    "NT":{
+                        "content":"Data:Australia/Northern Territory.map"
+                    },
+                    "JBT":{
+                        "content":"Data:Australia/Jervis Bay Territory.map"
+                    }
+                }
+            }
+        }
+    }
 }

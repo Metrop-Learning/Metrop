@@ -36,6 +36,9 @@
     #loading {
     color: rgb(0, 0, 0);
 }
+#tryLeft{
+    color: rgb(170, 126, 50);
+}
 }
 
 @media (prefers-color-scheme: dark) {
@@ -45,6 +48,9 @@
     }
     #loading {
     color: rgb(255, 255, 255);
+}
+#tryLeft{
+    color: rgb(219, 198, 61);
 }
 }
 
@@ -84,4 +90,7 @@
     transform: translate(-50%, -50%);
     width: auto;
     height: auto;
+}
+#tryLeft{
+    visibility: hidden;
 }

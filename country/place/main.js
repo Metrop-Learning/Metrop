@@ -66,8 +66,8 @@ catch{
 }
 try{
   EliminateSelected = data.cardInfo.option.EliminateSelected
-  if(tryMax != true && tryMax != false){
-    tryMax = true
+  if(EliminateSelected != true && EliminateSelected != false){
+    EliminateSelected = true
   }
 }
 catch{
@@ -143,10 +143,11 @@ async function addABoundarie(link, ite) {
     if (link.split(':')[1] == "OSMB") {
       tlink = "../OSMB/" + link.split(':')[2];
     }
+    document.getElementById("loadedR").innerText = "Fetching resource: " + link.split(':')[2] + " from " + link.split(':')[2]  + " local file"
   } else {
     tlink = "https://commons.wikimedia.org/w/api.php?action=query&prop=revisions&titles=" + link + "&rvprop=content&rvslots=main&format=json&origin=*";
+    document.getElementById("loadedR").innerText = "Fetching resource: " + link + " from Wikimedia"
   }
-
   const response = await fetch(tlink);
   let raw;
 
@@ -248,21 +249,11 @@ document.getElementById("map").style.visibility = "visible";
 
 let play = 0;
 document.getElementById("btnP").addEventListener("click", () => {
-  if(play < tryMax && play >= 0){
+  if(play >= 0){
     test();
   }
-  else if(play == -1){
-    reset()
-  }
   else{
-    play = -1;
-    document.getElementById('btnP').innerText = "Continuer"
-    failLayer = actual
-    let old = [mainColor, mainLightColor];
-    mainColor = failColor;
-    mainLightColor = failLightColor;
-    refreshStyles();
-    [mainColor, mainLightColor] = old
+    reset()
   }
 });
 
@@ -278,8 +269,20 @@ function test(){
     refreshStyles();
     [mainColor, mainLightColor] = old
   }
-  else{
+  else if (play + 1 <= (tryMax - 1)){
+    document.getElementById("tryLeft").style.visibility = "visible"
+    document.getElementById("tryLeft").innerText = tryMax - (play+1) + " Essai(s) restant(s)"
     play++
+  }else{
+    document.getElementById("tryLeft").style.visibility = "hidden"
+    play = -1;
+    document.getElementById('btnP').innerText = "Continuer"
+    failLayer = actual
+    let old = [mainColor, mainLightColor];
+    mainColor = failColor;
+    mainLightColor = failLightColor;
+    refreshStyles();
+    [mainColor, mainLightColor] = old
   }
 }
 function reset(){

@@ -1,0 +1,55 @@
+{
+  "listCountry":[
+    {
+      "name":"Australie-Méridionale",
+      "id":"OC-AU-SA"
+    },
+    {
+      "name":"Australie-Occidentale",
+      "id":"OC-AU-WA"
+    },
+    {
+      "name":"Nouvelle-Galles du Sud",
+      "id":"OC-AU-NGS"
+    },
+    {
+      "name":"Queensland",
+      "id":"OC-AU-QLD"
+    },
+    {
+      "name":"Tasmanie",
+      "id":"OC-AU-TAS"
+    },
+    {
+      "name":"Victoria",
+      "id":"OC-AU-VIC"
+    },
+    {
+      "name":"Territoire de la capitale australienne",
+      "id":"OC-AU-ACT"
+    },
+    {
+      "name":"Territoire du Nord",
+      "id":"OC-AU-NT"
+    },
+    {
+      "name":"Territoire de la baie de Jervis",
+      "id":"OC-AU-JBT"
+    }
+  ],
+  "cardInfo":{
+    "Title":"Les États et Territoires Intérieurs de l'Australie",
+    "Text":"Les 6 États et les 3 Territoires Intérieurs de l'Australie",
+    "lang":"FR",
+    "pictureURL":"None",
+    "option":{
+            "tryMax":2,
+            "EliminateSelected":true
+        }
+  },
+  "type":[
+    "placeTerritory",
+    "shadowTerritory",
+    "guessFromPosiTerritory"
+  ]
+}

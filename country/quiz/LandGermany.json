@@ -71,7 +71,7 @@
     "lang":"FR",
     "pictureURL":"None",
     "option":{
-            "tryMax":1,
+            "tryMax":2,
             "EliminateSelected":true
         }
   },
