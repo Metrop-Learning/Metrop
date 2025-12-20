@@ -10,7 +10,6 @@
     />
     <script src="./app.js" type="module"></script>
     <title>Metrop</title>
-    <h3 id="betaTest" style="display: none; color: rgb(210, 174, 65); background-color: rgb(58, 58, 58); padding: 5px; border-radius: 5px; position: sticky; top: 15px; width: fit-content; transform: translateX(-50%);  left: 50%;">Beta Version <br><a style="font-size: x-small; color: rgb(157, 211, 48);" href="#" onclick="localStorage.setItem('DEBUG_STATUT','false');window.location.href = window.location.href;">Revenir en version stable</a></h3>
   </head>
   <body>
     <script>
@@ -50,7 +49,9 @@
           learningID: -1,
           return: base,
         });
-        window.location.replace(`./country/place/index.html?${params.toString()}`);
+        window.location.replace(
+          `./country/place/index.html?${params.toString()}`
+        );
       }
       function learning(jsonName) {
         window.location.replace(`./learning_prgm/index.html?json=${jsonName}`);
@@ -66,9 +67,28 @@
         document.body.style.color = "#000000";
       }
     </script>
+    <header class="headerInfo" id="betaTest">
+      <h3>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="40px"
+          viewBox="0 -960 960 960"
+          width="40px"
+          fill="#e3e3e3"
+        >
+          <path
+            d="M97.67-120q-9.67 0-17.11-4.58-7.43-4.59-11.56-12.09-4.44-7.4-4.89-16.03-.44-8.63 4.89-17.3l382-660q5.33-8.67 12.83-12.67t16.17-4q8.67 0 16.17 4 7.5 4 12.83 12.67l382 660q5.33 8.67 4.89 17.3-.45 8.63-4.89 16.03-4.13 7.5-11.56 12.09Q872-120 862.33-120H97.67Zm57.66-66.67h649.34L480-746.67l-324.67 560ZM482.78-238q14.22 0 23.72-9.62 9.5-9.61 9.5-23.83 0-14.22-9.62-23.72-9.61-9.5-23.83-9.5-14.22 0-23.72 9.62-9.5 9.62-9.5 23.83 0 14.22 9.62 23.72 9.62 9.5 23.83 9.5Zm0-114q14.22 0 23.72-9.58 9.5-9.59 9.5-23.75v-149.34q0-14.16-9.62-23.75-9.61-9.58-23.83-9.58-14.22 0-23.72 9.58-9.5 9.59-9.5 23.75v149.34q0 14.16 9.62 23.75 9.62 9.58 23.83 9.58ZM480-466.67Z"
+          /></svg><br/>Beta Version <br />
+        <a
+          style="font-size: small"
+          href="#"
+          onclick="localStorage.setItem('DEBUG_STATUT','false');window.location.href = window.location.href;"
+          >Revenir en version stable</a
+        >
+      </h3>
+    </header>
+    <header><h1>Metrop</h1></header>
     <div id="menu">
-      <h1 style="margin-top: 21.44px">Metrop</h1>
-      <br /><br /><br />
       <h2 class="title-icon">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -83,38 +103,81 @@
         </svg>
         Villes
       </h2>
-      <section class="quizList" id="cityQuizList">
-      </section>
-      <br /><br /><br />
-      <div id="betaElement">
-        <h2 class="title-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#000000"><path d="M370-220h220q13 0 21.5-8.5T620-250q0-13-8.5-21.5T590-280H370q-13 0-21.5 8.5T340-250q0 13 8.5 21.5T370-220Zm110-120q83 0 141.5-58.5T680-540q0-83-58.5-141.5T480-740q-83 0-141.5 58.5T280-540q0 83 58.5 141.5T480-340Zm0-67q-8-11-17-36.5T451-510h58q-3 41-12 66.5T480-407Zm-72-13q-24-15-41-38t-23-52h47q2 25 6 47.5t11 42.5Zm144 0q7-20 11-42.5t6-47.5h47q-6 29-23 52t-41 38ZM344-570q6-29 23-52t41-38q-7 20-11 42.5t-6 47.5h-47Zm107 0q3-41 12-66.5t17-36.5q8 11 17 36.5t12 66.5h-58Zm118 0q-2-25-6-47.5T552-660q24 15 41 38t23 52h-47ZM193.33-80q-14.16 0-23.75-9.58-9.58-9.59-9.58-23.75v-733.34q0-14.16 9.58-23.75 9.59-9.58 23.75-9.58h540q27.5 0 47.09 19.58Q800-840.83 800-813.33v666.66q0 27.5-19.58 47.09Q760.83-80 733.33-80h-540Zm33.34-66.67h506.66v-666.66H226.67v666.66Zm0 0v-666.66 666.66Z"/></svg>
-        Pays
-      </h2>
-      <section class="quizList" id="countryQuizList">
-      </section>
+      <section class="quizList" id="cityQuizList"></section>
       <br /><br /><br />
       <h2 class="title-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#e3e3e3"><path d="M732.67-311.67v-349.66q-73.34 5-143.67-11.5-70.33-16.5-128.67-51.5-41-24.67-83.13-36.67-42.13-12-85.87-12-16 0-32.16 1.83Q243-769.33 226-766v348.67q16.33-2 33.17-3.17 16.83-1.17 35.5-1.17 60 0 119.16 16 59.17 16 109.84 46 49.33 29 101.47 41 52.13 12 107.53 7Zm-252.81-119q46.14 0 78.14-31.86 32-31.85 32-78 0-46.14-31.86-78.14t-78-32q-46.14 0-78.14 31.86t-32 78q0 46.14 31.86 78.14t78 32Zm16.81 132.34q-47-28.34-98.26-42.67-51.26-14.33-104.08-14.33-16 0-32 1.5T226.67-349v195.67q0 14.16-9.62 23.75-9.62 9.58-23.83 9.58-14.22 0-23.72-9.58-9.5-9.59-9.5-23.75v-637.34q0-12.62 7.82-22.71 7.83-10.1 20.18-12.62 32-7 56.5-10.5t48.83-3.5q51 0 101 14.5t95.34 41.5q47 28 99.16 42.5Q641-727 694.67-727q18.65 0 35.66-1 17-1 34-3 14.1-2 24.89 8.12Q800-712.76 800-698.67v417q0 13.4-8.8 23.03-8.79 9.63-22.2 11.31-18.67 2-37 3.33t-36.67 1.33q-52.33 0-102.66-14-50.34-14-96-41.66ZM479.33-539Z"/></svg>
-        Drapeaux
-      </h2>
-      <section class="quizList" id="flagQuizList"></section>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="40px"
+            viewBox="0 -960 960 960"
+            width="40px"
+            fill="#000000"
+          >
+            <path
+              d="M370-220h220q13 0 21.5-8.5T620-250q0-13-8.5-21.5T590-280H370q-13 0-21.5 8.5T340-250q0 13 8.5 21.5T370-220Zm110-120q83 0 141.5-58.5T680-540q0-83-58.5-141.5T480-740q-83 0-141.5 58.5T280-540q0 83 58.5 141.5T480-340Zm0-67q-8-11-17-36.5T451-510h58q-3 41-12 66.5T480-407Zm-72-13q-24-15-41-38t-23-52h47q2 25 6 47.5t11 42.5Zm144 0q7-20 11-42.5t6-47.5h47q-6 29-23 52t-41 38ZM344-570q6-29 23-52t41-38q-7 20-11 42.5t-6 47.5h-47Zm107 0q3-41 12-66.5t17-36.5q8 11 17 36.5t12 66.5h-58Zm118 0q-2-25-6-47.5T552-660q24 15 41 38t23 52h-47ZM193.33-80q-14.16 0-23.75-9.58-9.58-9.59-9.58-23.75v-733.34q0-14.16 9.58-23.75 9.59-9.58 23.75-9.58h540q27.5 0 47.09 19.58Q800-840.83 800-813.33v666.66q0 27.5-19.58 47.09Q760.83-80 733.33-80h-540Zm33.34-66.67h506.66v-666.66H226.67v666.66Zm0 0v-666.66 666.66Z"
+            />
+          </svg>
+          Pays
+        </h2>
+        <section class="quizList" id="countryQuizList"></section>
+        <br /><br /><br />
+      <div id="betaElement">
+        <h2 class="title-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="40px"
+            viewBox="0 -960 960 960"
+            width="40px"
+            fill="#e3e3e3"
+          >
+            <path
+              d="M732.67-311.67v-349.66q-73.34 5-143.67-11.5-70.33-16.5-128.67-51.5-41-24.67-83.13-36.67-42.13-12-85.87-12-16 0-32.16 1.83Q243-769.33 226-766v348.67q16.33-2 33.17-3.17 16.83-1.17 35.5-1.17 60 0 119.16 16 59.17 16 109.84 46 49.33 29 101.47 41 52.13 12 107.53 7Zm-252.81-119q46.14 0 78.14-31.86 32-31.85 32-78 0-46.14-31.86-78.14t-78-32q-46.14 0-78.14 31.86t-32 78q0 46.14 31.86 78.14t78 32Zm16.81 132.34q-47-28.34-98.26-42.67-51.26-14.33-104.08-14.33-16 0-32 1.5T226.67-349v195.67q0 14.16-9.62 23.75-9.62 9.58-23.83 9.58-14.22 0-23.72-9.58-9.5-9.59-9.5-23.75v-637.34q0-12.62 7.82-22.71 7.83-10.1 20.18-12.62 32-7 56.5-10.5t48.83-3.5q51 0 101 14.5t95.34 41.5q47 28 99.16 42.5Q641-727 694.67-727q18.65 0 35.66-1 17-1 34-3 14.1-2 24.89 8.12Q800-712.76 800-698.67v417q0 13.4-8.8 23.03-8.79 9.63-22.2 11.31-18.67 2-37 3.33t-36.67 1.33q-52.33 0-102.66-14-50.34-14-96-41.66ZM479.33-539Z"
+            />
+          </svg>
+          Drapeaux
+        </h2>
+        <section class="quizList" id="flagQuizList"></section>
       </div>
       <p></p>
       <br /><br /><br /><br />
-      <h3 style="font-size: smaller">
-        Crer par <a href="https://github.com/Jimmxyz">@Jimmxyz</a>
-      </h3>
-      <h3 id="verText" style="font-size: smaller">
-        Metrop Version X.X.X.x (API : X.X)
-      </h3>
-      <h3 style="font-size: smaller">
-        Some of the resources are sourced from <a href="https://wikipedia.org/">Wikipedia</a>/<a href="https://commons.wikimedia.org/">Wikimedia</a> or <a href="https://osm-boundaries.com/">OSMB</a> and <a href="https://www.openstreetmap.org/">OSM</a>.
-        <br>
-        <a href="#" onclick="localStorage.setItem('DEBUG_STATUT','true');window.location.href = window.location.href;">Passer en version beta</a>
-      </h3>
-      <br>
-      <br>
+      <footer><div class="colum">
+          <h1>Mentions légales :</h1>
+          <h3 style="font-size: smaller">Éditeur du site :</h3>
+          <p style="font-size: x-small">Jimmy</p>
+          <p style="font-size: x-small">Contact : @jimmxyz on github</p>
+          <h3 style="font-size: smaller">Hébergement :</h3>
+          <p style="font-size: x-small">GitHub, Inc.</p>
+          <p style="font-size: x-small">
+            88 Colin P. Kelly Jr. Street San Francisco, CA 94107 États-Unis
+          </p>
+          <h3 style="font-size: smaller">Ce site ne collecte aucune données</h3>
+        </div>
+        <div class="colum">
+          <h1>Credit</h1>
+          <h3 style="font-size: smaller">
+            Crer par <a href="https://github.com/Jimmxyz">@Jimmxyz</a>
+          </h3>
+          <h3 style="font-size: smaller">
+            Some of the resources are sourced from
+            <a href="https://wikipedia.org/">Wikipedia</a>/<a
+              href="https://commons.wikimedia.org/"
+              >Wikimedia</a
+            >
+            or <a href="https://osm-boundaries.com/">OSMB</a> and
+            <a href="https://www.openstreetmap.org/">OSM</a>.
+            <br>
+            <h1>Info</h1>
+          <h3 id="verText" style="font-size: smaller">
+            Metrop Version X.X.X.x (API : X.X)
+          </h3>
+          <h3 style="font-size: smaller"><a
+              href="#"
+              onclick="localStorage.setItem('DEBUG_STATUT','true');window.location.href = window.location.href;"
+              >Passer en version beta</a
+            ></h3>
+          </h3>
+        </div>      
+      </footer>
     </div>
   </body>
 </html>

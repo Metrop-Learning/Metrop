@@ -5,7 +5,7 @@
     text-align: center;
 }
 #menu {
-    margin-top: 15vh;
+    margin-top: 50px;
     text-align: center;
     align-content: center;
 }
@@ -192,4 +192,50 @@ img{
 }
 svg{
   fill: currentColor;
+}
+
+/* header */
+header {
+  margin: 0;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding: 5px;
+  background-color: #393939;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+}
+h1{
+  margin-top: 1px;
+  margin-bottom: 1px;
+  padding-left: 5px;
+  font-size:larger;
+  text-align: left;
+}
+.headerInfo{
+  background-color: #ab4747;
+  position: relative !important;
+  box-shadow: none;
+}
+
+#betaTest{
+  display: none;
+}
+
+footer{
+  padding-bottom: 50px;
+  padding-top: 50px;
+  box-shadow: 0 -6px 12px rgba(0, 0, 0, 0.25);
+  background-color: #0e0e0e;
+  display: flex;
+}
+.colum{
+  width: 100%;
+}
+.colum * {
+  text-align: left;
+}
+.colum h3, h1, p{
+  padding-left: 30px;
+  padding-right: 30px;
 }

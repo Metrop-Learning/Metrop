@@ -1,6 +1,6 @@
 import data from './data/jsonList.json' with { type: "json" };
 
-const ver =  [0,7,2,"b"]
+const ver =  [0,7,3,"a"]
 const verAPI = [0,4]
 
 if(localStorage.getItem("lastVersionUsed")){
@@ -214,10 +214,10 @@ async function cityListSetUp(nameJson,type){
     if(obj.type.includes("placeTerritory")){
         div_c.innerHTML += '<button class="btn" style="background-color: rgb(82, 82, 82);font-size: medium;" onclick="placeTerritoryIt('+"'"+nameJson+"'"+')"><svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#000000"><path d="M638.67-527.33v-1 1-168 168ZM171.33-138.67q-18 8.67-34.66-2.16Q120-151.67 120-172v-558.67q0-13 7.5-23t19.83-15l183.34-63.66q11-4.34 22-4 11 .33 22 4L608-750.67 788.67-822q18-8 34.66 2.5Q840-809 840-788.67v338.34q0 14.33-9.5 23.5-9.5 9.16-23.83 9.16-14.34 0-23.84-9.5t-9.5-23.83v-295.67l-134.66 51.34v148q0 14.33-9.5 23.83-9.5 9.5-23.84 9.5-14.33 0-23.83-9.5-9.5-9.5-9.5-23.83v-148L388-758v499.67q0 15.66-8.5 28.33-8.5 12.67-22.83 18.33l-185.34 73ZM186.67-214l134.66-51.33V-758l-134.66 44.67V-214Zm462.66-7.33q36.67 0 61.5-24 24.84-24 25.17-62.67.33-36.67-24.83-61.67-25.17-25-61.84-25-36.66 0-61.66 25t-25 61.67q0 36.67 25 61.67t61.66 25Zm0 66.66q-63.33 0-108.33-45T496-308q0-64 45-108.67 45-44.66 108.33-44.66 64 0 108.67 44.66Q802.67-372 802.67-308q0 23-6.17 43.83-6.17 20.84-17.83 38.84L858-146q9 9 9 22t-9 22q-9 9-22 9t-22-9l-79.33-78.67q-18.67 13-39.84 19.5-21.16 6.5-45.5 6.5ZM321.33-758v492.67V-758Z"/></svg>Place sur la carte</button><br>';
     }
-    if(obj.type.includes("shadowTerritory")){
+    if(obj.type.includes("shadowTerritory") && localStorage.getItem("DEBUG_STATUT") == "true"){
         div_c.innerHTML += '<button class="btn" style="background-color: rgb(82, 82, 82);font-size: medium;" onclick="placeTerritoryIt('+"'"+nameJson+"'"+')"><svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#e3e3e3"><path d="M146.67-80q-27 0-46.84-19.83Q80-119.67 80-146.67v-498.66q0-27 19.83-46.84Q119.67-712 146.67-712H248v-101.33q0-27 19.83-46.84Q287.67-880 314.67-880h498.66q27 0 46.84 19.83Q880-840.33 880-813.33v498.66q0 27-19.83 46.84Q840.33-248 813.33-248H712v101.33q0 27-19.83 46.84Q672.33-80 645.33-80H146.67Zm168-234.67h498.66v-498.66H314.67v498.66Z"/></svg>Depuis son ombre</button><br>';
     }
-    if(obj.type.includes("guessFromPosiTerritory")){
+    if(obj.type.includes("guessFromPosiTerritory") && localStorage.getItem("DEBUG_STATUT") == "true"){
         div_c.innerHTML += '<button class="btn" style="background-color: rgb(82, 82, 82);font-size: medium;" onclick="placeTerritoryIt('+"'"+nameJson+"'"+')"><svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#e3e3e3"><path d="M479.96-147.33q18.71 0 36.21-2t34.5-6.18l-50-75.16H355.33v-41.55q0-34.29 24.38-58.7 24.39-24.41 58.62-24.41h83V-480h-82.66q-17 0-29.5-12.5t-12.5-29.5v-83.33h-18.55q-26.79 0-45.79-18.17t-19-45.16q0-9.34 2.84-18.67 2.83-9.34 7.83-17.34l64.67-95q-105 29.67-173.17 117.3-68.17 87.62-68.17 202.37h41.34v-42q0-17 12.16-29.17Q213-563.33 230-563.33h83.33q17 0 29.5 12.16 12.5 12.17 12.5 29.17v42q0 17-12.5 29.17-12.5 12.16-29.5 12.16v41.83q0 34.51-24.43 58.67Q264.46-314 230.14-314h-38.47q44 75.33 119.88 121 75.89 45.67 168.41 45.67ZM796-378q8-24.33 12.33-49.79 4.34-25.46 4.34-52.48 0-116.4-70.65-205.35-70.64-88.96-178.69-117.05v114.35q34.34 0 58.79 24.43 24.45 24.43 24.45 58.73V-522q19.76 0 35.76 5.17 16 5.16 30 19.16L796-378ZM480.18-80q-82.83 0-155.67-31.5-72.84-31.5-127.18-85.83Q143-251.67 111.5-324.56T80-480.33q0-82.88 31.5-155.78Q143-709 197.33-763q54.34-54 127.23-85.5T480.33-880q82.88 0 155.78 31.5Q709-817 763-763t85.5 127Q880-563 880-480.18q0 82.83-31.5 155.67Q817-251.67 763-197.46q-54 54.21-127 85.84Q563-80 480.18-80Z"/></svg>Depuis la position</button><br>';
     }
     if('learning' in obj){
