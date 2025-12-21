@@ -56,6 +56,15 @@
   .card{
     background-color: #cccccc;
   }
+  footer{
+    background-color: #dcdcdc;
+  }
+  header{
+    background-color: #dddddd;
+  }
+  #welcomeHeader{
+    background-color: rgba(81, 81, 227, 0.8);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -83,6 +92,15 @@
   }
   .card{
     background-color: #1e1e1e;
+  }
+  footer{
+    background-color: #0e0e0e;
+  }
+  header{
+    background-color: #393939;
+  }
+  #welcomeHeader{
+    background-color: rgba(81, 81, 227, 0.8);
   }
 }
 
@@ -201,7 +219,6 @@ header {
   top: 0;
   width: 100%;
   padding: 5px;
-  background-color: #393939;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
   z-index: 1000;
 }
@@ -217,6 +234,9 @@ h1{
   position: relative !important;
   box-shadow: none;
 }
+#welcomeHeader{
+  display: none;
+}
 
 #betaTest{
   display: none;
@@ -226,7 +246,6 @@ footer{
   padding-bottom: 50px;
   padding-top: 50px;
   box-shadow: 0 -6px 12px rgba(0, 0, 0, 0.25);
-  background-color: #0e0e0e;
   display: flex;
 }
 .colum{

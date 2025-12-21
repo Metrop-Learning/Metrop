@@ -1,6 +1,6 @@
 import data from './data/jsonList.json' with { type: "json" };
 
-const ver =  [0,7,3,"a"]
+const ver =  [0,7,3,"b"]
 const verAPI = [0,4]
 
 if(localStorage.getItem("lastVersionUsed")){
@@ -9,6 +9,7 @@ if(localStorage.getItem("lastVersionUsed")){
     localStorage.setItem("lastVersionUsed",ver[0] + "." + ver[1] + "." + ver[2] + "." + ver[3])
 }
 else{
+    document.getElementById("welcomeHeader").style.display = 'block';
     localStorage.setItem("lastVersionUsed",ver[0] + "." + ver[1] + "." + ver[2] + "." + ver[3])
 }
 
