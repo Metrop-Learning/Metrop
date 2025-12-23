@@ -1,6 +1,6 @@
 import data from './data/jsonList.json' with { type: "json" };
 
-const ver =  [0,7,3,"b"]
+const ver =  [0,7,3,"c"]
 const verAPI = [0,4]
 
 if(localStorage.getItem("lastVersionUsed")){
@@ -27,7 +27,6 @@ else if (localStorage.getItem("DEBUG_STATUT") == "true"){
 
 
 //Set up city
-document.getElementById('cityQuizList').innerHTML = "";
 let cardList = []
 for(let i = 0; i < data.city.length; i++){
     await cityListSetUp(data.city[i],"city");
@@ -62,11 +61,11 @@ cardList.sort((a, b) => {
   const ordre = ["__NO_LEVEL__", "Facile", "Intermédiaire", "Expert"];
   return ordre.indexOf(niveauA) - ordre.indexOf(niveauB);
 });
+document.getElementById('cityQuizList').innerHTML = "";
 for(let i = 0; i < cardList.length; i++){
     document.getElementById('cityQuizList').appendChild(cardList[i][1]);
 }
 //set up country
-document.getElementById('countryQuizList').innerHTML = "";
 cardList = []
 for(let i = 0; i < data.country.length; i++){
     await cityListSetUp(data.country[i],"country");
@@ -96,11 +95,11 @@ cardList.sort((a, b) => {
   const ordre = ["__NO_LEVEL__", "Facile", "Intermédiaire", "Expert"];
   return ordre.indexOf(niveauA) - ordre.indexOf(niveauB);
 });
+document.getElementById('countryQuizList').innerHTML = "";
 for(let i = 0; i < cardList.length; i++){
     document.getElementById('countryQuizList').appendChild(cardList[i][1]);
 }
 //Set up flag
-document.getElementById('flagQuizList').innerHTML = "";
 cardList = []
 for(let i = 0; i < data.flag.length; i++){
     await cityListSetUp(data.flag[i],"flag");
@@ -130,6 +129,7 @@ cardList.sort((a, b) => {
   const ordre = ["__NO_LEVEL__", "Facile", "Intermédiaire", "Expert"];
   return ordre.indexOf(niveauA) - ordre.indexOf(niveauB);
 });
+document.getElementById('flagQuizList').innerHTML = "";
 for(let i = 0; i < cardList.length; i++){
     document.getElementById('flagQuizList').appendChild(cardList[i][1]);
 }

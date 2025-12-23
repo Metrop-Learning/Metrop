@@ -104,7 +104,7 @@
   }
 }
 
-body{
+body, html{
   overflow-x: hidden;
 }
 
@@ -178,6 +178,9 @@ body{
 @media (max-width: 768px) {
   .cardImage {
     display: none;
+  }
+  html{
+    scroll-behavior: auto;
   }
 }
 
