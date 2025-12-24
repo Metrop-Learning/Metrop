@@ -248,6 +248,10 @@ let lastInput = ""
 
 function textVerified() {
   let input = document.getElementById("nameArea").value;
+  if(input.replace(/\s+/g, '').trim() == ''){
+    document.getElementById("nameArea").value = ''
+    return
+  }
   let error_margin = util.checkDiff(input, listCity[posilist].name);
   if(util.checkDiff(input, lastInput) == 0){
     document.getElementById("errorText").style.color = "rgb(241, 186, 109)";

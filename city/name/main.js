@@ -120,6 +120,10 @@ let lastInput = ""
 
 function textVerified(){
     let input = document.getElementById('nameArea').value;
+    if(input.replace(/\s+/g, '').trim() == ''){
+      document.getElementById("nameArea").value = ''
+      return
+    }
     if(util.checkDiff(input, lastInput) == 0){
         document.getElementById("errorText").style.color = "rgb(241, 186, 109)";
         document.getElementById("errorText").innerHTML = "Cette entrée est trop proche de la dernière et n’est donc pas comptabilisée."

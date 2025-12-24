@@ -1,12 +1,22 @@
 import data from './data/jsonList.json' with { type: "json" };
 
-const ver =  [0,7,3,"c"]
+const ver =  [0,7,4,"a"]
 const verAPI = [0,4]
 
 if(localStorage.getItem("lastVersionUsed")){
     let verS = localStorage.getItem("lastVersionUsed").split(".")
     verS = [parseInt(verS[0]), parseInt(verS[1]), parseInt(verS[2]), verS[3]]
+    if(ver[0] > verS[0]){
+        //document.getElementById('updateHeader').style.display = 'block'
+    }else if(ver[1] > verS[1]){
+        //document.getElementById('updateHeader').style.display = 'block'
+    }else if(ver[2] > verS[2]){
+        //document.getElementById('updateHeader').style.display = 'block'
+    }else if(ver[3] > verS[3]){
+        //document.getElementById('updateHeader').style.display = 'block'
+    }
     localStorage.setItem("lastVersionUsed",ver[0] + "." + ver[1] + "." + ver[2] + "." + ver[3])
+    
 }
 else{
     document.getElementById("welcomeHeader").style.display = 'block';
@@ -30,10 +40,6 @@ else if (localStorage.getItem("DEBUG_STATUT") == "true"){
 let cardList = []
 for(let i = 0; i < data.city.length; i++){
     await cityListSetUp(data.city[i],"city");
-}
-if(cardList.length == 0){
-    document.getElementById('cityQuizList').innerHTML = '<div style="display: flex; flex-direction: column; align-items: center;"><svg xmlns="http://www.w3.org/2000/svg" height="75px" viewBox="0 -960 960 960" width="75px" fill="#000000"><path d="M479.98-280q14.02 0 23.52-9.48t9.5-23.5q0-14.02-9.48-23.52t-23.5-9.5q-14.02 0-23.52 9.48t-9.5 23.5q0 14.02 9.48 23.52t23.5 9.5Zm3.2-153q12.82 0 21.32-8.63 8.5-8.62 8.5-21.37v-193q0-12.75-8.68-21.38-8.67-8.62-21.5-8.62-12.82 0-21.32 8.62-8.5 8.63-8.5 21.38v193q0 12.75 8.68 21.37 8.67 8.63 21.5 8.63Zm-2.91 353q-82.74 0-155.5-31.5Q252-143 197.5-197.5t-86-127.34Q80-397.68 80-480.5t31.5-155.66Q143-709 197.5-763t127.34-85.5Q397.68-880 480.5-880t155.66 31.5Q709-817 763-763t85.5 127Q880-563 880-480.27q0 82.74-31.5 155.5Q817-252 763-197.68q-54 54.31-127 86Q563-80 480.27-80Zm.23-60Q622-140 721-239.5t99-241Q820-622 721.19-721T480-820q-141 0-240.5 98.81T140-480q0 141 99.5 240.5t241 99.5Zm-.5-340Z"/></svg><h2>Une erreur est survenue : aucune donnée trouvée.</h2></div>';
-    document.getElementById('cityQuizList').className = 'none'
 }
 const regex = /[\[\uFF3B]\s*(.*?)\s*[\]\uFF3D]/;
 
@@ -62,6 +68,10 @@ cardList.sort((a, b) => {
   return ordre.indexOf(niveauA) - ordre.indexOf(niveauB);
 });
 document.getElementById('cityQuizList').innerHTML = "";
+if(cardList.length == 0){
+    document.getElementById('cityQuizList').innerHTML = '<div style="display: flex; flex-direction: column; align-items: center;"><svg xmlns="http://www.w3.org/2000/svg" height="75px" viewBox="0 -960 960 960" width="75px" fill="#000000"><path d="M479.98-280q14.02 0 23.52-9.48t9.5-23.5q0-14.02-9.48-23.52t-23.5-9.5q-14.02 0-23.52 9.48t-9.5 23.5q0 14.02 9.48 23.52t23.5 9.5Zm3.2-153q12.82 0 21.32-8.63 8.5-8.62 8.5-21.37v-193q0-12.75-8.68-21.38-8.67-8.62-21.5-8.62-12.82 0-21.32 8.62-8.5 8.63-8.5 21.38v193q0 12.75 8.68 21.37 8.67 8.63 21.5 8.63Zm-2.91 353q-82.74 0-155.5-31.5Q252-143 197.5-197.5t-86-127.34Q80-397.68 80-480.5t31.5-155.66Q143-709 197.5-763t127.34-85.5Q397.68-880 480.5-880t155.66 31.5Q709-817 763-763t85.5 127Q880-563 880-480.27q0 82.74-31.5 155.5Q817-252 763-197.68q-54 54.31-127 86Q563-80 480.27-80Zm.23-60Q622-140 721-239.5t99-241Q820-622 721.19-721T480-820q-141 0-240.5 98.81T140-480q0 141 99.5 240.5t241 99.5Zm-.5-340Z"/></svg><h2>Une erreur est survenue : aucune donnée trouvée.</h2></div>';
+    document.getElementById('cityQuizList').className = 'none'
+}
 for(let i = 0; i < cardList.length; i++){
     document.getElementById('cityQuizList').appendChild(cardList[i][1]);
 }
@@ -69,10 +79,6 @@ for(let i = 0; i < cardList.length; i++){
 cardList = []
 for(let i = 0; i < data.country.length; i++){
     await cityListSetUp(data.country[i],"country");
-}
-if(cardList.length == 0){
-    document.getElementById('countryQuizList').innerHTML = '<div style="display: flex; flex-direction: column; align-items: center;"><svg xmlns="http://www.w3.org/2000/svg" height="75px" viewBox="0 -960 960 960" width="75px" fill="#000000"><path d="M479.98-280q14.02 0 23.52-9.48t9.5-23.5q0-14.02-9.48-23.52t-23.5-9.5q-14.02 0-23.52 9.48t-9.5 23.5q0 14.02 9.48 23.52t23.5 9.5Zm3.2-153q12.82 0 21.32-8.63 8.5-8.62 8.5-21.37v-193q0-12.75-8.68-21.38-8.67-8.62-21.5-8.62-12.82 0-21.32 8.62-8.5 8.63-8.5 21.38v193q0 12.75 8.68 21.37 8.67 8.63 21.5 8.63Zm-2.91 353q-82.74 0-155.5-31.5Q252-143 197.5-197.5t-86-127.34Q80-397.68 80-480.5t31.5-155.66Q143-709 197.5-763t127.34-85.5Q397.68-880 480.5-880t155.66 31.5Q709-817 763-763t85.5 127Q880-563 880-480.27q0 82.74-31.5 155.5Q817-252 763-197.68q-54 54.31-127 86Q563-80 480.27-80Zm.23-60Q622-140 721-239.5t99-241Q820-622 721.19-721T480-820q-141 0-240.5 98.81T140-480q0 141 99.5 240.5t241 99.5Zm-.5-340Z"/></svg><h2>Une erreur est survenue : aucune donnée trouvée.</h2></div>';
-    document.getElementById('countryQuizList').className = 'none'
 }
 cardList.sort((a, b) => {
   const textA = a[0];
@@ -96,6 +102,10 @@ cardList.sort((a, b) => {
   return ordre.indexOf(niveauA) - ordre.indexOf(niveauB);
 });
 document.getElementById('countryQuizList').innerHTML = "";
+if(cardList.length == 0){
+    document.getElementById('countryQuizList').innerHTML = '<div style="display: flex; flex-direction: column; align-items: center;"><svg xmlns="http://www.w3.org/2000/svg" height="75px" viewBox="0 -960 960 960" width="75px" fill="#000000"><path d="M479.98-280q14.02 0 23.52-9.48t9.5-23.5q0-14.02-9.48-23.52t-23.5-9.5q-14.02 0-23.52 9.48t-9.5 23.5q0 14.02 9.48 23.52t23.5 9.5Zm3.2-153q12.82 0 21.32-8.63 8.5-8.62 8.5-21.37v-193q0-12.75-8.68-21.38-8.67-8.62-21.5-8.62-12.82 0-21.32 8.62-8.5 8.63-8.5 21.38v193q0 12.75 8.68 21.37 8.67 8.63 21.5 8.63Zm-2.91 353q-82.74 0-155.5-31.5Q252-143 197.5-197.5t-86-127.34Q80-397.68 80-480.5t31.5-155.66Q143-709 197.5-763t127.34-85.5Q397.68-880 480.5-880t155.66 31.5Q709-817 763-763t85.5 127Q880-563 880-480.27q0 82.74-31.5 155.5Q817-252 763-197.68q-54 54.31-127 86Q563-80 480.27-80Zm.23-60Q622-140 721-239.5t99-241Q820-622 721.19-721T480-820q-141 0-240.5 98.81T140-480q0 141 99.5 240.5t241 99.5Zm-.5-340Z"/></svg><h2>Une erreur est survenue : aucune donnée trouvée.</h2></div>';
+    document.getElementById('countryQuizList').className = 'none'
+}
 for(let i = 0; i < cardList.length; i++){
     document.getElementById('countryQuizList').appendChild(cardList[i][1]);
 }
@@ -103,10 +113,6 @@ for(let i = 0; i < cardList.length; i++){
 cardList = []
 for(let i = 0; i < data.flag.length; i++){
     await cityListSetUp(data.flag[i],"flag");
-}
-if(cardList.length == 0){
-    document.getElementById('flagQuizList').innerHTML = '<div style="display: flex; flex-direction: column; align-items: center;"><svg xmlns="http://www.w3.org/2000/svg" height="75px" viewBox="0 -960 960 960" width="75px" fill="#000000"><path d="M479.98-280q14.02 0 23.52-9.48t9.5-23.5q0-14.02-9.48-23.52t-23.5-9.5q-14.02 0-23.52 9.48t-9.5 23.5q0 14.02 9.48 23.52t23.5 9.5Zm3.2-153q12.82 0 21.32-8.63 8.5-8.62 8.5-21.37v-193q0-12.75-8.68-21.38-8.67-8.62-21.5-8.62-12.82 0-21.32 8.62-8.5 8.63-8.5 21.38v193q0 12.75 8.68 21.37 8.67 8.63 21.5 8.63Zm-2.91 353q-82.74 0-155.5-31.5Q252-143 197.5-197.5t-86-127.34Q80-397.68 80-480.5t31.5-155.66Q143-709 197.5-763t127.34-85.5Q397.68-880 480.5-880t155.66 31.5Q709-817 763-763t85.5 127Q880-563 880-480.27q0 82.74-31.5 155.5Q817-252 763-197.68q-54 54.31-127 86Q563-80 480.27-80Zm.23-60Q622-140 721-239.5t99-241Q820-622 721.19-721T480-820q-141 0-240.5 98.81T140-480q0 141 99.5 240.5t241 99.5Zm-.5-340Z"/></svg><h2>Une erreur est survenue : aucune donnée trouvée.</h2></div>';
-    document.getElementById('flagQuizList').className = 'none'
 }
 cardList.sort((a, b) => {
   const textA = a[0];
@@ -130,6 +136,10 @@ cardList.sort((a, b) => {
   return ordre.indexOf(niveauA) - ordre.indexOf(niveauB);
 });
 document.getElementById('flagQuizList').innerHTML = "";
+if(cardList.length == 0){
+    document.getElementById('flagQuizList').innerHTML = '<div style="display: flex; flex-direction: column; align-items: center;"><svg xmlns="http://www.w3.org/2000/svg" height="75px" viewBox="0 -960 960 960" width="75px" fill="#000000"><path d="M479.98-280q14.02 0 23.52-9.48t9.5-23.5q0-14.02-9.48-23.52t-23.5-9.5q-14.02 0-23.52 9.48t-9.5 23.5q0 14.02 9.48 23.52t23.5 9.5Zm3.2-153q12.82 0 21.32-8.63 8.5-8.62 8.5-21.37v-193q0-12.75-8.68-21.38-8.67-8.62-21.5-8.62-12.82 0-21.32 8.62-8.5 8.63-8.5 21.38v193q0 12.75 8.68 21.37 8.67 8.63 21.5 8.63Zm-2.91 353q-82.74 0-155.5-31.5Q252-143 197.5-197.5t-86-127.34Q80-397.68 80-480.5t31.5-155.66Q143-709 197.5-763t127.34-85.5Q397.68-880 480.5-880t155.66 31.5Q709-817 763-763t85.5 127Q880-563 880-480.27q0 82.74-31.5 155.5Q817-252 763-197.68q-54 54.31-127 86Q563-80 480.27-80Zm.23-60Q622-140 721-239.5t99-241Q820-622 721.19-721T480-820q-141 0-240.5 98.81T140-480q0 141 99.5 240.5t241 99.5Zm-.5-340Z"/></svg><h2>Une erreur est survenue : aucune donnée trouvée.</h2></div>';
+    document.getElementById('flagQuizList').className = 'none'
+}
 for(let i = 0; i < cardList.length; i++){
     document.getElementById('flagQuizList').appendChild(cardList[i][1]);
 }
@@ -218,8 +228,8 @@ async function cityListSetUp(nameJson,type){
     if(obj.type.includes("shadowTerritory") && localStorage.getItem("DEBUG_STATUT") == "true"){
         div_c.innerHTML += '<button class="btn" style="background-color: rgb(82, 82, 82);font-size: medium;" onclick="placeTerritoryIt('+"'"+nameJson+"'"+')"><svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#e3e3e3"><path d="M146.67-80q-27 0-46.84-19.83Q80-119.67 80-146.67v-498.66q0-27 19.83-46.84Q119.67-712 146.67-712H248v-101.33q0-27 19.83-46.84Q287.67-880 314.67-880h498.66q27 0 46.84 19.83Q880-840.33 880-813.33v498.66q0 27-19.83 46.84Q840.33-248 813.33-248H712v101.33q0 27-19.83 46.84Q672.33-80 645.33-80H146.67Zm168-234.67h498.66v-498.66H314.67v498.66Z"/></svg>Depuis son ombre</button><br>';
     }
-    if(obj.type.includes("guessFromPosiTerritory") && localStorage.getItem("DEBUG_STATUT") == "true"){
-        div_c.innerHTML += '<button class="btn" style="background-color: rgb(82, 82, 82);font-size: medium;" onclick="placeTerritoryIt('+"'"+nameJson+"'"+')"><svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#e3e3e3"><path d="M479.96-147.33q18.71 0 36.21-2t34.5-6.18l-50-75.16H355.33v-41.55q0-34.29 24.38-58.7 24.39-24.41 58.62-24.41h83V-480h-82.66q-17 0-29.5-12.5t-12.5-29.5v-83.33h-18.55q-26.79 0-45.79-18.17t-19-45.16q0-9.34 2.84-18.67 2.83-9.34 7.83-17.34l64.67-95q-105 29.67-173.17 117.3-68.17 87.62-68.17 202.37h41.34v-42q0-17 12.16-29.17Q213-563.33 230-563.33h83.33q17 0 29.5 12.16 12.5 12.17 12.5 29.17v42q0 17-12.5 29.17-12.5 12.16-29.5 12.16v41.83q0 34.51-24.43 58.67Q264.46-314 230.14-314h-38.47q44 75.33 119.88 121 75.89 45.67 168.41 45.67ZM796-378q8-24.33 12.33-49.79 4.34-25.46 4.34-52.48 0-116.4-70.65-205.35-70.64-88.96-178.69-117.05v114.35q34.34 0 58.79 24.43 24.45 24.43 24.45 58.73V-522q19.76 0 35.76 5.17 16 5.16 30 19.16L796-378ZM480.18-80q-82.83 0-155.67-31.5-72.84-31.5-127.18-85.83Q143-251.67 111.5-324.56T80-480.33q0-82.88 31.5-155.78Q143-709 197.33-763q54.34-54 127.23-85.5T480.33-880q82.88 0 155.78 31.5Q709-817 763-763t85.5 127Q880-563 880-480.18q0 82.83-31.5 155.67Q817-251.67 763-197.46q-54 54.21-127 85.84Q563-80 480.18-80Z"/></svg>Depuis la position</button><br>';
+    if(obj.type.includes("guessFromPosiTerritory")){
+        div_c.innerHTML += '<button class="btn" style="background-color: rgb(82, 82, 82);font-size: medium;" onclick="fromPosiTerritory('+"'"+nameJson+"'"+')"><svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#e3e3e3"><path d="M479.96-147.33q18.71 0 36.21-2t34.5-6.18l-50-75.16H355.33v-41.55q0-34.29 24.38-58.7 24.39-24.41 58.62-24.41h83V-480h-82.66q-17 0-29.5-12.5t-12.5-29.5v-83.33h-18.55q-26.79 0-45.79-18.17t-19-45.16q0-9.34 2.84-18.67 2.83-9.34 7.83-17.34l64.67-95q-105 29.67-173.17 117.3-68.17 87.62-68.17 202.37h41.34v-42q0-17 12.16-29.17Q213-563.33 230-563.33h83.33q17 0 29.5 12.16 12.5 12.17 12.5 29.17v42q0 17-12.5 29.17-12.5 12.16-29.5 12.16v41.83q0 34.51-24.43 58.67Q264.46-314 230.14-314h-38.47q44 75.33 119.88 121 75.89 45.67 168.41 45.67ZM796-378q8-24.33 12.33-49.79 4.34-25.46 4.34-52.48 0-116.4-70.65-205.35-70.64-88.96-178.69-117.05v114.35q34.34 0 58.79 24.43 24.45 24.43 24.45 58.73V-522q19.76 0 35.76 5.17 16 5.16 30 19.16L796-378ZM480.18-80q-82.83 0-155.67-31.5-72.84-31.5-127.18-85.83Q143-251.67 111.5-324.56T80-480.33q0-82.88 31.5-155.78Q143-709 197.33-763q54.34-54 127.23-85.5T480.33-880q82.88 0 155.78 31.5Q709-817 763-763t85.5 127Q880-563 880-480.18q0 82.83-31.5 155.67Q817-251.67 763-197.46q-54 54.21-127 85.84Q563-80 480.18-80Z"/></svg>Depuis la position</button><br>';
     }
     if('learning' in obj){
         div_c.innerHTML += '<button class="btn" style="font-size: medium;" onclick="learning('+"'"+nameJson+"'"+')"><svg style="fill: currentColor;" xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#000000"><path d="M448-259.33v-416q-43.67-28-94.08-43t-101.92-15q-37.33 0-73.5 8.66Q142.33-716 106.67-702v421.33Q139-294 176.83-300.33q37.84-6.34 75.17-6.34 51.38 0 100.02 11.84Q400.67-283 448-259.33Zm-408 14v-469.34q0-13.66 6.5-25.33Q53-751.67 66-758q43.33-21.33 90.26-31.67Q203.19-800 252-800q74.67 0 129 18.67 54.33 18.66 114.33 55.66 9 5.34 14.17 13.67t5.17 20v432.67q48-23.67 94.83-35.5 46.83-11.84 98.5-11.84 37.33 0 75.83 6t69.5 16.67v-457.67q0-14.16 9.62-23.75 9.62-9.58 23.83-9.58 14.22 0 23.72 9.58 9.5 9.59 9.5 23.75v496.34q0 26.26-21.5 39.96t-43.17.7q-35-16-71.98-25.33-36.99-9.33-75.35-9.33-52.68 0-102.67 15.83-50 15.83-94.66 43.83-6.67 4.34-14.17 6.17t-15.17 1.83q-7.66 0-15.16-1.83T452-179.67q-45.53-28.2-95.93-43.93-50.4-15.73-104.07-15.73-38.36 0-75.35 9.66-36.98 9.67-72.65 25-22.4 11-43.2-2.33Q40-220.33 40-245.33ZM614.67-426v-383q0-10.95 6.2-19.79T637-841l83.33-28q12-4.33 22.5 3.49t10.5 20.18V-461q0 10.95-6.39 19.79-6.38 8.84-16.61 12.21L647-402.33q-12 4.33-22.17-3.49-10.16-7.83-10.16-20.18Zm-337.34-70.33Z"/></svg>Apprentisage</button>';

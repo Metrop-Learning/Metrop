@@ -1,5 +1,7 @@
 //Name of country with the ISO 3166-2
 //Country with 3 letter and not 2 in region
+
+//WIP not ready
 import * as util from "../../city/asset/common.js"
 const params = new URLSearchParams(window.location.search);
 const jsonName = params.get("json");
@@ -128,12 +130,12 @@ if (
   ).addTo(map);
 }
 
-let selectedLayer = null;
-let failLayer = null
+let selectedLayer = 0;
+let failLayer = false
+let goodLayer = false
 let selected = -1
 let actual = 0
 let geojsonLayer = [];
-document.getElementById('countryName').innerText = listCountry[actual].name
 
 async function addABoundarie(link, ite) {
   let tlink;
@@ -170,12 +172,6 @@ async function addABoundarie(link, ite) {
     weight: 3,
     fillOpacity: 0.5
   };
-  const selectedStyle = {
-    color: mainColor,
-    weight: 3,
-    fillColor: mainLightColor,
-    fillOpacity: 0.6
-  };
 
   const layer = L.geoJSON(geojson, {
     style: defaultStyle,
@@ -195,16 +191,6 @@ async function addABoundarie(link, ite) {
       });
       layer.on("mouseout", function () {
         if (selectedLayer !== layer) layer.setStyle(layer.lastHoverStyle);
-      });
-      // SELECT
-      layer.on("click", function () {
-        if (play == -1) return;
-        selected = ite;
-        document.getElementById("btnP").disabled = false;
-        if (selectedLayer) selectedLayer.setStyle(defaultStyle);
-        layer.setStyle(selectedStyle);
-        selectedLayer = layer;
-        layer.bringToFront();
       });
     }
   }).addTo(map);
@@ -246,6 +232,11 @@ document.getElementById("menu").style.visibility = "visible";
 document.getElementById("map").style.visibility = "visible";
 refreshStyles()
 
+for(let i = 0; i < listCountry.length; i++){
+  let option = new Option(data.listCountry[i].name, data.listCountry[i].id)
+  document.getElementById('nameArea').appendChild(option)
+}
+
 let play = 0;
 document.getElementById("btnP").addEventListener("click", () => {
   if(play >= 0){
@@ -256,37 +247,45 @@ document.getElementById("btnP").addEventListener("click", () => {
   }
 });
 
+document.getElementById('btnP').disabled = false;
 
+
+let lastInput = ""
 function test(){
-  if(selected == actual){
+  if(lastInput == document.getElementById('nameArea').value){
+    document.getElementById("errorText").style.color = "rgb(241, 186, 109)";
+    document.getElementById("errorText").innerHTML = "Cette entrée est trop proche de la dernière et n’est donc pas comptabilisée."
+  }
+  if(document.getElementById('nameArea').value == listCountry[selectedLayer].id){
+    document.getElementById('errorText').style.color = "rgba(109, 241, 118, 1)"
+    document.getElementById("errorText").innerHTML = "Bonne Réponsse !"
+    lastInput = document.getElementById('nameArea').value
     normalQuit = false
     play = -1
     document.getElementById('btnP').innerText = "Continuer"
-    let old = [mainColor, mainLightColor];
-    mainColor = green;
-    mainLightColor = lightGreen;
+    goodLayer = true
     refreshStyles();
-    [mainColor, mainLightColor] = old
+    goodLayer = false
   }
   else if (play + 1 <= (tryMax - 1)){
-    document.getElementById("tryLeft").style.visibility = "visible"
-    document.getElementById("tryLeft").innerText = tryMax - (play+1) + " Essai(s) restant(s)"
+    document.getElementById("errorText").style.color = "rgb(241, 186, 109)";
+    document.getElementById("errorText").innerHTML = tryMax - (play+1) + " Essai(s) restant(s)"
+    lastInput = document.getElementById('nameArea').value
     play++
   }else{
-    document.getElementById("tryLeft").style.visibility = "hidden"
+    document.getElementById('errorText').style.color = "rgb(241, 109, 109)"
+    document.getElementById("errorText").innerHTML = "Vous n'avez pas trouver : " + listCountry[selectedLayer].name
     play = -1;
     document.getElementById('btnP').innerText = "Continuer"
-    failLayer = actual
-    let old = [mainColor, mainLightColor];
-    mainColor = failColor;
-    mainLightColor = failLightColor;
+    failLayer = true
     refreshStyles();
-    [mainColor, mainLightColor] = old
+    failLayer = false
   }
 }
 function reset(){
-  document.getElementById("btnP").disabled = true;
+  document.getElementById("errorText").innerHTML = ""
   actual++
+  selectedLayer++;
   if(listCountry.length == actual){
     const params = new URLSearchParams({
       json: jsonName
@@ -294,12 +293,9 @@ function reset(){
   normalQuit = true
   window.location.replace(returned + "/index.html?" + params);
   }
-  document.getElementById('countryName').innerText = listCountry[actual].name
-  selectedLayer = null;
   if (!isNaN(actual+1) && actual+1 >= 0 && actual+1 <= document.getElementById('prgs').max) {
     document.getElementById('prgs').value = actual + 1;
   }
-  failLayer = null
   refreshStyles()
   document.getElementById('btnP').innerText = "Proposer cet position"
   play = 0
@@ -324,10 +320,6 @@ function refreshStyles() {
        fillColor: lightGrey,
        fillOpacity: 0.3
      };
-     const hoverStyle = {
-       weight: 3,
-       fillOpacity: 0.5
-     };
      const selectedStyle = {
        color: mainColor,
        weight: 3,
@@ -340,13 +332,22 @@ function refreshStyles() {
        fillColor: lightGreen,
        fillOpacity: 0.6
      }
+     const failStyle = {
+       color: failColor,
+       weight: 3,
+       fillColor: failLightColor,
+       fillOpacity: 0.6
+     }
 geojsonLayer.forEach(g => {
   g.eachLayer(layer => {
-    if (layer === selectedLayer) {
-      layer.setStyle(selectedStyle);
-      layer.bringToFront();
-    } else if (layer.feature.id === failLayer) {
-      layer.setStyle(nofailStyle);
+    if (layer.feature.id === selectedLayer) {
+      if(failLayer == true){
+        layer.setStyle(failStyle);
+      }else if(goodLayer == true){
+        layer.setStyle(nofailStyle);
+      }else{
+        layer.setStyle(selectedStyle);
+      }
       layer.bringToFront();
     } else {
       layer.setStyle(defaultStyle);
@@ -367,5 +368,3 @@ if (bounds.isValid()) {
   });
 }
 }
-
-

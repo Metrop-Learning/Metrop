@@ -65,6 +65,9 @@
   #welcomeHeader{
     background-color: rgba(81, 81, 227, 0.8);
   }
+  #updateHeader{
+    background-color: rgba(82, 201, 88, 0.8);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -101,6 +104,9 @@
   }
   #welcomeHeader{
     background-color: rgba(81, 81, 227, 0.8);
+  }
+  #updateHeader{
+    background-color: rgba(82, 201, 88, 0.8);
   }
 }
 
@@ -238,6 +244,9 @@ h1{
   box-shadow: none;
 }
 #welcomeHeader{
+  display: none;
+}
+#updateHeader{
   display: none;
 }
 
