@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="map.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap" rel="stylesheet">
+    <title>Metrop Géo Placement</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="./main.js" defer type="module"></script>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div id="menu">
+      <select id="nameArea" name="country" maxlength="20"></select>
+      <h6></h6>
+      <progress id="prgs" max="100" value="70"></progress>
+      <br>
+      <p id="errorText" style="color: rgb(241, 109, 109);"></p>
+      <button class="btn" id="btnP" disabled>Proposer cet position</button><p></p>
+      <button class="btn" id="back" style="background-color: rgb(82, 82, 82);">Retour</button>
+    </div>
+    <div id="loading">
+        <h3>Chargement...</h3>
+        <p id="loadedR" style="font-size: x-small; opacity: 0.4; margin: 2.5px;">Fetching resource: None<None> </p>
+        <progress id="loadingBar" max="100" value="0"></progress>
+        <p style="font-size: smaller; opacity: 0.75;">Nous vous remercions de votre patience <br>et vous remercions d’utiliser Metrop.</p>
+    </div>
+  </body>
+</html>

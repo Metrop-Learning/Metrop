@@ -51,7 +51,12 @@ if (!isNaN(0) && 0 >= 0 && 0 <= document.getElementById('prgs').max) {
 
 import dataBorder from '../boundary.json' with { type: "json" };
 
-const map = L.map("map",  { minZoom: 3, maxZoom: 10 }).setView([46.5, 2.5], 6);
+const map = L.map("map",  { dragging: false,
+  touchZoom: false,
+  scrollWheelZoom: false,
+  doubleClickZoom: false,
+  boxZoom: false,
+  keyboard: false   }).setView([46.5, 2.5], 6);
 
 let tryMax;
 let EliminateSelected;
@@ -96,35 +101,33 @@ if (
   failColor = "rgba(168, 79, 74, 1)"
   failLightColor = "rgba(205, 98, 96, 1)"
     document.getElementById('menu').style.color = '#ffffff'
-    document.getElementById('map').style.backgroundColor = '#000000ff'
+    document.getElementById('map').style.backgroundColor = '#101010ff'
     document.body.style.backgroundColor = '#1a1a1aff'
 
   L.tileLayer(
-    "https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png",
+    "",
     {
-      attribution: "© OpenStreetMap, © CartoDB, Made by @Jimmxyz on github",
-      maxZoom: 18,
+      attribution: "Made by @Jimmxyz on github",
       noWrap: true,
     }
   ).addTo(map);
 } else {
   grey = "#8F8F8F"   
   lightGrey = "#A8A8A8"
-  green = "#56c563ff"
-  lightGreen = "#82e18dff"
+  green = "#45a350ff"
+  lightGreen = "#59b464ff"
   mainColor = "rgb(81, 81, 227)"
   mainLightColor = "rgba(120, 120, 218, 1)"
   failColor = "rgba(186, 67, 61, 1)"
   failLightColor = "rgba(228, 109, 107, 1)"
   document.getElementById('menu').style.color = '#000000ff'
-  document.getElementById('map').style.backgroundColor = '#ffffffff'
+  document.getElementById('map').style.backgroundColor = '#e5e5e5ff'
   document.body.style.backgroundColor = '#ffffffff'
 
   L.tileLayer(
-    "https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png",
+    "",
     {
-      attribution: "© OpenStreetMap, © CartoDB, Made by @Jimmxyz on github",
-      maxZoom: 18,
+      attribution: "Made by @Jimmxyz on github",
       noWrap: true,
     }
   ).addTo(map);
@@ -177,21 +180,6 @@ async function addABoundarie(link, ite) {
     style: defaultStyle,
     onEachFeature: (feature, layer) => {
       feature.id = ite;
-      // HOVER
-      layer.on("mouseover", function () {
-        if (selectedLayer !== layer) {
-          layer.lastHoverStyle = {
-            color: layer.options.color,
-            fillColor: layer.options.fillColor,
-            weight: layer.options.weight,
-            fillOpacity: layer.options.fillOpacity
-          };
-          layer.setStyle(hoverStyle);
-        }
-      });
-      layer.on("mouseout", function () {
-        if (selectedLayer !== layer) layer.setStyle(layer.lastHoverStyle);
-      });
     }
   }).addTo(map);
   geojsonLayer.push(layer);
@@ -318,12 +306,10 @@ document.getElementById("back").addEventListener("click", () => {
 
 
 function refreshStyles() {
-  const defaultStyle = {
-       color: grey,
-       weight: 2,
-       fillColor: lightGrey,
-       fillOpacity: 0.3
-     };
+    const defaultStyle = {
+        opacity: 0,       // bordure invisible
+        fillOpacity: 0    // remplissage invisible
+    };
      const selectedStyle = {
        color: mainColor,
        weight: 3,
@@ -347,10 +333,22 @@ geojsonLayer.forEach(g => {
     if (layer.feature.id === selectedLayer) {
       if(failLayer == true){
         layer.setStyle(failStyle);
+        map.fitBounds(layer.getBounds(), {
+            padding: [20, 20],
+            animate: false
+        });
       }else if(goodLayer == true){
         layer.setStyle(nofailStyle);
+        map.fitBounds(layer.getBounds(), {
+            padding: [20, 20],
+            animate: false
+        });
       }else{
         layer.setStyle(selectedStyle);
+        map.fitBounds(layer.getBounds(), {
+            padding: [20, 20],
+            animate: false
+        });
       }
       layer.bringToFront();
     } else {
@@ -358,17 +356,4 @@ geojsonLayer.forEach(g => {
     }
   });
 });
-const bounds = L.latLngBounds([]);
-
-map.eachLayer(layer => {
-  if (layer instanceof L.Polygon) {
-    bounds.extend(layer.getBounds());
-  }
-});
-
-if (bounds.isValid()) {
-  map.fitBounds(bounds, {
-    padding: [20, 20]
-  });
-}
 }

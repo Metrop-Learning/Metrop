@@ -119,18 +119,19 @@ body, html{
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 .quizList{
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
-    overflow-x: auto;          
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  overflow-x: auto;          
   white-space: nowrap;
-    padding-left: 20px;
-        scroll-behavior: smooth;
-          user-select: none;
-          cursor: grab;
+  padding-left: 20px;
+  scroll-behavior: smooth;
+  user-select: none;
+  cursor: grab;
+  align-items: stretch;
 }
 .quizList:active{
   cursor: grabbing;
@@ -153,7 +154,7 @@ body, html{
 }
 
 .card {
-  height: 450px;
+  height: 500px;
   min-width: 240px;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -163,7 +164,7 @@ body, html{
   display: flex;
   flex-direction: row; 
   align-items: center; 
-  padding: 1%;
+  padding: 1.5%;
   border-radius: 10px;
   gap: 20px; 
   flex-shrink: 0;
@@ -171,6 +172,7 @@ body, html{
 
 /* IMAGE A GAUCHE */
 .cardImage {
+  max-height: 100%;
   flex: 1;
   aspect-ratio: 1/1;
   height: 100%;
@@ -199,12 +201,26 @@ body, html{
   white-space: normal;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* centre verticalement le contenu dans la card */
+  justify-content: space-between;
   align-items: center;  
   gap: 10px;
   width: 240px;  
-  height: 100%;           /* important */
-  height: auto;            /* surtout pas height:100% */
+  height: 100%;
+}
+.cardContent .btn{
+  width: 100%;
+  justify-content: center;
+}
+.cardContent .top,
+.cardContent .bottom {
+  height: auto;
+}
+
+.cardContent .middle {
+  flex-grow: 1;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
 }
 body{
     overflow-x: hidden;
@@ -269,4 +285,17 @@ footer{
 .colum h3, h1, p{
   padding-left: 30px;
   padding-right: 30px;
+}
+
+#dropzone {
+  margin: 20px;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  min-height: 150px;
+  border: 2px dashed #999;
+  padding: 30px;
+  text-align: center;
+  border-radius: 10px;
 }
