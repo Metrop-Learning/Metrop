@@ -5,10 +5,10 @@ Metrop is a free and open source 🇫🇷 french web app to learn
 
 # Documentation
 Documentation in english :
-[Get Started](./documentation/data.md)
+[Get Started](./documentation/en/getStarted.md)
 
 Documentation en français :
-[Commencer](./documentation/data.md)
+[Bien démarrer](./documentation/fr/demarrer.md)
 
 >[!IMPORTANT]
 >🇨🇦 : The various borders are being added little by little. Many are still missing.
@@ -18,7 +18,7 @@ Documentation en français :
 >[!CAUTION]
 > 🇨🇦 : Metrop was not designed for political purposes : some border in the world are disputed and we try to base our quizzes on the ON world map.
 >
-> 🇫🇷 : Metrop n'a pas été conçu à des fins politiques : certaines frontières dans le monde sont contestées et nous essayons de baser nos quiz sur la carte du monde de l'ONU.
+> 🇫🇷 : Metrop n'a pas été conçu à des fins politiques : certaines frosntières dans le monde sont contestées et nous essayons de baser nos quiz sur la carte du monde de l'ONU.
 
 # Credit
 Created by / Créé par : @Jimmxyz
