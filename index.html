@@ -125,7 +125,22 @@
         >
       </h3>
     </header>
-    <header><h1>Metrop</h1></header>
+    <header id="mainHeader"><h1 id="titleNameMetrop">Metrop</h1><div id="searchField">
+      <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e3e3e3"><path d="M384.03-336Q284-336 214-406t-70-170q0-100 70-170t170-70q100 0 170 70t70 170.03q0 40.39-12.5 76.18Q599-464 577-434l214 214q11 11 11 25t-11 25q-11 11-25.5 11T740-170L526-383q-30 22-65.79 34.5-35.79 12.5-76.18 12.5Zm-.03-72q70 0 119-49t49-119q0-70-49-119t-119-49q-70 0-119 49t-49 119q0 70 49 119t119 49Z"/></svg>
+      <input id="searchInput" type="text" placeholder="Rechercher un quiz ou une catégorie">
+    </div></header>
+    <div id="searchResult">
+      <div style="display: flex; align-items: center; margin-left: 20px;">
+              <button class="btn" onclick="document.getElementById('searchResult').style.display = 'none'; document.getElementById('menu').style.display = 'block';"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#e3e3e3"><path d="M226.67-186.67h140V-400q0-14.17 9.58-23.75t23.75-9.58h160q14.17 0 23.75 9.58t9.58 23.75v213.33h140v-380L480-756.67l-253.33 190v380Zm-66.67 0v-380q0-15.83 7.08-30 7.09-14.16 19.59-23.33L440-810q17.45-13.33 39.89-13.33T520-810l253.33 190q12.5 9.17 19.59 23.33 7.08 14.17 7.08 30v380q0 27.5-19.58 47.09Q760.83-120 733.33-120H560q-14.17 0-23.75-9.58-9.58-9.59-9.58-23.75v-213.34h-93.34v213.34q0 14.16-9.58 23.75Q414.17-120 400-120H226.67q-27.5 0-47.09-19.58Q160-159.17 160-186.67ZM480-472Z"/></svg> Accueil</button>
+              <h1>Résultat pour votre recherche : </h1>
+      </div>
+      <br>
+      <hr>
+      <br>
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#e3e3e3"><path d="m270-245 57 57q5 5 11.5 4.5T350-189q5-5 5-11.5t-5-11.5l-58-57 60-60q5-5 5-11.5t-5-11.5q-5-5-11.5-5t-11.5 5l-59 59-59-59q-5-5-11-5t-11 5q-5 5-5 11.5t5 11.5l58 59-58 58q-5 5-5 12t5 12q5 5 12 5t12-5l57-57Zm0 165q-78 0-134-56T80-270q0-78 56-134t134-56q78 0 134 56t56 134q0 78-56 134T270-80Zm303-303q-14 11-31.5 21.5T508-344q-5-14-11-28.5T483-399q54-21 91.5-69.5T612-584q0-81-57-138.5T417-780q-82 0-139.5 57.5T220-584q0 17 3.5 35.5T232-517q-13 2-29 6.5T174-500q-7-18-10.5-40t-3.5-44q0-107 75-181.5T417-840q106 0 180.5 75T672-584q0 43-15 85t-41 73l242 240q9 9 9 22t-9 22q-9 9-22 9t-22-9L573-383Z"/></svg>
+        <h2>Une erreur est survenue : la recherche n'a pas aboutie.</h2></div>
+    </div>
     <div id="menu">
       <h2 class="title-icon">
         <svg

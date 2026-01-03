@@ -190,6 +190,27 @@ body, html{
   html{
     scroll-behavior: auto;
   }
+  #dropzone {
+    flex-direction: column !important;
+  }
+  #mainHeader{
+      justify-content: center;
+      margin-left: 0px;
+      padding-left: 0px;
+}
+  #titleNameMetrop{
+    display: none;
+  }
+  #searchField{
+  margin-left: 0px !important;
+  width: 90vw !important;
+}
+#searchField:hover{
+  scale: 1 !important;
+}
+#searchField:focus-within{
+  width: 90vw !important;
+}
 }
 
 /* CONTENU A DROITE */
@@ -298,4 +319,50 @@ footer{
   padding: 30px;
   text-align: center;
   border-radius: 10px;
+  flex-direction: row;
+}
+
+#searchResult{
+  display: none;
+  margin-top: 20px;
+}
+
+#searchField{
+  gap: 5px;
+  display: flex;
+  width: 300px;
+  height: 25px;
+  border-radius: 3px;
+  background-color: #0e0e0e60;
+  align-items: center;
+  transition:0.2s;
+
+  display: none;
+}
+#searchField:hover{
+  scale: 1.1;
+}
+#searchField:focus-within{
+  width: calc(80% - 192px);
+  margin-left: 5%;
+}
+
+#searchField svg{
+  margin-left: 5px;
+}
+
+#searchInput{
+  background-color: transparent;
+  color: #ffffff;
+  border: none;
+  width: 100%;
+  text-align: left;
+}
+#searchInput:focus{
+  outline: none;
+}
+
+#mainHeader{
+  display: flex; 
+  align-items: center;
 }

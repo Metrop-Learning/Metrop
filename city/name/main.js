@@ -246,8 +246,7 @@ function intDisplay(str){
       break
     }
   }
-
-  let checkDifAfter = lastInt;
+  
   for(let i = 0; i < divised.length; i++){
     console.log(rng)  
     if(util.checkDiff(divised[i],rng) == 0){

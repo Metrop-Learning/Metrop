@@ -1,6 +1,6 @@
 import data from './data/jsonList.json' with { type: "json" };
 
-const ver =  [0,7,5,"a"]
+const ver =  [0,7,5,"b"]
 const verAPI = [0,4]
 
 if(localStorage.getItem("lastVersionUsed")){
@@ -33,6 +33,7 @@ else if (localStorage.getItem("DEBUG_STATUT") == "true"){
     console.info("DEBUG MODE ACTIVATED")
     document.getElementById('betaTest').style.display = "block";
     document.getElementById('betaElement').style.display = "block";
+    document.getElementById('searchField').style.display = 'flex';
 }
 
 
@@ -290,4 +291,17 @@ sliders.forEach(slider => {
     const walk = (x - startX) * 1.5; // speed
     slider.scrollLeft = scrollLeft - walk;
   });
+});
+
+
+//SEARCH LOGIC HERE will be moved to an another file
+document.getElementById('searchInput').addEventListener('keydown', function(event) {
+  if (event.key === "Enter") {
+    document.getElementById('searchInput').blur();
+  }
+});
+
+document.getElementById('searchInput').addEventListener('blur', function() {
+    document.getElementById('menu').style.display = "none"
+    document.getElementById('searchResult').style.display = "block"
 });
