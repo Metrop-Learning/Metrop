@@ -130,13 +130,84 @@ if (
 
 let selectedLayer = null;
 let failLayer = null
+let goodLayer = null
 let selected = -1
 let actual = 0
 let geojsonLayer = [];
+let circleTeri = []
 document.getElementById('countryName').innerText = listCountry[actual].name
 
 async function addABoundarie(link, ite) {
   let tlink;
+  if (link.split(':')[0] === "useInstead" && link.split(':')[1] === "Circle") {
+
+  const latlng = L.latLng(link.split(':')[2], link.split(':')[3]);
+
+  const defaultStyle = {
+    color: grey,
+    weight: 2,
+    fillColor: lightGrey,
+    fillOpacity: 0.3
+  };
+  const hoverStyle = {
+    weight: 3,
+    fillOpacity: 0.5
+  };
+  const selectedStyle = {
+    color: mainColor,
+    weight: 3,
+    fillColor: mainLightColor,
+    fillOpacity: 0.6
+  };
+
+  const circle = L.circle(latlng, {
+    radius: 16000,
+    ...defaultStyle
+  });
+
+  circle.feature = { id: ite };
+
+  const layer = L.layerGroup([circle]).addTo(map);
+
+  layer.feature = { id: ite };
+
+  circle.on("mouseover", function () {
+    if (selectedLayer !== layer) {
+      circle.lastHoverStyle = {
+        color: circle.options.color,
+        fillColor: circle.options.fillColor,
+        weight: circle.options.weight,
+        fillOpacity: circle.options.fillOpacity
+      };
+      circle.setStyle(hoverStyle);
+    }
+  });
+
+  circle.on("mouseout", function () {
+    if (selectedLayer !== layer) {
+      circle.setStyle(circle.lastHoverStyle);
+    }
+  });
+
+  circle.on("click", function () {
+    if (play == -1) return;
+    selected = ite;
+    document.getElementById("btnP").disabled = false;
+
+    if (selectedLayer) {
+      selectedLayer.eachLayer(l => l.setStyle(defaultStyle));
+    }
+
+    layer.eachLayer(l => l.setStyle(selectedStyle));
+    selectedLayer = layer;
+    layer.eachLayer(l => {
+    if (l.bringToFront) l.bringToFront();
+  });
+  });
+  circleTeri.push(ite)
+  geojsonLayer.push(layer);
+  return;
+}
   if (link.split(':')[0] == "useInstead") {
     if (link.split(':')[1] == "OSMB") {
       tlink = "../OSMB/" + link.split(':')[2];
@@ -201,7 +272,7 @@ async function addABoundarie(link, ite) {
         if (play == -1) return;
         selected = ite;
         document.getElementById("btnP").disabled = false;
-        if (selectedLayer) selectedLayer.setStyle(defaultStyle);
+        applyStyle(selectedLayer, defaultStyle)
         layer.setStyle(selectedStyle);
         selectedLayer = layer;
         layer.bringToFront();
@@ -209,6 +280,21 @@ async function addABoundarie(link, ite) {
     }
   }).addTo(map);
   geojsonLayer.push(layer);
+}
+
+function applyStyle(layer, style) {
+  if (!layer) return;
+
+  if (layer.setStyle) {
+    layer.setStyle(style);
+    return;
+  }
+
+  if (layer.eachLayer) {
+    layer.eachLayer(l => {
+      if (l.setStyle) l.setStyle(style);
+    });
+  }
 }
 
 document.getElementById('loadingBar').max = (listCountry.length);
@@ -224,6 +310,7 @@ for(let i = 0; i < listCountry.length; i++){
     deep = deep.get[country];
   }
 }
+
   if(deep.get && region){
   if(region in deep.get && region){
     deep = deep.get[region];
@@ -262,11 +349,8 @@ function test(){
     normalQuit = false
     play = -1
     document.getElementById('btnP').innerText = "Continuer"
-    let old = [mainColor, mainLightColor];
-    mainColor = green;
-    mainLightColor = lightGreen;
+    goodLayer = actual
     refreshStyles();
-    [mainColor, mainLightColor] = old
   }
   else if (play + 1 <= (tryMax - 1)){
     document.getElementById("tryLeft").style.visibility = "visible"
@@ -276,12 +360,11 @@ function test(){
     document.getElementById("tryLeft").style.visibility = "hidden"
     play = -1;
     document.getElementById('btnP').innerText = "Continuer"
-    failLayer = actual
-    let old = [mainColor, mainLightColor];
-    mainColor = failColor;
-    mainLightColor = failLightColor;
+    failLayer = selected
+    console.log(selected)
+    console.log(failLayer)
+    goodLayer = actual
     refreshStyles();
-    [mainColor, mainLightColor] = old
   }
 }
 function reset(){
@@ -300,6 +383,7 @@ function reset(){
     document.getElementById('prgs').value = actual + 1;
   }
   failLayer = null
+  goodLayer = null
   refreshStyles()
   document.getElementById('btnP').innerText = "Proposer cet position"
   play = 0
@@ -324,10 +408,6 @@ function refreshStyles() {
        fillColor: lightGrey,
        fillOpacity: 0.3
      };
-     const hoverStyle = {
-       weight: 3,
-       fillOpacity: 0.5
-     };
      const selectedStyle = {
        color: mainColor,
        weight: 3,
@@ -340,16 +420,33 @@ function refreshStyles() {
        fillColor: lightGreen,
        fillOpacity: 0.6
      }
+     const failStyle = {
+       color: failColor,
+       weight: 3,
+       fillColor: failLightColor,
+       fillOpacity: 0.6
+     }
 geojsonLayer.forEach(g => {
   g.eachLayer(layer => {
-    if (layer === selectedLayer) {
-      layer.setStyle(selectedStyle);
-      layer.bringToFront();
-    } else if (layer.feature.id === failLayer) {
+    console.log(goodLayer)
+
+    if (layer.feature.id === goodLayer) {
+      console.log("Hi Hi")
       layer.setStyle(nofailStyle);
       layer.bringToFront();
-    } else {
+    } else if (layer.feature.id === failLayer) {
+      layer.setStyle(failStyle);
+      layer.bringToFront();
+    }
+    else if (layer === selectedLayer) {
+      layer.setStyle(selectedStyle);
+      layer.bringToFront();
+    }
+    else {
       layer.setStyle(defaultStyle);
+    }
+    if(circleTeri.includes(layer.feature.id)){
+      layer.bringToFront()
     }
   });
 });

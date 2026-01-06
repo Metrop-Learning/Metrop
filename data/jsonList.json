@@ -17,7 +17,8 @@
         "StatesOfUSA.json",
         "StatesOfUSAporto.json",
         "USAterritories.json",
-        "australiaIntern.json"
+        "australiaIntern.json",
+        "EuropeanCountry.json"
     ],
     "flag":{
 

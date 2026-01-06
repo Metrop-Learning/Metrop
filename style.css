@@ -68,6 +68,18 @@
   #updateHeader{
     background-color: rgba(82, 201, 88, 0.8);
   }
+  #searchField{
+    background-color: #bebebe !important;
+  }
+  #searchInput{
+    color: #000000 !important;
+  }
+  .headerInfo{
+    background-color:#bf5d5d;
+  }
+  .svgErrorQuiz{
+    color: #000000;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -107,6 +119,12 @@
   }
   #updateHeader{
     background-color: rgba(82, 201, 88, 0.8);
+  }
+  .headerInfo{
+    background-color: #ab4747;
+  }
+  .svgErrorQuiz{
+    color: #ffffff;
   }
 }
 
@@ -276,7 +294,6 @@ h1{
   text-align: left;
 }
 .headerInfo{
-  background-color: #ab4747;
   position: relative !important;
   box-shadow: none;
 }
