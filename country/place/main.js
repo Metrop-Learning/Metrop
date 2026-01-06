@@ -119,7 +119,7 @@ if (
   document.body.style.backgroundColor = '#ffffffff'
 
   L.tileLayer(
-    "https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png",
+    "https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}.png",
     {
       attribution: "© OpenStreetMap, © CartoDB, Made by @Jimmxyz on github",
       maxZoom: 18,
@@ -297,36 +297,43 @@ function applyStyle(layer, style) {
   }
 }
 
-document.getElementById('loadingBar').max = (listCountry.length);
-for(let i = 0; i < listCountry.length; i++){
-  let id = listCountry[i].id
-  let deep;
-  const [continent, country, region, subregion] = id.split("-");
-  if(continent in dataBorder && continent){
-    deep = dataBorder[continent];
-  }
-  if(deep.get && country){
-  if(country in deep.get && country){
-    deep = deep.get[country];
-  }
-}
+let loaded = 0;
+const promises = listCountry.map((countryItem, i) => {
+  return (async () => {
+    const id = countryItem.id;
+    let deep;
 
-  if(deep.get && region){
-  if(region in deep.get && region){
-    deep = deep.get[region];
-  }
-}
-  if(deep.get && subregion){
-    if(subregion in deep.get){
+    const [continent, country, region, subregion] = id.split("-");
+
+    if (continent && dataBorder[continent]) {
+      deep = dataBorder[continent];
+    }
+
+    if (deep?.get && country && deep.get[country]) {
+      deep = deep.get[country];
+    }
+
+    if (deep?.get && region && deep.get[region]) {
+      deep = deep.get[region];
+    }
+
+    if (deep?.get && subregion && deep.get[subregion]) {
       deep = deep.get[subregion];
     }
-  }
-  let link = deep.content
-  await addABoundarie(link,i)
-  console.log("Loading..." + 100*((i+1)/listCountry.length) + "%")
-  document.getElementById('loadingBar').value = i + 1;
-  //addABoundarie(dataBorder.EU.get.FRA.get.ARA.content)
-}
+
+    const link = deep.content;
+
+    await addABoundarie(link, i);
+    loaded += 1;
+    console.log(
+      "Loading..." + 100 * ((loaded + 1) / listCountry.length) + "%"
+    );
+
+    document.getElementById("loadingBar").value = loaded + 1;
+    loaded += 1;
+  })();
+});
+await Promise.all(promises);
 document.getElementById("btnP").disabled = true;
 document.getElementById("loading").style.display = "none";
 document.getElementById("menu").style.visibility = "visible";
@@ -431,7 +438,6 @@ geojsonLayer.forEach(g => {
     console.log(goodLayer)
 
     if (layer.feature.id === goodLayer) {
-      console.log("Hi Hi")
       layer.setStyle(nofailStyle);
       layer.bringToFront();
     } else if (layer.feature.id === failLayer) {

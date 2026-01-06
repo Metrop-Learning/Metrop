@@ -1,0 +1,31 @@
+{
+  "listCountry":[
+    {
+      "name":"Canada",
+      "id":"NA-CAN"
+    },
+    {
+      "name":"Étas-Unis d'Amérique",
+      "id":"NA-USA"
+    },
+    {
+      "name":"Mexique",
+      "id":"NA-MEX"
+    }
+  ],
+  "cardInfo":{
+    "Title":"Les Pays d'Amérique du Nord",
+    "Text":"Canada, Étas-Unis d'Amérique et Méxique",
+    "lang":"FR",
+    "pictureURL":"None",
+    "option":{
+            "tryMax":1,
+            "EliminateSelected":true
+        }
+  },
+  "type":[
+    "placeTerritory",
+    "shadowTerritory",
+    "guessFromPosiTerritory"
+  ]
+}

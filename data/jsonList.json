@@ -18,7 +18,11 @@
         "StatesOfUSAporto.json",
         "USAterritories.json",
         "australiaIntern.json",
-        "EuropeanCountry.json"
+        "EuropeanCountry.json",
+        "NewZealandRegion.json",
+        "NorthAmerica.json",
+        "SouthAmerica.json",
+        "SouthAsia.json"
     ],
     "flag":{
 

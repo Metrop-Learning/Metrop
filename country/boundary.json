@@ -422,10 +422,76 @@
             },
             "AZE":{
                 "content":"Data:Azerbaijan.map"
+            },
+            "AFG":{
+                "content":"Data:Afghanistan.map"
+            },
+            "BGD":{
+                "content":"Data:Bangladesh.map"
+            },
+            "BTN":{
+                "content":"Data:Bhutan.map"
+            },
+            "IND":{
+                "content":"Data:India.map"
+            },
+            "MDV":{
+                "content":"Data:Maldives.map"
+            },
+            "NPL":{
+                "content":"Data:Nepal.map"
+            },
+            "PAK":{
+                "content":"Data:Pakistan.map"
+            },
+            "LKA":{
+                "content":"Data:Sri Lanka.map"
             }
         }
     },
-    "SA": {},
+    "SA": {
+        "get":{
+            "ARG":{
+                "content":"Data:Argentina.map"
+            },
+            "BOL":{
+                "content":"Data:Bolivia.map"
+            },
+            "BRA":{
+                "content":"Data:Brazil.map"
+            },
+            "CHL":{
+                "content":"Data:Chile.map"
+            },
+            "COL":{
+                "content":"Data:Colombia.map"
+            },
+            "ECU":{
+                "content":"Data:Ecuador.map"
+            },
+            "GUY":{
+                "content":"Data:Guyana.map"
+            },
+            "PRY":{
+                "content":"Data:Paraguay.map"
+            },
+            "PER":{
+                "content":"Data:Peru.map"
+            },
+            "SUR":{
+                "content":"Data:Suriname.map"
+            },
+            "TTO":{
+                "content":"Data:Trinidad and Tobago.map"
+            },
+            "VEN":{
+                "content":"Data:Venezuela.map"
+            },
+            "URY":{
+                "content":"Data:Uruguay.map"
+            }
+        }
+    },
     "NA": {
         "get":{
             "CAN":{
@@ -644,6 +710,9 @@
                         "content":"useInstead:OSMB:americanSamoa.geojson"
                     }
                 }
+            },
+            "MEX":{
+                "content":"Data:Mexico.map"
             }
         }
     },
@@ -679,6 +748,59 @@
                     },
                     "JBT":{
                         "content":"Data:Australia/Jervis Bay Territory.map"
+                    }
+                }
+            },
+            "NZ":{
+                "content":"Data:New Zealand.map",
+                "get":{
+                    "NTL":{
+                        "content":"Data:New Zealand/Northland.map"
+                    },
+                    "AUK":{
+                        "content":"Data:New Zealand/Auckland.map"
+                    },
+                    "WKO":{
+                        "content":"Data:New Zealand/Waikato.map"
+                    },
+                    "BOP":{
+                        "content":"Data:New Zealand/Bay of Plenty.map"
+                    },
+                    "GIS":{
+                        "content":"Data:New Zealand/Gisborne District.map"
+                    },
+                    "WGN":{
+                        "content":"Data:New Zealand/Wellington.map"
+                    },
+                    "MWT":{
+                        "content":"Data:New Zealand/Manawatu-Wanganui.map"
+                    },
+                    "TKI":{
+                        "content":"Data:New Zealand/Taranaki.map"
+                    },
+                    "HKB":{
+                        "content":"Data:New Zealand/Hawke's Bay.map"
+                    },
+                    "TAS":{
+                        "content":"Data:New Zealand/Tasman District.map"
+                    },
+                    "NSN":{
+                        "content":"Data:New Zealand/Nelson City.map"
+                    },
+                    "MBH":{
+                        "content":"Data:New Zealand/Marlborough District.map"
+                    },
+                    "WTC":{
+                        "content":"Data:New Zealand/West Coast.map"
+                    },
+                    "CAN":{
+                        "content":"Data:New Zealand/Canterbury.map"
+                    },
+                    "OTA":{
+                        "content":"Data:New Zealand/Otago.map"
+                    },
+                    "STL":{
+                        "content":"Data:New Zealand/Southland.map"
                     }
                 }
             }

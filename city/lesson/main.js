@@ -71,7 +71,7 @@ if (
         document.body.style.backgroundColor = '#ffffffff'
 
   L.tileLayer(
-    "https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png",
+    "https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}.png",
     {
       attribution: "© OpenStreetMap, © CartoDB, Made by @Jimmxyz on github",
       maxZoom: 18,

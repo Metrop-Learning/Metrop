@@ -1,6 +1,6 @@
 import data from './data/jsonList.json' with { type: "json" };
 
-const ver =  [0,7,5,"c"]
+const ver =  [0,7,5,"d"]
 const verAPI = [0,4]
 
 if(localStorage.getItem("lastVersionUsed")){
@@ -79,6 +79,7 @@ if(cardList.length == 0){
 for(let i = 0; i < cardList.length; i++){
     document.getElementById('cityQuizList').appendChild(cardList[i][1]);
 }
+document.getElementById('nbrQuizCity').innerText =  cardList.length + " quiz"
 //set up country
 cardList = []
 for(let i = 0; i < data.country.length; i++){
@@ -113,6 +114,7 @@ if(cardList.length == 0){
 for(let i = 0; i < cardList.length; i++){
     document.getElementById('countryQuizList').appendChild(cardList[i][1]);
 }
+document.getElementById('nbrQuizCountry').innerText =  cardList.length + " quiz"
 //Set up flag
 cardList = []
 for(let i = 0; i < data.flag.length; i++){
@@ -147,6 +149,7 @@ if(cardList.length == 0){
 for(let i = 0; i < cardList.length; i++){
     document.getElementById('flagQuizList').appendChild(cardList[i][1]);
 }
+document.getElementById('nbrQuizFlag').innerText =  cardList.length + " quiz"
 
 async function cityListSetUp(nameJson,type){
     const obj = await loadJSON(nameJson,type);

@@ -1,0 +1,83 @@
+{
+  "listCountry":[
+    {
+      "name":"Northland",
+      "id":"OC-NZ-NTL"
+    },
+    {
+      "name":"Auckland",
+      "id":"OC-NZ-AUK"
+    },
+    {
+      "name":"Waikato",
+      "id":"OC-NZ-WKO"
+    },
+    {
+      "name":"Baie de l'Abondance",
+      "id":"OC-NZ-BOP"
+    },
+    {
+      "name":"Gisborne",
+      "id":"OC-NZ-GIS"
+    },
+    {
+      "name":"Hawke's Bay",
+      "id":"OC-NZ-HKB"
+    },
+    {
+      "name":"Taranaki",
+      "id":"OC-NZ-TKI"
+    },
+    {
+      "name":"Manawatū-Whanganui",
+      "id":"OC-NZ-MWT"
+    },
+    {
+      "name":"Wellington",
+      "id":"OC-NZ-WGN"
+    },
+    {
+      "name":"Tasman",
+      "id":"OC-NZ-TAS"
+    },
+    {
+      "name":"Nelson",
+      "id":"OC-NZ-NSN"
+    },
+    {
+      "name":"Marlborough",
+      "id":"OC-NZ-MBH"
+    },
+    {
+      "name":"West Coast",
+      "id":"OC-NZ-WTC"
+    },
+    {
+      "name":"Canterbury",
+      "id":"OC-NZ-CAN"
+    },
+    {
+      "name":"Otago",
+      "id":"OC-NZ-OTA"
+    },
+    {
+      "name":"Southland",
+      "id":"OC-NZ-STL"
+    }
+  ],
+  "cardInfo":{
+    "Title":"Les Région de la Nouvelle-Zélande",
+    "Text":"Les 16 régions de la Nouvelle-Zélande",
+    "lang":"FR",
+    "pictureURL":"https://upload.wikimedia.org/wikipedia/commons/7/71/Lake_Ohau_Lodge_lupin_field%2C_NZ.jpg",
+    "option":{
+            "tryMax":1,
+            "EliminateSelected":true
+        }
+  },
+  "type":[
+    "placeTerritory",
+    "shadowTerritory",
+    "guessFromPosiTerritory"
+  ]
+}

@@ -23,3 +23,12 @@ Documentation en français :
 # Credit
 Created by / Créé par : @Jimmxyz
 
+🇨🇦 : Some of the resources are sourced from Wikipedia/Wikimedia or OSMB and OSM.  
+🇫🇷 : Certaines ressources proviennent de Wikipédia/Wikimédia ou d’OSM et OSMB.  
+
+🇨🇦 : The base maps are form CartoDB.  
+🇫🇷 : Les carte de base proviennent de CartoDB.
+
+🇨🇦 : Metrop use Leaflet an amazing api to manage maps.  
+🇫🇷 : Metrop utilise l'incroyable api Leaflet pour gérer les carte.
+
