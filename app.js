@@ -1,6 +1,6 @@
 import data from './data/jsonList.json' with { type: "json" };
 
-const ver =  [0,7,5,"d"]
+const ver =  [0,7,5,"e"]
 const verAPI = [0,4]
 
 if(localStorage.getItem("lastVersionUsed")){

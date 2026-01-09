@@ -148,6 +148,15 @@ document.getElementById("btnP").addEventListener("click", () => {
     test();
   }
   else{
+    if(posilist == listCity.length){
+      const params = new URLSearchParams({
+        return: returned,
+        learningID: learningID,
+        json: jsonName
+      });
+      window.location.replace(`../result/index.html?${params.toString()}`);
+      return
+    }
     play = true
     if(lastIsFail){
       map.removeLayer(playerGuess);
@@ -174,14 +183,6 @@ document.getElementById("btnP").addEventListener("click", () => {
 function test() {
   normalQuit = false
   play = false
-  if(playable == false){
-    const params = new URLSearchParams({
-      return: returned,
-      learningID: learningID,
-      json: jsonName
-    });
-    window.location.replace(`../result/index.html?${params.toString()}`);
-  }
   if (!isNaN(posilist+1) && posilist+1 >= 0 && posilist+1 <= document.getElementById('prgs').max) {
     document.getElementById('prgs').value = posilist + 1;
 }

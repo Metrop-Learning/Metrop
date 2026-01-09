@@ -25,9 +25,9 @@
         box-shadow 0.3s ease,
         background-color 0.3s ease;
     display: flex;              /* Aligne les éléments sur une même ligne */
-  align-items: center;        /* Centre verticalement SVG + texte */
-  gap: 8px;    
-  cursor: pointer; 
+    align-items: center;        /* Centre verticalement SVG + texte */
+    gap: 8px;    
+    cursor: pointer; 
 }
 
 @media (prefers-color-scheme: light) {
@@ -63,6 +63,9 @@
     background-color: #dddddd;
   }
   #welcomeHeader{
+    background-color: rgba(81, 81, 227, 0.8);
+  }
+  #contribFooter, #contribFooterLink{
     background-color: rgba(81, 81, 227, 0.8);
   }
   #updateHeader{
@@ -115,6 +118,9 @@
     background-color: #393939;
   }
   #welcomeHeader{
+    background-color: rgba(81, 81, 227, 0.8);
+  }
+  #contribFooter, #contribFooterLink{
     background-color: rgba(81, 81, 227, 0.8);
   }
   #updateHeader{
@@ -382,4 +388,21 @@ footer{
 #mainHeader{
   display: flex; 
   align-items: center;
+}
+
+/* TODO: TO BE DELETED */
+#contribFooter, #contribFooterLink{
+    display: none !important;
+}
+
+#contribFooter, #contribFooterLink{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#contribFooter svg, #contribFooterLink svg{
+  min-width: 50px;
+  margin-left: 20px;
 }
