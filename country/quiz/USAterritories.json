@@ -230,6 +230,7 @@
     "Text":"Les 50 États des États-Unis d'Amérique, les Commonwealth américain, le District de Columbia et les autre territoire non incorporé des États-Unis.",
     "lang":"FR",
     "pictureURL":"None",
+    "setInfo":"NA-USA",
     "option":{
             "tryMax":2,
             "EliminateSelected":true

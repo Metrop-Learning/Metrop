@@ -126,6 +126,7 @@
     "Text":"Les 27 membres de l'Union Européenne et les 3 membres de l'Espace économique européen non présent dans l'Union Européenne",
     "lang":"FR",
     "pictureURL":"None",
+    "setInfo":"EU",
     "option":{
             "tryMax":1,
             "EliminateSelected":true

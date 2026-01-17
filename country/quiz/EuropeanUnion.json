@@ -114,6 +114,7 @@
     "Text":"Les 27 membre de l'Union Européenne",
     "lang":"FR",
     "pictureURL":"None",
+    "setInfo":"EU",
     "option":{
             "tryMax":1,
             "EliminateSelected":true

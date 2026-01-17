@@ -86,6 +86,7 @@
     "Text":"Les 20 régions italienne",
     "lang":"FR",
     "pictureURL":"None",
+    "setInfo":"EU-ITA",
     "option":{
             "tryMax":1,
             "EliminateSelected":true

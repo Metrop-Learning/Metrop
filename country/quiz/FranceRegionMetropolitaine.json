@@ -58,6 +58,7 @@
     "Text":"Les 13 region de France Métropolitaine",
     "lang":"FR",
     "pictureURL":"None",
+    "setInfo":"EU-FRA",
     "option":{
             "tryMax":1,
             "EliminateSelected":true

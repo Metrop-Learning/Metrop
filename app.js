@@ -1,6 +1,7 @@
 import data from './data/jsonList.json' with { type: "json" };
+import dataBorder from './country/boundary.json' with { type:"json"}
 
-const ver =  [0,7,5,"e"]
+const ver =  [0,7,5,"f"]
 const verAPI = [0,4]
 
 if(localStorage.getItem("lastVersionUsed")){
@@ -158,6 +159,7 @@ async function cityListSetUp(nameJson,type){
     let img;
     let title;
     let text;
+    let flagImg;
     if ('cardInfo' in obj) {
             if ('pictureURL' in obj.cardInfo) {
                 if(obj.cardInfo.pictureURL != "None"){
@@ -190,6 +192,31 @@ async function cityListSetUp(nameJson,type){
                 //NOT GOOD
                 console.warn('METROP DATA API\n---\nDATA MISSING : "lang"\nIN : '+ nameJson +' \n---\nlang are needed. The lang will be set to "EN".\n---\nDocumentation : https://github.com/Metrop-Learning/Metrop/blob/main/documentaion/data.md\n---', obj);
             }
+            if ('setInfo' in obj.cardInfo) {
+                const id = obj.cardInfo.setInfo;
+                let deep;
+                        
+                const [continent, country, region, subregion] = id.split("-");
+                        
+                if (continent && dataBorder[continent]) {
+                  deep = dataBorder[continent];
+                }
+            
+                if (deep?.get && country && deep.get[country]) {
+                  deep = deep.get[country];
+                }
+            
+                if (deep?.get && region && deep.get[region]) {
+                  deep = deep.get[region];
+                }
+            
+                if (deep?.get && subregion && deep.get[subregion]) {
+                  deep = deep.get[subregion];
+                }
+                if ('flag' in deep) flagImg = deep.flag;
+            } else {
+                //NOT GOOD
+            }
     } else {
       console.error('METROP DATA API\n---\nNEEDED DATA MISSING : "cardInfo"\nIN : '+ nameJson +' \n---\ncardInfo are used to give base information to Metrop\n---\nDocumentation : https://github.com/Metrop-Learning/Metrop/blob/main/documentaion/data.md\n---', obj);
       return
@@ -208,6 +235,9 @@ async function cityListSetUp(nameJson,type){
     div_c.className = 'cardContent';
     const h3 = document.createElement('h3');
     h3.textContent = title;
+    if(flagImg){
+        h3.innerHTML = "<img class='flagOnCard' src='" + flagImg + "'><br>" + h3.innerHTML
+    }
     h3.className = 'top'
     const p = document.createElement('p');
     p.textContent = text;

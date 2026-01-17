@@ -58,6 +58,7 @@
     "Text":"Les 10 Provinces et les 3 Territoires (Yukon, Territoires du Nord-Ouest et Nunavut) du Canada",
     "lang":"FR",
     "pictureURL":"None",
+    "setInfo":"NA-CAN",
     "option":{
             "tryMax":1,
             "EliminateSelected":true

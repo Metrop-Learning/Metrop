@@ -406,3 +406,9 @@ footer{
   min-width: 50px;
   margin-left: 20px;
 }
+
+.flagOnCard{
+  margin-bottom: 5px;
+  max-height: 20px;
+  width: auto;
+}

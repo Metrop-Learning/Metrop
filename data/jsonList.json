@@ -22,7 +22,10 @@
         "NewZealandRegion.json",
         "NorthAmerica.json",
         "SouthAmerica.json",
-        "SouthAsia.json"
+        "SouthAsia.json",
+        "indiaStatesAndfTerritories.json",
+        "denmarkRegion.json",
+        "denmarkRegionNoAuto.json"
     ],
     "flag":{
 

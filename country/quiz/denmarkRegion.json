@@ -1,0 +1,48 @@
+{
+  "listCountry":[
+    {
+      "name":"Jutland du Nord",
+      "id":"EU-DNK-NJL"
+    },
+    {
+      "name":"Jutland central",
+      "id":"EU-DNK-MJL"
+    },
+    {
+      "name":"Danemark du Sud",
+      "id":"EU-DNK-SYM"
+    },
+    {
+      "name":"Sjælland",
+      "id":"EU-DNK-SJL"
+    },
+    {
+      "name":"Région de la Capitale",
+      "id":"EU-DNK-HSD"
+    },
+    {
+      "name":"Groenland",
+      "id":"EU-DNK-GRL"
+    },
+    {
+      "name":"Îles Féroé",
+      "id":"EU-DNK-FRO"
+    }
+  ],
+  "cardInfo":{
+    "Title":"Les Région et Région autonome du Danemark avant 2027",
+    "Text":"Les 5 Région et les 2 Région autonome (Groenland et îles Féroé) du Danemark avant le 1er Janvier 2027",
+    "lang":"FR",
+    "pictureURL":"None",
+    "setInfo":"EU-DNK",
+    "option":{
+            "tryMax":1,
+            "EliminateSelected":true
+        }
+  },
+  "type":[
+    "placeTerritory",
+    "shadowTerritory",
+    "guessFromPosiTerritory"
+  ]
+}

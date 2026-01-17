@@ -70,6 +70,7 @@
     "Text":"Les 16 lands allemand",
     "lang":"FR",
     "pictureURL":"None",
+    "setInfo":"EU-DEU",
     "option":{
             "tryMax":2,
             "EliminateSelected":true

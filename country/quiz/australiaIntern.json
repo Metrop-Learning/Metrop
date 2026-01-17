@@ -42,6 +42,7 @@
     "Text":"Les 6 États et les 3 Territoires Intérieurs de l'Australie",
     "lang":"FR",
     "pictureURL":"None",
+    "setInfo":"OC-AU",
     "option":{
             "tryMax":2,
             "EliminateSelected":true

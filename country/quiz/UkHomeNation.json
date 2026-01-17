@@ -22,6 +22,7 @@
     "Text":"Les 4 nations constitutives du Royaume-Unis",
     "lang":"FR",
     "pictureURL":"None",
+    "setInfo":"EU-UK",
     "option":{
             "tryMax":1,
             "EliminateSelected":true

@@ -206,6 +206,7 @@
     "Text":"Les 50 États des États-Unis d'Amérique",
     "lang":"FR",
     "pictureURL":"None",
+    "setInfo":"NA-USA",
     "option":{
             "tryMax":2,
             "EliminateSelected":true

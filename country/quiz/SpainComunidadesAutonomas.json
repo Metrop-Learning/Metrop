@@ -82,6 +82,7 @@
     "Text":"Les 17 communautés autonomes et les 2 Ville autonomes de l'Espagne",
     "lang":"FR",
     "pictureURL":"None",
+    "setInfo":"EU-ESP",
     "option":{
             "tryMax":1,
             "EliminateSelected":true

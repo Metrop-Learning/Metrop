@@ -1,8 +1,10 @@
 {
     "EU": {
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg",
         "get": {
             "FRA": {
                 "content": "Data:France.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg",
                 "get": {
                     "ARA": {
                         "content": "Data:France/Region/Auvergne-Rhône-Alpes.map"
@@ -62,6 +64,7 @@
             },
             "DEU": {
                 "content": "Data:Germany.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg",
                 "get":{
                     "BW":{
                         "content":"Data:Baden-Württemberg.map"
@@ -118,6 +121,7 @@
             },
             "ITA": {
                 "content": "Data:Italy.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/0/03/Flag_of_Italy.svg",
                 "get":{
                     "ABR":{
                         "content":"Data:Italy/Region/Abruzzo.map"
@@ -183,6 +187,7 @@
             },
             "ESP": {
                 "content":"Data:Spain.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg",
                 "get":{
                     "AN":{
                         "content":"Data:Spain/Andalusia.map"
@@ -248,6 +253,7 @@
             },
             "UK":{
                 "content":"Data:United Kingdom.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg",
                 "get":{
                     "ENG":{
                         "content":"Data:England.map"
@@ -288,7 +294,31 @@
                 "content":"Data:Luxembourg.map"
             },
             "DNK":{
-                "content":"Data:Denmark.map"
+                "content":"Data:Denmark.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/9/9c/Flag_of_Denmark.svg",
+                "get":{
+                    "NJL":{
+                        "content":"Data:Denmark/Nordjylland.map"
+                    },
+                    "MJL":{
+                        "content":"Data:Denmark/Midtjylland.map"
+                    },
+                    "SYM":{
+                        "content":"Data:Denmark/Syddanmark.map"
+                    },
+                    "SJL":{
+                        "content":"Data:Denmark/Sjaælland.map"
+                    },
+                    "HSD":{
+                        "content":"Data:Denmark/Hovedstaden.map"
+                    },
+                    "GRL":{
+                        "content":"Data:Greenland.map"
+                    },
+                    "FRO":{
+                        "content":"Data:Faroe Islands.map"
+                    }
+                }
             },
             "SWE":{
                 "content":"Data:Sweden.map"
@@ -433,7 +463,118 @@
                 "content":"Data:Bhutan.map"
             },
             "IND":{
-                "content":"Data:India.map"
+                "content":"Data:India.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_India.svg",
+                "get":{
+                    "AP":{
+                        "content":"Data:India/Andhra Pradesh.map"
+                    },
+                    "AR":{
+                        "content":"Data:India/Arunachal Pradesh.map"
+                    },
+                    "AS":{
+                        "content":"Data:India/Assam.map"
+                    },
+                    "BR":{
+                        "content":"Data:India/Bihar.map"
+                    },
+                    "CG":{
+                        "content":"Data:India/Chhattisgarh.map"
+                    },
+                    "GA":{
+                        "content":"Data:India/Goa.map"
+                    },
+                    "GJ":{
+                        "content":"Data:India/Gujarat.map"
+                    },
+                    "HR":{
+                        "content":"Data:India/Haryana.map"
+                    },
+                    "HP":{
+                        "content":"Data:India/Himachal Pradesh.map"
+                    },
+                    "JH":{
+                        "content":"Data:India/Jharkhand.map"
+                    },
+                    "KA":{
+                        "content":"Data:India/Karnataka.map"
+                    },
+                    "KL":{
+                        "content":"Data:India/Kerala.map"
+                    },
+                    "MP":{
+                        "content":"Data:India/Madhya Pradesh.map"
+                    },
+                    "MH":{
+                        "content":"Data:India/Maharashtra.map"
+                    },
+                    "MN":{
+                        "content":"Data:India/Manipur.map"
+                    },
+                    "ML":{
+                        "content":"Data:India/Meghalaya.map"
+                    },
+                    "MZ":{
+                        "content":"Data:India/Mizoram.map"
+                    },
+                    "NL":{
+                        "content":"Data:India/Nagaland.map"
+                    },
+                    "OD":{
+                        "content":"Data:India/Odisha.map"
+                    },
+                    "PB":{
+                        "content":"Data:India/Punjab.map"
+                    },
+                    "RJ":{
+                        "content":"Data:India/Rajasthan.map"
+                    },
+                    "SK":{
+                        "content":"Data:India/Sikkim.map"
+                    },
+                    "TN":{
+                        "content":"Data:India/Tamil Nadu.map"
+                    },
+                    "TS":{
+                        "content":"Data:India/Telangana.map"
+                    },
+                    "TR":{
+                        "content":"Data:India/Tripura.map"
+                    },
+                    "UP":{
+                        "content":"Data:India/Uttar Pradesh.map"
+                    },
+                    "UK":{
+                        "content":"Data:India/Uttarakhand.map"
+                    },
+                    "WB":{
+                        "content":"Data:India/West Bengal.map"
+                    },
+                    "AN":{
+                        "content":"Data:India/Andaman and Nicobar Islands.map"
+                    },
+                    "CH":{
+                        "content":"Data:India/Chandigarh.map"
+                    },
+                    "DH":{
+                        "content":"useInstead:OSMB:dnh-and-dd.geojson"
+                    },
+                    "DL":{
+                        "content":"Data:India/Delhi.map"
+                    },
+                    "JK":{
+                        "content":"useInstead:OSMB:jammu-and-kashmir.geojson"
+                    },
+                    "LA":{
+                        "content":"Data:India/Ladakh.map"
+                    },
+                    "LD":{
+                        "content":"Data:India/Lakshadweep.map"
+                    },
+                    "PY":{
+                        "content":"Data:India/Puducherry.map"
+                    }
+                }
             },
             "MDV":{
                 "content":"Data:Maldives.map"
@@ -496,6 +637,7 @@
         "get":{
             "CAN":{
                 "content":"Data:Canada.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Canada_%28Pantone%29.svg",
                 "get":{
                     "ON":{
                         "content":"Data:Canada/Ontario.map"
@@ -540,6 +682,7 @@
             },
             "USA":{
                 "content":"useInstead:OSMB:usa.geojson",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/e/e2/Flag_of_the_United_States_%28Pantone%29.svg",
                 "get":{
                     "AL":{
                         "content":"Data:Alabama.map"
@@ -721,6 +864,7 @@
         "get":{
             "AU":{
                 "content":"Data:Australia.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia_%28converted%29.svg",
                 "get":{
                     "SA":{
                         "content":"Data:Australia/South Australia.map"
@@ -753,6 +897,7 @@
             },
             "NZ":{
                 "content":"Data:New Zealand.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/3/3e/Flag_of_New_Zealand.svg",
                 "get":{
                     "NTL":{
                         "content":"Data:New Zealand/Northland.map"
