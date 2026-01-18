@@ -1,0 +1,104 @@
+{
+    "listCity": [
+  {
+    "name": "Ottawa",
+    "country": "Canada",
+    "lat": 45.4215,
+    "lng": -75.6972
+  },
+  {
+    "name": "Victoria",
+    "country": "Canada",
+    "lat": 48.4284,
+    "lng": -123.3656
+  },
+  {
+    "name": "Edmonton",
+    "country": "Canada",
+    "lat": 53.5461,
+    "lng": -113.4938
+  },
+  {
+    "name": "Regina",
+    "country": "Canada",
+    "lat": 50.4452,
+    "lng": -104.6189
+  },
+  {
+    "name": "Winnipeg",
+    "country": "Canada",
+    "lat": 49.8951,
+    "lng": -97.1384
+  },
+  {
+    "name": "Toronto",
+    "country": "Canada",
+    "lat": 43.6532,
+    "lng": -79.3832
+  },
+  {
+    "name": "Québec",
+    "country": "Canada",
+    "lat": 46.8139,
+    "lng": -71.2080
+  },
+  {
+    "name": "Saint-Jean de Terre-Neuve",
+    "country": "Canada",
+    "lat": 47.5615,
+    "lng": -52.7126
+  },
+  {
+    "name": "Fredericton",
+    "country": "Canada",
+    "lat": 45.9636,
+    "lng": -66.6431
+  },
+  {
+    "name": "Halifax",
+    "country": "Canada",
+    "lat": 44.6488,
+    "lng": -63.5752
+  },
+  {
+    "name": "Charlottetown",
+    "country": "Canada",
+    "lat": 46.2382,
+    "lng": -63.1311
+  },
+  {
+    "name": "Iqaluit",
+    "country": "Canada",
+    "lat": 63.7467,
+    "lng": -68.5170
+  },
+  {
+    "name": "Yellowknife",
+    "country": "Canada",
+    "lat": 62.4540,
+    "lng": -114.3718
+  },
+  {
+    "name": "Whitehorse",
+    "country": "Canada",
+    "lat": 60.7212,
+    "lng": -135.0568
+  }
+],
+    "cardInfo": {
+        "Title": "Les capitales du Canada",
+        "Text": "La Capitale Fédérale, Les Capitales des Provinces et les Capitales des Territoire du Canada",
+        "lang": "FR",
+        "pictureURL": "None",
+        "setInfo":"NA-CAN",
+        "option":{
+            "rangeError":300,
+            "rangeErrorAccepted":100
+        }
+    },
+    "type": [
+        "place",
+        "name",
+        "guess"
+    ]
+}

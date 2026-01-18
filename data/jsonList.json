@@ -3,7 +3,9 @@
         "Megacity.json",
         "MegacityEasy.json",
         "MegacityHard.json",
-        "MetroCityFrance.json"
+        "MetroCityFrance.json",
+        "CapitalCanada.json",
+        "CapitalEuropeanUnion.json"
     ],
     "country":[
         "FranceRegionMetropolitaine.json",
