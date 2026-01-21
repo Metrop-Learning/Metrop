@@ -51,11 +51,31 @@
     {
       "name":"Provence-Alpes-Côte d'Azur",
       "id":"EU-FRA-PAC"
+    },
+    {
+      "name":"Guadeloupe",
+      "id":"EU-FRA-GLP"
+    },
+    {
+      "name":"Guyane",
+      "id":"EU-FRA-GUF"
+    },
+    {
+      "name":"Martinique",
+      "id":"EU-FRA-MTQ"
+    },
+    {
+      "name":"La Réunion",
+      "id":"EU-FRA-REU"
+    },
+    {
+      "name":"Mayotte",
+      "id":"EU-FRA-MYT"
     }
   ],
   "cardInfo":{
-    "Title":"Régions de France Métropolitaine",
-    "Text":"Les 13 régions de France Métropolitaine",
+    "Title":"Régions de France",
+    "Text":"Les 13 régions de France Métropolitaine et les 5 régions ultramarines de France",
     "lang":"FR",
     "pictureURL":"None",
     "setInfo":"EU-FRA",

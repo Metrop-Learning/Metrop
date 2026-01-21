@@ -29,8 +29,8 @@
   { "name": "Stockholm", "country": "Suède", "lat": 59.3293, "lng": 18.0686 }
 ],
     "cardInfo": {
-        "Title": "Les Capitales de L'Union Européene",
-        "Text": "Les Capitales des 27 Membre de L'Union Européene",
+        "Title": "Les Capitales de L'Union Européenne",
+        "Text": "Les Capitales des 27 Membres de L'Union Européenne",
         "lang": "FR",
         "pictureURL": "None",
         "setInfo":"EU",

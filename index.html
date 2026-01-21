@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="./data/globe-showing-europe-africa-noto-emoji-noanimation.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
     <link
@@ -125,21 +126,26 @@
         >
       </h3>
     </header>
-    <header id="mainHeader"><h1 id="titleNameMetrop">Metrop</h1><div id="searchField">
+    <header id="mainHeader"><img id="logoMainPage" src="./data/globe-showing-europe-africa-noto-emoji.gif" style="height: 30px; width: auto;">
+      <h1 id="titleNameMetrop">
+      Metrop</h1><div id="searchField">
       <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e3e3e3"><path d="M384.03-336Q284-336 214-406t-70-170q0-100 70-170t170-70q100 0 170 70t70 170.03q0 40.39-12.5 76.18Q599-464 577-434l214 214q11 11 11 25t-11 25q-11 11-25.5 11T740-170L526-383q-30 22-65.79 34.5-35.79 12.5-76.18 12.5Zm-.03-72q70 0 119-49t49-119q0-70-49-119t-119-49q-70 0-119 49t-49 119q0 70 49 119t119 49Z"/></svg>
       <input id="searchInput" type="text" placeholder="Rechercher un quiz ou une catégorie">
     </div></header>
     <div id="searchResult">
       <div style="display: flex; align-items: center; margin-left: 20px;">
-              <button class="btn" onclick="document.getElementById('searchResult').style.display = 'none'; document.getElementById('menu').style.display = 'block';"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#e3e3e3"><path d="M226.67-186.67h140V-400q0-14.17 9.58-23.75t23.75-9.58h160q14.17 0 23.75 9.58t9.58 23.75v213.33h140v-380L480-756.67l-253.33 190v380Zm-66.67 0v-380q0-15.83 7.08-30 7.09-14.16 19.59-23.33L440-810q17.45-13.33 39.89-13.33T520-810l253.33 190q12.5 9.17 19.59 23.33 7.08 14.17 7.08 30v380q0 27.5-19.58 47.09Q760.83-120 733.33-120H560q-14.17 0-23.75-9.58-9.58-9.59-9.58-23.75v-213.34h-93.34v213.34q0 14.16-9.58 23.75Q414.17-120 400-120H226.67q-27.5 0-47.09-19.58Q160-159.17 160-186.67ZM480-472Z"/></svg> Accueil</button>
+              <button class="btn" onclick="document.getElementById('searchResult').style.display = 'none'; document.getElementById('menu').style.display = 'block'; document.getElementById('searchInput').value = ''"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#e3e3e3"><path d="M226.67-186.67h140V-400q0-14.17 9.58-23.75t23.75-9.58h160q14.17 0 23.75 9.58t9.58 23.75v213.33h140v-380L480-756.67l-253.33 190v380Zm-66.67 0v-380q0-15.83 7.08-30 7.09-14.16 19.59-23.33L440-810q17.45-13.33 39.89-13.33T520-810l253.33 190q12.5 9.17 19.59 23.33 7.08 14.17 7.08 30v380q0 27.5-19.58 47.09Q760.83-120 733.33-120H560q-14.17 0-23.75-9.58-9.58-9.59-9.58-23.75v-213.34h-93.34v213.34q0 14.16-9.58 23.75Q414.17-120 400-120H226.67q-27.5 0-47.09-19.58Q160-159.17 160-186.67ZM480-472Z"/></svg> Accueil</button>
               <h1>Résultat pour votre recherche : </h1>
       </div>
       <br>
       <hr>
       <br>
-      <div style="display: flex; flex-direction: column; align-items: center;">
+      <div style="display: flex; flex-direction: column; align-items: center; display: none;" id="researchEmptyOrError">
         <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#e3e3e3"><path d="m270-245 57 57q5 5 11.5 4.5T350-189q5-5 5-11.5t-5-11.5l-58-57 60-60q5-5 5-11.5t-5-11.5q-5-5-11.5-5t-11.5 5l-59 59-59-59q-5-5-11-5t-11 5q-5 5-5 11.5t5 11.5l58 59-58 58q-5 5-5 12t5 12q5 5 12 5t12-5l57-57Zm0 165q-78 0-134-56T80-270q0-78 56-134t134-56q78 0 134 56t56 134q0 78-56 134T270-80Zm303-303q-14 11-31.5 21.5T508-344q-5-14-11-28.5T483-399q54-21 91.5-69.5T612-584q0-81-57-138.5T417-780q-82 0-139.5 57.5T220-584q0 17 3.5 35.5T232-517q-13 2-29 6.5T174-500q-7-18-10.5-40t-3.5-44q0-107 75-181.5T417-840q106 0 180.5 75T672-584q0 43-15 85t-41 73l242 240q9 9 9 22t-9 22q-9 9-22 9t-22-9L573-383Z"/></svg>
-        <h2>Une erreur est survenue : la recherche n'a pas aboutie.</h2></div>
+        <h2>Aucun résultat pour la recherche</h2>
+        <h5>Une erreur est peut être survenue.</h5>
+      </div>
+        <div id="searchResultCard" style="display: flex; padding-left: 20px; gap: 20px; flex-wrap: wrap;"></div>
     </div>
     <div id="menu">
       <h2 class="title-icon" style="display: none;">
@@ -180,7 +186,7 @@
               d="M370-220h220q13 0 21.5-8.5T620-250q0-13-8.5-21.5T590-280H370q-13 0-21.5 8.5T340-250q0 13 8.5 21.5T370-220Zm110-120q83 0 141.5-58.5T680-540q0-83-58.5-141.5T480-740q-83 0-141.5 58.5T280-540q0 83 58.5 141.5T480-340Zm0-67q-8-11-17-36.5T451-510h58q-3 41-12 66.5T480-407Zm-72-13q-24-15-41-38t-23-52h47q2 25 6 47.5t11 42.5Zm144 0q7-20 11-42.5t6-47.5h47q-6 29-23 52t-41 38ZM344-570q6-29 23-52t41-38q-7 20-11 42.5t-6 47.5h-47Zm107 0q3-41 12-66.5t17-36.5q8 11 17 36.5t12 66.5h-58Zm118 0q-2-25-6-47.5T552-660q24 15 41 38t23 52h-47ZM193.33-80q-14.16 0-23.75-9.58-9.58-9.59-9.58-23.75v-733.34q0-14.16 9.58-23.75 9.59-9.58 23.75-9.58h540q27.5 0 47.09 19.58Q800-840.83 800-813.33v666.66q0 27.5-19.58 47.09Q760.83-80 733.33-80h-540Zm33.34-66.67h506.66v-666.66H226.67v666.66Zm0 0v-666.66 666.66Z"
             />
           </svg>
-          Pays <span style="font-size: small; opacity: 0.5;"><sub id="nbrQuizCountry">0 quiz</sub></span>
+          Pays et régions <span style="font-size: small; opacity: 0.5;"><sub id="nbrQuizCountry">0 quiz</sub></span>
         </h2>
         <section class="quizList" id="countryQuizList">
           <h1>Chargement...</h1>
@@ -253,6 +259,9 @@
             <br>
             <br>
             Metrop use <a href="https://leafletjs.com/">Leaflet</a> an amazing api to manage maps.
+            <br>
+            <br>
+            The animated logo and the favicon are from the <a href="https://googlefonts.github.io/noto-emoji-animation/">Google Noto Emoji</a> database licensed under <a href="https://creativecommons.org/licenses/by/4.0/legalcode">🅭 CC BY 4.0</a>
           </h3>  
             <h1>Info :</h1>
           <h3 id="verText" style="font-size: smaller">

@@ -16,7 +16,7 @@ Documentation en français :
 >🇫🇷 : Les différentes frontières sont ajoutées petit à petit. Il en manque encore beaucoup.
 
 >[!CAUTION]
-> 🇨🇦 : Metrop was not designed for political purposes : some border in the world are disputed and we try to base our quizzes on the ON world map.
+> 🇨🇦 : Metrop was not designed for political purposes : some border in the world are disputed and we try to base our quizzes on the UN world map.
 >
 > 🇫🇷 : Metrop n'a pas été conçu à des fins politiques : certaines frosntières dans le monde sont contestées et nous essayons de baser nos quiz sur la carte du monde de l'ONU.
 
@@ -31,4 +31,8 @@ Created by / Créé par : @Jimmxyz
 
 🇨🇦 : Metrop use Leaflet an amazing api to manage maps.  
 🇫🇷 : Metrop utilise l'incroyable api Leaflet pour gérer les carte.
+
+🇨🇦 : Le logo animé et la favicon proviennent de la base de données <a href="https://googlefonts.github.io/noto-emoji-animation/">Google Noto Emoji</a>, licenciés sous la <a href="https://creativecommons.org/licenses/by/4.0/legalcode">🅭 CC BY 4.0</a>.
+
+🇫🇷 : The animated logo and the favicon come from the <a href="https://googlefonts.github.io/noto-emoji-animation/">Google Noto Emoji</a> database, licensed under <a href="https://creativecommons.org/licenses/by/4.0/legalcode">🅭 CC BY 4.0</a>.
 

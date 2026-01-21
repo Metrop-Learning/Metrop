@@ -1,0 +1,30 @@
+{
+    "listCity": [
+  { "name": "Paris", "country": "France", "lat": 48.8566, "lng": 2.3522 },
+  { "name": "Marseille", "country": "France", "lat": 43.2965, "lng": 5.3698 },
+  { "name": "Lyon", "country": "France", "lat": 45.7640, "lng": 4.8357 },
+  { "name": "Toulouse", "country": "France", "lat": 43.6047, "lng": 1.4442 },
+  { "name": "Nice", "country": "France", "lat": 43.7102, "lng": 7.2620 },
+  { "name": "Nantes", "country": "France", "lat": 47.2184, "lng": -1.5536 },
+  { "name": "Montpellier", "country": "France", "lat": 43.6119, "lng": 3.8772 },
+  { "name": "Strasbourg", "country": "France", "lat": 48.5734, "lng": 7.7521 },
+  { "name": "Bordeaux", "country": "France", "lat": 44.8378, "lng": -0.5792 },
+  { "name": "Lille", "country": "France", "lat": 50.6292, "lng": 3.0573 }
+],
+    "cardInfo": {
+        "Title": "Les villes les plus peuplées de France",
+        "Text": "Les 10 villes les plus peuplées de France",
+        "lang": "FR",
+        "pictureURL": "None",
+        "setInfo":"EU-FRA",
+        "option":{
+            "rangeError":300,
+            "rangeErrorAccepted":100
+        }
+    },
+    "type": [
+        "place",
+        "name",
+        "guess"
+    ]
+}

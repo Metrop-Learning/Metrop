@@ -4,10 +4,49 @@
         "get": {
             "FRA": {
                 "content": "Data:France.map",
+                "namefr":"France",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg",
                 "get": {
                     "ARA": {
-                        "content": "Data:France/Region/Auvergne-Rhône-Alpes.map"
+                        "content": "Data:France/Region/Auvergne-Rhône-Alpes.map",
+                        "get":{
+                            "1":{
+                                "content":"useInstead:OSMB:departement-01-ain.geojson"
+                            },
+                            "3":{
+                                "content":"useInstead:OSMB:departement-03-allier.geojson"
+                            },
+                            "7":{
+                                "content":"useInstead:OSMB:departement-07-ardeche.geojson"
+                            },
+                            "15":{
+                                "content":"useInstead:OSMB:departement-15-cantal.geojson"
+                            },
+                            "26":{
+                                "content":"useInstead:OSMB:departement-26-drome.geojson"
+                            },
+                            "38":{
+                                "content":"useInstead:OSMB:departement-38-isere.geojson"
+                            },
+                            "42":{
+                                "content":"useInstead:OSMB:departement-42-loire.geojson"
+                            },
+                            "43":{
+                                "content":"useInstead:OSMB:departement-43-haute-loire.geojson"
+                            },
+                            "63":{
+                                "content":"useInstead:OSMB:departement-63-puy-de-dome.geojson"
+                            },
+                            "69":{
+                                "content":"useInstead:OSMB:departement-69-rhone.geojson"
+                            },
+                            "73":{
+                                "content":"useInstead:OSMB:departement-73-savoie.geojson"
+                            },
+                            "74":{
+                                "content":"useInstead:OSMB:departement-74-haute-savoie.geojson"
+                            }
+                        }
                     },
                     "BRE": {
                         "content": "Data:France/Region/Bretagne.map"
@@ -64,6 +103,7 @@
             },
             "DEU": {
                 "content": "Data:Germany.map",
+                "namefr":"Allemagne",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg",
                 "get":{
                     "BW":{
@@ -121,6 +161,7 @@
             },
             "ITA": {
                 "content": "Data:Italy.map",
+                "namefr":"Italie",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/0/03/Flag_of_Italy.svg",
                 "get":{
                     "ABR":{
@@ -637,6 +678,7 @@
         "get":{
             "CAN":{
                 "content":"Data:Canada.map",
+                "namefr":"Canada",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Canada_%28Pantone%29.svg",
                 "get":{
                     "ON":{
@@ -864,6 +906,7 @@
         "get":{
             "AU":{
                 "content":"Data:Australia.map",
+                "namefr":"Australie",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia_%28converted%29.svg",
                 "get":{
                     "SA":{
@@ -897,6 +940,7 @@
             },
             "NZ":{
                 "content":"Data:New Zealand.map",
+                "namefr":"Nouvelle-Zélande",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/3/3e/Flag_of_New_Zealand.svg",
                 "get":{
                     "NTL":{

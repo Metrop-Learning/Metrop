@@ -1,8 +1,9 @@
 import data from './data/jsonList.json' with { type: "json" };
 import dataBorder from './country/boundary.json' with { type:"json"}
+import * as util from "../../city/asset/common.js"
 
-const ver =  [0,7,5,"g"]
-const verAPI = [0,4]
+const ver =  [0,7,5,"h"]
+const verAPI = [0,5]
 
 if(localStorage.getItem("lastVersionUsed")){
     let verS = localStorage.getItem("lastVersionUsed").split(".")
@@ -34,18 +35,18 @@ else if (localStorage.getItem("DEBUG_STATUT") == "true"){
     console.info("DEBUG MODE ACTIVATED")
     document.getElementById('betaTest').style.display = "block";
     document.getElementById('betaElement').style.display = "block";
-    document.getElementById('searchField').style.display = 'flex';
-}
-else{
-    document.getElementById('titleNameMetrop').style.display = "block";
 }
 
+let listCountryQuizInfo = []
+let listCityQuizInfo = []
 
 //Set up city
 let cardList = []
-for(let i = 0; i < data.city.length; i++){
-    await cityListSetUp(data.city[i],"city");
-}
+const promisesCity = data.city.map(city => cityListSetUp(city, "city"));
+listCityQuizInfo = await Promise.all(promisesCity);
+//for(let i = 0; i < data.city.length; i++){
+//    listCityQuizInfo.push(await cityListSetUp(data.city[i],"city"));
+//}
 const regex = /[\[\uFF3B]\s*(.*?)\s*[\]\uFF3D]/;
 
 const normalize = (str) =>
@@ -83,9 +84,11 @@ for(let i = 0; i < cardList.length; i++){
 document.getElementById('nbrQuizCity').innerText =  cardList.length + " quiz"
 //set up country
 cardList = []
-for(let i = 0; i < data.country.length; i++){
-    await cityListSetUp(data.country[i],"country");
-}
+const promisesCountry = data.country.map(country => cityListSetUp(country, "country"));
+listCountryQuizInfo = await Promise.all(promisesCountry);
+//for(let i = 0; i < data.country.length; i++){
+//    listCountryQuizInfo.push(await cityListSetUp(data.country[i],"country"));
+//}
 cardList.sort((a, b) => {
   const textA = a[0];
   const textB = b[0];
@@ -154,6 +157,7 @@ document.getElementById('nbrQuizFlag').innerText =  cardList.length + " quiz"
 
 async function cityListSetUp(nameJson,type){
     const obj = await loadJSON(nameJson,type);
+    let dataToReturn = { "type":type }
     if (obj == undefined) return
     const wikimediaImageRegex = /^https:\/\/upload\.wikimedia\.org\/[^\s]+\.(?:jpg|jpeg|png|gif|svg|webp)$/;
     let img;
@@ -176,12 +180,14 @@ async function cityListSetUp(nameJson,type){
             //tilte
             if ('Title' in obj.cardInfo) {
                 title = obj.cardInfo.Title;
+                dataToReturn["name"] = title
             } else {
                 title = "No Title"
                 console.warn('METROP DATA API\n---\nDATA MISSING : "Title"\nIN : '+ nameJson +' \n---\nTitle are not needed but recomended. The title will be "No Title".\n---\nDocumentation : https://github.com/Metrop-Learning/Metrop/blob/main/documentaion/data.md\n---', obj);
             }
             if ('Text' in obj.cardInfo) {
                 text = obj.cardInfo.Text;
+                dataToReturn["description"] = text
             } else {
                 text = "No Texte"
                 console.warn('METROP DATA API\n---\nDATA MISSING : "Text"\nIN : '+ nameJson +' \n---\nText are not needed but recomended. The text will be "No Text".\n---\nDocumentation : https://github.com/Metrop-Learning/Metrop/blob/main/documentaion/data.md\n---', obj);
@@ -197,6 +203,7 @@ async function cityListSetUp(nameJson,type){
                 let deep;
                         
                 const [continent, country, region, subregion] = id.split("-");
+                dataToReturn["countryID"] = country
                         
                 if (continent && dataBorder[continent]) {
                   deep = dataBorder[continent];
@@ -204,6 +211,9 @@ async function cityListSetUp(nameJson,type){
             
                 if (deep?.get && country && deep.get[country]) {
                   deep = deep.get[country];
+                  if ('namefr' in deep){
+                    dataToReturn["countryName"] = deep.namefr
+                  }
                 }
             
                 if (deep?.get && region && deep.get[region]) {
@@ -277,6 +287,8 @@ async function cityListSetUp(nameJson,type){
     div_c.innerHTML += buttonWillAdded + "</div>"
     div.appendChild(div_c)
     cardList.push([title,div])
+    dataToReturn["div"] = div
+    return dataToReturn
 }
 
 
@@ -338,6 +350,110 @@ document.getElementById('searchInput').addEventListener('keydown', function(even
 });
 
 document.getElementById('searchInput').addEventListener('blur', function() {
+    if(document.getElementById('searchInput').value.trimStart() == ""){
+        document.getElementById('searchInput').value = ""
+        return
+    }
     document.getElementById('menu').style.display = "none"
     document.getElementById('searchResult').style.display = "block"
+    searchPreparation(document.getElementById('searchInput').value)
 });
+
+function searchPreparation(textResearch){
+    document.getElementById('researchEmptyOrError').style.display = 'none'
+    document.getElementById('searchResultCard').innerHTML = ""
+    let final = []
+    for(let i = 0; i < listCityQuizInfo.length; i++){
+        const words = textResearch.split(" ");
+        //name country vérif
+        if(words.some( word => util.checkDiff(word, listCityQuizInfo[i].countryName) <= word.length / 2)){
+            let objExistant = final.find(obj => obj.name === listCityQuizInfo[i].name)
+            if(objExistant){
+                objExistant.point += 50;
+            }
+            else{
+                final.push({name: listCityQuizInfo[i].name, point: 50,div: listCityQuizInfo[i].div})
+            }
+        }
+        //id country vérif
+        if(words.some(word => word.toUpperCase() === listCityQuizInfo[i].countryID)){
+            let objExistant = final.find(obj => obj.name === listCityQuizInfo[i].name)
+            if(objExistant){
+                objExistant.point += 50;
+            }
+            else{
+                final.push({name: listCityQuizInfo[i].name, point: 50,div: listCityQuizInfo[i].div})
+            }
+        }
+        //Title
+        if(words.some(word => listCityQuizInfo[i].name.toLowerCase().includes(word.toLowerCase()))){
+            let objExistant = final.find(obj => obj.name === listCityQuizInfo[i].name)
+            if(objExistant){
+                objExistant.point += words.filter(word => listCityQuizInfo[i].name.toLowerCase().includes(word.toLowerCase())).length * 10;
+            }
+            else{
+                final.push({name: listCityQuizInfo[i].name, point: 50,div: listCityQuizInfo[i].div})
+            }
+        }
+        //Description
+        if(words.some(word => listCityQuizInfo[i].description.toLowerCase().includes(word.toLowerCase()))){
+            let objExistant = final.find(obj => obj.name === listCityQuizInfo[i].name)
+            if(objExistant){
+                objExistant.point += words.filter(word => listCityQuizInfo[i].description.toLowerCase().includes(word.toLowerCase())).length * 2;
+            }
+            else{
+                final.push({name: listCityQuizInfo[i].name, point: 50,div: listCityQuizInfo[i].div})
+            }
+        }
+    }
+    for(let i = 0; i < listCountryQuizInfo.length; i++){
+        const words = textResearch.split(" ");
+        //name country vérif
+        if(words.some( word => util.checkDiff(word, listCountryQuizInfo[i].countryName) <= word.length / 2)){
+            let objExistant = final.find(obj => obj.name === listCountryQuizInfo[i].name)
+            if(objExistant){
+                objExistant.point += 50;
+            }
+            else{
+                final.push({name: listCountryQuizInfo[i].name, point: 50,div: listCountryQuizInfo[i].div})
+            }
+        }
+        //id country vérif
+        if(words.some(word => word.toUpperCase() === listCountryQuizInfo[i].countryID)){
+            let objExistant = final.find(obj => obj.name === listCountryQuizInfo[i].name)
+            if(objExistant){
+                objExistant.point += 50;
+            }
+            else{
+                final.push({name: listCountryQuizInfo[i].name, point: 50,div: listCountryQuizInfo[i].div})
+            }
+        }
+        //Title
+        if(words.some(word => listCountryQuizInfo[i].name.toLowerCase().includes(word.toLowerCase()))){
+            let objExistant = final.find(obj => obj.name === listCountryQuizInfo[i].name)
+            if(objExistant){
+                objExistant.point += words.filter(word => listCountryQuizInfo[i].name.toLowerCase().includes(word.toLowerCase())).length * 10;
+            }
+            else{
+                final.push({name: listCountryQuizInfo[i].name, point: 50,div: listCountryQuizInfo[i].div})
+            }
+        }
+        //Description
+        if(words.some(word => listCountryQuizInfo[i].description.toLowerCase().includes(word.toLowerCase()))){
+            let objExistant = final.find(obj => obj.name === listCountryQuizInfo[i].name)
+            if(objExistant){
+                objExistant.point += words.filter(word => listCountryQuizInfo[i].description.toLowerCase().includes(word.toLowerCase())).length * 2;
+            }
+            else{
+                final.push({name: listCountryQuizInfo[i].name, point: 50,div: listCountryQuizInfo[i].div})
+            }
+        }
+    }
+    final.sort((a, b) => b.point - a.point);
+    for(let i = 0; i < final.length; i++){
+        document.getElementById('searchResultCard').appendChild(final[i].div);
+    }
+    if(final.length == 0){
+        document.getElementById('researchEmptyOrError').style.display = 'block'
+    }
+}

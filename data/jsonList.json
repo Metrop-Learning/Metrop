@@ -5,7 +5,8 @@
         "MegacityHard.json",
         "MetroCityFrance.json",
         "CapitalCanada.json",
-        "CapitalEuropeanUnion.json"
+        "CapitalEuropeanUnion.json",
+        "Most10PopulatedCity.json"
     ],
     "country":[
         "FranceRegionMetropolitaine.json",
@@ -27,7 +28,9 @@
         "SouthAsia.json",
         "indiaStatesAndfTerritories.json",
         "denmarkRegion.json",
-        "denmarkRegionNoAuto.json"
+        "denmarkRegionNoAuto.json",
+        "FranceARAdepartement.json",
+        "FranceRegion.json"
     ],
     "flag":{
 
