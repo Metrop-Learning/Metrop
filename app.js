@@ -1,6 +1,6 @@
 import data from './data/jsonList.json' with { type: "json" };
 import dataBorder from './country/boundary.json' with { type:"json"}
-import * as util from "../../city/asset/common.js"
+import * as util from "./city/asset/common.js"
 
 const ver =  [0,7,5,"h"]
 const verAPI = [0,5]
