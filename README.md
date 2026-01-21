@@ -1,7 +1,7 @@
 <h1 align="center"><img src="./data/globe-showing-europe-africa-noto-emoji.gif" width="60">
 <picture>
   <source srcset="./data/name-dark.svg" media="(prefers-color-scheme: dark)" width="200">
-  <img src="name.svg" alt="Mon image" width="200">
+  <img src="./data/name.svg" width="200">
 </picture>
 </h1>
 
@@ -38,7 +38,7 @@ Created by / Créé par : @Jimmxyz
 🇨🇦 : Metrop use Leaflet an amazing api to manage maps.  
 🇫🇷 : Metrop utilise l'incroyable api Leaflet pour gérer les carte.
 
-🇨🇦 : Le logo animé et la favicon proviennent de la base de données <a href="https://googlefonts.github.io/noto-emoji-animation/">Google Noto Emoji</a>, licenciés sous la <a href="https://creativecommons.org/licenses/by/4.0/legalcode">🅭 CC BY 4.0</a>.
+🇨🇦 : The animated logo and the favicon come from the <a href="https://googlefonts.github.io/noto-emoji-animation/">Google Noto Emoji</a> database, licensed under <a href="https://creativecommons.org/licenses/by/4.0/legalcode">🅭 CC BY 4.0</a>.
 
-🇫🇷 : The animated logo and the favicon come from the <a href="https://googlefonts.github.io/noto-emoji-animation/">Google Noto Emoji</a> database, licensed under <a href="https://creativecommons.org/licenses/by/4.0/legalcode">🅭 CC BY 4.0</a>.
+🇫🇷 : Le logo animé et la favicon proviennent de la base de données <a href="https://googlefonts.github.io/noto-emoji-animation/">Google Noto Emoji</a>, licenciés sous la <a href="https://creativecommons.org/licenses/by/4.0/legalcode">🅭 CC BY 4.0</a>.
 
