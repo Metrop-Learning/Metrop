@@ -1,8 +1,36 @@
 {
   "listCountry":[
     {
-      "name":"none",
-      "id":"none"
+      "name":"Hokkaidō",
+      "id":"AS-JAP-R1"
+    },
+    {
+      "name":"Tōhoku",
+      "id":"AS-JAP-R2"
+    },
+    {
+      "name":"Kantō",
+      "id":"AS-JAP-R3"
+    },
+    {
+      "name":"Chūbu",
+      "id":"AS-JAP-R4"
+    },
+    {
+      "name":"Kansai",
+      "id":"AS-JAP-R5"
+    },
+    {
+      "name":"Chūgoku",
+      "id":"AS-JAP-R6"
+    },
+    {
+      "name":"Shikoku",
+      "id":"AS-JAP-R7"
+    },
+    {
+      "name":"Kyūshū & Okinawa",
+      "id":"AS-JAP-R8"
     }
   ],
   "cardInfo":{
@@ -10,6 +38,7 @@
     "Text":"Les 8 régions du Japon ne sont pas des subdivisions administratives du Japon, mais une division historique du territoire.",
     "lang":"FR",
     "pictureURL":"None",
+    "setInfo":"AS-JAP",
     "option":{
             "tryMax":1,
             "EliminateSelected":true

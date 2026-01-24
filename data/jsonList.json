@@ -30,7 +30,10 @@
         "denmarkRegion.json",
         "denmarkRegionNoAuto.json",
         "FranceARAdepartement.json",
-        "FranceRegion.json"
+        "FranceRegion.json",
+        "JapanRegion.json",
+        "SwitzerlandCanton.json",
+        "FrancePACdepartement.json"
     ],
     "flag":{
 

@@ -1,0 +1,44 @@
+{
+  "listCountry":[
+    {
+      "name":"Hautes-Alpes",
+      "id":"EU-FRA-PAC-5"
+    },
+    {
+      "name":"Alpes-de-Haute-Provence",
+      "id":"EU-FRA-PAC-4"
+    },
+    {
+      "name":"Ardèche",
+      "id":"EU-FRA-PAC-6"
+    },
+    {
+      "name":"Cantal",
+      "id":"EU-FRA-PAC-13"
+    },
+    {
+      "name":"Var",
+      "id":"EU-FRA-PAC-83"
+    },
+    {
+      "name":"Vaucluse",
+      "id":"EU-FRA-PAC-84"
+    }
+  ],
+  "cardInfo":{
+    "Title":"Les départements de Provence-Alpes-Côte d'Azur",
+    "Text":"Les 6 départements de la région Provence-Alpes-Côte d'Azur en France",
+    "lang":"FR",
+    "pictureURL":"None",
+    "setInfo":"EU-FRA",
+    "option":{
+            "tryMax":1,
+            "EliminateSelected":true
+        }
+  },
+  "type":[
+    "placeTerritory",
+    "shadowTerritory",
+    "guessFromPosiTerritory"
+  ]
+}

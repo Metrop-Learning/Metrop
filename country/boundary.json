@@ -61,7 +61,27 @@
                         "content": "Data:France/Region/Occitanie.map"
                     },
                     "PAC": {
-                        "content": "Data:France/Region/ Provence-Alpes-Côte d'Azur.map"
+                        "content": "Data:France/Region/ Provence-Alpes-Côte d'Azur.map",
+                        "get":{
+                            "4":{
+                                "content":"useInstead:OSMB:departement-04-alpes-de-haute-provence.geojson"
+                            },
+                            "5":{
+                                "content":"useInstead:OSMB:departement-05-hautes-alpes.geojson"
+                            },
+                            "6":{
+                                "content":"useInstead:OSMB:departement-06-alpes-maritimes.geojson"
+                            },
+                            "13":{
+                                "content":"useInstead:OSMB:departement-13-bouches-du-rhone.geojson"
+                            },
+                            "83":{
+                                "content":"useInstead:OSMB:departement-83-var.geojson"
+                            },
+                            "84":{
+                                "content":"useInstead:OSMB:departement-84-vaucluse.geojson"
+                            }
+                        }
                     },
                     "COR": {
                         "content": "Data:France/Region/Corse.map"
@@ -157,7 +177,88 @@
                 }
             },
             "CHE": {
-                "content": "Data:Switzerland.map"
+                "content": "Data:Switzerland.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/0/08/Flag_of_Switzerland_%28Pantone%29.svg",
+                "get":{
+                    "UR":{
+                        "content":"Data:Uri.map"
+                    },
+                    "SZ":{
+                        "content":"Data:Schwyz.map"
+                    },
+                    "OW":{
+                        "content":"Data:Obwalden.map"
+                    },
+                    "NW":{
+                        "content":"Data:Nidwalden.map"
+                    },
+                    "LU":{
+                        "content":"Data:Lucerne.map"
+                    },
+                    "ZH":{
+                        "content":"Data:Zürich.map"
+                    },
+                    "GL":{
+                        "content":"Data:Glarus.map"
+                    },
+                    "ZG":{
+                        "content":"Data:Zug.map"
+                    },
+                    "BE":{
+                        "content":"Data:Bern.map"
+                    },
+                    "FR":{
+                        "content":"Data:Fribourg.map"
+                    },
+                    "SO":{
+                        "content":"Data:Solothurn.map"
+                    },
+                    "BS":{
+                        "content":"Data:Basel-Stadt.map"
+                    },
+                    "BL":{
+                        "content":"Data:Basel-Landschaft.map"
+                    },
+                    "SH":{
+                        "content":"Data:Schaffhausen.map"
+                    },
+                    "AR":{
+                        "content":"Data:Appenzell Ausserrhoden.map"
+                    },
+                    "AI":{
+                        "content":"Data:Appenzell Innerrhoden.map"
+                    },
+                    "SG":{
+                        "content":"Data:Sankt Gallen.map"
+                    },
+                    "GR":{
+                        "content":"Data:Graubünden.map"
+                    },
+                    "AG":{
+                        "content":"Data:Aargau.map"
+                    },
+                    "TG":{
+                        "content":"Data:Thurgau.map"
+                    },
+                    "TI":{
+                        "content":"Data:Ticino.map"
+                    },
+                    "VD":{
+                        "content":"Data:Vaud.map"
+                    },
+                    "NE":{
+                        "content":"Data:Neuchâtel.map"
+                    },
+                    "GE":{
+                        "content":"Data:Genève.map"
+                    },
+                    "VS":{
+                        "content":"Data:Valais.map"
+                    },
+                    "JU":{
+                        "content":"Data:Jura (Switzerland).map"
+                    }
+                }
             },
             "ITA": {
                 "content": "Data:Italy.map",
@@ -628,6 +729,42 @@
             },
             "LKA":{
                 "content":"Data:Sri Lanka.map"
+            },
+            "JAP":{
+                "content":"Data:Japan.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/9/9e/Flag_of_Japan.svg",
+                "get":{
+                    "R1":{
+                        "content":"useInstead:OSMB:Hokkaidō.geojson",
+                        "get":{
+                            "P1":{
+                                "content":"useInstead:OSMB:Hokkaidō.geojson",
+                                "flag":"https://upload.wikimedia.org/wikipedia/commons/2/22/Flag_of_Hokkaido_Prefecture.svg"   
+                            }
+                        }
+                    },
+                    "R2":{
+                        "content":"useInstead:OSMB:Tōhoku.geojson"
+                    },
+                    "R3":{
+                        "content":"useInstead:OSMB:Kantō.geojson"
+                    },
+                    "R4":{
+                        "content":"useInstead:OSMB:Chūbu.geojson"
+                    },
+                    "R5":{
+                        "content":"useInstead:OSMB:Kansai.geojson"
+                    },
+                    "R6":{
+                        "content":"useInstead:OSMB:Chūgoku.geojson"
+                    },
+                    "R7":{
+                        "content":"useInstead:OSMB:Shikoku.geojson"
+                    },
+                    "R8":{
+                        "content":"useInstead:OSMB:KyūshūOkinawa.geojson"
+                    }
+                }
             }
         }
     },
