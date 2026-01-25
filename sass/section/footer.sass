@@ -1,0 +1,29 @@
+@use "../color"
+/* for footer */
+footer
+    padding-bottom: 50px
+    padding-top: 50px
+    box-shadow: 0 -6px 12px rgba(0, 0, 0, 0.25)
+    display: flex
+    background-color: var(--footer-color)
+        
+#contribFooter, #contribFooterLink
+        height: auto
+        width: 100%
+        /* change to display: flex; when you want to show it */
+        display: none
+        justify-content: center
+        align-items: center
+        background-color: var(--footer-contrib-color)
+        svg
+            min-width: 50px
+            margin-left: 20px
+
+/* Credit footer colum */
+.colum
+    width: 100%
+    *
+        text-align: left
+    h3, h1, p
+        padding-left: 30px
+        padding-right: 30px;

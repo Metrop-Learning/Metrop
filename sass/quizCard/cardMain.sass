@@ -1,0 +1,39 @@
+@use "../color"
+@use "./cardFooter"
+@use "./cardHeader"
+
+.card
+    height: 520px
+    min-width: 240px
+    text-overflow: ellipsis
+    white-space: nowrap
+    word-wrap: break-word
+    overflow: hidden
+    white-space: normal
+    display: flex
+    flex-direction: row 
+    align-items: center 
+    padding: 1.5%
+    border-radius: 10px
+    gap: 20px
+    flex-shrink: 0
+    position: relative
+    background-color: var(--card-background-color)
+
+/* <- IMG */
+.cardImage
+    max-height: 100%
+    flex: 1
+    aspect-ratio: 1/1
+    height: 100%
+    border-radius: 10px
+    text-overflow: ellipsis
+    white-space: nowrap
+    word-wrap: break-word
+    overflow: hidden
+
+
+/* for smartphone and small screen */
+@media (max-width: 768px)
+    .cardImage
+        display: none

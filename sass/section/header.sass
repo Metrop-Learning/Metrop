@@ -1,0 +1,49 @@
+@use "../color"
+@use "./search"
+
+/* for ALL header */
+header
+    margin: 0
+    position: sticky
+    top: 0
+    width: 100%
+    padding: 5px
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25)
+    z-index: 1000
+
+    
+/* for the header */
+#mainHeader
+    display: flex
+    align-items: center
+    background-color: var(--header-top-color)
+    #titleNameMetrop
+        padding-left: 10px
+        padding-right: 20px
+
+/* for smartphone and small screen*/
+@media (max-width: 768px)
+    #mainHeader
+        justify-content: center
+        margin-left: 0px
+        margin-right: 0px
+        #titleNameMetrop, #logoMainPage
+            display: none
+
+/*diferent header type*/
+
+#betaTest
+    display: none
+
+#welcomeHeader
+    display: none
+    background-color: rgba(81, 81, 227, 0.8)
+
+#updateHeader
+    display: none
+    background-color: rgba(82, 201, 88, 0.8)
+
+.headerInfo
+    position: relative !important
+    box-shadow: none
+    background-color: var(--header-red-color)

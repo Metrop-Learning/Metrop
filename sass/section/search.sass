@@ -1,0 +1,46 @@
+@use "../color"
+/*for the search bar*/
+#searchField
+    gap: 5px
+    display: flex
+    width: 300px
+    height: 25px
+    border-radius: 3px
+    background-color: var(--search-bar-background)
+    align-items: center
+    transition:0.2s
+    /* search icon */
+    svg
+        margin-left: 5px
+    /* input area */
+    #searchInput
+        background-color: transparent
+        color: var(--text-color)
+        border: none
+        width: 100%
+        text-align: left
+
+    #searchInput:focus
+        outline: none
+
+#searchField:hover
+    scale: 1.1
+
+#searchField:focus-within
+    width: calc( 80% - 192px)
+    margin-left: 5%
+
+/* for smartphone and small screen*/
+@media (max-width: 768px)
+    #searchField
+        margin-left: 0px !important
+        width: 90vw !important
+    #searchField:hover
+        scale: 1 !important
+    #searchField:focus-within
+        width: 90vw !important
+
+/* Search Result Area */
+#searchResult
+    display: none
+    margin-top: 20px

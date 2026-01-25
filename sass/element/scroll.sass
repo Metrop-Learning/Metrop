@@ -1,0 +1,22 @@
+@use "../color"
+/* --- Firefox --- */
+*
+   scrollbar-width: thin
+   scrollbar-color: var(--scroll-bar-color) transparent 
+
+/* --- for Chrome, Edge and Safari --- */
+*::-webkit-scrollbar
+   width: 8px
+
+*::-webkit-scrollbar-track
+   background: transparent
+
+*::-webkit-scrollbar-thumb
+   background-color: var(--scroll-bar-color)
+   border-radius: 10px
+   border: 2px solid transparent 
+   transition: background-color 0.3s, opacity 0.3s
+   opacity: 0
+
+*:hover::-webkit-scrollbar-thumb
+   opacity: 1
