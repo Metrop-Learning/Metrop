@@ -87,7 +87,33 @@
                         "content": "Data:France/Region/Corse.map"
                     },
                     "BFC": {
-                        "content": "Data:France/Region/Bourgogne-Franche-Comté.map"
+                        "content": "Data:France/Region/Bourgogne-Franche-Comté.map",
+                        "get":{
+                            "21":{
+                                "content":"useInstead:OSMB:departement-21-cote-d-or.geojson"
+                            },
+                            "25":{
+                                "content":"useInstead:OSMB:departement-25-doubs.geojson"
+                            },
+                            "39":{
+                                "content":"useInstead:OSMB:departement-39-jura.geojson"
+                            },
+                            "58":{
+                                "content":"useInstead:OSMB:departement-58-nievre.geojson"
+                            },
+                            "70":{
+                                "content":"useInstead:OSMB:departement-70-haute-saone.geojson"
+                            },
+                            "71":{
+                                "content":"useInstead:OSMB:departement-71-saone-et-loire.geojson"
+                            },
+                            "89":{
+                                "content":"useInstead:OSMB:departement-89-yonne.geojson"
+                            },
+                            "90":{
+                                "content":"useInstead:OSMB:departement-90-territoire-de-belfort.geojson"
+                            }
+                        }
                     },
                     "CVL": {
                         "content": "Data:France/Region/Centre-Val de Loire.map"
@@ -1038,7 +1064,43 @@
             }
         }
     },
-    "AF": {},
+    "AF": {
+        "get":{
+            "ZAF":{
+                "content":"Data:South Africa.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_South_Africa.svg",
+                "get":{
+                    "WC":{
+                        "content":"Data:South Africa/Western Cape.map"
+                    },
+                    "NC":{
+                        "content":"Data:South Africa/Northern Cape.map"
+                    },
+                    "EC":{
+                        "content":"Data:South Africa/Eastern Cape.map"
+                    },
+                    "KZN":{
+                        "content":"Data:South Africa/KwaZulu-Natal.map"
+                    },
+                    "FS":{
+                        "content":"Data:South Africa/Orange Free State.map"
+                    },
+                    "NW":{
+                        "content":"Data:South Africa/North West.map"
+                    },
+                    "GT":{
+                        "content":"Data:South Africa/Gauteng.map"
+                    },
+                    "MP":{
+                        "content":"Data:South Africa/Mpumalanga.map"
+                    },
+                    "LP":{
+                        "content":"Data:South Africa/Limpopo.map"
+                    }
+                }
+            }
+        }
+    },
     "OC": {
         "get":{
             "AU":{

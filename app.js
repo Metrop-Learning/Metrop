@@ -2,7 +2,7 @@ import data from './data/jsonList.json' with { type: "json" };
 import dataBorder from './country/boundary.json' with { type:"json"}
 import * as util from "./city/asset/common.js"
 
-const ver =  [0,7,5,"j"]
+const ver =  [0,7,5,"k"]
 const verAPI = [0,5]
 
 if(localStorage.getItem("lastVersionUsed")){

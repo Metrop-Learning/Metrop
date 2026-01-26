@@ -297,7 +297,7 @@ function reset(){
     document.getElementById('prgs').value = actual + 1;
   }
   refreshStyles()
-  document.getElementById('btnP').innerText = "Proposer cet position"
+  document.getElementById('btnP').innerText = "Proposer cette position"
   play = 0
 }
 

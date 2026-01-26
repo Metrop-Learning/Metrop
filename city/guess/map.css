@@ -3,6 +3,11 @@
     width: 100%;
     border-radius: 10px;
 }
+
+#continue{
+    display:none;
+}
+
 @media (max-width: 768px) {
     #map{
         height: 45vh;
@@ -111,4 +116,104 @@
   display: flex;          
   align-items: center;    
   gap: 8px;               
+}
+
+
+@media (prefers-color-scheme: light) {
+    progress {
+  accent-color: rgb(81, 81, 227);
+}
+#resultContent{
+    color: #000;
+}
+}
+
+@media (prefers-color-scheme: dark) {
+    progress {
+  accent-color: rgb(44, 44, 150);
+}
+#resultContent{
+    color: #fff;
+}
+}
+
+
+#resultArea{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: none;
+}
+svg{
+    fill: currentColor;
+}
+
+.btnMenu {
+    background-color: rgb(81, 81, 227);
+    width: auto;
+    border: 0;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    font-style: normal;
+    font-size: larger;
+    font-variation-settings:
+        "wdth" 100,
+        "YTLC" 500;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+    display: flex;              /* Aligne les éléments sur une même ligne */
+    align-items: center;        /* Centre verticalement SVG + texte */
+    gap: 8px;    
+    cursor: pointer; 
+}
+.btnMenu:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+@media (prefers-color-scheme: dark) {
+    .btnMenu {
+        background-color: rgb(44, 44, 150); 
+        color: rgb(230, 230, 230);
+    }
+}
+@media (prefers-color-scheme: light) {
+    .btnMenu {
+        background-color: rgb(81, 81, 227);
+        color: white;
+    }
+}
+
+table {
+        margin-top: 50px;
+        border-collapse: collapse;
+        margin: 0 auto;
+        width: 50vw;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      thead {
+        background: #616161;
+        color: #fff;
+      }
+      th,
+      td {
+        padding: 10px 12px;
+        text-align: left;
+        border-bottom: 1px solid #eee;
+        font-size: 14px;
+      }
+
+#resultArea{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: none;
+}
+.btnList{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }

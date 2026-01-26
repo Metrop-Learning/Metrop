@@ -33,7 +33,9 @@
         "FranceRegion.json",
         "JapanRegion.json",
         "SwitzerlandCanton.json",
-        "FrancePACdepartement.json"
+        "FrancePACdepartement.json",
+        "FranceBFCdepartement.json",
+        "SouthAfricaRegion.json"
     ],
     "flag":{
 

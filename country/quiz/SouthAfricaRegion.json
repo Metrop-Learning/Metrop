@@ -1,0 +1,56 @@
+{
+  "listCountry":[
+    {
+      "name":"Cap-Occidental",
+      "id":"AF-ZAF-WC"
+    },
+    {
+      "name":"Cap-Nord",
+      "id":"AF-ZAF-NC"
+    },
+    {
+      "name":"Cap-Oriental",
+      "id":"AF-ZAF-EC"
+    },
+    {
+      "name":"KwaZulu-Natal",
+      "id":"AF-ZAF-KZN"
+    },
+    {
+      "name":"État libre",
+      "id":"AF-ZAF-FS"
+    },
+    {
+      "name":"Nord-Ouest",
+      "id":"AF-ZAF-NW"
+    },
+    {
+      "name":"Gauteng",
+      "id":"AF-ZAF-GT"
+    },
+    {
+      "name":"Mpumalanga",
+      "id":"AF-ZAF-MP"
+    },
+    {
+      "name":"Limpopo",
+      "id":"AF-ZAF-LP"
+    }
+  ],
+  "cardInfo":{
+    "Title":"Les Régions de l'Afrique du Sud",
+    "Text":"Les 8 régions de l'Afrique du Sud.",
+    "lang":"FR",
+    "pictureURL":"None",
+    "setInfo":"AF-ZAF",
+    "option":{
+            "tryMax":1,
+            "EliminateSelected":true
+        }
+  },
+  "type":[
+    "placeTerritory",
+    "shadowTerritory",
+    "guessFromPosiTerritory"
+  ]
+}

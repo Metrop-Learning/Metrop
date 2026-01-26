@@ -178,7 +178,7 @@ function textVerified(){
     else if(loseStrick >= 6){
       console.log("(failed)\n" + intCityList[indexInt].name)
       document.getElementById('errorText').style.color = "rgb(241, 109, 109)"
-      document.getElementById('errorText').innerHTML = "Tu n'as pas trouvée : " + intCityList[indexInt].name
+      document.getElementById('errorText').innerHTML = "Tu as trouvée : " + intCityList[indexInt].name
       document.getElementById('intArea').style.visibility = 'hidden'
       fail++;
       lastInt = []

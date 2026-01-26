@@ -170,7 +170,7 @@ document.getElementById("btnP").addEventListener("click", () => {
       lastIsFail = false
     }
     document.getElementById("btnP").disabled = true;
-    document.getElementById("btnP").innerText = "Proposer cet position";
+    document.getElementById("btnP").innerText = "Proposer cette position";
     document.getElementById("cityName").innerText = listCity[posilist].name;
     map.setView(
   [48.8566, 2.3522],

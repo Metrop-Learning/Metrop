@@ -15,10 +15,44 @@
     <script src="./main.js" defer type="module"></script>
   </head>
   <body>
-    <div id="map"></div>
+    <div id="resultArea">
+      <div id="logo">
+
+      </div>
+    <div id="resultContent">
+        <h1 id="nameOfCategory"></h1>
+        <h3 id="scorePrc">Score : ?%</h3>
+        <div class="btnList">
+          <button class="btnMenu" style="background-color: rgb(82, 82, 82);font-size: medium;" id="retryMenu">
+            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e3e3e3"><path d="M480-80q-75 0-140.5-28.17-65.5-28.16-114.33-77-48.84-48.83-77-114.33Q120-365 120-440q0-14.33 9.5-23.83 9.5-9.5 23.83-9.5 14.34 0 23.84 9.5t9.5 23.83q0 122.33 85.5 207.83 85.5 85.5 207.83 85.5 122.33 0 207.83-85.5 85.5-85.5 85.5-207.83 0-122.33-83.83-207.83-83.83-85.5-206.17-85.5h-16.66l46 46q10 10 9.83 23.33-.17 13.33-9.83 23.33-10 10-23.5 10.17-13.5.17-23.5-9.83L361.33-744.67q-10-10-10-23.33 0-13.33 10-23.33l105-105q9.34-9.34 23.17-9.17 13.83.17 23.17 9.5 9 9.33 9.16 23 .17 13.67-9.16 23l-50 50H480q75 0 140.5 28.17 65.5 28.16 114.33 77 48.84 48.83 77 114.33Q840-515 840-440t-28.17 140.5q-28.16 65.5-77 114.33-48.83 48.84-114.33 77Q555-80 480-80Z"/></svg>
+            Réessayer
+          </button>
+          <button class="btnMenu" style="font-size: medium;" id="continueMenu">
+            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e3e3e3"><path d="M673-446.67H160v-66.66h513l-240-240L480-800l320 320-320 320-47-46.67 240-240Z"/></svg>
+            Continuer
+          </button>
+        </div>
+        <br>
+        <br>
+        <br>
+        <table id="scoresTable" aria-label="Tableau de scores">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Pays ou Région</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+      <br>
+      </div>
+    </div>
+    <div id="mapsArea">
+      <div id="map"></div>
+    </div>
     <div id="info">
       <br>
-      <input id="nameArea" type="text" maxlength="20" placeholder="Votre réponsse ici">
+      <input id="nameArea" type="text" maxlength="20" placeholder="Votre réponse ici">
       <progress id="prgs" max="100" value="70"></progress>
       <br>
       <br>
