@@ -150,6 +150,18 @@ header {
   background-color: var(--header-red-color);
 }
 
+/* text in header */
+.headerTextMainDes {
+  font-size: smaller;
+}
+.headerTextMainDes a {
+  font-size: smaller;
+}
+
+.headerTextDes {
+  font-size: x-small;
+}
+
 /* for the future #dropZone */
 #dropzone {
   margin: 20px;
