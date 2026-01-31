@@ -4,6 +4,11 @@
   <img src="./data/name.svg" width="200">
 </picture>
 </h1>
+<h3 align="center">
+Open Your Eyes. Go Further. Learn the World.
+</h3>
+<br>
+
 
 Metrop est une app web 🇫🇷 Française et open source pour apprendre
 
