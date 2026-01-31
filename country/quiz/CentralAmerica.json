@@ -1,0 +1,47 @@
+{
+  "listCountry":[
+    {
+      "name":"Guatemala",
+      "id":"AM-GTM"
+    },
+    {
+      "name":"Belize",
+      "id":"AM-BLZ"
+    },
+    {
+      "name":"Honduras",
+      "id":"AM-HND"
+    },
+    {
+      "name":"Salvador",
+      "id":"AM-SLV"
+    },
+    {
+      "name":"Nicaragua",
+      "id":"AM-NIC"
+    },
+    {
+      "name":"Costa Rica",
+      "id":"AM-CRI"
+    },
+    {
+      "name":"Panama",
+      "id":"AM-PAN"
+    }
+  ],
+  "cardInfo":{
+    "Title":"Les Pays d'Amérique Central",
+    "Text":"Les 13 pays d'Amérique du Sud (À l'exception des territoires d'outre-mer de la France, du Royaume-Uni et des Pays-Bas)",
+    "lang":"FR",
+    "pictureURL":"None",
+    "option":{
+            "tryMax":1,
+            "EliminateSelected":true
+        }
+  },
+  "type":[
+    "placeTerritory",
+    "shadowTerritory",
+    "guessFromPosiTerritory"
+  ]
+}

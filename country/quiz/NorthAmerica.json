@@ -2,15 +2,15 @@
   "listCountry":[
     {
       "name":"Canada",
-      "id":"NA-CAN"
+      "id":"AM-CAN"
     },
     {
       "name":"Étas-Unis d'Amérique",
-      "id":"NA-USA"
+      "id":"AM-USA"
     },
     {
       "name":"Mexique",
-      "id":"NA-MEX"
+      "id":"AM-MEX"
     }
   ],
   "cardInfo":{

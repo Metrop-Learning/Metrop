@@ -2,227 +2,227 @@
   "listCountry":[
     {
       "name":"Alberta",
-      "id":"NA-USA-AL"
+      "id":"AM-USA-AL"
     },
     {
       "name":"Alaska",
-      "id":"NA-USA-AK"
+      "id":"AM-USA-AK"
     },
     {
       "name":"Arizona",
-      "id":"NA-USA-AZ"
+      "id":"AM-USA-AZ"
     },
     {
       "name":"Arkansas",
-      "id":"NA-USA-AR"
+      "id":"AM-USA-AR"
     },
     {
       "name":"Californie",
-      "id":"NA-USA-CA"
+      "id":"AM-USA-CA"
     },
     {
       "name":"Caroline du Nord",
-      "id":"NA-USA-NC"
+      "id":"AM-USA-NC"
     },
     {
       "name":"Caroline du Sud",
-      "id":"NA-USA-SC"
+      "id":"AM-USA-SC"
     },
     {
       "name":"Colorado",
-      "id":"NA-USA-CO"
+      "id":"AM-USA-CO"
     },
     {
       "name":"Connecticut",
-      "id":"NA-USA-CT"
+      "id":"AM-USA-CT"
     },
     {
       "name":"Dakota du Nord",
-      "id":"NA-USA-ND"
+      "id":"AM-USA-ND"
     },
     {
       "name":"Dakota du Sud",
-      "id":"NA-USA-SD"
+      "id":"AM-USA-SD"
     },
     {
       "name":"Delaware",
-      "id":"NA-USA-DE"
+      "id":"AM-USA-DE"
     },
     {
       "name":"Floride",
-      "id":"NA-USA-FL"
+      "id":"AM-USA-FL"
     },
     {
       "name":"Géorgie",
-      "id":"NA-USA-GA"
+      "id":"AM-USA-GA"
     },
     {
       "name":"Hawaï",
-      "id":"NA-USA-HI"
+      "id":"AM-USA-HI"
     },
     {
       "name":"Idaho",
-      "id":"NA-USA-ID"
+      "id":"AM-USA-ID"
     },
     {
       "name":"Illinois",
-      "id":"NA-USA-IL"
+      "id":"AM-USA-IL"
     },
     {
       "name":"Indiana",
-      "id":"NA-USA-IN"
+      "id":"AM-USA-IN"
     },
     {
       "name":"Iowa",
-      "id":"NA-USA-IA"
+      "id":"AM-USA-IA"
     },
     {
       "name":"Kansas",
-      "id":"NA-USA-KS"
+      "id":"AM-USA-KS"
     },
     {
       "name":"Commonwealth du Kentucky",
-      "id":"NA-USA-KY"
+      "id":"AM-USA-KY"
     },
     {
       "name":"Louisiane",
-      "id":"NA-USA-LA"
+      "id":"AM-USA-LA"
     },
     {
       "name":"Maine",
-      "id":"NA-USA-ME"
+      "id":"AM-USA-ME"
     },
     {
       "name":"Maryland",
-      "id":"NA-USA-MD"
+      "id":"AM-USA-MD"
     },
     {
       "name":"Commonwealth du Massachusetts",
-      "id":"NA-USA-MA"
+      "id":"AM-USA-MA"
     },
     {
       "name":"Michigan",
-      "id":"NA-USA-MI"
+      "id":"AM-USA-MI"
     },
     {
       "name":"Minnesota",
-      "id":"NA-USA-MN"
+      "id":"AM-USA-MN"
     },
     {
       "name":"Mississippi",
-      "id":"NA-USA-MS"
+      "id":"AM-USA-MS"
     },
     {
       "name":"Missouri",
-      "id":"NA-USA-MO"
+      "id":"AM-USA-MO"
     },
     {
       "name":"Montana",
-      "id":"NA-USA-MT"
+      "id":"AM-USA-MT"
     },
     {
       "name":"Nebraska",
-      "id":"NA-USA-NE"
+      "id":"AM-USA-NE"
     },
     {
       "name":"Nevada",
-      "id":"NA-USA-NV"
+      "id":"AM-USA-NV"
     },
     {
       "name":"New Hampshire",
-      "id":"NA-USA-NH"
+      "id":"AM-USA-NH"
     },
     {
       "name":"New Jersey",
-      "id":"NA-USA-NJ"
+      "id":"AM-USA-NJ"
     },
     {
       "name":"New York",
-      "id":"NA-USA-NY"
+      "id":"AM-USA-NY"
     },
     {
       "name":"Nouveau-Méxique",
-      "id":"NA-USA-NM"
+      "id":"AM-USA-NM"
     },
     {
       "name":"Ohio",
-      "id":"NA-USA-OH"
+      "id":"AM-USA-OH"
     },
     {
       "name":"Oklahoma",
-      "id":"NA-USA-OK"
+      "id":"AM-USA-OK"
     },
     {
       "name":"Oregon",
-      "id":"NA-USA-OR"
+      "id":"AM-USA-OR"
     },
     {
       "name":"Commonwealth de Pennsylvanie",
-      "id":"NA-USA-PA"
+      "id":"AM-USA-PA"
     },
     {
       "name":"Rhode Island",
-      "id":"NA-USA-RI"
+      "id":"AM-USA-RI"
     },
     {
       "name":"Tennessee",
-      "id":"NA-USA-TN"
+      "id":"AM-USA-TN"
     },
     {
       "name":"Texas",
-      "id":"NA-USA-TX"
+      "id":"AM-USA-TX"
     },
     {
       "name":"Utah",
-      "id":"NA-USA-UT"
+      "id":"AM-USA-UT"
     },
     {
       "name":"Vermont",
-      "id":"NA-USA-VT"
+      "id":"AM-USA-VT"
     },
     {
       "name":"Commonwealth de Virginie",
-      "id":"NA-USA-VA"
+      "id":"AM-USA-VA"
     },
     {
       "name":"Virginie-Occidentale",
-      "id":"NA-USA-WV"
+      "id":"AM-USA-WV"
     },
     {
       "name":"Washington",
-      "id":"NA-USA-WA"
+      "id":"AM-USA-WA"
     },
     {
       "name":"Wisconsin",
-      "id":"NA-USA-WI"
+      "id":"AM-USA-WI"
     },
     {
       "name":"Wyoming",
-      "id":"NA-USA-WY"
+      "id":"AM-USA-WY"
     },
     {
       "name":"Commonwealth de Porto Rico",
-      "id":"NA-USA-PRI"
+      "id":"AM-USA-PRI"
     },
     {
       "name":"Commonwealth des Îles Mariannes du Nord",
-      "id":"NA-USA-NMI"
+      "id":"AM-USA-NMI"
     },
     {
       "name":"District de Columbia",
-      "id":"NA-USA-DC"
+      "id":"AM-USA-DC"
     },
     {
       "name":"Îles Vierges des États-Unis",
-      "id":"NA-USA-UVI"
+      "id":"AM-USA-UVI"
     },
     {
       "name":"Guam",
-      "id":"NA-USA-GUM"
+      "id":"AM-USA-GUM"
     },
     {
       "name":"Samoa américaines",
-      "id":"NA-USA-ASM"
+      "id":"AM-USA-ASM"
     }
   ],
   "cardInfo":{
@@ -230,7 +230,7 @@
     "Text":"Les 50 États des États-Unis d'Amérique, les Commonwealth américain, le District de Columbia et les autres territoires non incorporés des États-Unis.",
     "lang":"FR",
     "pictureURL":"None",
-    "setInfo":"NA-USA",
+    "setInfo":"AM-USA",
     "option":{
             "tryMax":2,
             "EliminateSelected":true

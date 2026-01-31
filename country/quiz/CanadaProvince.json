@@ -2,55 +2,55 @@
   "listCountry":[
     {
       "name":"Alberta",
-      "id":"NA-CAN-AB"
+      "id":"AM-CAN-AB"
     },
     {
       "name":"Colombie-Britannique ",
-      "id":"NA-CAN-BC"
+      "id":"AM-CAN-BC"
     },
     {
       "name":"Île-du-Prince-Édouard",
-      "id":"NA-CAN-PE"
+      "id":"AM-CAN-PE"
     },
     {
       "name":"Manitoba",
-      "id":"NA-CAN-MB"
+      "id":"AM-CAN-MB"
     },
     {
       "name":"Nouveau-Brunswick",
-      "id":"NA-CAN-NB"
+      "id":"AM-CAN-NB"
     },
     {
       "name":"Nouvelle-Écosse",
-      "id":"NA-CAN-NS"
+      "id":"AM-CAN-NS"
     },
     {
       "name":"Ontario",
-      "id":"NA-CAN-ON"
+      "id":"AM-CAN-ON"
     },
     {
       "name":"Québec",
-      "id":"NA-CAN-QC"
+      "id":"AM-CAN-QC"
     },
     {
       "name":"Saskatchewan",
-      "id":"NA-CAN-SK"
+      "id":"AM-CAN-SK"
     },
     {
       "name":"Terre-Neuve-et-Labrador",
-      "id":"NA-CAN-NL"
+      "id":"AM-CAN-NL"
     },
     {
       "name":"Nunavut",
-      "id":"NA-CAN-NU"
+      "id":"AM-CAN-NU"
     },
     {
       "name":"Territoires du Nord-Ouest",
-      "id":"NA-CAN-NT"
+      "id":"AM-CAN-NT"
     },
     {
       "name":"Yukon",
-      "id":"NA-CAN-YT"
+      "id":"AM-CAN-YT"
     }
   ],
   "cardInfo":{
@@ -58,7 +58,7 @@
     "Text":"Les 10 Provinces et les 3 Territoires (Yukon, Territoires du Nord-Ouest et Nunavut) du Canada",
     "lang":"FR",
     "pictureURL":"None",
-    "setInfo":"NA-CAN",
+    "setInfo":"AM-CAN",
     "option":{
             "tryMax":1,
             "EliminateSelected":true

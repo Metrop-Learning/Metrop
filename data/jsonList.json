@@ -35,7 +35,10 @@
         "SwitzerlandCanton.json",
         "FrancePACdepartement.json",
         "FranceBFCdepartement.json",
-        "SouthAfricaRegion.json"
+        "SouthAfricaRegion.json",
+        "CentralAmerica.json",
+        "Caraibe.json",
+        "AllCaraibe.json"
     ],
     "flag":{
 

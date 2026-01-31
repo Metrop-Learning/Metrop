@@ -794,50 +794,7 @@
             }
         }
     },
-    "SA": {
-        "get":{
-            "ARG":{
-                "content":"Data:Argentina.map"
-            },
-            "BOL":{
-                "content":"Data:Bolivia.map"
-            },
-            "BRA":{
-                "content":"Data:Brazil.map"
-            },
-            "CHL":{
-                "content":"Data:Chile.map"
-            },
-            "COL":{
-                "content":"Data:Colombia.map"
-            },
-            "ECU":{
-                "content":"Data:Ecuador.map"
-            },
-            "GUY":{
-                "content":"Data:Guyana.map"
-            },
-            "PRY":{
-                "content":"Data:Paraguay.map"
-            },
-            "PER":{
-                "content":"Data:Peru.map"
-            },
-            "SUR":{
-                "content":"Data:Suriname.map"
-            },
-            "TTO":{
-                "content":"Data:Trinidad and Tobago.map"
-            },
-            "VEN":{
-                "content":"Data:Venezuela.map"
-            },
-            "URY":{
-                "content":"Data:Uruguay.map"
-            }
-        }
-    },
-    "NA": {
+    "AM": {
         "get":{
             "CAN":{
                 "content":"Data:Canada.map",
@@ -1060,7 +1017,136 @@
                 }
             },
             "MEX":{
-                "content":"Data:Mexico.map"
+                "content":"Data:Mexico.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/f/fc/Flag_of_Mexico.svg"
+            },
+            "ARG":{
+                "content":"Data:Argentina.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg"
+            },
+            "BOL":{
+                "content":"Data:Bolivia.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/d/de/Flag_of_Bolivia_%28state%29.svg"
+            },
+            "BRA":{
+                "content":"Data:Brazil.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg"
+            },
+            "CHL":{
+                "content":"Data:Chile.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/7/78/Flag_of_Chile.svg"
+            },
+            "COL":{
+                "content":"Data:Colombia.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Colombia.svg"
+            },
+            "ECU":{
+                "content":"Data:Ecuador.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/e/e8/Flag_of_Ecuador.svg"
+            },
+            "GUY":{
+                "content":"Data:Guyana.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/9/99/Flag_of_Guyana.svg"
+            },
+            "PRY":{
+                "content":"Data:Paraguay.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/2/27/Flag_of_Paraguay.svg"
+            },
+            "PER":{
+                "content":"Data:Peru.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Peru.svg"
+            },
+            "SUR":{
+                "content":"Data:Suriname.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/6/60/Flag_of_Suriname.svg"
+            },
+            "TTO":{
+                "content":"Data:Trinidad and Tobago.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/6/64/Flag_of_Trinidad_and_Tobago.svg"
+            },
+            "VEN":{
+                "content":"Data:Venezuela.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/0/06/Flag_of_Venezuela.svg"
+            },
+            "URY":{
+                "content":"Data:Uruguay.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Uruguay.svg"
+            },
+            "GTM":{
+                "content":"Data:Guatemala.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/e/ec/Flag_of_Guatemala.svg"
+            },
+            "BLZ":{
+                "content":"Data:Belize.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/e/e7/Flag_of_Belize.svg"
+            },
+            "HND":{
+                "content":"Data:Honduras.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/7/79/Flag_of_Honduras_%281949%E2%80%932022%2C_2026%E2%80%93present%29.svg"
+            },
+            "SLV":{
+                "content":"Data:El Salvador.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/3/34/Flag_of_El_Salvador.svg"
+            },
+            "NIC":{
+                "content":"Data:Nicaragua.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/1/19/Flag_of_Nicaragua.svg"
+            },
+            "CRI":{
+                "content":"Data:Costa Rica.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/f/f2/Flag_of_Costa_Rica.svg"
+            },
+            "PAN":{
+                "content":"Data:Panama.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/a/ab/Flag_of_Panama.svg"
+            },
+            "ATG":{
+                "content":"Data:Antigua and Barbuda.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/8/89/Flag_of_Antigua_and_Barbuda.svg"
+            },
+            "BHS":{
+                "content":"Data:Bahamas.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/9/93/Flag_of_the_Bahamas.svg"
+            },
+            "BRB":{
+                "content":"Data:Barbados.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/e/ef/Flag_of_Barbados.svg"
+            },
+            "CUB":{
+                "content":"Data:Cuba.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/b/bd/Flag_of_Cuba.svg"
+            },
+            "DMA":{
+                "content":"Data:Dominica.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/c/c4/Flag_of_Dominica.svg"
+            },
+            "GRD":{
+                "content":"Data:Grenada.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_Grenada.svg"
+            },
+            "HTI":{
+                "content":"Data:Haiti.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/5/56/Flag_of_Haiti.svg"
+            },
+            "JAM":{
+                "content":"Data:Jamaica.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/0/0a/Flag_of_Jamaica.svg"
+            },
+            "DOM":{
+                "content":"Data:Dominican Republic.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_the_Dominican_Republic.svg"
+            },
+            "KNA":{
+                "content":"Data:Saint Kitts and Nevis.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Saint_Kitts_and_Nevis.svg"
+            },
+            "VTC":{
+                "content":"Data:Saint Vincent.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/6/6d/Flag_of_Saint_Vincent_and_the_Grenadines.svg"
+            },
+            "LCA":{
+                "content":"Data:Saint Lucia.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_Saint_Lucia.svg"
             }
         }
     },
