@@ -1,0 +1,48 @@
+{
+  "listCountry":[
+    {
+      "name":"Koshi",
+      "id":"AS-NPL-P1"
+    },
+    {
+      "name":"Madhesh",
+      "id":"AS-NPL-P2"
+    },
+    {
+      "name":"Bagmati",
+      "id":"AS-NPL-P3"
+    },
+    {
+      "name":"Gandaki",
+      "id":"AS-NPL-P4"
+    },
+    {
+      "name":"Lumbini",
+      "id":"AS-NPL-P5"
+    },
+    {
+      "name":"Karnali",
+      "id":"AS-NPL-P6"
+    },
+    {
+      "name":"Sudurpashchim",
+      "id":"AS-NPL-P7"
+    }
+  ],
+  "cardInfo":{
+    "Title":"Les Provinces du Népal",
+    "Text":"Les 7 Provinces du Népal",
+    "lang":"FR",
+    "pictureURL":"None",
+    "setInfo":"AS-NPL",
+    "option":{
+            "tryMax":1,
+            "EliminateSelected":true
+        }
+  },
+  "type":[
+    "placeTerritory",
+    "shadowTerritory",
+    "guessFromPosiTerritory"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "listCountry":[
+    {
+      "name":"Indonésie",
+      "id":"AS-IDN"
+    },
+    {
+      "name":"Philippines",
+      "id":"AS-PHL"
+    },
+    {
+      "name":"Vietnam",
+      "id":"AS-VNM"
+    },
+    {
+      "name":"Thaïlande",
+      "id":"AS-THA"
+    },
+    {
+      "name":"Myanmar",
+      "id":"AS-MMR"
+    },
+    {
+      "name":"Malaisie",
+      "id":"AS-MYS"
+    },
+    {
+      "name":"Cambodge",
+      "id":"AS-KHM"
+    },
+    {
+      "name":"Laos",
+      "id":"AS-LAO"
+    },
+    {
+      "name":"Singapour",
+      "id":"AS-SGP"
+    },
+    {
+      "name":"Timor oriental",
+      "id":"AS-TLS"
+    },
+    {
+      "name":"Brunei",
+      "id":"AS-BRN"
+    }
+  ],
+  "cardInfo":{
+    "Title":"Les Pays d'Asie du Sud-Est",
+    "Text":"Les 11 pays d'Asie du Sud-Est",
+    "lang":"FR",
+    "pictureURL":"None",
+    "option":{
+            "tryMax":1,
+            "EliminateSelected":true
+        }
+  },
+  "type":[
+    "placeTerritory",
+    "shadowTerritory",
+    "guessFromPosiTerritory"
+  ]
+}

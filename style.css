@@ -97,6 +97,10 @@
   margin-top: 20px;
 }
 
+#researchEmptyOrError {
+  color: var(--text-color);
+}
+
 /* for ALL header */
 header {
   margin: 0;

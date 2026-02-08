@@ -38,7 +38,13 @@
         "SouthAfricaRegion.json",
         "CentralAmerica.json",
         "Caraibe.json",
-        "AllCaraibe.json"
+        "AllCaraibe.json",
+        "NepalProvince.json",
+        "SriLankaProvince.json",
+        "JapanPrefectures.json",
+        "GreeceDioceses.json",
+        "GreecePeripheric.json",
+        "SouthEasternAsia.json"
     ],
     "flag":{
 

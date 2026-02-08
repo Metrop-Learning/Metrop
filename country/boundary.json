@@ -11,40 +11,40 @@
                         "content": "Data:France/Region/Auvergne-Rhône-Alpes.map",
                         "get":{
                             "1":{
-                                "content":"useInstead:OSMB:departement-01-ain.geojson"
+                                "content":"useInstead:OSMB:france/departement-01-ain.geojson"
                             },
                             "3":{
-                                "content":"useInstead:OSMB:departement-03-allier.geojson"
+                                "content":"useInstead:OSMB:france/departement-03-allier.geojson"
                             },
                             "7":{
-                                "content":"useInstead:OSMB:departement-07-ardeche.geojson"
+                                "content":"useInstead:OSMB:france/departement-07-ardeche.geojson"
                             },
                             "15":{
-                                "content":"useInstead:OSMB:departement-15-cantal.geojson"
+                                "content":"useInstead:OSMB:france/departement-15-cantal.geojson"
                             },
                             "26":{
-                                "content":"useInstead:OSMB:departement-26-drome.geojson"
+                                "content":"useInstead:OSMB:france/departement-26-drome.geojson"
                             },
                             "38":{
-                                "content":"useInstead:OSMB:departement-38-isere.geojson"
+                                "content":"useInstead:OSMB:france/departement-38-isere.geojson"
                             },
                             "42":{
-                                "content":"useInstead:OSMB:departement-42-loire.geojson"
+                                "content":"useInstead:OSMB:france/departement-42-loire.geojson"
                             },
                             "43":{
-                                "content":"useInstead:OSMB:departement-43-haute-loire.geojson"
+                                "content":"useInstead:OSMB:france/departement-43-haute-loire.geojson"
                             },
                             "63":{
-                                "content":"useInstead:OSMB:departement-63-puy-de-dome.geojson"
+                                "content":"useInstead:OSMB:france/departement-63-puy-de-dome.geojson"
                             },
                             "69":{
-                                "content":"useInstead:OSMB:departement-69-rhone.geojson"
+                                "content":"useInstead:OSMB:france/departement-69-rhone.geojson"
                             },
                             "73":{
-                                "content":"useInstead:OSMB:departement-73-savoie.geojson"
+                                "content":"useInstead:OSMB:france/departement-73-savoie.geojson"
                             },
                             "74":{
-                                "content":"useInstead:OSMB:departement-74-haute-savoie.geojson"
+                                "content":"useInstead:OSMB:france/departement-74-haute-savoie.geojson"
                             }
                         }
                     },
@@ -64,22 +64,22 @@
                         "content": "Data:France/Region/ Provence-Alpes-Côte d'Azur.map",
                         "get":{
                             "4":{
-                                "content":"useInstead:OSMB:departement-04-alpes-de-haute-provence.geojson"
+                                "content":"useInstead:OSMB:france/departement-04-alpes-de-haute-provence.geojson"
                             },
                             "5":{
-                                "content":"useInstead:OSMB:departement-05-hautes-alpes.geojson"
+                                "content":"useInstead:OSMB:france/departement-05-hautes-alpes.geojson"
                             },
                             "6":{
-                                "content":"useInstead:OSMB:departement-06-alpes-maritimes.geojson"
+                                "content":"useInstead:OSMB:france/departement-06-alpes-maritimes.geojson"
                             },
                             "13":{
-                                "content":"useInstead:OSMB:departement-13-bouches-du-rhone.geojson"
+                                "content":"useInstead:OSMB:france/departement-13-bouches-du-rhone.geojson"
                             },
                             "83":{
-                                "content":"useInstead:OSMB:departement-83-var.geojson"
+                                "content":"useInstead:OSMB:france/departement-83-var.geojson"
                             },
                             "84":{
-                                "content":"useInstead:OSMB:departement-84-vaucluse.geojson"
+                                "content":"useInstead:OSMB:france/departement-84-vaucluse.geojson"
                             }
                         }
                     },
@@ -90,28 +90,28 @@
                         "content": "Data:France/Region/Bourgogne-Franche-Comté.map",
                         "get":{
                             "21":{
-                                "content":"useInstead:OSMB:departement-21-cote-d-or.geojson"
+                                "content":"useInstead:OSMB:france/departement-21-cote-d-or.geojson"
                             },
                             "25":{
-                                "content":"useInstead:OSMB:departement-25-doubs.geojson"
+                                "content":"useInstead:OSMB:france/departement-25-doubs.geojson"
                             },
                             "39":{
-                                "content":"useInstead:OSMB:departement-39-jura.geojson"
+                                "content":"useInstead:OSMB:france/departement-39-jura.geojson"
                             },
                             "58":{
-                                "content":"useInstead:OSMB:departement-58-nievre.geojson"
+                                "content":"useInstead:OSMB:france/departement-58-nievre.geojson"
                             },
                             "70":{
-                                "content":"useInstead:OSMB:departement-70-haute-saone.geojson"
+                                "content":"useInstead:OSMB:france/departement-70-haute-saone.geojson"
                             },
                             "71":{
-                                "content":"useInstead:OSMB:departement-71-saone-et-loire.geojson"
+                                "content":"useInstead:OSMB:france/departement-71-saone-et-loire.geojson"
                             },
                             "89":{
-                                "content":"useInstead:OSMB:departement-89-yonne.geojson"
+                                "content":"useInstead:OSMB:france/departement-89-yonne.geojson"
                             },
                             "90":{
-                                "content":"useInstead:OSMB:departement-90-territoire-de-belfort.geojson"
+                                "content":"useInstead:OSMB:france/departement-90-territoire-de-belfort.geojson"
                             }
                         }
                     },
@@ -510,7 +510,92 @@
                 "content":"Data:Finland.map"
             },
             "GRC":{
-                "content":"Data:Greece.map"
+                "content":"Data:Greece.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Greece.svg",
+                "get":{
+                    "AT":{
+                        "content":"useInstead:OSMB:greece/at.geojson",
+                        "get":{
+                            "ATQ":{
+                                "content":"Data:Greece/Attiki.map"
+                            }
+                        }
+                    },
+                    "MT":{
+                        "content":"useInstead:OSMB:greece/mt.geojson",
+                        "get":{
+                            "AMT":{
+                                "content":"Data:Greece/Anatoliki Makedonia kai Thraki.map"
+                            },
+                            "KEM":{
+                                "content":"Data:Greece/Kentriki Makedonia.map"
+                            }
+                        }
+                    },
+                    "EO":{
+                        "content":"useInstead:OSMB:greece/eo.geojson",
+                        "get":{
+                            "DYM":{
+                                "content":"Data:Greece/Dytiki Makedonia.map"
+                            },
+                            "IEO":{
+                                "content":"Data:Greece/Ipeiros.map"
+                            }
+                        }
+                    },
+                    "TC":{
+                        "content":"useInstead:OSMB:greece/tc.geojson",
+                        "get":{
+                            "THE":{
+                                "content":"Data:Greece/Thessalia.map"
+                            },
+                            "STE":{
+                                "content":"Data:Greece/Stereá Elláda.map"
+                            }
+                        }
+                    },
+                    "PI":{
+                        "content":"useInstead:OSMB:greece/pi.geojson",
+                        "get":{
+                            "ION":{
+                                "content":"Data:Greece/Ionioi Nisoi.map"
+                            },
+                            "DYE":{
+                                "content":"Data:Greece/Dytiki Ellada.map"
+                            },
+                            "PEL":{
+                                "content":"Data:Greece/Peloponnisos.map"
+                            }
+                        }
+                    },
+                    "EG":{
+                        "content":"useInstead:OSMB:greece/eg.geojson",
+                        "get":{
+                            "NAI":{
+                                "content":"Data:Greece/Notio Aigaio.map"
+                            },
+                            "VAI":{
+                                "content":"Data:Greece/Voreio Aigaio.map"
+                            }
+                        }
+                    },
+                    "CR":{
+                        "content":"useInstead:OSMB:greece/cr.geojson",
+                        "get":{
+                            "KRI":{
+                                "content":"Data:Greece/Kriti.map"
+                            }
+                        }
+                    },
+                    "MA":{
+                        "content":"useInstead:OSMB:greece/ma.geojson",
+                        "get":{
+                            "AYO":{
+                                "content":"Data:Greece/Ayion Oros.map"
+                            }
+                        }
+                    }
+                }
             },
             "HUN":{
                 "content":"Data:Hungary.map"
@@ -601,34 +686,43 @@
     "AS": {
         "get":{
             "CYP":{
-                "content":"Data:Cyprus.map"
+                "content":"Data:Cyprus.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Cyprus.svg"
             },
             "RUS":{
-                "content":"Data:Russia.map"
+                "content":"Data:Russia.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg"
             },
             "TUR":{
-                "content":"Data:Turkey.map"
+                "content":"Data:Turkey.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg"
             },
             "GRC":{
-                "content":"Data:Greece.map"
+                "content":"Data:Greece.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Greece.svg"
             },
             "KAZ":{
-                "content":"Data:Kazakhstan.map"
+                "content":"Data:Kazakhstan.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/d/d3/Flag_of_Kazakhstan.svg"
             },
             "GEO":{
-                "content":"Data:Georgia.map"
+                "content":"Data:Georgia.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/0/0f/Flag_of_Georgia.svg"
             },
             "AZE":{
-                "content":"Data:Azerbaijan.map"
+                "content":"Data:Azerbaijan.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/d/dd/Flag_of_Azerbaijan.svg"
             },
             "AFG":{
                 "content":"Data:Afghanistan.map"
             },
             "BGD":{
-                "content":"Data:Bangladesh.map"
+                "content":"Data:Bangladesh.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/f/f9/Flag_of_Bangladesh.svg"
             },
             "BTN":{
-                "content":"Data:Bhutan.map"
+                "content":"Data:Bhutan.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/9/91/Flag_of_Bhutan.svg"
             },
             "IND":{
                 "content":"Data:India.map",
@@ -745,52 +839,313 @@
                 }
             },
             "MDV":{
-                "content":"Data:Maldives.map"
+                "content":"Data:Maldives.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/0/0f/Flag_of_Maldives.svg"
             },
             "NPL":{
-                "content":"Data:Nepal.map"
+                "content":"Data:Nepal.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/9/9b/Flag_of_Nepal.svg",
+                "get":{
+                    "P1":{
+                        "content":"useInstead:OSMB:nepal/Province-1.geojson"
+                    },
+                    "P2":{
+                        "content":"useInstead:OSMB:nepal/Province-2.geojson"
+                    },
+                    "P3":{
+                        "content":"useInstead:OSMB:nepal/Province-3.geojson"
+                    },
+                    "P4":{
+                        "content":"useInstead:OSMB:nepal/Province-4.geojson"
+                    },
+                    "P5":{
+                        "content":"useInstead:OSMB:nepal/Province-5.geojson"
+                    },
+                    "P6":{
+                        "content":"useInstead:OSMB:nepal/Province-6.geojson"
+                    },
+                    "P7":{
+                        "content":"useInstead:OSMB:nepal/Province-7.geojson"
+                    }
+                }
             },
             "PAK":{
-                "content":"Data:Pakistan.map"
+                "content":"Data:Pakistan.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/3/32/Flag_of_Pakistan.svg"
             },
             "LKA":{
-                "content":"Data:Sri Lanka.map"
+                "content":"Data:Sri Lanka.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/1/11/Flag_of_Sri_Lanka.svg",
+                "get":{
+                    "CP":{
+                        "content":"useInstead:OSMB:sriLanka/Central.geojson",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/f/fc/Central_Province.png"
+                    },
+                    "EP":{
+                        "content":"useInstead:OSMB:sriLanka/Eastern.geojson",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/d/dd/Eastern_Province_Flag_%28SRI_LANKA%29.png"
+                    },
+                    "NP":{
+                        "content":"useInstead:OSMB:sriLanka/Northern.geojson",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/f/f8/Flag_of_the_Northern_Province.svg"
+                    },
+                    "SP":{
+                        "content":"useInstead:OSMB:sriLanka/Southern.geojson",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/b/b3/Flag_of_the_Southern_Province_%28Sri_Lanka%29.PNG"
+                    },
+                    "WP":{
+                        "content":"useInstead:OSMB:sriLanka/Western.geojson",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/e/e8/Western_Province_Flag_%28SRI_LANKA%29.png"
+                    },
+                    "NW":{
+                        "content":"useInstead:OSMB:sriLanka/North_Western.geojson",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/7/70/Flag_of_the_North_Western_Province_%28Sri_Lanka%29.svg"
+                    },
+                    "NC":{
+                        "content":"useInstead:OSMB:sriLanka/North_Central.geojson",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/7/74/Flag_of_the_North_Central_Province_Sri_Lanka.png"
+                    },
+                    "UP":{
+                        "content":"useInstead:OSMB:sriLanka/Uva.geojson",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/1/1c/Flag_of_the_Uva_Province_%28Sri_Lanka%29.svg"
+                    },
+                    "SG":{
+                        "content":"useInstead:OSMB:sriLanka/Sabaragamuwa.geojson",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/a/ac/Flag_of_the_Sabaragamuwa_Province_%28Sri_Lanka%29.PNG"
+                    }
+                }
             },
             "JAP":{
                 "content":"Data:Japan.map",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/9/9e/Flag_of_Japan.svg",
                 "get":{
                     "R1":{
-                        "content":"useInstead:OSMB:Hokkaidō.geojson",
+                        "content":"useInstead:OSMB:japan/Hokkaidō.geojson",
                         "get":{
                             "P1":{
-                                "content":"useInstead:OSMB:Hokkaidō.geojson",
+                                "content":"useInstead:OSMB:japan/Hokkaidō.geojson",
                                 "flag":"https://upload.wikimedia.org/wikipedia/commons/2/22/Flag_of_Hokkaido_Prefecture.svg"   
                             }
                         }
                     },
                     "R2":{
-                        "content":"useInstead:OSMB:Tōhoku.geojson"
+                        "content":"useInstead:OSMB:japan/Tōhoku.geojson",
+                        "get":{
+                            "P2":{
+                                "content":"useInstead:OSMB:japan/pref/02.geojson"
+                            },
+                            "P3":{
+                                "content":"useInstead:OSMB:japan/pref/03.geojson"
+                            },
+                            "P4":{
+                                "content":"useInstead:OSMB:japan/pref/04.geojson"
+                            },
+                            "P5":{
+                                "content":"useInstead:OSMB:japan/pref/05.geojson"
+                            },
+                            "P6":{
+                                "content":"useInstead:OSMB:japan/pref/06.geojson"
+                            },
+                            "P7":{
+                                "content":"useInstead:OSMB:japan/pref/07.geojson"
+                            }
+                        }
                     },
                     "R3":{
-                        "content":"useInstead:OSMB:Kantō.geojson"
+                        "content":"useInstead:OSMB:japan/Kantō.geojson",
+                        "get":{
+                            "P8":{
+                                "content":"useInstead:OSMB:japan/pref/08.geojson"
+                            },
+                            "P9":{
+                                "content":"useInstead:OSMB:japan/pref/09.geojson"
+                            },
+                            "P10":{
+                                "content":"useInstead:OSMB:japan/pref/10.geojson"
+                            },
+                            "P11":{
+                                "content":"useInstead:OSMB:japan/pref/11.geojson"
+                            },
+                            "P12":{
+                                "content":"useInstead:OSMB:japan/pref/12.geojson"
+                            },
+                            "P13":{
+                                "content":"useInstead:OSMB:japan/pref/13.geojson"
+                            },
+                            "P14":{
+                                "content":"useInstead:OSMB:japan/pref/14.geojson"
+                            }
+                        }
                     },
                     "R4":{
-                        "content":"useInstead:OSMB:Chūbu.geojson"
+                        "content":"useInstead:OSMB:japan/Chūbu.geojson",
+                        "get":{
+                            "P15":{
+                                "content":"useInstead:OSMB:japan/pref/15.geojson"
+                            },
+                            "P16":{
+                                "content":"useInstead:OSMB:japan/pref/16.geojson"
+                            },
+                            "P17":{
+                                "content":"useInstead:OSMB:japan/pref/17.geojson"
+                            },
+                            "P18":{
+                                "content":"useInstead:OSMB:japan/pref/18.geojson"
+                            },
+                            "P19":{
+                                "content":"useInstead:OSMB:japan/pref/19.geojson"
+                            },
+                            "P20":{
+                                "content":"useInstead:OSMB:japan/pref/20.geojson"
+                            },
+                            "P21":{
+                                "content":"useInstead:OSMB:japan/pref/21.geojson"
+                            },
+                            "P22":{
+                                "content":"useInstead:OSMB:japan/pref/22.geojson"
+                            },
+                            "P23":{
+                                "content":"useInstead:OSMB:japan/pref/23.geojson"
+                            }
+                        }
                     },
                     "R5":{
-                        "content":"useInstead:OSMB:Kansai.geojson"
+                        "content":"useInstead:OSMB:japan/Kansai.geojson",
+                        "get":{
+                            "P24":{
+                                "content":"useInstead:OSMB:japan/pref/24.geojson"
+                            },
+                            "P25":{
+                                "content":"useInstead:OSMB:japan/pref/25.geojson"
+                            },
+                            "P26":{
+                                "content":"useInstead:OSMB:japan/pref/26.geojson"
+                            },
+                            "P27":{
+                                "content":"useInstead:OSMB:japan/pref/27.geojson"
+                            },
+                            "P28":{
+                                "content":"useInstead:OSMB:japan/pref/28.geojson"
+                            },
+                            "P29":{
+                                "content":"useInstead:OSMB:japan/pref/29.geojson"
+                            },
+                            "P30":{
+                                "content":"useInstead:OSMB:japan/pref/30.geojson"
+                            }
+                        }
                     },
                     "R6":{
-                        "content":"useInstead:OSMB:Chūgoku.geojson"
+                        "content":"useInstead:OSMB:japan/Chūgoku.geojson",
+                        "get":{
+                            "P31":{
+                                "content":"useInstead:OSMB:japan/pref/31.geojson"
+                            },
+                            "P32":{
+                                "content":"useInstead:OSMB:japan/pref/32.geojson"
+                            },
+                            "P33":{
+                                "content":"useInstead:OSMB:japan/pref/33.geojson"
+                            },
+                            "P34":{
+                                "content":"useInstead:OSMB:japan/pref/34.geojson"
+                            },
+                            "P35":{
+                                "content":"useInstead:OSMB:japan/pref/35.geojson"
+                            }
+                        }
                     },
                     "R7":{
-                        "content":"useInstead:OSMB:Shikoku.geojson"
+                        "content":"useInstead:OSMB:japan/Shikoku.geojson",
+                        "get":{
+                            "P36":{
+                                "content":"useInstead:OSMB:japan/pref/36.geojson"
+                            },
+                            "P37":{
+                                "content":"useInstead:OSMB:japan/pref/37.geojson"
+                            },
+                            "P38":{
+                                "content":"useInstead:OSMB:japan/pref/38.geojson"
+                            },
+                            "P39":{
+                                "content":"useInstead:OSMB:japan/pref/39.geojson"
+                            }
+                        }
                     },
                     "R8":{
-                        "content":"useInstead:OSMB:KyūshūOkinawa.geojson"
+                        "content":"useInstead:OSMB:japan/KyūshūOkinawa.geojson",
+                        "get":{
+                            "P40":{
+                                "content":"useInstead:OSMB:japan/pref/40.geojson"
+                            },
+                            "P41":{
+                                "content":"useInstead:OSMB:japan/pref/41.geojson"
+                            },
+                            "P42":{
+                                "content":"useInstead:OSMB:japan/pref/42.geojson"
+                            },
+                            "P43":{
+                                "content":"useInstead:OSMB:japan/pref/43.geojson"
+                            },
+                            "P44":{
+                                "content":"useInstead:OSMB:japan/pref/44.geojson"
+                            },
+                            "P45":{
+                                "content":"useInstead:OSMB:japan/pref/45.geojson"
+                            },
+                            "P46":{
+                                "content":"useInstead:OSMB:japan/pref/46.geojson"
+                            },
+                            "P47":{
+                                "content":"useInstead:OSMB:japan/pref/47.geojson"
+                            }
+                        }
                     }
                 }
+            },
+            "IDN":{
+                "content":"Data:Indonesia.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_Indonesia.svg"
+            },
+            "PHL":{
+                "content":"Data:Philippines.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/9/99/Flag_of_the_Philippines.svg"
+            },
+            "VNM":{
+                "content":"Data:Vietnam.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Vietnam.svg"
+            },
+            "THA":{
+                "content":"Data:Thailand.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/a/a9/Flag_of_Thailand.svg"
+            },
+            "MMR":{
+                "content":"Data:Myanmar.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/8/8c/Flag_of_Myanmar.svg"
+            },
+            "MYS":{
+                "content":"Data:Malaysia.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/6/66/Flag_of_Malaysia.svg"
+            },
+            "KHM":{
+                "content":"Data:Cambodia.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_Cambodia.svg"
+            },
+            "LAO":{
+                "content":"Data:Laos.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/5/56/Flag_of_Laos.svg"
+            },
+            "SGP":{
+                "content":"Data:Singapore.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/4/48/Flag_of_Singapore.svg"
+            },
+            "TLS":{
+                "content":"Data:East Timor.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/2/26/Flag_of_East_Timor.svg"
+            },
+            "BRN":{
+                "content":"Data:Brunei.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/9/9c/Flag_of_Brunei.svg"
             }
         }
     },
