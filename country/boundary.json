@@ -1,6 +1,7 @@
 {
     "EU": {
         "flag":"https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg",
+        "namefr":"Europe",
         "get": {
             "FRA": {
                 "content": "Data:France.map",
@@ -205,6 +206,7 @@
             "CHE": {
                 "content": "Data:Switzerland.map",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/0/08/Flag_of_Switzerland_%28Pantone%29.svg",
+                "namefr":"Suisse",
                 "get":{
                     "UR":{
                         "content":"Data:Uri.map"
@@ -356,6 +358,7 @@
             "ESP": {
                 "content":"Data:Spain.map",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg",
+                "namefr":"Espagne",
                 "get":{
                     "AN":{
                         "content":"Data:Spain/Andalusia.map"
@@ -422,6 +425,7 @@
             "UK":{
                 "content":"Data:United Kingdom.map",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg",
+                "namefr":"Royaume-Uni",
                 "get":{
                     "ENG":{
                         "content":"Data:England.map"
@@ -463,6 +467,7 @@
             },
             "DNK":{
                 "content":"Data:Denmark.map",
+                "namefr":"Danemark",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/9/9c/Flag_of_Denmark.svg",
                 "get":{
                     "NJL":{
@@ -511,6 +516,7 @@
             },
             "GRC":{
                 "content":"Data:Greece.map",
+                "namefr":"Grèce",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Greece.svg",
                 "get":{
                     "AT":{
@@ -684,6 +690,7 @@
         }
     },
     "AS": {
+        "namefr":"Asie",
         "get":{
             "CYP":{
                 "content":"Data:Cyprus.map",
@@ -726,6 +733,7 @@
             },
             "IND":{
                 "content":"Data:India.map",
+                "namefr":"Inde",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_India.svg",
                 "get":{
                     "AP":{
@@ -844,6 +852,7 @@
             },
             "NPL":{
                 "content":"Data:Nepal.map",
+                "namefr":"Népal",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/9/9b/Flag_of_Nepal.svg",
                 "get":{
                     "P1":{
@@ -875,6 +884,7 @@
             },
             "LKA":{
                 "content":"Data:Sri Lanka.map",
+                "namefr":"Sri Lanka",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/1/11/Flag_of_Sri_Lanka.svg",
                 "get":{
                     "CP":{
@@ -917,6 +927,7 @@
             },
             "JAP":{
                 "content":"Data:Japan.map",
+                "namefr":"Japon",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/9/9e/Flag_of_Japan.svg",
                 "get":{
                     "R1":{
@@ -1146,10 +1157,111 @@
             "BRN":{
                 "content":"Data:Brunei.map",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/9/9c/Flag_of_Brunei.svg"
+            },
+            "EGY":{
+                "content":"Data:Egypt.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt.svg"
+            },
+            "IRN":{
+                "content":"Data:Iran.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/c/ca/Flag_of_Iran.svg"
+            },
+            "IRQ":{
+                "content":"Data:Iraq.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/f/f6/Flag_of_Iraq.svg"
+            },
+            "YEM":{
+                "content":"Data:Yemen.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/8/89/Flag_of_Yemen.svg"
+            },
+            "SAU":{
+                "content":"Data:Saudi Arabia.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Saudi_Arabia.svg"
+            },
+            "SYR":{
+                "content":"Data:Syria.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/5/54/Flag_of_Syria_%282025-%29.svg"
+            },
+            "JOR":{
+                "content":"Data:Jordan.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/c/c0/Flag_of_Jordan.svg"
+            },
+            "ARE":{
+                "content":"Data:United Arab Emirates.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_the_United_Arab_Emirates.svg"
+            },
+            "ISR":{
+                "content":"Data:Israel.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Israel.svg"
+            },
+            "LBN":{
+                "content":"Data:Lebanon.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/5/59/Flag_of_Lebanon.svg"
+            },
+            "PSE":{
+                "content":"Data:Palestinian territories.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Palestine.svg"
+            },
+            "OMN":{
+                "content":"Data:Oman.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/d/dd/Flag_of_Oman.svg"
+            },
+            "KWT":{
+                "content":"Data:Kuwait.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/a/aa/Flag_of_Kuwait.svg"
+            },
+            "QAT":{
+                "content":"Data:Qatar.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/6/65/Flag_of_Qatar.svg"
+            },
+            "BHR":{
+                "content":"Data:Bahrain.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/2/2c/Flag_of_Bahrain.svg"
+            },
+            "CHN":{
+                "content":"Data:China.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/f/fa/Flag_of_the_People%27s_Republic_of_China.svg"
+            },
+            "PRK":{
+                "content":"Data:North Korea.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/5/51/Flag_of_North_Korea.svg"
+            },
+            "KOR":{
+                "content":"Data:South Korea.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg"
+            },
+            "MNG":{
+                "content":"Data:Mongolia.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/4/4c/Flag_of_Mongolia.svg"
+            },
+            "TWN":{
+                "content":"Data:Taiwan.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/4/4c/Flag_of_Mongolia.svg"
+            },
+            "UZB":{
+                "content":"Data:Uzbekistan.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/8/84/Flag_of_Uzbekistan.svg"
+            },
+            "KGZ":{
+                "content":"Data:Kyrgyzstan.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/c/c7/Flag_of_Kyrgyzstan.svg"
+            },
+            "TJK":{
+                "content":"Data:Tajikistan.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/d/d0/Flag_of_Tajikistan.svg"
+            },
+            "TKM":{
+                "content":"Data:Turkmenistan.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/1/1b/Flag_of_Turkmenistan.svg"
+            },
+            "ARM":{
+                "content":"Data:Armenia.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/2/2f/Flag_of_Armenia.svg"
             }
         }
     },
     "AM": {
+        "namefr":"Amérique",
         "get":{
             "CAN":{
                 "content":"Data:Canada.map",
@@ -1199,6 +1311,7 @@
             },
             "USA":{
                 "content":"useInstead:OSMB:usa.geojson",
+                "namefr":"États-Unis",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/e/e2/Flag_of_the_United_States_%28Pantone%29.svg",
                 "get":{
                     "AL":{
@@ -1373,6 +1486,7 @@
             },
             "MEX":{
                 "content":"Data:Mexico.map",
+                "namefr":"Méxique",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/f/fc/Flag_of_Mexico.svg"
             },
             "ARG":{
@@ -1506,9 +1620,11 @@
         }
     },
     "AF": {
+        "namefr":"Afrique",
         "get":{
             "ZAF":{
                 "content":"Data:South Africa.map",
+                "namefr":"Afrique du Sud",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_South_Africa.svg",
                 "get":{
                     "WC":{
@@ -1539,10 +1655,15 @@
                         "content":"Data:South Africa/Limpopo.map"
                     }
                 }
+            },
+            "EGY":{
+                "content":"Data:Egypt.map",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt.svg"
             }
         }
     },
     "OC": {
+        "namefr":"Océanie",
         "get":{
             "AU":{
                 "content":"Data:Australia.map",
@@ -1636,6 +1757,7 @@
         }
     },
     "WD":{
+        "namefr":"Monde",
         "flag":"https://upload.wikimedia.org/wikipedia/commons/2/2f/Flag_of_the_United_Nations.svg"
     }
 }

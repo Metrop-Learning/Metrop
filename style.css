@@ -226,6 +226,37 @@ footer {
   padding-right: 30px;
 }
 
+#TodayQuiz {
+  width: auto;
+  margin: 30px;
+  height: 210px;
+  border-radius: 15px;
+  background-color: var(--card-background-color);
+  color: var(--text-color);
+  padding: 5px;
+}
+#TodayQuiz p {
+  font-size: smaller;
+  text-align: left;
+  padding-left: 45px;
+  opacity: 0.7;
+}
+#TodayQuiz h1 {
+  font-size: 30px;
+}
+#TodayQuiz h1 img {
+  height: 30px;
+  width: auto;
+}
+#TodayQuiz h3 {
+  text-align: left;
+  padding-left: 45px;
+}
+#TodayQuiz button {
+  margin: 10px;
+  margin-left: 45px;
+}
+
 /* This is the file for the btn classes and ALL button */
 .btn {
   background-color: var(--btn-color);
@@ -453,7 +484,7 @@ svg {
 
 /* main menu */
 #menu {
-  margin-top: 50px;
+  margin-top: 0px;
   text-align: center;
   align-content: center;
 }

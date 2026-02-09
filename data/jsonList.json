@@ -44,7 +44,12 @@
         "JapanPrefectures.json",
         "GreeceDioceses.json",
         "GreecePeripheric.json",
-        "SouthEasternAsia.json"
+        "SouthEasternAsia.json",
+        "MiddleEast.json",
+        "EastAsia.json",
+        "CentralAsia.json",
+        "Asia.json",
+        "America.json"
     ],
     "flag":{
 

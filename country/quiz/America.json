@@ -73,24 +73,64 @@
       "id":"AM-LCA"
     },
     {
-      "name":"Venezuela",
-      "id":"AM-VEN"
+      "name":"Salvador",
+      "id":"AM-SLV"
     },
     {
-      "name":"Trinité-et-Tobago",
-      "id":"AM-TTO"
+      "name":"Argentine",
+      "id":"AM-ARG"
     },
     {
-      "name":"Suriname",
-      "id":"AM-SUR"
+      "name":"Bolivie",
+      "id":"AM-BOL"
+    },
+    {
+      "name":"Brésil",
+      "id":"AM-BRA"
+    },
+    {
+      "name":"Chili",
+      "id":"AM-CHL"
     },
     {
       "name":"Colombie",
       "id":"AM-COL"
     },
     {
+      "name":"Équateur",
+      "id":"AM-ECU"
+    },
+    {
       "name":"Guyana",
       "id":"AM-GUY"
+    },
+    {
+      "name":"Paraguay",
+      "id":"AM-PRY"
+    },
+    {
+      "name":"Pérou",
+      "id":"AM-PER"
+    },
+    {
+      "name":"Suriname",
+      "id":"AM-SUR"
+    },
+    {
+      "name":"Trinité-et-Tobago",
+      "id":"AM-TTO"
+    },
+    {
+      "name":"Uruguay",
+      "id":"AM-URY"
+    },
+    {
+      "name":"Venezuela",
+      "id":"AM-VEN"
+    },
+    {
+      "name":"Canada",
+      "id":"AM-CAN"
     },
     {
       "name":"Étas-Unis d'Amérique",
@@ -102,8 +142,8 @@
     }
   ],
   "cardInfo":{
-    "Title":"Les Pays des Grande Caraïbes",
-    "Text":"Les pays des Grande Caraïbes (À l'exception des territoires d'outre-mer de la France, du Royaume-Uni et des Pays-Bas)",
+    "Title":"Les Pays d'Amérique",
+    "Text":"Les 35 pays en Amérique.",
     "lang":"FR",
     "setInfo":"AM",
     "pictureURL":"None",
