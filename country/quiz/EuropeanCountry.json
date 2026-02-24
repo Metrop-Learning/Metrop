@@ -201,6 +201,7 @@
     "Title":"Pays d'Europe",
     "Text":"Les 50 pays de l'Europe dont 5 pays intercontinentaux (Il convient de noter que Chypre n'est pas située géographiquement en Europe, bien qu'elle y soit politiquement liée. C'est pourquoi Chypre n'a pas été incluse sur cette carte.)",
     "lang":"FR",
+    "setInfo":"EU",
     "pictureURL":"None",
     "option":{
             "tryMax":1,

@@ -2,13 +2,14 @@
 
 #TodayQuiz
     width: auto
-    margin: 30px
-    height: 210px
+    margin: 10px
+    height: auto
     border-radius: 15px
     background-color: var(--card-background-color)
     color: var(--text-color)
     padding: 5px
     p
+        margin-top: 25px
         font-size: smaller
         text-align: left
         padding-left: 45px
@@ -24,3 +25,38 @@
     button
         margin: 10px
         margin-left: 45px
+
+#containerMainInfo
+    display: grid
+    padding: 20px
+    margin: 0px
+    //grid: auto-flow / 1fr 1fr
+    //@media (max-width: 840px)
+    //    grid: 1fr 1fr / auto-flow
+
+.containMainInfoDEBUG
+    grid: auto-flow / 1fr 1fr
+    @media (max-width: 840px)
+        grid: 1fr 1fr / auto-flow
+
+#infoBoard
+    display: none // to change
+    padding: 5px
+    width: auto
+    margin: 10px
+    height: auto
+    border-radius: 15px
+    background-color: var(--card-background-color)
+    color: var(--text-color)
+    p
+        margin-top: 25px
+        font-size: smaller
+        text-align: left
+        padding-left: 45px
+        opacity: 0.7
+    #mostCountry
+        display: flex
+        gap: 8px
+        img
+                height: 10px
+                width: auto

@@ -1,0 +1,56 @@
+{
+  "listCountry":[
+    {
+      "name":"Tchad",
+      "id":"AF-TCD"
+    },
+    {
+      "name":"République centrafricaine",
+      "id":"AF-CAF"
+    },
+    {
+      "name":"Cameroun",
+      "id":"AF-CMR"
+    },
+    {
+      "name":"République démocratique du Congo",
+      "id":"AF-COD"
+    },
+    {
+      "name":"République du Congo",
+      "id":"AF-COG"
+    },
+    {
+      "name":"Gabon",
+      "id":"AF-GAB"
+    },
+    {
+      "name":"Angola",
+      "id":"AF-AGO"
+    },
+    {
+      "name":"Guinée équatoriale",
+      "id":"AF-GNQ"
+    },
+    {
+      "name":"Sao Tomé-et-Principe",
+      "id":"AF-STP"
+    }
+  ],
+  "cardInfo":{
+    "Title":"Les Pays d'Afrique Centrale",
+    "Text":"Les 9 Pays d’Afrique Centrale.",
+    "lang":"FR",
+    "setInfo":"AF",
+    "pictureURL":"None",
+    "option":{
+            "tryMax":1,
+            "EliminateSelected":true
+        }
+  },
+  "type":[
+    "placeTerritory",
+    "shadowTerritory",
+    "guessFromPosiTerritory"
+  ]
+}

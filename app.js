@@ -1,8 +1,10 @@
 import data from './data/jsonList.json' with { type: "json" };
 import dataBorder from './country/boundary.json' with { type:"json"}
 import * as util from "./city/asset/common.js"
+import * as trad from "./trad/trad.js"
 
-const ver =  [0,7,5,"n"]
+const ver =  [0,7,6,"a"]
+const verDate = [2026,2,24]
 const verAPI = [0,5]
 
 if(localStorage.getItem("lastVersionUsed")){
@@ -43,7 +45,7 @@ catch{
 
 
 
-document.getElementById('verText').innerText = "Metrop Version " + ver[0] + "." + ver[1] + "." + ver[2] + "." + ver[3] + " (API : " + verAPI[0] + "." + verAPI[1] + ")"
+document.getElementById('verText').innerHTML = "Metrop Version " + ver[0] + "." + ver[1] + "." + ver[2] + "." + ver[3] + " (API : " + verAPI[0] + "." + verAPI[1] + ")<br><br>Updated the : " + verDate[0] + " / "+verDate[1]+" / " + verDate[2]
 console.info("Metrop ver\n"+ver[0]+"."+ver[1]+"."+ver[2]+"."+ver[3]+"\nMetrop API ver\n"+verAPI[0]+"."+verAPI[1])
 
 if(!localStorage.getItem("DEBUG_STATUT")){
@@ -53,6 +55,8 @@ else if (localStorage.getItem("DEBUG_STATUT") == "true"){
     console.info("DEBUG MODE ACTIVATED")
     document.getElementById('betaTest').style.display = "block";
     document.getElementById('betaElement').style.display = "block";
+    document.getElementById('infoBoard').style.display = "block";
+    document.getElementById('containerMainInfo').className = "containMainInfoDEBUG"
 }
 
 let listCountryQuizInfo = []
@@ -60,6 +64,8 @@ let listCityQuizInfo = []
 
 //Set up city
 let cardList = []
+let tempCardList;
+let tempCard;
 const promisesCity = data.city.map(city => cityListSetUp(city, "city"));
 listCityQuizInfo = await Promise.all(promisesCity);
 //for(let i = 0; i < data.city.length; i++){
@@ -69,6 +75,30 @@ const regex = /[\[\uFF3B]\s*(.*?)\s*[\]\uFF3D]/;
 
 const normalize = (str) =>
   str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+
+
+document.getElementById('nbrQuizCity').innerText =  cardList.length + " quiz"
+if(cardList.length > 10){
+    tempCardList = []
+    for(let i = 0;i < 10; i++){
+        tempCard = cardList[Math.floor(Math.random() * cardList.length)];
+        while(tempCardList.some(obj => obj[0] === tempCard[0])){
+            tempCard = cardList[Math.floor(Math.random() * cardList.length)];
+        }
+        tempCardList.push(tempCard)
+    }
+    cardList = tempCardList
+    const div = document.createElement("div");
+    div.id = "seeAllCity";
+    div.className = "card";
+    div.innerHTML = '<h1>Voir tout les quiz</h1><div style="color: var(--text-color);"><svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#e3e3e3"><path d="m512-450-53 53q-9 9-9 21t9 21q9 9 21 9t21-9l104-104q9-9 9-21t-9-21L501-605q-9-9-21-9t-21 9q-9 9-9 21t9 21l53 53H360q-13 0-21.5 8.5T330-480q0 13 8.5 21.5T360-450h152ZM480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-156t86-127Q252-817 325-848.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 82-31.5 155T763-197.5q-54 54.5-127 86T480-80Zm0-60q142 0 241-99.5T820-480q0-142-99-241t-241-99q-141 0-240.5 99T140-480q0 141 99.5 240.5T480-140Zm0-340Z"/></svg></div>'
+    cardList.push(
+        [
+            "Z:END:SEE:ALL",
+            div
+        ]
+    )
+}
 
 cardList.sort((a, b) => {
   const textA = a[0];
@@ -99,7 +129,6 @@ if(cardList.length == 0){
 for(let i = 0; i < cardList.length; i++){
     document.getElementById('cityQuizList').appendChild(cardList[i][1]);
 }
-document.getElementById('nbrQuizCity').innerText =  cardList.length + " quiz"
 //set up country
 cardList = []
 const promisesCountry = data.country.map(country => cityListSetUp(country, "country"));
@@ -107,6 +136,30 @@ listCountryQuizInfo = await Promise.all(promisesCountry);
 //for(let i = 0; i < data.country.length; i++){
 //    listCountryQuizInfo.push(await cityListSetUp(data.country[i],"country"));
 //}
+console.log(cardList[0])
+document.getElementById('nbrQuizCountry').innerText =  cardList.length + " quiz"
+if(cardList.length > 10){
+    tempCardList = []
+    for(let i = 0;i < 10; i++){
+        tempCard = cardList[Math.floor(Math.random() * cardList.length)];
+        while(tempCardList.some(obj => obj[0] === tempCard[0])){
+            tempCard = cardList[Math.floor(Math.random() * cardList.length)];
+        }
+        tempCardList.push(tempCard)
+    }
+    cardList = tempCardList
+    const div = document.createElement("div");
+    div.id = "seeAllCountry";
+    div.className = "card";
+    div.innerHTML = '<h1>Voir tout les quiz</h1><div style="color: var(--text-color);"><svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#e3e3e3"><path d="m512-450-53 53q-9 9-9 21t9 21q9 9 21 9t21-9l104-104q9-9 9-21t-9-21L501-605q-9-9-21-9t-21 9q-9 9-9 21t9 21l53 53H360q-13 0-21.5 8.5T330-480q0 13 8.5 21.5T360-450h152ZM480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-156t86-127Q252-817 325-848.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 82-31.5 155T763-197.5q-54 54.5-127 86T480-80Zm0-60q142 0 241-99.5T820-480q0-142-99-241t-241-99q-141 0-240.5 99T140-480q0 141 99.5 240.5T480-140Zm0-340Z"/></svg></div>'
+    cardList.push(
+        [
+            "Z:END:SEE:ALL",
+            div
+        ]
+    )
+}
+
 cardList.sort((a, b) => {
   const textA = a[0];
   const textB = b[0];
@@ -136,7 +189,6 @@ if(cardList.length == 0){
 for(let i = 0; i < cardList.length; i++){
     document.getElementById('countryQuizList').appendChild(cardList[i][1]);
 }
-document.getElementById('nbrQuizCountry').innerText =  cardList.length + " quiz"
 //Set up flag
 cardList = []
 for(let i = 0; i < data.flag.length; i++){
@@ -301,7 +353,7 @@ async function cityListSetUp(nameJson,type){
     let buttonWillAdded = "<div class='bottom'>"
     if(obj.type.includes("place")){
         let btnPlace1 = '<button class="btn" onclick="placeOnMap('+"'"+nameJson+"'"+')"'
-        let btnPlace2 = '><svg style="fill: currentColor;" xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#000000"><path d="M480-80q-106 0-173-31.83-67-31.84-67-81.5 0-21 13.17-39.34 13.16-18.33 38.16-33 12-6.66 25.17-4Q329.67-267 336.33-255q6.67 12 3.84 25.17-2.84 13.16-14.84 19.83-5.33 4-10 8.33-4.66 4.34-8.66 8.34 15.66 18.66 67 32.66 51.33 14 106.33 14t106.33-14q51.34-14 67-32.66-4-4-8.66-8.34-4.67-4.33-10-8.33-12-6.67-14.84-19.83Q617-243 623.67-255q6.66-12 19.83-14.67 13.17-2.66 25.17 4 25 14.67 38.16 33Q720-214.33 720-193.33q0 49.66-67 81.5Q586-80 480-80Zm1-203.33q105.67-78.34 159-158.17 53.33-79.83 53.33-152.5 0-108.67-69-164T480-813.33q-74.67 0-144 55.33t-69.33 164q0 71 53 147.83 53 76.84 161.33 162.84Zm-1 67.66q-10 0-20-3.33t-18.67-10Q320-325 260-415.83 200-506.67 200-594q0-71 25.5-124.5t65.83-89.5q40.34-36 90-54Q431-880 480-880t99 18q50 18 90 54t65.5 89.5Q760-665 760-594q0 87.33-60 178.17Q640-325 518-229q-8.67 6.67-18.33 10-9.67 3.33-19.67 3.33ZM480-520q33 0 56.5-23.5T560-600q0-33-23.5-56.5T480-680q-33 0-56.5 23.5T400-600q0 33 23.5 56.5T480-520Zm0-80Z"/></svg>Place sur la carte</button><br>';
+        let btnPlace2 = '><svg style="fill: currentColor;" xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#000000"><path d="M480-80q-106 0-173-31.83-67-31.84-67-81.5 0-21 13.17-39.34 13.16-18.33 38.16-33 12-6.66 25.17-4Q329.67-267 336.33-255q6.67 12 3.84 25.17-2.84 13.16-14.84 19.83-5.33 4-10 8.33-4.66 4.34-8.66 8.34 15.66 18.66 67 32.66 51.33 14 106.33 14t106.33-14q51.34-14 67-32.66-4-4-8.66-8.34-4.67-4.33-10-8.33-12-6.67-14.84-19.83Q617-243 623.67-255q6.66-12 19.83-14.67 13.17-2.66 25.17 4 25 14.67 38.16 33Q720-214.33 720-193.33q0 49.66-67 81.5Q586-80 480-80Zm1-203.33q105.67-78.34 159-158.17 53.33-79.83 53.33-152.5 0-108.67-69-164T480-813.33q-74.67 0-144 55.33t-69.33 164q0 71 53 147.83 53 76.84 161.33 162.84Zm-1 67.66q-10 0-20-3.33t-18.67-10Q320-325 260-415.83 200-506.67 200-594q0-71 25.5-124.5t65.83-89.5q40.34-36 90-54Q431-880 480-880t99 18q50 18 90 54t65.5 89.5Q760-665 760-594q0 87.33-60 178.17Q640-325 518-229q-8.67 6.67-18.33 10-9.67 3.33-19.67 3.33ZM480-520q33 0 56.5-23.5T560-600q0-33-23.5-56.5T480-680q-33 0-56.5 23.5T400-600q0 33 23.5 56.5T480-520Zm0-80Z"/></svg><span trad-i18n="btn-place-on-map">Place sur la carte</span></button><br>';
         dataToReturn["placeBtn"] = btnPlace1 + btnPlace2
         buttonWillAdded += btnPlace1 + 'style="background-color: rgb(82, 82, 82);font-size: medium;"' + btnPlace2
     }
@@ -313,7 +365,7 @@ async function cityListSetUp(nameJson,type){
     }
     if(obj.type.includes("placeTerritory")){
         let btnPlace1 = '<button class="btn" onclick="placeTerritoryIt('+"'"+nameJson+"'"+')"'
-        let btnPlace2 = '><svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#000000"><path d="M638.67-527.33v-1 1-168 168ZM171.33-138.67q-18 8.67-34.66-2.16Q120-151.67 120-172v-558.67q0-13 7.5-23t19.83-15l183.34-63.66q11-4.34 22-4 11 .33 22 4L608-750.67 788.67-822q18-8 34.66 2.5Q840-809 840-788.67v338.34q0 14.33-9.5 23.5-9.5 9.16-23.83 9.16-14.34 0-23.84-9.5t-9.5-23.83v-295.67l-134.66 51.34v148q0 14.33-9.5 23.83-9.5 9.5-23.84 9.5-14.33 0-23.83-9.5-9.5-9.5-9.5-23.83v-148L388-758v499.67q0 15.66-8.5 28.33-8.5 12.67-22.83 18.33l-185.34 73ZM186.67-214l134.66-51.33V-758l-134.66 44.67V-214Zm462.66-7.33q36.67 0 61.5-24 24.84-24 25.17-62.67.33-36.67-24.83-61.67-25.17-25-61.84-25-36.66 0-61.66 25t-25 61.67q0 36.67 25 61.67t61.66 25Zm0 66.66q-63.33 0-108.33-45T496-308q0-64 45-108.67 45-44.66 108.33-44.66 64 0 108.67 44.66Q802.67-372 802.67-308q0 23-6.17 43.83-6.17 20.84-17.83 38.84L858-146q9 9 9 22t-9 22q-9 9-22 9t-22-9l-79.33-78.67q-18.67 13-39.84 19.5-21.16 6.5-45.5 6.5ZM321.33-758v492.67V-758Z"/></svg>Place sur la carte</button><br>';
+        let btnPlace2 = '><svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#000000"><path d="M638.67-527.33v-1 1-168 168ZM171.33-138.67q-18 8.67-34.66-2.16Q120-151.67 120-172v-558.67q0-13 7.5-23t19.83-15l183.34-63.66q11-4.34 22-4 11 .33 22 4L608-750.67 788.67-822q18-8 34.66 2.5Q840-809 840-788.67v338.34q0 14.33-9.5 23.5-9.5 9.16-23.83 9.16-14.34 0-23.84-9.5t-9.5-23.83v-295.67l-134.66 51.34v148q0 14.33-9.5 23.83-9.5 9.5-23.84 9.5-14.33 0-23.83-9.5-9.5-9.5-9.5-23.83v-148L388-758v499.67q0 15.66-8.5 28.33-8.5 12.67-22.83 18.33l-185.34 73ZM186.67-214l134.66-51.33V-758l-134.66 44.67V-214Zm462.66-7.33q36.67 0 61.5-24 24.84-24 25.17-62.67.33-36.67-24.83-61.67-25.17-25-61.84-25-36.66 0-61.66 25t-25 61.67q0 36.67 25 61.67t61.66 25Zm0 66.66q-63.33 0-108.33-45T496-308q0-64 45-108.67 45-44.66 108.33-44.66 64 0 108.67 44.66Q802.67-372 802.67-308q0 23-6.17 43.83-6.17 20.84-17.83 38.84L858-146q9 9 9 22t-9 22q-9 9-22 9t-22-9l-79.33-78.67q-18.67 13-39.84 19.5-21.16 6.5-45.5 6.5ZM321.33-758v492.67V-758Z"/></svg><span trad-i18n="btn-place-on-map">Place sur la carte</span></button><br>';
         dataToReturn["placeBtn"] = btnPlace1 + btnPlace2
         buttonWillAdded += btnPlace1 + 'style="background-color: rgb(82, 82, 82);font-size: medium;"' + btnPlace2
     }
@@ -435,8 +487,60 @@ document.getElementById('searchInput').addEventListener('blur', function() {
 });
 
 function searchPreparation(textResearch){
+    document.body.scrollTop = 0;
     document.getElementById('researchEmptyOrError').style.display = 'none'
     document.getElementById('searchResultCard').innerHTML = ""
+    console.log(listCountryQuizInfo)
+    if(textResearch === "r:country:all"){
+        let final = listCountryQuizInfo
+        final.sort((a, b) => {
+          if (a.continent < b.continent) return -1;
+          if (a.continent > b.continent) return 1;
+
+          const countryA = a.countryName || "";
+          const countryB = b.countryName || "";
+          if (countryA < countryB) return -1;
+          if (countryA > countryB) return 1;
+
+          if (a.name < b.name) return -1;
+          if (a.name > b.name) return 1;
+
+          return 0;
+        });
+        document.getElementById('NbResult').innerText = final.length + ((final.length > 1) ? " résultats" : " résultat");
+        for(let i = 0; i < final.length; i++){
+            document.getElementById('searchResultCard').appendChild(final[i].div);
+        }
+        if(final.length == 0){
+            document.getElementById('researchEmptyOrError').style.display = 'block'
+        }
+        return
+    }
+    if(textResearch === "r:city:all"){
+        let final = listCityQuizInfo
+        final.sort((a, b) => {
+          if (a.continent < b.continent) return -1;
+          if (a.continent > b.continent) return 1;
+
+          const countryA = a.countryName || "";
+          const countryB = b.countryName || "";
+          if (countryA < countryB) return -1;
+          if (countryA > countryB) return 1;
+
+          if (a.name < b.name) return -1;
+          if (a.name > b.name) return 1;
+
+          return 0;
+        });
+        document.getElementById('NbResult').innerText = final.length + ((final.length > 1) ? " résultats" : " résultat");
+        for(let i = 0; i < final.length; i++){
+            document.getElementById('searchResultCard').appendChild(final[i].div);
+        }
+        if(final.length == 0){
+            document.getElementById('researchEmptyOrError').style.display = 'block'
+        }
+        return
+    }
     let final = []
     for(let i = 0; i < listCityQuizInfo.length; i++){
         const words = textResearch.split(" ");
@@ -525,6 +629,7 @@ function searchPreparation(textResearch){
         }
     }
     final.sort((a, b) => b.point - a.point);
+    document.getElementById('NbResult').innerText = final.length + ((final.length > 1) ? " résultats" : " résultat");
     for(let i = 0; i < final.length; i++){
         document.getElementById('searchResultCard').appendChild(final[i].div);
     }
@@ -561,3 +666,35 @@ function TodayQuiz(){
     document.getElementById('todayQuizImgCountry').src = obj.flag ?? "https://upload.wikimedia.org/wikipedia/commons/2/2f/Flag_of_the_United_Nations.svg"
     document.getElementById('btnTodayQuiz').innerHTML = obj.placeBtn
 }
+
+try{
+    document.getElementById("seeAllCountry").addEventListener("click", () => {
+        document.getElementById('menu').style.display = "none"
+        document.getElementById('searchResult').style.display = "block"
+        searchPreparation("r:country:all")
+    })
+}
+catch{
+    //Nothing to do
+}
+
+try{
+    document.getElementById("seeAllCity").addEventListener("click", () => {
+        document.getElementById('menu').style.display = "none"
+        document.getElementById('searchResult').style.display = "block"
+        searchPreparation("r:city:all")
+    })
+}
+catch{
+    //Nothing to do
+}
+
+
+const radios = document.querySelectorAll('input[name="lang"]');
+radios.forEach(radio => {
+  radio.addEventListener('change', function() {
+    if (this.checked) {
+      trad.traductAll("./trad/", this.value)
+    }
+  });
+});

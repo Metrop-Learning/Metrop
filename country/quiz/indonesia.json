@@ -1,0 +1,172 @@
+{
+  "listCountry":[
+    {
+      "name":"Aceh",
+      "id":"AS-IDN-AC"
+    },
+    {
+      "name":"Sumatra du Nord",
+      "id":"AS-IDN-SU"
+    },
+    {
+      "name":"Sumatra occidental",
+      "id":"AS-IDN-SB"
+    },
+    {
+      "name":"Riau",
+      "id":"AS-IDN-RI"
+    },
+    {
+      "name":"Jambi",
+      "id":"AS-IDN-JA"
+    },
+    {
+      "name":"Sumatra du Sud",
+      "id":"AS-IDN-SS"
+    },
+    {
+      "name":"Bengkulu",
+      "id":"AS-IDN-BE"
+    },
+    {
+      "name":"Lampung",
+      "id":"AS-IDN-LA"
+    },
+    {
+      "name":"Îles Bangka Belitung",
+      "id":"AS-IDN-BB"
+    },
+    {
+      "name":"Îles Riau",
+      "id":"AS-IDN-KR"
+    },
+    {
+      "name":"Jakarta",
+      "id":"AS-IDN-JK"
+    },
+    {
+      "name":"Java occidental",
+      "id":"AS-IDN-JB"
+    },
+    {
+      "name":"Java central",
+      "id":"AS-IDN-JT"
+    },
+    {
+      "name":"Territoire spécial de Yogyakarta",
+      "id":"AS-IDN-YO"
+    },
+    {
+      "name":"Java oriental",
+      "id":"AS-IDN-JI"
+    },
+    {
+      "name":"Banten",
+      "id":"AS-IDN-BT"
+    },
+    {
+      "name":"Bali",
+      "id":"AS-IDN-BA"
+    },
+    {
+      "name":"Petites îles de la Sonde occidentales",
+      "id":"AS-IDN-NB"
+    },
+    {
+      "name":"Petites îles de la Sonde orientales",
+      "id":"AS-IDN-NT"
+    },
+    {
+      "name":"Kalimantan occidental",
+      "id":"AS-IDN-KB"
+    },
+    {
+      "name":"Kalimantan central",
+      "id":"AS-IDN-KT"
+    },
+    {
+      "name":"Kalimantan du Sud",
+      "id":"AS-IDN-KS"
+    },
+    {
+      "name":"Kalimantan oriental",
+      "id":"AS-IDN-KI"
+    },
+    {
+      "name":"Kalimantan du Nord",
+      "id":"AS-IDN-KU"
+    },
+    {
+      "name":"Sulawesi du Nord",
+      "id":"AS-IDN-SA"
+    },
+    {
+      "name":"Sulawesi central",
+      "id":"AS-IDN-ST"
+    },
+    {
+      "name":"Sulawesi du Sud",
+      "id":"AS-IDN-SN"
+    },
+    {
+      "name":"Sulawesi du Sud-Est",
+      "id":"AS-IDN-SG"
+    },
+    {
+      "name":"Gorontalo",
+      "id":"AS-IDN-GO"
+    },
+    {
+      "name":"Sulawesi occidental",
+      "id":"AS-IDN-SR"
+    },
+    {
+      "name":"Moluques",
+      "id":"AS-IDN-MA"
+    },
+    {
+      "name":"Moluques du Nord",
+      "id":"AS-IDN-MU"
+    },
+    {
+      "name":"Papouasie",
+      "id":"AS-IDN-PA"
+    },
+    {
+      "name":"Papouasie occidentale",
+      "id":"AS-IDN-PB"
+    },
+    {
+      "name":"Papouasie méridionale",
+      "id":"AS-IDN-PS"
+    },
+    {
+      "name":"Papouasie centrale",
+      "id":"AS-IDN-PT"
+    },
+    {
+      "name":"Papouasie des hautes terres",
+      "id":"AS-IDN-PE"
+    },
+    {
+      "name":"Papouasie du Sud-Ouest",
+      "id":"AS-IDN-PD"
+    }
+  ],
+  "cardInfo":{
+    "Title":"Les provinces de l'Indonésie",
+    "Text":"Les 38 provinces de l'Indonésie",
+    "lang":"FR",
+    "pictureURL":"None",
+    "setInfo":"AS-IDN",
+    "option":{
+            "tryMax":2,
+            "EliminateSelected":true
+        }
+  },
+  "type":[
+    "placeTerritory",
+    "shadowTerritory",
+    "guessFromPosiTerritory"
+  ]
+}

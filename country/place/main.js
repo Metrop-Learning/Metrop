@@ -87,8 +87,8 @@ if (
   window.matchMedia &&
   window.matchMedia("(prefers-color-scheme: dark)").matches
 ) {
-  grey = "#545454ff"   
-  lightGrey = "#6b6b6bff"
+  grey = "rgb(84, 83, 97)"   
+  lightGrey = "rgb(107, 107, 107)"
   green = "#379442ff"
   lightGreen = "#5cc368ff"
   mainColor = "rgba(61, 61, 186, 1)"
@@ -311,7 +311,6 @@ const promises = listCountry.map((countryItem, i) => {
     let deep;
 
     const [continent, country, region, subregion] = id.split("-");
-
     if (continent && dataBorder[continent]) {
       deep = dataBorder[continent];
     }
@@ -327,7 +326,7 @@ const promises = listCountry.map((countryItem, i) => {
     if (deep?.get && subregion && deep.get[subregion]) {
       deep = deep.get[subregion];
     }
-
+    
     const link = deep.content;
 
     await addABoundarie(link, i);

@@ -1,0 +1,40 @@
+{
+    "listCity": [
+  { "name": "Chongqing", "country": "Chine", "lat": 29.4393, "lng": 106.8877 },
+  { "name": "Shanghai", "country": "Chine", "lat": 31.2244, "lng": 121.4692 },
+  { "name": "Pékin", "country": "Chine", "lat": 39.9167, "lng": 116.3833 },
+  { "name": "Chengdu", "country": "Chine", "lat": 30.6570, "lng": 104.0660 },
+  { "name": "Guangzhou", "country": "Chine", "lat": 23.1290, "lng": 113.2530 },
+  { "name": "Shenzhen", "country": "Chine", "lat": 22.5429, "lng": 114.0629 },
+  { "name": "Wuhan", "country": "Chine", "lat": 30.5833, "lng": 114.2833 },
+  { "name": "Tianjin", "country": "Chine", "lat": 39.1333, "lng": 117.1833 },
+  { "name": "Xi'an", "country": "Chine", "lat": 34.2743, "lng": 108.8892 },
+  { "name": "Zhengzhou", "country": "Chine", "lat": 34.7466, "lng": 113.6651 },
+  { "name": "Suzhou", "country": "Chine", "lat": 31.3000, "lng": 120.6000 },
+  { "name": "Hangzhou", "country": "Chine", "lat": 30.2500, "lng": 120.1667 },
+  { "name": "Shijiazhuang", "country": "Chine", "lat": 38.0500, "lng": 114.4800 },
+  { "name": "Linyi", "country": "Chine", "lat": 35.1021, "lng": 118.3460 },
+  { "name": "Changsha", "country": "Chine", "lat": 28.2280, "lng": 112.9390 },
+  { "name": "Dongguan", "country": "Chine", "lat": 23.0205, "lng": 113.7518 },
+  { "name": "Qingdao", "country": "Chine", "lat": 36.0669, "lng": 120.3827 },
+  { "name": "Hefei", "country": "Chine", "lat": 31.8484, "lng": 117.2724 },
+  { "name": "Wenzhou", "country": "Chine", "lat": 27.9943, "lng": 120.6994 },
+  { "name": "Foshan", "country": "Chine", "lat": 23.0270, "lng": 113.1310 }
+],
+    "cardInfo": {
+        "Title": "Les 20 villes les plus peuplées de Chine",
+        "Text": "Les 20 villes les plus peuplées de Chine",
+        "lang": "FR",
+        "pictureURL": "None",
+        "setInfo":"AS-CHN",
+        "option":{
+            "rangeError":300,
+            "rangeErrorAccepted":100
+        }
+    },
+    "type": [
+        "place",
+        "name",
+        "guess"
+    ]
+}

@@ -1,0 +1,44 @@
+{
+  "listCountry":[
+    {
+      "name":"Égypte",
+      "id":"AF-EGY"
+    },
+    {
+      "name":"Maroc",
+      "id":"AF-MAR"
+    },
+    {
+      "name":"Algérie",
+      "id":"AF-DZA"
+    },
+    {
+      "name":"Libye",
+      "id":"AF-LBY"
+    },
+    {
+      "name":"Tunisie",
+      "id":"AF-TUN"
+    },
+    {
+      "name":"Soudan",
+      "id":"AF-SDN"
+    }
+  ],
+  "cardInfo":{
+    "Title":"Les Pays d'Afrique du Nord",
+    "Text":"Les 6 États reconnus d’Afrique du Nord. (Le Sahara occidental, territoire au statut contesté, n’est pas inclus.)",
+    "lang":"FR",
+    "setInfo":"AF",
+    "pictureURL":"None",
+    "option":{
+            "tryMax":1,
+            "EliminateSelected":true
+        }
+  },
+  "type":[
+    "placeTerritory",
+    "shadowTerritory",
+    "guessFromPosiTerritory"
+  ]
+}

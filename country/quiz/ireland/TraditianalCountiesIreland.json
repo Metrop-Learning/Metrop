@@ -1,0 +1,124 @@
+{
+  "listCountry":[
+    {
+      "name":"Comté de Carlow",
+      "id":"EU-IRL-LEIN-CW"
+    },
+    {
+      "name":"Comté de Dublin",
+      "id":"EU-IRL-LEIN-D"
+    },
+    {
+      "name":"Comté de Kildare",
+      "id":"EU-IRL-LEIN-KD"
+    },
+    {
+      "name":"Comté de Kilkenny",
+      "id":"EU-IRL-LEIN-KK"
+    },
+    {
+      "name":"Comté de Laois",
+      "id":"EU-IRL-LEIN-LS"
+    },
+    {
+      "name":"Comté de Longford",
+      "id":"EU-IRL-LEIN-LM"
+    },
+    {
+      "name":"Comté de Louth",
+      "id":"EU-IRL-LEIN-LH"
+    },
+    {
+      "name":"Comté de Meath",
+      "id":"EU-IRL-LEIN-MH"
+    },
+    {
+      "name":"Comté d'Offaly",
+      "id":"EU-IRL-LEIN-OY"
+    },
+    {
+      "name":"Comté de Westmeath",
+      "id":"EU-IRL-LEIN-WH"
+    },
+    {
+      "name":"Comté de Wexford",
+      "id":"EU-IRL-LEIN-WW"
+    },
+    {
+      "name":"Comté de Wicklow",
+      "id":"EU-IRL-LEIN-WX"
+    },
+    {
+      "name":"Comté de Galway",
+      "id":"EU-IRL-CONN-G"
+    },
+    {
+      "name":"Comté de Leitrim",
+      "id":"EU-IRL-CONN-LD"
+    },
+    {
+      "name":"Comté de Mayo",
+      "id":"EU-IRL-CONN-MO"
+    },
+    {
+      "name":"Comté de Roscommon",
+      "id":"EU-IRL-CONN-RN"
+    },
+    {
+      "name":"Comté de Sligo",
+      "id":"EU-IRL-CONN-SO"
+    },
+    {
+      "name":"Comté de Cavan",
+      "id":"EU-IRL-ULST-CN"
+    },
+    {
+      "name":"Comté de Donegal",
+      "id":"EU-IRL-ULST-DL"
+    },
+    {
+      "name":"Comté de Monaghan",
+      "id":"EU-IRL-ULST-MN"
+    },
+    {
+      "name":"Comté de Clare",
+      "id":"EU-IRL-MUNS-CE"
+    },
+    {
+      "name":"Comté de Cork",
+      "id":"EU-IRL-MUNS-CO"
+    },
+    {
+      "name":"Comté de Kerry", 
+      "id":"EU-IRL-MUNS-KY"
+    },
+    {
+      "name":"Comté de Limerick", 
+      "id":"EU-IRL-MUNS-LK"
+    },
+    {
+      "name":"Comté de Tipperary", 
+      "id":"EU-IRL-MUNS-TA"
+    },
+    {
+      "name":"Comté de Waterford", 
+      "id":"EU-IRL-MUNS-WD"
+    }
+  ],
+  "cardInfo":{
+    "Title":"Les Comté Traditionnels d'Irlande",
+    "Text":"Les 26 Comté Traditionnels d'Irlande ne coresponde plus exactement à des subdivisions administratives de l'Irlande. (Sans Les six comtés britanniques qui relèvent de l'autorité de l'Irlande du Nord).",
+    "lang":"FR",
+    "pictureURL":"None",
+    "setInfo":"EU-IRL",
+    "option":{
+            "tryMax":1,
+            "EliminateSelected":true
+        }
+  },
+  "type":[
+    "placeTerritory",
+    "shadowTerritory",
+    "guessFromPosiTerritory"
+  ]
+}

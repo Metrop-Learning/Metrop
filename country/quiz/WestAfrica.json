@@ -1,0 +1,84 @@
+{
+  "listCountry":[
+    {
+      "name":"Bénin",
+      "id":"AF-BEN"
+    },
+    {
+      "name":"Burkina Faso",
+      "id":"AF-BFA"
+    },
+    {
+      "name":"Cap-Vert",
+      "id":"AF-CPV"
+    },
+    {
+      "name":"Côte d'Ivoire",
+      "id":"AF-CIV"
+    },
+    {
+      "name":"Gambie",
+      "id":"AF-GMB"
+    },
+    {
+      "name":"Ghana",
+      "id":"AF-GHA"
+    },
+    {
+      "name":"Guinée",
+      "id":"AF-GIN"
+    },
+    {
+      "name":"Guinée-Bissau",
+      "id":"AF-GNB"
+    },
+    {
+      "name":"Liberia",
+      "id":"AF-LBR"
+    },
+    {
+      "name":"Mali",
+      "id":"AF-MLI"
+    },
+    {
+      "name":"Mauritanie",
+      "id":"AF-MRT"
+    },
+    {
+      "name":"Niger",
+      "id":"AF-NER"
+    },
+    {
+      "name":"Nigeria",
+      "id":"AF-NGA"
+    },
+    {
+      "name":"Sénégal",
+      "id":"AF-SEN"
+    },
+    {
+      "name":"Sierra Leone",
+      "id":"AF-SLE"
+    },
+    {
+      "name":"Togo",
+      "id":"AF-TGO"
+    }
+  ],
+  "cardInfo":{
+    "Title":"Les Pays d'Afrique de l'Ouest",
+    "Text":"Les 16 États reconnus d’Afrique de l'Ouest.",
+    "lang":"FR",
+    "setInfo":"AF",
+    "pictureURL":"None",
+    "option":{
+            "tryMax":1,
+            "EliminateSelected":true
+        }
+  },
+  "type":[
+    "placeTerritory",
+    "shadowTerritory",
+    "guessFromPosiTerritory"
+  ]
+}

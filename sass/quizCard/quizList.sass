@@ -20,3 +20,35 @@
 
 .card:last-child
         margin-right: 50px
+
+
+#gameList
+    display: flex
+
+#populationGuess
+    background-color: var(--card-background-color)
+    height: 400px
+    width: 700px
+    border-radius: 10px
+    padding: 20px
+    color: var(--text-color)
+    text-align: left
+    p
+        text-align: left
+
+
+#seeAllCountry, #seeAllCity, #seeAllFlag
+    text-align: left
+    display: flex
+    justify-content: center
+    align-items: center
+    gap: 3px
+    transition: gap 0.3s ease, transform 0.3s ease, opacity 0.3s ease
+#seeAllCountry:hover, #seeAllCity:hover, #seeAllFlag:hover
+    gap: 15px
+    transform: scale(1.1)
+    cursor: pointer
+    opacity: 0.8
+#seeAllCountry:active, #seeAllCity:active, #seeAllFlag:active
+    transform: scale(0.5)
+    cursor: pointer

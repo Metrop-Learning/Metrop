@@ -1,0 +1,56 @@
+{
+  "listCountry":[
+    {
+      "name":"Burgenland",
+      "id":"EU-AUT-AT1"
+    },
+    {
+      "name":"Carinthie",
+      "id":"EU-AUT-AT2"
+    },
+    {
+      "name":"Basse-Autriche",
+      "id":"EU-AUT-AT3"
+    },
+    {
+      "name":"Haute-Autriche",
+      "id":"EU-AUT-AT4"
+    },
+    {
+      "name":"Salzbourg",
+      "id":"EU-AUT-AT5"
+    },
+    {
+      "name":"Styrie",
+      "id":"EU-AUT-AT6"
+    },
+    {
+      "name":"Tyrol",
+      "id":"EU-AUT-AT7"
+    },
+    {
+      "name":"Vorarlberg",
+      "id":"EU-AUT-AT8"
+    },
+    {
+      "name":"Vienne",
+      "id":"EU-AUT-AT9"
+    }
+  ],
+  "cardInfo":{
+    "Title":"Les Land Autrichien",
+    "Text":"Les 9 Land Autrichien",
+    "lang":"FR",
+    "setInfo":"EU-AUT",
+    "pictureURL":"None",
+    "option":{
+            "tryMax":1,
+            "EliminateSelected":true
+        }
+  },
+  "type":[
+    "placeTerritory",
+    "shadowTerritory",
+    "guessFromPosiTerritory"
+  ]
+}

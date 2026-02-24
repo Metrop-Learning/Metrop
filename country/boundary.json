@@ -6,6 +6,7 @@
             "FRA": {
                 "content": "Data:France.map",
                 "namefr":"France",
+                "population":"69 082 000",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg",
                 "get": {
                     "ARA": {
@@ -59,7 +60,48 @@
                         "content": "Data:France/Region/Nouvelle-Aquitaine.map"
                     },
                     "OCC": {
-                        "content": "Data:France/Region/Occitanie.map"
+                        "content": "Data:France/Region/Occitanie.map",
+                        "get":{
+                            "9":{
+                                "content":"useInstead:OSMB:france/departement-09-ariege.geojson"
+                            },
+                            "11":{
+                                "content":"useInstead:OSMB:france/departement-11-aude.geojson"
+                            },
+                            "12":{
+                                "content":"useInstead:OSMB:france/departement-12-aveyron.geojson"
+                            },
+                            "30":{
+                                "content":"useInstead:OSMB:france/departement-30-gard.geojson"
+                            },
+                            "31":{
+                                "content":"useInstead:OSMB:france/departement-31-haute-garonne.geojson"
+                            },
+                            "32":{
+                                "content":"useInstead:OSMB:france/departement-32-gers.geojson"
+                            },
+                            "34":{
+                                "content":"useInstead:OSMB:france/departement-34-herault.geojson"
+                            },
+                            "46":{
+                                "content":"useInstead:OSMB:france/departement-46-lot.geojson"
+                            },
+                            "48":{
+                                "content":"useInstead:OSMB:france/departement-48-lozere.geojson"
+                            },
+                            "65":{
+                                "content":"useInstead:OSMB:france/departement-65-hautes-pyrenees.geojson"
+                            },
+                            "66":{
+                                "content":"useInstead:OSMB:france/departement-66-pyrenees-orientales.geojson"
+                            },
+                            "81":{
+                                "content":"useInstead:OSMB:france/departement-81-tarn.geojson"
+                            },
+                            "82":{
+                                "content":"useInstead:OSMB:france/departement-82-tarn-et-garonne.geojson"
+                            }
+                        }
                     },
                     "PAC": {
                         "content": "Data:France/Region/ Provence-Alpes-Côte d'Azur.map",
@@ -151,6 +193,7 @@
             "DEU": {
                 "content": "Data:Germany.map",
                 "namefr":"Allemagne",
+                "population":"83 577 140",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg",
                 "get":{
                     "BW":{
@@ -205,6 +248,7 @@
             },
             "CHE": {
                 "content": "Data:Switzerland.map",
+                "population":"9 048 900",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/0/08/Flag_of_Switzerland_%28Pantone%29.svg",
                 "namefr":"Suisse",
                 "get":{
@@ -291,6 +335,7 @@
             "ITA": {
                 "content": "Data:Italy.map",
                 "namefr":"Italie",
+                "population":"58 934 177",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/0/03/Flag_of_Italy.svg",
                 "get":{
                     "ABR":{
@@ -357,6 +402,7 @@
             },
             "ESP": {
                 "content":"Data:Spain.map",
+                "population":"49 077 984",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg",
                 "namefr":"Espagne",
                 "get":{
@@ -420,10 +466,14 @@
                 }
             },
             "PRT":{
-                "content":"Data:Portugal.map"
+                "content":"Data:Portugal.map",
+                "namefr":"Portugal",
+                "population":"10 639 726",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/a/a8/Flag_of_Portugal_%28official%29.svg"
             },
             "UK":{
                 "content":"Data:United Kingdom.map",
+                "population":"68 350 000",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg",
                 "namefr":"Royaume-Uni",
                 "get":{
@@ -451,23 +501,261 @@
                 "content":"Data:Guernsey.map"
             },
             "IRL":{
-                "content":"Data:Ireland.map"
+                "content":"Data:Ireland.map",
+                "namefr":"Irlande",
+                "population":"5 149 139",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/4/45/Flag_of_Ireland.svg",
+                "get":{
+                    "ULST":{
+                        "content":"useInstead:OSMB:ireland/ulst.geojson",
+                        "namefr":"Ulster",
+                        "population":"2 105 666",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/7/7e/Flag_of_Ulster.svg",
+                        "get":{
+                            "CN":{
+                                "content":"useInstead:OSMB:ireland/ulst/2.geojson",
+                                "namefr":"Cavan"
+                            },
+                            "DL":{
+                                "content":"useInstead:OSMB:ireland/ulst/3.geojson",
+                                "namefr":"Donegal"
+                            },
+                            "MN":{
+                                "content":"useInstead:OSMB:ireland/ulst/1.geojson",
+                                "namefr":"Monaghan"
+                            }
+                        }
+                    },
+                    "CONN":{
+                        "content":"useInstead:OSMB:ireland/conn.geojson",
+                        "namefr":"Connacht",
+                        "population":"591 363",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/e/e1/Flag_of_Connacht.svg",
+                        "get":{
+                            "G":{
+                                "content":"useInstead:OSMB:ireland/conn/4.geojson",
+                                "namefr":"Galway"
+                            },
+                            "LD":{
+                                "content":"useInstead:OSMB:ireland/conn/1.geojson",
+                                "namefr":"Leitrim"
+                            },
+                            "MO":{
+                                "content":"useInstead:OSMB:ireland/conn/5.geojson",
+                                "namefr":"Mayo"
+                            },
+                            "RN":{
+                                "content":"useInstead:OSMB:ireland/conn/3.geojson",
+                                "namefr":"Roscommon"
+                            },
+                            "SO":{
+                                "content":"useInstead:OSMB:ireland/conn/2.geojson",
+                                "namefr":"Sligo"
+                            }
+                        }
+                    },
+                    "MUNS":{
+                        "content":"useInstead:OSMB:ireland/muns.geojson",
+                        "namefr":"Munster",
+                        "population":"1 373 346",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/7/7d/Flag_of_Munster.svg",
+                        "get":{
+                            "CE":{
+                                "content":"useInstead:OSMB:ireland/muns/5.geojson",
+                                "namefr":"Clare"
+                            },
+                            "CO":{
+                                "content":"useInstead:OSMB:ireland/muns/3.geojson",
+                                "namefr":"Cork"
+                            },
+                            "KY":{
+                                "content":"useInstead:OSMB:ireland/muns/2.geojson",
+                                "namefr":"Kerry"
+                            },
+                            "LK":{
+                                "content":"useInstead:OSMB:ireland/muns/6.geojson",
+                                "namefr":"Limerick"
+                            },
+                            "TA":{
+                                "content":"useInstead:OSMB:ireland/muns/4.geojson",
+                                "namefr":"Tipperary"
+                            },
+                            "WD":{
+                                "content":"useInstead:OSMB:ireland/muns/1.geojson",
+                                "namefr":"Waterford"
+                            }
+                        }
+                    },
+                    "LEIN":{
+                        "content":"useInstead:OSMB:ireland/lein.geojson",
+                        "namefr":"Leinster",
+                        "population":"2 870 354",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/8/8d/Flag_of_Leinster.svg",
+                        "get":{
+                            "CW":{
+                                "content":"useInstead:OSMB:ireland/lein/6.geojson",
+                                "namefr":"Carlow"
+                            },
+                            "D":{
+                                "content":"useInstead:OSMB:ireland/lein/2.geojson",
+                                "namefr":"Dublin"
+                            },
+                            "KD":{
+                                "content":"useInstead:OSMB:ireland/lein/4.geojson",
+                                "namefr":"Kildare"
+                            },
+                            "KK":{
+                                "content":"useInstead:OSMB:ireland/lein/7.geojson",
+                                "namefr":"Kilkenny"
+                            },
+                            "LS":{
+                                "content":"useInstead:OSMB:ireland/lein/5.geojson",
+                                "namefr":"Laois"
+                            },
+                            "LM":{
+                                "content":"useInstead:OSMB:ireland/lein/10.geojson",
+                                "namefr":"Longford"
+                            },
+                            "LH":{
+                                "content":"useInstead:OSMB:ireland/lein/12.geojson",
+                                "namefr":"Louth"
+                            },
+                            "MH":{
+                                "content":"useInstead:OSMB:ireland/lein/3.geojson",
+                                "namefr":"Meath"
+                            },
+                            "OY":{
+                                "content":"useInstead:OSMB:ireland/lein/9.geojson",
+                                "namefr":"Offaly"
+                            },
+                            "WH":{
+                                "content":"useInstead:OSMB:ireland/lein/11.geojson",
+                                "namefr":"Westmeath"
+                            },
+                            "WW":{
+                                "content":"useInstead:OSMB:ireland/lein/8.geojson",
+                                "namefr":"Wexford"
+                            },
+                            "WX":{
+                                "content":"useInstead:OSMB:ireland/lein/1.geojson",
+                                "namefr":"Wicklow"
+                            }
+                        }
+                    }
+                }
             },
             "ISL":{
-                "content":"Data:Iceland.map"
+                "content":"Data:Iceland.map",
+                "namefr":"Islande",
+                "population":"383 726",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Iceland.svg"
             },
             "BEL":{
-                "content":"Data:Belgium.map"
+                "content":"Data:Belgium.map",
+                "namefr":"Belgique",
+                "population":"11 825 551",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/9/92/Flag_of_Belgium_%28civil%29.svg",
+                "get":{
+                    "BRU":{
+                        "content":"useInstead:OSMB:belgium/bru.geojson",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_the_Brussels-Capital_Region.svg",
+                        "namefr":"Région de Bruxelles-Capitale",
+                        "population":"1 255 795"
+                    },
+                    "VLG":{
+                        "content":"useInstead:OSMB:belgium/vlg.geojson",
+                        "namefr":"Région flamande",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/2/2b/Flag_of_Flanders.svg",
+                        "population":"6 821 770",
+                        "get":{
+                            "VAN":{
+                                "content":"useInstead:OSMB:belgium/van.geojson",
+                                "flag":"https://upload.wikimedia.org/wikipedia/commons/1/10/Flag_of_Antwerp.svg",
+                                "population":"1 921 189",
+                                "namfr":"Anvers"
+                            },
+                            "VLI":{
+                                "content":"useInstead:OSMB:belgium/vli.geojson",
+                                "flag":"https://upload.wikimedia.org/wikipedia/commons/7/70/Flag_of_Limburg_(Belgium).svg",
+                                "population":"904 919",
+                                "namfr":"Limbourg"
+                            },
+                            "VOV":{
+                                "content":"useInstead:OSMB:belgium/vov.geojson",
+                                "flag":"https://upload.wikimedia.org/wikipedia/commons/e/eb/Flag_of_Oost-Vlaanderen.svg",
+                                "population":"1 602 532",
+                                "namfr":"Flandre-Orientale"
+                            },
+                            "VBR":{
+                                "content":"useInstead:OSMB:belgium/vbr.geojson",
+                                "flag":"https://upload.wikimedia.org/wikipedia/commons/b/bd/Flag_of_Flemish_Brabant.svg",
+                                "population":"1 204 541",
+                                "namfr":"Brabant flamand"
+                            },
+                            "VWV":{
+                                "content":"useInstead:OSMB:belgium/vwv.geojson",
+                                "flag":"https://upload.wikimedia.org/wikipedia/commons/c/c2/Flag_of_West_Flanders.svg",
+                                "population":"1 231 585",
+                                "namfr":"Flandre-Occidentale"
+                            }
+                        }
+                    },
+                    "WAL":{
+                        "content":"useInstead:OSMB:belgium/wal.geojson",
+                        "namefr":"Région wallonne",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/4/42/Flag_of_Wallonia.svg",
+                        "population":"3 692 283",
+                        "get":{
+                            "WBR":{
+                                "content":"useInstead:OSMB:belgium/wbr.geojson",
+                                "namefr":"Brabant wallon",
+                                "population":"415 381",
+                                "flag":"https://upload.wikimedia.org/wikipedia/commons/4/47/Drapeau_Province_BE_Brabant_Wallon.svg"
+                            },
+                            "WHT":{
+                                "content":"useInstead:OSMB:belgium/wht.geojson",
+                                "namefr":"Hainaut",
+                                "population":"1 360 074",
+                                "flag":"https://upload.wikimedia.org/wikipedia/commons/6/6d/Generieke_vlag_van_Henegouwen.svg"
+                            },
+                            "WLG":{
+                                "content":"useInstead:OSMB:belgium/wlg.geojson",
+                                "namefr":"Liège",
+                                "population":"1 122 925",
+                                "flag":"https://upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_the_Province_of_Li%C3%A8ge.svg"
+                            },
+                            "WLX":{
+                                "content":"useInstead:OSMB:belgium/wlx.geojson",
+                                "namefr":"Luxembourg",
+                                "population":"296 008",
+                                "flag":"https://upload.wikimedia.org/wikipedia/commons/5/54/Flag_of_the_Province_of_Luxembourg_(Belgium).svg"
+                            },
+                            "WNA":{
+                                "content":"useInstead:OSMB:belgium/wna.geojson",
+                                "namefr":"Namur",
+                                "population":"505 348",
+                                "flag":"https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Namur_Province.svg"
+                            }
+                        }
+                    }
+                }
             },
             "NLD":{
-                "content":"Data:Nederland.map"
+                "content":"Data:Nederland.map",
+                "namefr":"Pays-Bas",
+                "population":"18 045 532",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_the_Netherlands.svg"
             },
             "LUX":{
-                "content":"Data:Luxembourg.map"
+                "content":"Data:Luxembourg.map",
+                "namefr":"Luxembourg",
+                "population":"681 973",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/d/da/Flag_of_Luxembourg.svg"
             },
             "DNK":{
                 "content":"Data:Denmark.map",
                 "namefr":"Danemark",
+                "population":"5 992 734",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/9/9c/Flag_of_Denmark.svg",
                 "get":{
                     "NJL":{
@@ -494,29 +782,151 @@
                 }
             },
             "SWE":{
-                "content":"Data:Sweden.map"
+                "content":"Data:Sweden.map",
+                "namefr":"Suède",
+                "population":"10 564 484",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/4/4c/Flag_of_Sweden.svg"
             },
             "NOR":{
-                "content":"Data:Norway.map"
+                "content":"Data:Norway.map",
+                "namefr":"Norvège",
+                "population":"5 594 340",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Norway.svg",
+                "get":{
+                    "42":{
+                        "content":"useInstead:OSMB:norway/42.geojson",
+                        "namefr":"Agder"
+                    },
+                    "02":{
+                        "content":"useInstead:OSMB:norway/02.geojson",
+                        "namefr":"Akershus"
+                    },
+                    "06":{
+                        "content":"useInstead:OSMB:norway/06.geojson",
+                        "namefr":"Buskerud"
+                    },
+                    "20":{
+                        "content":"useInstead:OSMB:norway/20.geojson",
+                        "namefr":"Finnmark"
+                    },
+                    "34":{
+                        "content":"useInstead:OSMB:norway/34.geojson",
+                        "namefr":"Innlandet"
+                    },
+                    "15":{
+                        "content":"useInstead:OSMB:norway/15.geojson",
+                        "namefr":"Møre og Romsdal"
+                    },
+                    "18":{
+                        "content":"useInstead:OSMB:norway/18.geojson",
+                        "namefr":"Nordland"
+                    },
+                    "OSLO":{
+                        "content":"useInstead:OSMB:norway/oslo.geojson",
+                        "namefr":"Oslo"
+                    },
+                    "01":{
+                        "content":"useInstead:OSMB:norway/01.geojson",
+                        "namefr":"Østfold"
+                    },
+                    "11":{
+                        "content":"useInstead:OSMB:norway/11.geojson",
+                        "namefr":"Rogaland"
+                    },
+                    "08":{
+                        "content":"useInstead:OSMB:norway/08.geojson",
+                        "namefr":"Telemark"
+                    },
+                    "17":{
+                        "content":"useInstead:OSMB:norway/17.geojson",
+                        "namefr":"Trøndelag"
+                    },
+                    "19":{
+                        "content":"useInstead:OSMB:norway/19.geojson",
+                        "namefr":"Troms"
+                    },
+                    "07":{
+                        "content":"useInstead:OSMB:norway/07.geojson",
+                        "namefr":"Vestfold"
+                    },
+                    "46":{
+                        "content":"useInstead:OSMB:norway/46.geojson",
+                        "namefr":"Vestland"
+                    }
+                }
             },
             "AUT":{
-                "content":"Data:Austria.map"
+                "content":"Data:Austria.map",
+                "namefr":"Autriche",
+                "population":"9 197 213",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_Austria.svg",
+                "get":{
+                    "AT1":{
+                        "content":"useInstead:OSMB:austria/at1.geojson",
+                        "namefr":"Burgenland"
+                    },
+                    "AT2":{
+                        "content":"useInstead:OSMB:austria/at2.geojson",
+                        "namefr":"Carinthie"
+                    },
+                    "AT3":{
+                        "content":"useInstead:OSMB:austria/at3.geojson",
+                        "namefr":"Basse-Autriche"
+                    },
+                    "AT4":{
+                        "content":"useInstead:OSMB:austria/at4.geojson",
+                        "namefr":"Haute-Autriche"
+                    },
+                    "AT5":{
+                        "content":"useInstead:OSMB:austria/at5.geojson",
+                        "namefr":"Salzbourg"
+                    },
+                    "AT6":{
+                        "content":"useInstead:OSMB:austria/at6.geojson",
+                        "namefr":"Styrie"
+                    },
+                    "AT7":{
+                        "content":"useInstead:OSMB:austria/at7.geojson",
+                        "namefr":"Tyrol"
+                    },
+                    "AT8":{
+                        "content":"useInstead:OSMB:austria/at8.geojson",
+                        "namefr":"Vorarlberg"
+                    },
+                    "AT9":{
+                        "content":"useInstead:OSMB:austria/at9.geojson",
+                        "namefr":"Vienne"
+                    }
+                }
             },
             "BGR":{
-                "content":"Data:Bulgaria.map"
+                "content":"Data:Bulgaria.map",
+                "namefr":"Bulgarie",
+                "population":"6 437 630",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Bulgaria.svg"
             },
             "HRV":{
-                "content":"Data:Croatia.map"
+                "content":"Data:Croatia.map",
+                "namefr":"Croatie",
+                "population":"3 861 967",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/1/1b/Flag_of_Croatia.svg"
             },
             "EST":{
-                "content":"Data:Estonia.map"
+                "content":"Data:Estonia.map",
+                "namefr":"Estonie",
+                "population":"1 369 995",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/8/8f/Flag_of_Estonia.svg"
             },
             "FIN":{
-                "content":"Data:Finland.map"
+                "content":"Data:Finland.map",
+                "namefr":"Finlande",
+                "population":"5 635 971",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_Finland.svg"
             },
             "GRC":{
                 "content":"Data:Greece.map",
                 "namefr":"Grèce",
+                "population":"10 482 487",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Greece.svg",
                 "get":{
                     "AT":{
@@ -604,88 +1014,240 @@
                 }
             },
             "HUN":{
-                "content":"Data:Hungary.map"
+                "content":"Data:Hungary.map",
+                "namefr":"Hongrie",
+                "population":"9 584 627",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/c/c1/Flag_of_Hungary.svg"
             },
             "LVA":{
-                "content":"Data:Latvia.map"
+                "content":"Data:Latvia.map",
+                "namefr":"Lettonie",
+                "population":"1 856 932",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/8/84/Flag_of_Latvia.svg"
             },
             "LTU":{
-                "content":"Data:Lithuania.map"
+                "content":"Data:Lithuania.map",
+                "namefr":"Lituanie",
+                "population":"2 871 585",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/1/11/Flag_of_Lithuania.svg"
             },
             "MLT":{
-                "content":"Data:Malta.map"
+                "content":"Data:Malta.map",
+                "namefr":"Malte",
+                "population":"563 443",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/7/73/Flag_of_Malta.svg"
             },
             "POL":{
-                "content":"Data:Poland.map"
+                "content":"Data:Poland.map",
+                "namefr":"Pologne",
+                "population":"37 991 766",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/1/12/Flag_of_Poland.svg",
+                "get":{
+                    "DS":{
+                        "content":"Data:Poland/Lower Silesian.map",
+                        "namefr":"Basse-Silésie"
+                    },
+                    "PK":{
+                        "content":"Data:Poland/Subcarpathian.map",
+                        "namefr":"Basses-Carpates"
+                    },
+                    "KP":{
+                        "content":"Data:Poland/Kuyavian-Pomeranian.map",
+                        "namefr":"Couïavie-Poméranie"
+                    },
+                    "WP":{
+                        "content":"Data:Poland/Greater Poland.map",
+                        "namefr":"Grande-Pologne"
+                    },
+                    "LU":{
+                        "content":"Data:Poland/Lublin.map",
+                        "namefr":"Lublin"
+                    },
+                    "LB":{
+                        "content":"Data:Poland/Lubusz.map",
+                        "namefr":"Lubusz"
+                    },
+                    "LD":{
+                        "content":"Data:Poland/Łódź.map",
+                        "namefr":"Łódź"
+                    },
+                    "MZ":{
+                        "content":"Data:Poland/Masovian.map",
+                        "namefr":"Mazovie"
+                    },
+                    "OP":{
+                        "content":"Data:Poland/Opole.map",
+                        "namefr":"Opole"
+                    },
+                    "MA":{
+                        "content":"Data:Poland/Lesser Poland.map",
+                        "namefr":"Petite-Pologne"
+                    },
+                    "PD":{
+                        "content":"Data:Poland/Podlachian.map",
+                        "namefr":"Podlachie"
+                    },
+                    "PM":{
+                        "content":"Data:Poland/Pomeranian.map",
+                        "namefr":"Poméranie"
+                    },
+                    "ZP":{
+                        "content":"Data:Poland/West Pomeranian.map",
+                        "namefr":"Poméranie-Occidentale"
+                    },
+                    "SK":{
+                        "content":"Data:Poland/Świętokrzyskie.map",
+                        "namefr":"Sainte-Croix"
+                    },
+                    "SL":{
+                        "content":"Data:Poland/Silesian.map",
+                        "namefr":"Silésie"
+                    },
+                    "WN":{
+                        "content":"Data:Poland/Warmian-Masurian.map",
+                        "namefr":"Varmie-Mazurie"
+                    }
+                }
             },
             "CZE":{
-                "content":"Data:Czechia.map"
+                "content":"Data:Czechia.map",
+                "namefr":"Tchéquie",
+                "longFormNamefr":"République tchèque",
+                "population":"10 882 235",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_the_Czech_Republic.svg"
             },
             "ROU":{
-                "content":"Data:Romania.map"
+                "content":"Data:Romania.map",
+                "namefr":"Roumanie",
+                "population":"19 038 098",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/7/73/Flag_of_Romania.svg"
             },
             "SVK":{
-                "content":"Data:Slovakia.map"
+                "content":"Data:Slovakia.map",
+                "namefr":"Slovaquie",
+                "population":"5 452 025",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/e/e6/Flag_of_Slovakia.svg"
             },
             "SVN":{
-                "content":"Data:Slovenia.map"
+                "content":"Data:Slovenia.map",
+                "namefr":"Slovénie",
+                "population":"2 130 850",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/f/f0/Flag_of_Slovenia.svg"
             },
             "LIE":{
-                "content":"Data:Liechtenstein.map"
+                "content":"Data:Liechtenstein.map",
+                "namefr":"Liechtenstein",
+                "population":"40 900",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/4/47/Flag_of_Liechtenstein.svg"
             },
             "AND":{
-                "content":"Data:Andorra.map"
+                "content":"Data:Andorra.map",
+                "namefr":"Andorre",
+                "population":"86 280",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/1/19/Flag_of_Andorra.svg"
             },
             "ALB":{
-                "content":"Data:Albania.map"
+                "content":"Data:Albania.map",
+                "namefr":"Albanie",
+                "population":"2 402 113",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/3/36/Flag_of_Albania.svg"
             },
             "MNE":{
-                "content":"Data:Montenegro.map"
+                "content":"Data:Montenegro.map",
+                "namefr":"Monténégro",
+                "population":"623 633",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/6/64/Flag_of_Montenegro.svg"
             },
             "RKS":{
-                "content":"Data:Kosovo.map"
+                "content":"Data:Kosovo.map",
+                "namefr":"Kosovo",
+                "population":"1 602 515",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/1/1f/Flag_of_Kosovo.svg"
             },
             "MKD":{
-                "content":"Data:Macedonia.map"
+                "content":"Data:Macedonia.map",
+                "namefr":"Macédoine du Nord",
+                "population":"1 836 713",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/7/79/Flag_of_North_Macedonia.svg"
             },
             "SRB":{
-                "content":"Data:Serbia.map"
+                "content":"Data:Serbia.map",
+                "namefr":"Serbie",
+                "population":"6 693 375",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/f/ff/Flag_of_Serbia.svg"
             },
             "BIH":{
-                "content":"Data:Bosnia.map"
+                "content":"Data:Bosnia.map",
+                "namefr":"Bosnie-Herzégovine",
+                "population":"3 185 073",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/b/bf/Flag_of_Bosnia_and_Herzegovina.svg"
             },
             "UKR":{
-                "content":"Data:Ukraine.map"
+                "content":"Data:Ukraine.map",
+                "namefr":"Ukraine",
+                "population":"41 167 336",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_Ukraine.svg",
+                "coatOfArms":"https://upload.wikimedia.org/wikipedia/commons/c/cf/Coat_of_Arms_of_Ukraine.svg"
             },
             "BLR":{
-                "content":"Data:Belarus.map"
+                "content":"Data:Belarus.map",
+                "namefr":"Bélarus",
+                "population":"9 477 918",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/8/85/Flag_of_Belarus.svg"
             },
             "MDA":{
-                "content":"Data:Moldova.map"
+                "content":"Data:Moldova.map",
+                "namefr":"Moldavie",
+                "population":"2 865 000",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/2/27/Flag_of_Moldova.svg"
             },
             "VAT":{
-                "content":"useInstead:Circle:41.9029:12.4534"
+                "content":"useInstead:Circle:41.9029:12.4534",
+                "namefr":"Vatican",
+                "population":"764",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/b/b3/Flag_of_Vatican_City_%282023%E2%80%93present%29.svg"
             },
             "MCO":{
-                "content":"useInstead:Circle:43.7384:7.4246"
+                "content":"useInstead:Circle:43.7384:7.4246",
+                "namefr":"Monaco",
+                "population":"38 423",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/e/ea/Flag_of_Monaco.svg"
             },
             "SMR":{
-                "content":"useInstead:Circle:43.9424:12.4578"
+                "content":"useInstead:Circle:43.9424:12.4578",
+                "namefr":"Saint-Marin",
+                "population":"34 132",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/b/b1/Flag_of_San_Marino.svg"
             },
             "RUS":{
-                "content":"Data:Russia.map"
+                "content":"Data:Russia.map",
+                "namefr":"Russie",
+                "population":"143 679 916",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg"
             },
             "TUR":{
-                "content":"Data:Turkey.map"
+                "content":"Data:Turkey.map",
+                "namefr":"Turquie",
+                "population":"85 372 377",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg"
             },
             "KAZ":{
-                "content":"Data:Kazakhstan.map"
+                "content":"Data:Kazakhstan.map",
+                "namefr":"Kazakhstan",
+                "population":"20 286 084",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/d/d3/Flag_of_Kazakhstan.svg"
             },
             "GEO":{
-                "content":"Data:Georgia.map"
+                "content":"Data:Georgia.map",
+                "namefr":"Géorgie",
+                "population":"4 215 000",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/0/0f/Flag_of_Georgia.svg"
             },
             "AZE":{
-                "content":"Data:Azerbaijan.map"
+                "content":"Data:Azerbaijan.map",
+                "namefr":"Azerbaïdjan",
+                "population":"10 205 810",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/d/dd/Flag_of_Azerbaijan.svg"
             }
         }
     },
@@ -694,41 +1256,60 @@
         "get":{
             "CYP":{
                 "content":"Data:Cyprus.map",
+                "namefr":"Chypre",
+                "population":"923 381",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Cyprus.svg"
             },
             "RUS":{
                 "content":"Data:Russia.map",
+                "namefr":"Russie",
+                "population":"143 679 916",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg"
             },
             "TUR":{
                 "content":"Data:Turkey.map",
+                "namefr":"Turquie",
+                "population":"85 372 377",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg"
             },
             "GRC":{
                 "content":"Data:Greece.map",
+                "namefr":"Grèce",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Greece.svg"
             },
             "KAZ":{
                 "content":"Data:Kazakhstan.map",
+                "namefr":"Kazakhstan",
+                "population":"20 286 084",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/d/d3/Flag_of_Kazakhstan.svg"
             },
             "GEO":{
                 "content":"Data:Georgia.map",
+                "namefr":"Géorgie",
+                "population":"4 215 000",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/0/0f/Flag_of_Georgia.svg"
             },
             "AZE":{
                 "content":"Data:Azerbaijan.map",
+                "namefr":"Azerbaïdjan",
+                "population":"10 205 810",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/d/dd/Flag_of_Azerbaijan.svg"
             },
             "AFG":{
-                "content":"Data:Afghanistan.map"
+                "content":"Data:Afghanistan.map",
+                "namefr":"Afghanistan",
+                "population":"39 232 003"
             },
             "BGD":{
                 "content":"Data:Bangladesh.map",
+                "namefr":"Bangladesh",
+                "population":"169 828 911",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/f/f9/Flag_of_Bangladesh.svg"
             },
             "BTN":{
                 "content":"Data:Bhutan.map",
+                "namefr":"Bhoutan",
+                "population":"884 546",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/9/91/Flag_of_Bhutan.svg"
             },
             "IND":{
@@ -848,11 +1429,14 @@
             },
             "MDV":{
                 "content":"Data:Maldives.map",
+                "namefr":"Maldives",
+                "population":"525 994",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/0/0f/Flag_of_Maldives.svg"
             },
             "NPL":{
                 "content":"Data:Nepal.map",
                 "namefr":"Népal",
+                "population":"30 896 590",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/9/9b/Flag_of_Nepal.svg",
                 "get":{
                     "P1":{
@@ -880,11 +1464,14 @@
             },
             "PAK":{
                 "content":"Data:Pakistan.map",
+                "namefr":"Pakistan",
+                "population":"241 499 431",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/3/32/Flag_of_Pakistan.svg"
             },
             "LKA":{
                 "content":"Data:Sri Lanka.map",
                 "namefr":"Sri Lanka",
+                "population":"21 763 170",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/1/11/Flag_of_Sri_Lanka.svg",
                 "get":{
                     "CP":{
@@ -928,6 +1515,7 @@
             "JAP":{
                 "content":"Data:Japan.map",
                 "namefr":"Japon",
+                "population":"122 950 000",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/9/9e/Flag_of_Japan.svg",
                 "get":{
                     "R1":{
@@ -1116,146 +1704,465 @@
             },
             "IDN":{
                 "content":"Data:Indonesia.map",
-                "flag":"https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_Indonesia.svg"
+                "namefr":"Indonésie",
+                "population":"284 973 643",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_Indonesia.svg",
+                "get":{
+                    "SP:ISL":{
+                        "get":{
+                            "JAV":{
+                                "content":"useInstead:OSMB:indonesia/jav.geojson"
+                            },
+                            "KAL":{
+                                "content":"useInstead:OSMB:indonesia/kal.geojson"
+                            },
+                            "LSI":{
+                                "content":"useInstead:OSMB:indonesia/lsi.geojson"
+                            },
+                            "MAK":{
+                                "content":"useInstead:OSMB:indonesia/mak.geojson"
+                            },
+                            "SUL":{
+                                "content":"useInstead:OSMB:indonesia/sul.geojson"
+                            },
+                            "SUM":{
+                                "content":"useInstead:OSMB:indonesia/sum.geojson"
+                            },
+                            "WNG":{
+                                "content":"useInstead:OSMB:indonesia/wng.geojson"
+                            }
+                        }
+                    },
+                    "AC":{
+                        "content":"Data:Indonesia/Aceh.map",
+                        "namefr":"Aceh",
+                        "population":"5 515 839",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/3/36/Flag_of_Aceh%2C_Indonesia.svg"
+                    },
+                    "SU":{
+                        "content":"Data:Indonesia/Sumatera Utara.map",
+                        "namefr":"Sumatra du Nord",
+                        "population":"15 471 582",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_North_Sumatra.svg"
+                    },
+                    "SB":{
+                        "content":"Data:Indonesia/Sumatera Barat.map",
+                        "namefr":"Sumatra occidental",
+                        "population":"5 750 326"
+                    },
+                    "RI":{
+                        "content":"Data:Indonesia/Riau.map",
+                        "namefr":"Riau",
+                        "population":"6 861 237"
+                    },
+                    "JA":{
+                        "content":"Data:Indonesia/Jambi.map",
+                        "namefr":"Jambi",
+                        "population":"3 760 275",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/8/8d/Flag_of_Jambi.svg"
+                    },
+                    "SS":{
+                        "content":"Data:Indonesia/Sumatera Selatan.map",
+                        "namefr":"Sumatra du Sud",
+                        "population":"8 889 913",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/a/ab/Flag_of_South_Sumatra_%28vectorised%29.svg"
+                    },
+                    "BE":{
+                        "content":"Data:Indonesia/Bengkulu.map",
+                        "namefr":"Bengkulu",
+                        "population":"1 549 273",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/e/ec/Flag_of_Bengkulu.svg"
+                    },
+                    "LA":{
+                        "content":"Data:Indonesia/Lampung.map",
+                        "namefr":"Lampung",
+                        "population":"9 010 000",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_Lampung.svg"
+                    },
+                    "BB":{
+                        "content":"Data:Indonesia/Bangka-Belitung.map",
+                        "namefr":"Îles Bangka Belitung",
+                        "population":"1 043 456"
+                    },
+                    "KR":{
+                        "content":"Data:Indonesia/Kepulauan Riau.map",
+                        "namefr":"Îles Riau",
+                        "population":"1 274 848",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/a/aa/Flag_of_Riau_Islands.svg"
+                    },
+                    "JK":{
+                        "content":"Data:Indonesia/Jakarta Raya.map",
+                        "namefr":"Jakarta",
+                        "population":"11 634 100",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/8/8e/Flag_of_Jakarta_%28vectorised%29.svg"
+                    },
+                    "JB":{
+                        "content":"Data:Indonesia/Jawa Barat.map",
+                        "namefr":"Java occidental",
+                        "population":"48 270 000",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_West_Java_%28vectorised%29.svg"
+                    },
+                    "JT":{
+                        "content":"Data:Indonesia/Jawa Tengah.map",
+                        "namefr":"Java central",
+                        "population":"36 520 000",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/2/2d/Flag_of_Central_Java.svg"
+                    },
+                    "YO":{
+                        "content":"Data:Indonesia/Yogyakarta.map",
+                        "namefr":"Yogyakarta",
+                        "population":"3 670 000"
+                    },
+                    "JI":{
+                        "content":"Data:Indonesia/Jawa Timur.map",
+                        "namefr":"Java oriental",
+                        "population":"41 644 099",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/3/3d/Flag_of_East_Java.svg"
+                    },
+                    "BT":{
+                        "content":"Data:Indonesia/Banten.map",
+                        "namefr":"Banten",
+                        "population":"11 900 000",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/a/a9/Flag_of_Banten.png"
+                    },
+                    "BA":{
+                        "content":"Data:Indonesia/Bali.map",
+                        "namefr":"Bali",
+                        "population":"4 344 554",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/a/a3/Flag_of_Bali.svg"
+                    },
+                    "NB":{
+                        "content":"Data:Indonesia/Nusa Tenggara Barat.map",
+                        "namefr":"Petites îles de la Sonde occidentales",
+                        "population":"5 320 000",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/1/1f/Flag_of_West_Nusa_Tenggara.svg"
+                    },
+                    "NT":{
+                        "content":"Data:Indonesia/Nusa Tenggara Timur.map",
+                        "namefr":"Petites îles de la Sonde orientales",
+                        "population":"5 330 000",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/5/57/Flag_of_East_Nusa_Tenggara.svg"
+                    },
+                    "KB":{
+                        "content":"useInstead:OSMB:indonesia/kb.geojson",
+                        "namefr":"Kalimantan occidental",
+                        "population":"5 557 277",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/8/8b/Flag_of_West_Kalimantan.svg"
+                    },
+                    "KT":{
+                        "content":"useInstead:OSMB:indonesia/kt.geojson",
+                        "namefr":"Kalimantan central",
+                        "population":"2 753 049",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/c/c9/Flag_of_Central_Kalimantan.png"
+                    },
+                    "KS":{
+                        "content":"useInstead:OSMB:indonesia/ks.geojson",
+                        "namefr":"Kalimantan du Sud",
+                        "population":"4 070 000"
+                    },
+                    "KI":{
+                        "content":"useInstead:OSMB:indonesia/ki.geojson",
+                        "namefr":"Kalimantan oriental",
+                        "population":"4 007 736",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_East_Kalimantan.svg"
+                    },
+                    "KU":{
+                        "content":"useInstead:OSMB:indonesia/ku.geojson",
+                        "namefr":"Kalimantan du Nord",
+                        "population":"747 415",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/4/4b/Flag_of_North_Kalimantan.svg"
+                    },
+                    "SA":{
+                        "content":"Data:Indonesia/Sulawesi Utara.map",
+                        "namefr":"Sulawesi du Nord",
+                        "population":"2 512 900",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_North_Sulawesi.svg"
+                    },
+                    "ST":{
+                        "content":"Data:Indonesia/Sulawesi Tengah.map",
+                        "namefr":"Sulawesi central",
+                        "population":"2 294 841"
+                    },
+                    "SN":{
+                        "content":"Data:Indonesia/Sulawesi Selatan.map",
+                        "namefr":"Sulawesi du Sud",
+                        "population":"9 070 000"
+                    },
+                    "SG":{
+                        "content":"Data:Indonesia/Sulawesi Tenggara.map",
+                        "namefr":"Sulawesi du Sud-Est",
+                        "population":"1 963 025",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/a/ac/Flag_of_Southeast_Sulawesi.svg"
+                    },
+                    "GO":{
+                        "content":"Data:Indonesia/Gorontalo.map",
+                        "namefr":"Gorontalo",
+                        "population":"922 176",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/8/8f/Flag_of_Gorontalo.svg"
+                    },
+                    "SR":{
+                        "content":"Data:Indonesia/Sulawesi Barat.map",
+                        "namefr":"Sulawesi occidental",
+                        "population":"969 429",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/9/95/Flag_of_West_Sulawesi.svg"
+                    },
+                    "MA":{
+                        "content":"Data:Indonesia/Maluku.map",
+                        "namefr":"Moluques",
+                        "population":"1 251 539",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/b/b6/Flag_of_Maluku.svg"
+                    },
+                    "MU":{
+                        "content":"Data:Indonesia/Maluku Utara.map",
+                        "namefr":"Moluques du Nord",
+                        "population":"884 142"
+                    },
+                    "PA":{
+                        "content":"useInstead:OSMB:indonesia/pa.geojson",
+                        "namefr":"Papouasie",
+                        "population":"1 020 190",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/e/ec/Flag_of_Papua_2.svg"
+                    },
+                    "PB":{
+                        "content":"useInstead:OSMB:indonesia/pb.geojson",
+                        "namefr":"Papouasie occidentale",
+                        "population":"551 792",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_West_Papua_%28vectorised%29.svg"
+                    },
+                    "PS":{
+                        "content":"useInstead:OSMB:indonesia/ps.geojson",
+                        "namefr":"Papouasie méridionale",
+                        "population":"517 623",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/1/1f/Flag_of_South_Papua_Province.svg"
+                    },
+                    "PT":{
+                        "content":"useInstead:OSMB:indonesia/pt.geojson",
+                        "namefr":"Papouasie centrale",
+                        "population":"1 409 000",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/b/bd/Flag_of_Central_Papua_Province.svg"
+                    },
+                    "PE":{
+                        "content":"useInstead:OSMB:indonesia/pe.geojson",
+                        "namefr":"Papouasie des hautes terres",
+                        "population":"1 408 641",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/d/df/Flag_of_Highland_Papua.svg"
+                    },
+                    "PD":{
+                        "content":"useInstead:OSMB:indonesia/pd.geojson",
+                        "namefr":"Papouasie du Sud-Ouest",
+                        "population":"627 127",
+                        "flag":"https://upload.wikimedia.org/wikipedia/commons/4/43/Flag_of_Southwest_Papua.svg"
+                    }
+                }
             },
             "PHL":{
                 "content":"Data:Philippines.map",
+                "namefr":"Philippines",
+                "population":"112 729 484",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/9/99/Flag_of_the_Philippines.svg"
             },
             "VNM":{
                 "content":"Data:Vietnam.map",
+                "namefr":"Vietnam",
+                "population":"101 620 305",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Vietnam.svg"
             },
             "THA":{
                 "content":"Data:Thailand.map",
+                "namefr":"Thaïlande",
+                "population":"71 601 103",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/a/a9/Flag_of_Thailand.svg"
             },
             "MMR":{
                 "content":"Data:Myanmar.map",
+                "namefr":"Myanmar",
+                "population":"51 316 756",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/8/8c/Flag_of_Myanmar.svg"
             },
             "MYS":{
                 "content":"Data:Malaysia.map",
+                "namefr":"Malaisie",
+                "population":"35 126 298",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/6/66/Flag_of_Malaysia.svg"
             },
             "KHM":{
                 "content":"Data:Cambodia.map",
+                "namefr":"Cambodge",
+                "population":"17 423 880",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_Cambodia.svg"
             },
             "LAO":{
                 "content":"Data:Laos.map",
+                "namefr":"Laos",
+                "population":"7 848 130",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/5/56/Flag_of_Laos.svg"
             },
             "SGP":{
                 "content":"Data:Singapore.map",
+                "namefr":"Singapour",
+                "population":"5 917 600",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/4/48/Flag_of_Singapore.svg"
             },
             "TLS":{
                 "content":"Data:East Timor.map",
+                "namefr":"Timor oriental",
+                "population":"1 341 737",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/2/26/Flag_of_East_Timor.svg"
             },
             "BRN":{
                 "content":"Data:Brunei.map",
+                "namefr":"Brunei",
+                "population":"491 900",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/9/9c/Flag_of_Brunei.svg"
             },
             "EGY":{
                 "content":"Data:Egypt.map",
+                "namefr":"Égypte",
+                "population":"105 174 090",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt.svg"
             },
             "IRN":{
                 "content":"Data:Iran.map",
+                "namefr":"Iran",
+                "population":"87 590 873",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/c/ca/Flag_of_Iran.svg"
             },
             "IRQ":{
                 "content":"Data:Iraq.map",
+                "namefr":"Irak",
+                "population":"46 118 793",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/f/f6/Flag_of_Iraq.svg"
             },
             "YEM":{
                 "content":"Data:Yemen.map",
+                "namefr":"Yémen",
+                "population":"39 390 799",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/8/89/Flag_of_Yemen.svg"
             },
             "SAU":{
                 "content":"Data:Saudi Arabia.map",
+                "namefr":"Arabie saoudite",
+                "population":"35 300 280",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Saudi_Arabia.svg"
             },
             "SYR":{
                 "content":"Data:Syria.map",
+                "namefr":"Syrie",
+                "population":"23 865 423",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/5/54/Flag_of_Syria_%282025-%29.svg"
             },
             "JOR":{
                 "content":"Data:Jordan.map",
+                "namefr":"Jordanie",
+                "population":"10 820 644",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/c/c0/Flag_of_Jordan.svg"
             },
             "ARE":{
                 "content":"Data:United Arab Emirates.map",
+                "namefr":"Émirats arabes unis",
+                "population":"10 678 556",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_the_United_Arab_Emirates.svg"
             },
             "ISR":{
                 "content":"Data:Israel.map",
+                "namefr":"Israël",
+                "population":"10 147 200",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Israel.svg"
             },
             "LBN":{
                 "content":"Data:Lebanon.map",
+                "namefr":"Liban",
+                "population":"5 773 493",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/5/59/Flag_of_Lebanon.svg"
             },
             "PSE":{
                 "content":"Data:Palestinian territories.map",
+                "namefr":"Palestine",
+                "population":"5 483 450",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Palestine.svg"
             },
             "OMN":{
                 "content":"Data:Oman.map",
+                "namefr":"Oman",
+                "population":"5 049 269",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/d/dd/Flag_of_Oman.svg"
             },
             "KWT":{
                 "content":"Data:Kuwait.map",
+                "namefr":"Koweït",
+                "population":"4 913 271",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/a/aa/Flag_of_Kuwait.svg"
             },
             "QAT":{
                 "content":"Data:Qatar.map",
+                "namefr":"Qatar",
+                "population":"2 444 174",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/6/65/Flag_of_Qatar.svg"
             },
             "BHR":{
                 "content":"Data:Bahrain.map",
+                "namefr":"Bahreïn",
+                "population":"1 442 659",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/2/2c/Flag_of_Bahrain.svg"
             },
             "CHN":{
                 "content":"Data:China.map",
+                "namefr":"Chine",
+                "population":"1 425 671 352",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/f/fa/Flag_of_the_People%27s_Republic_of_China.svg"
             },
             "PRK":{
                 "content":"Data:North Korea.map",
+                "namefr":"Corée du Nord",
+                "population":"25 831 360",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/5/51/Flag_of_North_Korea.svg"
             },
             "KOR":{
                 "content":"Data:South Korea.map",
+                "namefr":"Corée du Sud",
+                "population":"51 709 098",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg"
             },
             "MNG":{
                 "content":"Data:Mongolia.map",
+                "namefr":"Mongolie",
+                "population":"3 524 788",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/4/4c/Flag_of_Mongolia.svg"
             },
             "TWN":{
                 "content":"Data:Taiwan.map",
+                "namefr":"Taïwan",
+                "population":"23 588 613",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/4/4c/Flag_of_Mongolia.svg"
             },
             "UZB":{
                 "content":"Data:Uzbekistan.map",
+                "namefr":"Ouzbékistan",
+                "population":"37 697 787",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/8/84/Flag_of_Uzbekistan.svg"
             },
             "KGZ":{
                 "content":"Data:Kyrgyzstan.map",
+                "namefr":"Kirghizistan",
+                "population":"7 213 455",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/c/c7/Flag_of_Kyrgyzstan.svg"
             },
             "TJK":{
                 "content":"Data:Tajikistan.map",
+                "namefr":"Tadjikistan",
+                "population":"10 288 300",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/d/d0/Flag_of_Tajikistan.svg"
             },
             "TKM":{
                 "content":"Data:Turkmenistan.map",
+                "namefr":"Turkménistan",
+                "population":"7 057 841",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/1/1b/Flag_of_Turkmenistan.svg"
             },
             "ARM":{
                 "content":"Data:Armenia.map",
+                "namefr":"Arménie",
+                "population":"3 076 200",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/2/2f/Flag_of_Armenia.svg"
             }
         }
@@ -1266,6 +2173,7 @@
             "CAN":{
                 "content":"Data:Canada.map",
                 "namefr":"Canada",
+                "population":"40 769 890",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Canada_%28Pantone%29.svg",
                 "get":{
                     "ON":{
@@ -1312,6 +2220,7 @@
             "USA":{
                 "content":"useInstead:OSMB:usa.geojson",
                 "namefr":"États-Unis",
+                "population":"341 784 857",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/e/e2/Flag_of_the_United_States_%28Pantone%29.svg",
                 "get":{
                     "AL":{
@@ -1487,144 +2396,211 @@
             "MEX":{
                 "content":"Data:Mexico.map",
                 "namefr":"Méxique",
+                "population":"129 875 529",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/f/fc/Flag_of_Mexico.svg"
             },
             "ARG":{
                 "content":"Data:Argentina.map",
+                "namefr":"Argentine",
+                "population":"45 892 285",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg"
             },
             "BOL":{
                 "content":"Data:Bolivia.map",
+                "namefr":"Bolivie",
+                "population":"12 581 843",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/d/de/Flag_of_Bolivia_%28state%29.svg"
             },
             "BRA":{
                 "content":"Data:Brazil.map",
+                "namefr":"Brésil",
+                "population":"213 421 037",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg"
             },
             "CHL":{
                 "content":"Data:Chile.map",
+                "namefr":"Chili",
+                "population":"20 206 000",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/7/78/Flag_of_Chile.svg"
             },
             "COL":{
                 "content":"Data:Colombia.map",
+                "namefr":"Colombie",
+                "population":"49 588 357",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Colombia.svg"
             },
             "ECU":{
                 "content":"Data:Ecuador.map",
+                "namefr":"Équateur",
+                "population":"18 000 062",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/e/e8/Flag_of_Ecuador.svg"
             },
             "GUY":{
                 "content":"Data:Guyana.map",
+                "namefr":"Guyana",
+                "population":"826 353",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/9/99/Flag_of_Guyana.svg"
             },
             "PRY":{
                 "content":"Data:Paraguay.map",
+                "namefr":"Paraguay",
+                "population":"7 026 306",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/2/27/Flag_of_Paraguay.svg"
             },
             "PER":{
                 "content":"Data:Peru.map",
+                "namefr":"Pérou",
+                "population":"31 914 989",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Peru.svg"
             },
             "SUR":{
                 "content":"Data:Suriname.map",
+                "namefr":"Suriname",
+                "population":"628 886",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/6/60/Flag_of_Suriname.svg"
             },
             "TTO":{
                 "content":"Data:Trinidad and Tobago.map",
+                "namefr":"Trinité-et-Tobago",
+                "population":"1 208 789",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/6/64/Flag_of_Trinidad_and_Tobago.svg"
             },
             "VEN":{
                 "content":"Data:Venezuela.map",
+                "namefr":"Venezuela",
+                "population":"28 405 543",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/0/06/Flag_of_Venezuela.svg"
             },
             "URY":{
                 "content":"Data:Uruguay.map",
+                "namefr":"Uruguay",
+                "population":"3 499 451",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Uruguay.svg"
             },
             "GTM":{
                 "content":"Data:Guatemala.map",
+                "namefr":"Guatemala",
+                "population":"17 850 000",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/e/ec/Flag_of_Guatemala.svg"
             },
             "BLZ":{
                 "content":"Data:Belize.map",
+                "namefr":"Belize",
+                "population":"417 634",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/e/e7/Flag_of_Belize.svg"
             },
             "HND":{
                 "content":"Data:Honduras.map",
+                "namefr":"Honduras",
+                "population":"10 278 345",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/7/79/Flag_of_Honduras_%281949%E2%80%932022%2C_2026%E2%80%93present%29.svg"
             },
             "SLV":{
                 "content":"Data:El Salvador.map",
+                "namefr":"Salvador",
+                "population":"6 029 976",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/3/34/Flag_of_El_Salvador.svg"
             },
             "NIC":{
                 "content":"Data:Nicaragua.map",
+                "namefr":"Nicaragua",
+                "population":"7 046 310",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/1/19/Flag_of_Nicaragua.svg"
             },
             "CRI":{
                 "content":"Data:Costa Rica.map",
+                "namefr":"Costa Rica",
+                "population":"5 111 238",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/f/f2/Flag_of_Costa_Rica.svg"
             },
             "PAN":{
                 "content":"Data:Panama.map",
+                "namefr":"Panama",
+                "population":"4 404 108",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/a/ab/Flag_of_Panama.svg"
             },
             "ATG":{
                 "content":"Data:Antigua and Barbuda.map",
+                "namefr":"Antigua-et-Barbuda",
+                "population":"93 316",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/8/89/Flag_of_Antigua_and_Barbuda.svg"
             },
             "BHS":{
                 "content":"Data:Bahamas.map",
+                "namefr":"Bahamas",
+                "population":"397 900",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/9/93/Flag_of_the_Bahamas.svg"
             },
             "BRB":{
                 "content":"Data:Barbados.map",
+                "namefr":"Barbade",
+                "population":"303 431",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/e/ef/Flag_of_Barbados.svg"
             },
             "CUB":{
                 "content":"Data:Cuba.map",
+                "namefr":"Cuba",
+                "population":"11 032 343",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/b/bd/Flag_of_Cuba.svg"
             },
             "DMA":{
                 "content":"Data:Dominica.map",
+                "namefr":"Dominique",
+                "population":"74 243",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/c/c4/Flag_of_Dominica.svg"
             },
             "GRD":{
                 "content":"Data:Grenada.map",
+                "namefr":"Grenade",
+                "population":"109 021",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_Grenada.svg"
             },
             "HTI":{
                 "content":"Data:Haiti.map",
+                "namefr":"Haïti",
+                "population":"11 637 398",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/5/56/Flag_of_Haiti.svg"
             },
             "JAM":{
                 "content":"Data:Jamaica.map",
+                "namefr":"Jamaïque",
+                "population":"2 839 786",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/0/0a/Flag_of_Jamaica.svg"
             },
             "DOM":{
                 "content":"Data:Dominican Republic.map",
+                "namefr":"République dominicaine",
+                "population":"11 331 265",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_the_Dominican_Republic.svg"
             },
             "KNA":{
                 "content":"Data:Saint Kitts and Nevis.map",
+                "namefr":"Saint-Christophe-et-Niévès",
+                "population":"46 758",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Saint_Kitts_and_Nevis.svg"
             },
             "VTC":{
                 "content":"Data:Saint Vincent.map",
+                "namefr":"Saint-Vincent-et-les-Grenadines",
+                "population":"101 323",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/6/6d/Flag_of_Saint_Vincent_and_the_Grenadines.svg"
             },
             "LCA":{
                 "content":"Data:Saint Lucia.map",
+                "namefr":"Sainte-Lucie",
+                "population":"179 285",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_Saint_Lucia.svg"
             }
         }
     },
     "AF": {
         "namefr":"Afrique",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/5/51/Flag_of_the_African_Union.svg",
         "get":{
             "ZAF":{
                 "content":"Data:South Africa.map",
                 "namefr":"Afrique du Sud",
+                "population":"64 386 489",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_South_Africa.svg",
                 "get":{
                     "WC":{
@@ -1658,7 +2634,326 @@
             },
             "EGY":{
                 "content":"Data:Egypt.map",
+                "namefr":"Égypte",
+                "population":"105 174 090",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt.svg"
+            },
+            "MAR":{
+                "content":"Data:Morocco.map",
+                "namefr":"Maroc",
+                "population":"36 157 337",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/2/2c/Flag_of_Morocco.svg"
+            },
+            "DZA":{
+                "content":"Data:Algeria.map",
+                "namefr":"Algérie",
+                "population":"47 000 000",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/7/77/Flag_of_Algeria.svg"
+            },
+            "LBY":{
+                "content":"Data:Libya.map",
+                "namefr":"Libye",
+                "population":"7 252 573",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Libya.svg"
+            },
+            "TUN":{
+                "content":"Data:Tunisia.map",
+                "namefr":"Tunisie",
+                "population":"11 972 169",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Tunisia.svg"
+            },
+            "SDN":{
+                "content":"Data:Sudan.map",
+                "namefr":"Soudan",
+                "population":"1 886 068",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_Sudan.svg"
+            },
+            "BEN":{
+                "content":"Data:Benin.map",
+                "namefr":"Bénin",
+                "population":"14 814 460",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/0/0a/Flag_of_Benin.svg"
+            },
+            "BFA":{
+                "content":"Data:Burkina Faso.map",
+                "namefr":"Burkina Faso",
+                "population":"23 409 000",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/3/31/Flag_of_Burkina_Faso.svg"
+            },
+            "CPV":{
+                "content":"Data:Cape Verde.map",
+                "namefr":"Cap-Vert",
+                "population":"524 877",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/3/38/Flag_of_Cape_Verde.svg"
+            },
+            "CIV":{
+                "content":"Data:Ivory Coast.map",
+                "namefr":"Côte d'Ivoire",
+                "population":"29 389 150",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_C%C3%B4te_d%27Ivoire.svg"
+            },
+            "GMB":{
+                "content":"Data:The Gambia.map",
+                "namefr":"Gambie",
+                "population":"2 422 712",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/7/77/Flag_of_The_Gambia.svg"
+            },
+            "GHA":{
+                "content":"Data:Ghana.map",
+                "namefr":"Ghana",
+                "population":"34 589 092",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/1/19/Flag_of_Ghana.svg"
+            },
+            "GIN":{
+                "content":"Data:Guinea.map",
+                "namefr":"Guinée",
+                "population":"13 607 249",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/e/ed/Flag_of_Guinea.svg"
+            },
+            "GNB":{
+                "content":"Data:Guinea-Bissau.map",
+                "namefr":"Guinée-Bissau",
+                "population":"2 153 339",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_Guinea-Bissau.svg"
+            },
+            "LBR":{
+                "content":"Data:Liberia.map",
+                "namefr":"Liberia",
+                "population":"5 493 031",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/b/b8/Flag_of_Liberia.svg"
+            },
+            "MLI":{
+                "content":"Data:Mali.map",
+                "namefr":"Mali",
+                "population":"25 184 849",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/9/92/Flag_of_Mali.svg"
+            },
+            "MRT":{
+                "content":"Data:Mauritania.map",
+                "namefr":"Mauritanie",
+                "population":"4 244 878",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/4/43/Flag_of_Mauritania.svg"
+            },
+            "NER":{
+                "content":"Data:Niger.map",
+                "namefr":"Niger",
+                "population":"26 312 034",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/e/eb/Flag_of_Niger_%283-2%29.svg"
+            },
+            "NGA":{
+                "content":"Data:Nigeria.map",
+                "namefr":"Nigeria",
+                "population":"236 747 130",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/7/79/Flag_of_Nigeria.svg"
+            },
+            "SEN":{
+                "content":"Data:Senegal.map",
+                "namefr":"Sénégal",
+                "population":"18 032 473",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/f/fd/Flag_of_Senegal.svg"
+            },
+            "SLE":{
+                "content":"Data:Sierra Leone.map",
+                "namefr":"Sierra Leone",
+                "population":"8 460 512",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Sierra_Leone.svg"
+            },
+            "TGO":{
+                "content":"Data:Togo.map",
+                "namefr":"Togo",
+                "population":"9 515 236",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/6/68/Flag_of_Togo.svg"
+            },
+            "ERI":{
+                "content":"Data:Eritrea.map",
+                "namefr":"Érythrée",
+                "population":"3 470 390",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/2/29/Flag_of_Eritrea.svg"
+            },
+            "DJI":{
+                "content":"Data:Djibouti.map",
+                "namefr":"Djibouti",
+                "population":"1 066 809",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/3/34/Flag_of_Djibouti.svg"
+            },
+            "SOM":{
+                "content":"useInstead:OSMB:som.geojson",
+                "namefr":"Somalie",
+                "population":"18 358 615",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/a/a0/Flag_of_Somalia.svg"
+            },
+            "ETH":{
+                "content":"Data:Ethiopia.map",
+                "namefr":"Éthiopie",
+                "population":"128 691 692",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/7/71/Flag_of_Ethiopia.svg"
+            },
+            "SSD":{
+                "content":"Data:South Sudan.map",
+                "namefr":"Soudan du Sud",
+                "population":"12 129 437",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/7/7a/Flag_of_South_Sudan.svg"
+            },
+            "KEN":{
+                "content":"Data:Kenya.map",
+                "namefr":"Kenya",
+                "population":"55 339 003",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_Kenya.svg"
+            },
+            "UGA":{
+                "content":"Data:Uganda.map",
+                "namefr":"Ouganda",
+                "population":"45 905 417",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/4/4e/Flag_of_Uganda.svg"
+            },
+            "RWA":{
+                "content":"Data:Rwanda.map",
+                "namefr":"Rwanda",
+                "population":"13 954 471",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Rwanda.svg"
+            },
+            "BDI":{
+                "content":"Data:Burundi.map",
+                "namefr":"Burundi",
+                "population":"12 332 788",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/5/50/Flag_of_Burundi.svg"
+            },
+            "TZA":{
+                "content":"Data:Tanzania.map",
+                "namefr":"Tanzanie",
+                "population":"66 617 606",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/3/38/Flag_of_Tanzania.svg"
+            },
+            "MWI":{
+                "content":"Data:Malawi.map",
+                "namefr":"Malawi",
+                "population":"21 104 482",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/d/d1/Flag_of_Malawi.svg"
+            },
+            "MOZ":{
+                "content":"Data:Mozambique.map",
+                "namefr":"Mozambique",
+                "population":"33 635 160",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/d/d0/Flag_of_Mozambique.svg"
+            },
+            "ZMB":{
+                "content":"Data:Zambia.map",
+                "namefr":"Zambie",
+                "population":"20 723 965",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/0/06/Flag_of_Zambia.svg"
+            },
+            "ZWE":{
+                "content":"Data:Zimbabwe.map",
+                "namefr":"Zimbabwe",
+                "population":"16 340 822",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/6/6a/Flag_of_Zimbabwe.svg"
+            },
+            "MDG":{
+                "content":"Data:Madagascar.map",
+                "namefr":"Madagascar",
+                "population":"30 325 732",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_Madagascar.svg"
+            },
+            "COM":{
+                "content":"Data:Comoros.map",
+                "namefr":"Comores",
+                "population":"850 387",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/9/94/Flag_of_the_Comoros.svg"
+            },
+            "SYC":{
+                "content":"Data:Seychelles.map",
+                "namefr":"Seychelles",
+                "population":"119 878",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/f/fc/Flag_of_Seychelles.svg"
+            },
+            "MUS":{
+                "content":"Data:Mauritius.map",
+                "namefr":"Maurice",
+                "population":"1 379 365",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/7/77/Flag_of_Mauritius.svg"
+            },
+            "C:EH":{
+                "content":"Data:Sahrawi Arab Democratic Republic.map",
+                "namefr":"République arabe sahraouie démocratique",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/2/26/Flag_of_the_Sahrawi_Arab_Democratic_Republic.svg"
+            },
+            "TCD":{
+                "content":"Data:Chad.map",
+                "namefr":"Tchad",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/4/4b/Flag_of_Chad.svg",
+                "population":"20 299 123"
+            },
+            "CAF":{
+                "content":"Data:Central African Republic.map",
+                "namefr":"République centrafricaine",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/6/6f/Flag_of_the_Central_African_Republic.svg",
+                "population":"5 552 228"
+            },
+            "CMR":{
+                "content":"Data:Cameroon.map",
+                "namefr":"Cameroun",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/4/4f/Flag_of_Cameroon.svg",
+                "population":"30 135 732"
+            },
+            "COD":{
+                "content":"Data:DR Congo.map",
+                "namefr":"République démocratique du Congo",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/6/6f/Flag_of_the_Democratic_Republic_of_the_Congo.svg",
+                "population":"109 276 265"
+            },
+            "COG":{
+                "content":"Data:Republic of Congo.map",
+                "namefr":"République du Congo",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/9/92/Flag_of_the_Republic_of_the_Congo.svg",
+                "population":"6 142 180"
+            },
+            "GAB":{
+                "content":"Data:Gabon.map",
+                "namefr":"Gabon",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/0/04/Flag_of_Gabon.svg",
+                "population":"2 397 368"
+            },
+            "AGO":{
+                "content":"Data:Angola.map",
+                "namefr":"Angola",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Angola.svg",
+                "population":"39 040 039"
+            },
+            "GNQ":{
+                "content":"Data:Equatorial Guinea.map",
+                "namefr":"Guinée équatoriale",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/3/31/Flag_of_Equatorial_Guinea.svg",
+                "population":"1 853 000"
+            },
+            "STP":{
+                "content":"Data:Sao Tome and Principe.map",
+                "namefr":"Sao Tomé-et-Principe",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/0/0a/Flag_of_S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe.svg",
+                "population":"209 607"
+            },
+            "NAM":{
+                "content":"Data:Namibia.map",
+                "namefr":"Namibie",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Namibia.svg",
+                "population":"3 022 401"
+            },
+            "BWA":{
+                "content":"Data:Botswana.map",
+                "namefr":"Botswana",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/f/fa/Flag_of_Botswana.svg",
+                "population":"2 480 244"
+            },
+            "LSO":{
+                "content":"Data:Lesotho.map",
+                "namefr":"Lesotho",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/4/4a/Flag_of_Lesotho.svg",
+                "population":"2 311 472"
+            },
+            "SWZ":{
+                "content":"Data:Eswatini.map",
+                "namefr":"Eswatini",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/f/fb/Flag_of_Eswatini.svg",
+                "population":"1 202 300"
             }
         }
     },
@@ -1668,40 +2963,75 @@
             "AU":{
                 "content":"Data:Australia.map",
                 "namefr":"Australie",
+                "population":"27 204 809",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia_%28converted%29.svg",
                 "get":{
                     "SA":{
-                        "content":"Data:Australia/South Australia.map"
+                        "content":"Data:Australia/South Australia.map",
+                        "namefr":"Australie-Méridionale"
                     },
                     "WA":{
-                        "content":"Data:Australia/Western Australia.map"
+                        "content":"Data:Australia/Western Australia.map",
+                        "namefr":"Australie-Occidentale"
                     },
                     "NGS":{
-                        "content":"Data:Australia/New South Wales.map"
+                        "content":"Data:Australia/New South Wales.map",
+                        "namefr":"Nouvelle-Galles du Sud"
                     },
                     "QLD":{
-                        "content":"Data:Australia/Queensland.map"
+                        "content":"Data:Australia/Queensland.map",
+                        "namefr":"Queensland"
                     },
                     "TAS":{
-                        "content":"Data:Australia/Tasmania.map"
+                        "content":"Data:Australia/Tasmania.map",
+                        "namefr":"Tasmanie"
                     },
                     "VIC":{
-                        "content":"Data:Australia/Victoria.map"
+                        "content":"Data:Australia/Victoria.map",
+                        "namefr":"Victoria"
                     },
                     "ACT":{
-                        "content":"Data:Australia/Australian Capital Territory.map"
+                        "content":"Data:Australia/Australian Capital Territory.map",
+                        "namefr":"Territoire de la capitale australienne"
                     },
                     "NT":{
-                        "content":"Data:Australia/Northern Territory.map"
+                        "content":"Data:Australia/Northern Territory.map",
+                        "namefr":"Territoire du Nord"
                     },
                     "JBT":{
-                        "content":"Data:Australia/Jervis Bay Territory.map"
+                        "content":"Data:Australia/Jervis Bay Territory.map",
+                        "namefr":"Territoire de la baie de Jervis"
+                    },
+                    "NFK":{
+                        "content":"useInstead:OSMB:australia/nfk.geojson",
+                        "namefr":"Île Norfolk"
+                    },
+                    "CXR":{
+                        "content":"useInstead:OSMB:australia/cxr.geojson",
+                        "namefr":"Île Christmas"
+                    },
+                    "CCK":{
+                        "content":"useInstead:OSMB:australia/cck.geojson",
+                        "namefr":"Îles Cocos"
+                    },
+                    "ACI":{
+                        "content":"useInstead:OSMB:australia/aci.geojson",
+                        "namefr":"Îles Ashmore-et-Cartier"
+                    },
+                    "CSI":{
+                        "content":"useInstead:OSMB:australia/csi.geojson",
+                        "namefr":"Îles de la mer de Corail"
+                    },
+                    "HMD":{
+                        "content":"useInstead:OSMB:australia/hmd.geojson",
+                        "namefr":"Îles Heard-et-MacDonald"
                     }
                 }
             },
             "NZ":{
                 "content":"Data:New Zealand.map",
                 "namefr":"Nouvelle-Zélande",
+                "population":"5 330 600",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/3/3e/Flag_of_New_Zealand.svg",
                 "get":{
                     "NTL":{
@@ -1753,6 +3083,90 @@
                         "content":"Data:New Zealand/Southland.map"
                     }
                 }
+            },
+            "COK":{
+                "content":"useInstead:OSMB:cok.geojson",
+                "namefr":"Îles Cook",
+                "population":"14 987",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/3/35/Flag_of_the_Cook_Islands.svg"
+            },
+            "FJI":{
+                "content":"useInstead:OSMB:fji.geojson",
+                "namefr":"Fidji",
+                "population":"924 145",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Fiji.svg"
+            },
+            "NIU":{
+                "content":"useInstead:OSMB:niu.geojson",
+                "namefr":"Niue",
+                "population":"1 689",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_Niue.svg"
+            },
+            "NRU":{
+                "content":"useInstead:OSMB:nru.geojson",
+                "namefr":"Nauru",
+                "population":"9 770",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/3/30/Flag_of_Nauru.svg"
+            },
+            "FSM":{
+                "content":"useInstead:OSMB:fsm.geojson",
+                "namefr":"États fédérés de Micronésie",
+                "population":"112 630",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/e/e4/Flag_of_the_Federated_States_of_Micronesia.svg"
+            },
+            "MHL":{
+                "content":"useInstead:OSMB:mhl.geojson",
+                "namefr":"Îles Marshall",
+                "population":"38 827",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/2/2e/Flag_of_the_Marshall_Islands.svg"
+            },
+            "KIR":{
+                "content":"useInstead:OSMB:kir.geojson",
+                "namefr":"Kiribati",
+                "population":"121 000",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/d/d3/Flag_of_Kiribati.svg"
+            },
+            "VUT":{
+                "content":"useInstead:OSMB:vut.geojson",
+                "namefr":"Vanuatu",
+                "population":"327 777",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_Vanuatu.svg"
+            },
+            "TUV":{
+                "content":"useInstead:OSMB:tuv.geojson",
+                "namefr":"Tuvalu",
+                "population":"10 632",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/3/38/Flag_of_Tuvalu.svg"
+            },
+            "TON":{
+                "content":"useInstead:OSMB:ton.geojson",
+                "namefr":"Tonga",
+                "population":"105 597",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Tonga.svg"
+            },
+            "WSM":{
+                "content":"useInstead:OSMB:wsm.geojson",
+                "namefr":"Samoa",
+                "population":"216 663",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/3/31/Flag_of_Samoa.svg"
+            },
+            "SLB":{
+                "content":"useInstead:OSMB:slb.geojson",
+                "namefr":"Îles Salomon",
+                "population":"800 005",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/7/74/Flag_of_the_Solomon_Islands.svg"
+            },
+            "PNG":{
+                "content":"useInstead:OSMB:png.geojson",
+                "namefr":"Papouasie-Nouvelle-Guinée",
+                "population":"10 185 363",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/e/e3/Flag_of_Papua_New_Guinea.svg"
+            },
+            "PLW":{
+                "content":"useInstead:OSMB:plw.geojson",
+                "namefr":"Palaos",
+                "population":"21 500",
+                "flag":"https://upload.wikimedia.org/wikipedia/commons/4/48/Flag_of_Palau.svg"
             }
         }
     },

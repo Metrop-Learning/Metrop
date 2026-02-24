@@ -1,0 +1,29 @@
+{
+  "listCity":[
+  { "name": "Buenos Aires", "country": "Argentine", "lat": -34.61, "lng": -58.38 },
+  { "name": "Sucre", "country": "Bolivie", "lat": -19.0429, "lng": -65.2554 },
+  { "name": "Brasília", "country": "Brésil", "lat": -15.7801, "lng": -47.9292 },
+  { "name": "Santiago", "country": "Chili", "lat": -33.46, "lng": -70.65 },
+  { "name": "Bogotá", "country": "Colombie", "lat": 4.61, "lng": -74.08 },
+  { "name": "Quito", "country": "Équateur", "lat": -0.23, "lng": -78.52 },
+  { "name": "Georgetown", "country": "Guyana", "lat": 6.80, "lng": -58.16 },
+  { "name": "Asunción", "country": "Paraguay", "lat": -25.30, "lng": -57.64 },
+  { "name": "Lima", "country": "Pérou", "lat": -12.04, "lng": -77.03 },
+  { "name": "Paramaribo", "country": "Suriname", "lat": 5.87, "lng": -55.17 },
+  { "name": "Montevideo", "country": "Uruguay", "lat": -34.90, "lng": -56.19 },
+  { "name": "Caracas", "country": "Venezuela", "lat": 10.49, "lng": -66.88 },
+  { "name": "Port‑of‑Spain", "country": "Trinité-et-Tobago", "lat": 10.6549, "lng": -61.5019 }
+],
+  "cardInfo":{
+    "Title":"Les capital des pays d’Amérique du Sud",
+    "Text":"Les capital des 13 pays d’Amérique du Sud. (À l'exception des territoires d'outre-mer de la France, du Royaume-Uni et des Pays-Bas)",
+    "lang":"FR",
+    "setInfo":"AM",
+    "pictureURL":"None"
+  },
+  "type": [
+        "place",
+        "name",
+        "guess"
+    ]
+}

@@ -42,6 +42,9 @@ print("\n")
 
 
 cwf = 0
+cwp = 0
+cwfn = 0
+cwen = 0
 
 numOfRegion = 0
 numOfCountryWithRegion = 0
@@ -50,11 +53,23 @@ for continent, countries in listOfCountryPerContinent.items():
     for country_name, country_data in countries.items():
         if country_data.get("flag"):
             cwf += 1
+        if country_data.get("population"):
+            cwp += 1
+        if country_data.get("namefr"):
+            cwfn += 1
+        if country_data.get("nameen"):
+            cwen += 1
         if country_data.get("get"):
             numOfRegion += len(country_data.get("get"))
             numOfCountryWithRegion += 1
 
 percent = math.floor(cwf / total_countries * 100) if total_countries else 0
 print(f"{percent}% of countries have a flag")
+percent = math.floor(cwp / total_countries * 100) if total_countries else 0
+print(f"{percent}% of countries have a population")
+percent = math.floor(cwfn / total_countries * 100) if total_countries else 0
+print(f"{percent}% of countries have a french name")
+percent = math.floor(cwen / total_countries * 100) if total_countries else 0
+print(f"{percent}% of countries have a english name")
 
 print(f"There are {numOfRegion} region in {numOfCountryWithRegion} different country\n")

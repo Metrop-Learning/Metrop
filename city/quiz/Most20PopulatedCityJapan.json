@@ -1,0 +1,40 @@
+{
+    "listCity": [
+  { "name": "Tokyo", "country": "Japon", "lat": 35.6895, "lng": 139.6917 },
+  { "name": "Osaka", "country": "Japon", "lat": 34.6937, "lng": 135.5023 },
+  { "name": "Nagoya", "country": "Japon", "lat": 35.1815, "lng": 136.9066 },
+  { "name": "Fukuoka", "country": "Japon", "lat": 33.5904, "lng": 130.4017 },
+  { "name": "Yokohama", "country": "Japon", "lat": 35.4437, "lng": 139.6380 },
+  { "name": "Shizuoka", "country": "Japon", "lat": 34.9756, "lng": 138.3828 },
+  { "name": "Sapporo", "country": "Japon", "lat": 43.0621, "lng": 141.3544 },
+  { "name": "Sendai", "country": "Japon", "lat": 38.2682, "lng": 140.8694 },
+  { "name": "Hiroshima", "country": "Japon", "lat": 34.3853, "lng": 132.4553 },
+  { "name": "Kobe", "country": "Japon", "lat": 34.6901, "lng": 135.1955 },
+  { "name": "Kyoto", "country": "Japon", "lat": 35.0116, "lng": 135.7681 },
+  { "name": "Kawasaki", "country": "Japon", "lat": 35.5308, "lng": 139.7036 },
+  { "name": "Saitama", "country": "Japon", "lat": 35.8617, "lng": 139.6455 },
+  { "name": "Kitakyushu", "country": "Japon", "lat": 33.8833, "lng": 130.8750 },
+  { "name": "Chiba", "country": "Japon", "lat": 35.6074, "lng": 140.1063 },
+  { "name": "Niigata", "country": "Japon", "lat": 37.9162, "lng": 139.0364 },
+  { "name": "Sakai", "country": "Japon", "lat": 34.5735, "lng": 135.4828 },
+  { "name": "Kumamoto", "country": "Japon", "lat": 32.8031, "lng": 130.7079 },
+  { "name": "Okayama", "country": "Japon", "lat": 34.6551, "lng": 133.9195 },
+  { "name": "Hamamatsu", "country": "Japon", "lat": 34.7108, "lng": 137.7269 }
+],
+    "cardInfo": {
+        "Title": "Les 20 villes les plus peuplées du Japon",
+        "Text": "Les 20 villes les plus peuplées du Japon",
+        "lang": "FR",
+        "pictureURL": "None",
+        "setInfo":"AS-JAP",
+        "option":{
+            "rangeError":300,
+            "rangeErrorAccepted":100
+        }
+    },
+    "type": [
+        "place",
+        "name",
+        "guess"
+    ]
+}

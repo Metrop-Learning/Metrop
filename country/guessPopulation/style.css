@@ -1,0 +1,124 @@
+html, body{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: black;
+}
+
+*{
+    font-family: "Momo Trust Display", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+    color: aliceblue;
+}
+
+#chooseSimple{
+    display: none;
+}
+
+#choose{
+    display: none;
+}
+
+#game{
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+
+#result{
+    display: none;
+}
+
+#a{
+    grid-column: span 2 / span 2;
+    grid-row: span 5 / span 5;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(8, 8, 8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#a .counter{
+    display: none;
+}
+#a:hover{
+    background-color: rgb(30, 30, 30) !important;
+    cursor:pointer;
+}
+
+#b{
+    grid-column: span 2 / span 2;
+    grid-row: span 5 / span 5;
+    grid-column-start: 4;
+    grid-row-start: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(8, 8, 8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#b .counter{
+    display: none;
+}
+#b:hover{
+    background-color: rgb(30, 30, 30) !important;
+    cursor:pointer;
+}
+
+img{
+    height: 80px;
+    width: auto;
+}
+
+#c{
+    grid-row: span 5 / span 5;
+    grid-column-start: 3;
+    grid-row-start: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+
+.btn {
+    background-color: rgb(44, 44, 150);
+    border: 0;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: rgb(230, 230, 230);
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: normal;
+    font-variation-settings:
+        "wdth" 100,
+        "YTLC" 500;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease,
+        opacity 0.3s ease;
+}
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+    filter: grayscale(60%);
+}
+.btn:hover:not(:disabled) {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
