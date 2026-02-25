@@ -10,7 +10,8 @@
         "CapitalUA.json",
         "CapitalEurope.json",
         "CapitalSouthAmerica.json",
-        "Most20PopulatedCityChina.json"
+        "Most20PopulatedCityChina.json",
+        "Most20PopulatedCityJapan.json"
     ],
     "country":[
         "FranceRegionMetropolitaine.json",
