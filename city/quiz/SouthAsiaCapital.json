@@ -1,0 +1,64 @@
+{
+  "listCity": [
+  {
+    "name": "New Delhi",
+    "country": "Inde",
+    "lat": 28.613939,
+    "lng": 77.209023
+  },
+  {
+    "name": "Malé",
+    "country": "Maldives",
+    "lat": 4.175496,
+    "lng": 73.509347
+  },
+  {
+    "name": "Islamabad",
+    "country": "Pakistan",
+    "lat": 33.684420,
+    "lng": 73.047882
+  },
+  {
+    "name": "Kaboul",
+    "country": "Afghanistan",
+    "lat": 34.555349,
+    "lng": 69.207486
+  },
+  {
+    "name": "Katmandou",
+    "country": "Népal",
+    "lat": 27.717245,
+    "lng": 85.323960
+  },
+  {
+    "name": "Sri Jayawardenepura Kotte",
+    "country": "Sri Lanka",
+    "lat": 6.894070,
+    "lng": 79.902478
+  },
+  {
+    "name": "Dacca",
+    "country": "Bangladesh",
+    "lat": 23.810331,
+    "lng": 90.412521
+  },
+  {
+    "name": "Thimphou",
+    "country": "Bhoutan",
+    "lat": 27.472792,
+    "lng": 89.639286
+  }
+],
+  "cardInfo":{
+    "Title":"Les capital des pays d'Asie du Sud",
+    "Text":"Les capital des pays d'Asie du Sud",
+    "setInfo":"AS",
+    "lang":"FR",
+    "pictureURL":"None"
+  },
+  "type":[
+    "place",
+    "name",
+    "guess"
+  ]
+}

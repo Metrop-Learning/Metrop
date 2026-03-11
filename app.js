@@ -3,7 +3,7 @@ import dataBorder from './country/boundary.json' with { type:"json"}
 import * as util from "./city/asset/common.js"
 import * as trad from "./trad/trad.js"
 
-const ver =  [0,7,6,"a"]
+const ver =  [0,7,6,"b"]
 const verDate = [2026,2,24]
 const verAPI = [0,5]
 

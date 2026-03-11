@@ -30,10 +30,6 @@ window.addEventListener('beforeunload', function (e) {
 
 const data = await loadJSON();
 
-const map = L.map("map", { minZoom: 3, maxZoom: 8 }).setView(
-  [48.8566, 2.3522],
-  5
-);
 
 let dist;
 let listCity;
@@ -60,36 +56,65 @@ if (learningID == -1) {
 // ****************************
 // *Dark/Light mode + map load*
 // ****************************
+
+let tilesLayer;
+
 if (
   window.matchMedia &&
   window.matchMedia("(prefers-color-scheme: dark)").matches
 ) {
   document.getElementById("info").style.color = "#ffffff";
-  document.getElementById("map").style.backgroundColor = "#000000ff";
+  document.getElementById("map").style.backgroundColor = "rgb(18, 18, 18)";
   document.body.style.backgroundColor = "#1a1a1aff";
 
-  L.tileLayer(
-    "https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png",
-    {
-      attribution: "© OpenStreetMap, © CartoDB, Made by @Jimmxyz on github",
-      maxZoom: 18,
-      noWrap: true,
-    }
-  ).addTo(map);
+  tilesLayer = [
+                    'https://a.basemaps.cartocdn.com/rastertiles/dark_nolabels/{z}/{x}/{y}.png',
+                    'https://b.basemaps.cartocdn.com/rastertiles/dark_nolabels/{z}/{x}/{y}.png',
+                    'https://c.basemaps.cartocdn.com/rastertiles/dark_nolabels/{z}/{x}/{y}.png'
+                ]
 } else {
   document.getElementById("info").style.color = "#000000ff";
-  document.getElementById("map").style.backgroundColor = "#ffffffff";
+  document.getElementById("map").style.backgroundColor = "rgb(244, 244, 244)";
   document.body.style.backgroundColor = "#ffffffff";
 
-  L.tileLayer(
-    "https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}.png",
-    {
-      attribution: "© OpenStreetMap, © CartoDB, Made by @Jimmxyz on github",
-      maxZoom: 18,
-      noWrap: true,
-    }
-  ).addTo(map);
+  tilesLayer = [
+                    'https://a.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}.png',
+                    'https://b.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}.png',
+                    'https://c.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}.png'
+                ]
 }
+
+
+const map = new maplibregl.Map({
+    container: 'map',
+    style: {
+        version: 8,
+        sources: {
+            carto: {
+                type: 'raster',
+                tiles: tilesLayer,
+                tileSize: 256,
+                attribution: '© <a href="https://carto.com/">CARTO</a> © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | Created by <a href="https://github.com/Jimmxyz">@Jimmxyz</a>'
+            }
+        },
+        layers: [
+            {
+                id: 'carto-base',
+                type: 'raster',
+                source: 'carto'
+            }
+        ]
+    },
+    zoom: 1,
+    center: [150.16546137527212, -35.017179237129994],
+    pitch: 0,
+    maxPitch: 85,
+    canvasContextAttributes: { antialias: true }
+});
+
+map.on('style.load', () => {
+     map.setProjection({ type: 'globe' });
+});
 
 // *******************
 // *random city order*
@@ -112,23 +137,26 @@ let actual;
 
 //point every city :
 for (let i = 0; i < listCity.length; i++) {
-  const marker = L.marker([listCity[i].lat, listCity[i].lng], {
-    icon: util.greyIcon,
-  }).addTo(map);
+  const marker = new maplibregl.Marker({ color: "#7c7c7c" })
+        .setLngLat([listCity[i].lng, listCity[i].lat])
+        .addTo(map);
   markers.push(marker);
 }
 
 function showCity() {
-  console.log(markers[posilist])
   if (actual) {
-    map.removeLayer(actual);
+    actual.remove();
   }
   if (markers[posilist]) {
-    map.removeLayer(markers[posilist]);
-    actual = L.marker([listCity[posilist].lat, listCity[posilist].lng], {
-      icon: util.blueIcon,
-    }).addTo(map);
-    map.setView([listCity[posilist].lat, listCity[posilist].lng], 6);
+    markers[posilist].remove();
+    actual = new maplibregl.Marker({ color: "#3190d2" })
+      .setLngLat([listCity[posilist].lng, listCity[posilist].lat])
+      .addTo(map);
+
+    map.flyTo({
+      center: [listCity[posilist].lng, listCity[posilist].lat],
+      zoom: 6
+    });
   }
 }
 
@@ -258,12 +286,12 @@ function textVerified() {
   lastInput = input
   if (error_margin <= 2) {
     console.log(posilist + "\n" + listCity[posilist].name);
-    let icon = util.orangeIcon;
+    let icon = "#d3732f";
     document.getElementById("errorText").style.color = "rgb(241, 186, 109)";
     if (error_margin <= 1 && loseStrick < 1) {
       document.getElementById("errorText").style.color =
         "rgba(109, 241, 118, 1)";
-      icon = util.greenIcon;
+      icon = "#32da49";
       good.push(posilist);
     }else{miss.push(posilist);}
     document.getElementById("errorText").innerHTML =
@@ -289,33 +317,29 @@ function textVerified() {
       document.getElementById("continue").style.display = "block";
       document.getElementById("continue").disabled = false;
       showCity();
-      markers[posilist - 1] = L.marker(
-      [listCity[posilist - 1].lat, listCity[posilist - 1].lng],
-      {
-        icon: icon,
-      }
-    )
-      .addTo(map)
-      .bindPopup(`<b>${listCity[posilist - 1].name}</b>`);
+      markers[posilist - 1] = new maplibregl.Marker({ color: icon })
+      .setLngLat([listCity[posilist - 1].lng, listCity[posilist - 1].lat])
+      .setPopup(
+         new maplibregl.Popup().setHTML(`<b>${listCity[posilist - 1].name}</b>`)
+       )
+      .addTo(map);
       return
     }
     showCity();
-    markers[posilist - 1] = L.marker(
-      [listCity[posilist - 1].lat, listCity[posilist - 1].lng],
-      {
-        icon: icon,
-      }
-    )
-      .addTo(map)
-      .bindPopup(`<b>${listCity[posilist - 1].name}</b>`);
+    markers[posilist - 1] = new maplibregl.Marker({ color: icon })
+      .setLngLat([listCity[posilist - 1].lng, listCity[posilist - 1].lat])
+      .setPopup(
+         new maplibregl.Popup().setHTML(`<b>${listCity[posilist - 1].name}</b>`)
+       )
+      .addTo(map);
     return;
   }
   document.getElementById("errorText").style.color = "rgb(241, 109, 109)";
   document.getElementById("errorText").innerHTML = "Nom invalide";
   loseStrick++;
-  if (loseStrick >= 2 && loseStrick <= 6) {
+  if (loseStrick >= 2 && loseStrick <= 4) {
     intmaker();
-  } else if (loseStrick >= 6) {
+  } else if (loseStrick >= 4) {
     fail.push(posilist);
     document.getElementById("errorText").style.color = "rgb(241, 109, 109)";
     document.getElementById("errorText").innerHTML =
@@ -342,14 +366,12 @@ function textVerified() {
       return
     }
     showCity();
-    markers[posilist - 1] = L.marker(
-      [listCity[posilist - 1].lat, listCity[posilist - 1].lng],
-      {
-        icon: util.redIcon,
-      }
-    )
-      .addTo(map)
-      .bindPopup(`<b>${listCity[posilist - 1].name}</b>`);
+    markers[posilist - 1] = new maplibregl.Marker({ color: "#d32f2f" })
+      .setLngLat([listCity[posilist - 1].lng, listCity[posilist - 1].lat])
+      .setPopup(
+         new maplibregl.Popup().setHTML(`<b>${listCity[posilist - 1].name}</b>`)
+       )
+      .addTo(map);
   }
   return;
 }
@@ -432,9 +454,9 @@ function showResult() {
           document.getElementById("tid" + i).style.backgroundColor =
             "#" + color;
         }
-  //document.getElementById('logo').innerHTML = ''
-  map.invalidateSize();
-  map.setMinZoom(2);
+        map.easeTo({
+          zoom: 1.5
+        });
 }
 
 document.getElementById("continueMenu").addEventListener("click", () => {

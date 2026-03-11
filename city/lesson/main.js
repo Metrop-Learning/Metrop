@@ -20,11 +20,6 @@ async function loadJSON() {
 
 const data = await loadJSON();
 
-const map = L.map("map", { minZoom: 3, maxZoom: 8 }).setView(
-  [48.8566, 2.3522],
-  5
-); 
-
 let dist;
 let listCity;
 if(learningID == -1){
@@ -49,36 +44,62 @@ else{
 // ****************************
 // *Dark/Light mode + map load*
 // ****************************
+let tilesLayer;
 if (
   window.matchMedia &&
   window.matchMedia("(prefers-color-scheme: dark)").matches
 ) {
-    document.getElementById('info').style.color = '#ffffff'
-    document.getElementById('map').style.backgroundColor = '#000000ff'
-    document.body.style.backgroundColor = '#1a1a1aff'
+  document.getElementById("info").style.color = "#ffffff";
+  document.getElementById("map").style.backgroundColor = "rgb(18, 18, 18)";
+  document.body.style.backgroundColor = "#1a1a1aff";
 
-  L.tileLayer(
-    "https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png",
-    {
-      attribution: "© OpenStreetMap, © CartoDB, Made by @Jimmxyz on github",
-      maxZoom: 18,
-      noWrap: true,
-    }
-  ).addTo(map);
+  tilesLayer = [
+                    'https://a.basemaps.cartocdn.com/rastertiles/dark_nolabels/{z}/{x}/{y}.png',
+                    'https://b.basemaps.cartocdn.com/rastertiles/dark_nolabels/{z}/{x}/{y}.png',
+                    'https://c.basemaps.cartocdn.com/rastertiles/dark_nolabels/{z}/{x}/{y}.png'
+                ]
 } else {
-        document.getElementById('info').style.color = '#000000ff'
-        document.getElementById('map').style.backgroundColor = '#ffffffff'
-        document.body.style.backgroundColor = '#ffffffff'
+  document.getElementById("info").style.color = "#000000ff";
+  document.getElementById("map").style.backgroundColor = "rgb(244, 244, 244)";
+  document.body.style.backgroundColor = "#ffffffff";
 
-  L.tileLayer(
-    "https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}.png",
-    {
-      attribution: "© OpenStreetMap, © CartoDB, Made by @Jimmxyz on github",
-      maxZoom: 18,
-      noWrap: true,
-    }
-  ).addTo(map);
+  tilesLayer = [
+                    'https://a.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}.png',
+                    'https://b.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}.png',
+                    'https://c.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}.png'
+                ]
 }
+
+
+const map = new maplibregl.Map({
+    container: 'map',
+    style: {
+        version: 8,
+        sources: {
+            carto: {
+                type: 'raster',
+                tiles: tilesLayer,
+                tileSize: 256,
+                attribution: '© <a href="https://carto.com/">CARTO</a> © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | Created by <a href="https://github.com/Jimmxyz">@Jimmxyz</a>'
+            }
+        },
+        layers: [
+            {
+                id: 'carto-base',
+                type: 'raster',
+                source: 'carto'
+            }
+        ]
+    },
+    zoom: 1,
+    center: [150.16546137527212, -35.017179237129994],
+    pitch: 0,
+    maxPitch: 85,
+    canvasContextAttributes: { antialias: true }
+});
+map.on('style.load', () => {
+     map.setProjection({ type: 'globe' });
+});
 
 // *******************
 // *random city order*
@@ -105,25 +126,30 @@ document.getElementById("next").addEventListener("click", () => {
 
 //point every city :
 for(let i = 0; i < listCity.length; i++){
-  const marker = L.marker([listCity[i].lat, listCity[i].lng], {
-    icon: util.greyIcon,
-  }).addTo(map)
+  const marker = new maplibregl.Marker({ color: "#7c7c7c" })
+        .setLngLat([listCity[i].lng, listCity[i].lat])
+        .addTo(map);
   markers.push(marker);
 }
 
 
 function showCity() {
   document.getElementById('cityName').innerText = listCity[posilist].name;
-  if(actual){
-    map.removeLayer(actual)
+  if (actual) {
+    actual.remove();
   }
-  if(markers[posilist]){
-    map.removeLayer(markers[posilist])
-    actual = L.marker([listCity[posilist].lat, listCity[posilist].lng], {
-    icon: util.blueIcon,
-  }).addTo(map)
-  map.setView([listCity[posilist].lat, listCity[posilist].lng], 6);}
+  if (markers[posilist]) {
+    markers[posilist].remove();
+    actual = new maplibregl.Marker({ color: "#3190d2" })
+      .setLngLat([listCity[posilist].lng, listCity[posilist].lat])
+      .addTo(map);
+
+    map.flyTo({
+      center: [listCity[posilist].lng, listCity[posilist].lat],
+      zoom: 6
+    });
   }
+}
 
 showCity();
 
@@ -152,11 +178,12 @@ function next(){
   }      
   posilist++;
         showCity();
-        markers[posilist - 1] = L.marker([listCity[posilist - 1].lat, listCity[posilist - 1].lng], {
-    icon: util.greyIcon,
-  })
-    .addTo(map)
-    .bindPopup(`<b>${listCity[posilist].name}</b>`)
+        markers[posilist - 1] = new maplibregl.Marker({ color: "#7c7c7c" })
+      .setLngLat([listCity[posilist - 1].lng, listCity[posilist - 1].lat])
+      .setPopup(
+         new maplibregl.Popup().setHTML(`<b>${listCity[posilist - 1].name}</b>`)
+       )
+      .addTo(map);
         if (!isNaN(posilist) && posilist >= 0 && posilist <= document.getElementById('prgs').max) {
           document.getElementById('prgs').value = posilist;
         }

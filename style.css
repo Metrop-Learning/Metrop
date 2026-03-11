@@ -33,7 +33,7 @@
     --text-color: #fff;
     --search-bar-background: #0e0e0e60;
     --footer-contrib-color: rgba(81, 81, 227, 0.8);
-    --footer-color: #0e0e0e;
+    --footer-color: #07030a;
     --btn-color: rgb(44, 44, 150);
     --btn-text-color: rgb(230,230,230);
     --card-background-color: #1e1e1e;
@@ -232,6 +232,11 @@ footer {
 .colum h3, .colum h1, .colum p {
   padding-left: 30px;
   padding-right: 30px;
+}
+
+#mainFooter {
+  margin: 20px;
+  border-radius: 10px;
 }
 
 #TodayQuiz {
