@@ -1,0 +1,70 @@
+@use "../color"
+
+#settings-menu
+    display: none    
+    width: 100%
+    #settings-content
+        padding-top: 25px
+        margin-left: auto
+        margin-right: auto
+        width: 700px
+        padding-left: 2px
+        padding-bottom: 50px
+        h1, p , h3
+            padding-left: 0px
+        #warning-beta-settings
+            border-left: solid 5px #cab33c
+            padding-left: 10px
+            margin-top: 25px
+            span
+                display: flex
+                align-items: center
+                color: #cab33c
+            p
+                text-align: left
+                font-size: small
+
+.switch
+  position: relative
+  height: 1.5rem
+  width: 3rem
+  cursor: pointer
+  appearance: none
+  -webkit-appearance: none
+  border-radius: 9999px
+  background-color: rgba(100, 116, 139, 0.377)
+  transition: all .3s ease
+
+.switch:checked
+  background-color: var(--footer-contrib-color)
+
+.switch::before 
+  position: absolute
+  content: ""
+  left: calc(1.5rem - 1.6rem)
+  top: calc(1.5rem - 1.6rem)
+  display: block
+  height: 1.6rem
+  width: 1.6rem
+  cursor: pointer
+  border: 1px solid rgba(100, 116, 139, 0.527)
+  border-radius: 9999px
+  background-color: rgba(255, 255, 255, 1)
+  box-shadow: 0 3px 10px rgba(100, 116, 139, 0.327)
+  transition: all .3s ease
+
+.switch:hover::before
+  box-shadow: 0 0 0px 8px rgba(0, 0, 0, .15)
+
+.switch:checked:hover::before
+  box-shadow: 0 0 0px 8px rgba(77, 175, 80, .15)
+
+.switch:checked:before
+  transform: translateX(100%)
+  border-color: var(--footer-contrib-color)
+
+
+.settings-line
+    display: flex
+    align-items: center
+    justify-content: space-between

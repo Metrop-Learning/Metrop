@@ -61,7 +61,7 @@
       Metrop</h1><div id="searchField">
       <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e3e3e3"><path d="M384.03-336Q284-336 214-406t-70-170q0-100 70-170t170-70q100 0 170 70t70 170.03q0 40.39-12.5 76.18Q599-464 577-434l214 214q11 11 11 25t-11 25q-11 11-25.5 11T740-170L526-383q-30 22-65.79 34.5-35.79 12.5-76.18 12.5Zm-.03-72q70 0 119-49t49-119q0-70-49-119t-119-49q-70 0-119 49t-49 119q0 70 49 119t119 49Z"/></svg>
       <input id="searchInput" type="text" placeholder="Rechercher un quiz ou une catégorie">
-    </div></header>
+    </div><span class="btn-settings" id="btn-settings-id"><span id="btn-settings-id-svg-open"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e3e3e3"><path d="M433-80q-27 0-46.5-18T363-142l-9-66q-13-5-24.5-12T307-235l-62 26q-25 11-50 2t-39-32l-47-82q-14-23-8-49t27-43l53-40q-1-7-1-13.5v-27q0-6.5 1-13.5l-53-40q-21-17-27-43t8-49l47-82q14-23 39-32t50 2l62 26q11-8 23-15t24-12l9-66q4-26 23.5-44t46.5-18h94q27 0 46.5 18t23.5 44l9 66q13 5 24.5 12t22.5 15l62-26q25-11 50-2t39 32l47 82q14 23 8 49t-27 43l-53 40q1 7 1 13.5v27q0 6.5-2 13.5l53 40q21 17 27 43t-8 49l-48 82q-14 23-39 32t-50-2l-60-26q-11 8-23 15t-24 12l-9 66q-4 26-23.5 44T527-80h-94Zm7-80h79l14-106q31-8 57.5-23.5T639-327l99 41 39-68-86-65q5-14 7-29.5t2-31.5q0-16-2-31.5t-7-29.5l86-65-39-68-99 42q-22-23-48.5-38.5T533-694l-13-106h-79l-14 106q-31 8-57.5 23.5T321-633l-99-41-39 68 86 64q-5 15-7 30t-2 32q0 16 2 31t7 30l-86 65 39 68 99-42q22 23 48.5 38.5T427-266l13 106Zm42-180q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Zm-2-140Z"/></svg></span><span id="btn-settings-id-svg-close"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e3e3e3"><path d="M480-424 284-228q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536-480l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480-424Z"/></svg></span></button></header>
     <div id="searchResult">
       <div style="display: flex; align-items: center; margin-left: 20px;">
               <h1>Résultat pour votre recherche : </h1>
@@ -99,7 +99,7 @@
       <div id="infoBoard">
         <!-- <p>Vos statistique :</p> -->
         <p trad-i18n="info-setting">Vos paramètre :</p>
-        <div class="lang_select">
+        <div class="horizontalSelectorSize4">
   <label>
   <input type="radio" name="lang" value="fr" checked>
   <span>Français</span>
@@ -214,29 +214,39 @@
       <section id="contribFooterLink">
         <a href="https://github.com/Metrop-Learning/Metrop" style="padding-bottom:10px;">Voir le code ou contribuer ↗</a>
       </section>
-      <footer id="mainFooter"><div class="colum">
-          <h1>Mentions légales :</h1>
-          <h3 style="font-size: smaller">Éditeur du site :</h3>
-          <p style="font-size: x-small">Jimmy</p>
-          <p style="font-size: x-small">Contact : @jimmxyz on github</p>
-          <h3 style="font-size: smaller">Hébergement :</h3>
-          <p style="font-size: x-small">GitHub, Inc.</p>
-          <p style="font-size: x-small">
-            88 Colin P. Kelly Jr. Street San Francisco, CA 94107 États-Unis
-          </p>
-          <h3 style="font-size: smaller">Ce site ne collecte aucune données</h3>
-          <p style="font-size: x-small">
-Toutefois, Metrop enregistre des informations nécessaires au fonctionnement du site <br>
-dans le stockage local de votre navigateur. Vous pouvez choisir de les supprimer. <br>
-<a onclick="if(confirm('Souhaitez-vous être oublié par Metrop ?\nLes données suivantes seront supprimées :\n- Les scores\n- La date du dernier quiz du jour\n- Le dernier quiz du jour\n- La dernière version de Metrop utilisée\n- Le statut debug (outils dev)\nAttention, ces données ne pourront pas être restaurées.')){localStorage.clear(); alert('Les données ont été supprimées'); window.location.reload()}" href="#">M'oublier et supprimer les données.</a>
-</p>
+    </div>
+    <div id="settings-menu">
+      <div id="settings-content">
+        <h1>Paramètres</h1>
+        <hr />
+        <div id="warning-beta-settings">
+          <span>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M109-120q-11 0-20-5.5T75-140q-5-9-5.5-19.5T75-180l370-640q6-10 15.5-15t19.5-5q10 0 19.5 5t15.5 15l370 640q6 10 5.5 20.5T885-140q-5 9-14 14.5t-20 5.5H109Zm69-80h604L480-720 178-200Zm330.5-51.5Q520-263 520-280t-11.5-28.5Q497-320 480-320t-28.5 11.5Q440-297 440-280t11.5 28.5Q463-240 480-240t28.5-11.5Zm0-120Q520-383 520-400v-120q0-17-11.5-28.5T480-560q-17 0-28.5 11.5T440-520v120q0 17 11.5 28.5T480-360q17 0 28.5-11.5ZM480-460Z"/></svg>
+            <h1>Attention</h1>
+          </span>
+          <p>Metrop est toujours en beta et certaine des fonctionnalité suivante peuvent ne pas fonctionner corectement.</p>
         </div>
-        <div class="colum">
-          <h1>Credit :</h1>
-          <h3 style="font-size: smaller">
-            Created by <a href="https://github.com/Jimmxyz">@Jimmxyz</a>
+        <br><br><br><h1>Langue</h1><hr/>
+        <div class="settings-line" style="color: var(--text-color);">Bientôt disponible.</div>
+   <br><br><br><h1>Carte</h1><hr/>
+        <div class="settings-line">
+          <p>Globe en 3D <span style="font-size: smaller;">(Fortement recommander)</span></p>
+          <input id="3dglobe" checked="true" type="checkbox" class="switch">
+        </div>
+
+        <br><br><br><h1>Information</h1><hr/>
+        <h3 id="verText" style="font-size: smaller; text-align: left;">
+            Metrop Version X.X.X.x (API : X.X) <br>
+            Updated the 10 Febuary 2026
+        </h3>
+        <h3 style="font-size: smaller; text-align: left;">
+            <a href="https://github.com/Metrop-Learning/Metrop">Voir le code ou contribuer ↗</a><br><br>
+            <a href="https://metrop-learning.github.io/Tools-and-Documentation/">Voir la base de données ↗</a><br><br>
+            Metrop is under MIT lisence.
           </h3>
-          <h3 style="font-size: smaller">
+        <br><br><br><h1>Credit</h1><hr/>
+          <h3 style="font-size: smaller; text-align: left;">
+            Created by <a href="https://github.com/Jimmxyz">@Jimmxyz</a><br><br>
             Some of the resources are sourced from
             <a href="https://wikipedia.org/">Wikipedia</a>/<a
               href="https://commons.wikimedia.org/"
@@ -251,22 +261,9 @@ dans le stockage local de votre navigateur. Vous pouvez choisir de les supprimer
             <br>
             The animated logo and the favicon are from the <a href="https://googlefonts.github.io/noto-emoji-animation/">Google Noto Emoji</a> database licensed under <a href="https://creativecommons.org/licenses/by/4.0/legalcode">🅭 CC BY 4.0</a>
           </h3>  
-            <h1>Info :</h1>
-          <h3 id="verText" style="font-size: smaller">
-            Metrop Version X.X.X.x (API : X.X) <br>
-            Updated the 10 Febuary 2026
-          </h3>
-          <h3 style="font-size: smaller">
-            <a href="https://github.com/Metrop-Learning/Metrop">Voir le code ou contribuer ↗</a>
-          </h3>
-          <h3 style="font-size: smaller"><a
-              href="#"
-              onclick="localStorage.setItem('DEBUG_STATUT','true');window.location.href = window.location.href;"
-              >Passer en version beta</a
-            ></h3>
-          </h3>
-        </div>      
-      </footer>
+        <br><br><br><h1>Mentions légales</h1><hr/>
+        <h3 style="font-size: smaller; text-align: left;">Éditeur du site : Jimmy (speudonyme)<br><br>Contact : @jimmxyz sur github<br><br>Editeur soumis au lois Française.<br><br>Hébergement: Github Inc.<br><br>Adresse de l'hébergeur :  88 Colin P. Kelly Jr. Street San Francisco, CA 94107 États-Unis<br><br>Aucune donnée n’est transmise à Metrop ni à des tiers. Cependant, certaines données non personnelles peuvent être enregistrées dans le stockage local de votre navigateur afin de garantir le bon fonctionnement du site.</h3>
+      </div>
     </div>
     <script>
       var drop = document.getElementById("dropzone");

@@ -1,0 +1,46 @@
+@use "../color"
+
+// credit : https://uiverse.io/Yaya12085/orange-eagle-19
+
+$sizes: 2, 3, 4
+$widthfixed: 100%
+
+@each $size in $sizes
+    .horizontalSelectorSize#{$size}
+        position: relative
+        display: flex
+        align-items: center
+        border-radius: 10px
+        background-color: var(--footer-color) //may be changed
+        color: var(--text-color)
+        width: $widthfixed
+        overflow: hidden
+        border: 1px solid rgba(53, 52, 52, 0.226)
+        input
+            display: none
+        label
+            width: 100%
+            padding: 10px
+            cursor: pointer
+            display: flex
+            justify-content: center
+            align-items: center
+            z-index: 1
+            font-size: 14px // may be changed
+        .selection
+            display: none
+            position: absolute
+            height: 100%
+            width: calc($widthfixed / #{$size})
+            z-index: 0
+            left: 0
+            top: 0
+            transition: .15s ease
+        label:has(input:checked)
+            color: #fff
+        label:has(input:checked) ~ .selection
+            background-color: var(--btn-color)
+            display: inline-block
+        @for $i from 0 through $size - 1
+            label:nth-child(#{$i + 1}):has(input:checked) ~ .selection
+                transform: translateX(calc(100% * #{$i}))

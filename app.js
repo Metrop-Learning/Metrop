@@ -3,7 +3,7 @@ import dataBorder from './country/boundary.json' with { type:"json"}
 import * as util from "./city/asset/common.js"
 import * as trad from "./trad/trad.js"
 
-const ver =  [0,7,6,"b"]
+const ver =  [0,7,6,"c"]
 const verDate = [2026,3,11]
 const verAPI = [0,5]
 
@@ -62,6 +62,7 @@ else if (localStorage.getItem("DEBUG_STATUT") == "true"){
 let listCountryQuizInfo = []
 let listCityQuizInfo = []
 
+let settingsOpen = false;
 //Set up city
 let cardList = []
 let tempCardList;
@@ -697,4 +698,34 @@ radios.forEach(radio => {
       trad.traductAll("./trad/", this.value)
     }
   });
+});
+
+document.getElementById("btn-settings-id").addEventListener("click", () => {
+        if(settingsOpen){
+            document.getElementById('menu').style.display = "block"
+            document.getElementById('settings-menu').style.display = "none"
+            settingsOpen = false
+            document.getElementById('btn-settings-id-svg-close').style.display = 'none'
+            document.getElementById('btn-settings-id-svg-open').style.display = 'flex'
+        }
+        else{
+            document.getElementById('menu').style.display = "none"
+            document.getElementById('settings-menu').style.display = "flex"
+            settingsOpen = true
+            document.getElementById('btn-settings-id-svg-close').style.display = 'flex'
+            document.getElementById('btn-settings-id-svg-open').style.display = 'none'
+            if(localStorage.getItem("SETTINGS_MAPS_RENDER3D") == "false"){
+                document.getElementById('3dglobe').checked = false
+            } else{
+                document.getElementById('3dglobe').checked = true
+            }
+        }
+})
+
+document.getElementById('3dglobe').addEventListener("change", () => {
+    if(document.getElementById('3dglobe').checked == false){
+        localStorage.setItem("SETTINGS_MAPS_RENDER3D","false")
+    } else{
+        localStorage.setItem("SETTINGS_MAPS_RENDER3D","true")
+    }
 });

@@ -1,5 +1,5 @@
 @use "../color"
-/* This is the file for the btn classes and ALL button
+// This is the file for the btn classes and ALL button
 .btn
     background-color: var(--btn-color)
     border: 0
@@ -21,3 +21,34 @@
 
 .btn:active
     transform: scale(0.8)
+
+
+// This is the the code for the small settings btn in the header
+.btn-settings
+    background-color: var(--search-bar-background)
+    color: var(--text-color)
+    border-radius: 5px
+    border: solid 1px #6d6d6d8e
+    height: 25px
+    width: 25px
+    margin-left: auto
+    margin-right: 10px
+    padding: 0px
+    display: flex
+    justify-content: center
+    align-items: center
+    cursor: pointer
+    svg
+        transition: transform 0.2s
+    svg:hover
+        transform: rotate(90deg)
+
+#btn-settings-id-svg-close
+    display: none
+    justify-content: center
+    align-item: center
+
+#btn-settings-id-svg-open
+    display: flex
+    justify-content: center
+    align-item: center

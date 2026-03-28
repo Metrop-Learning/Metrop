@@ -312,7 +312,6 @@ footer {
   width: auto;
 }
 
-/* This is the file for the btn classes and ALL button */
 .btn {
   background-color: var(--btn-color);
   border: 0;
@@ -336,6 +335,40 @@ footer {
 
 .btn:active {
   transform: scale(0.8);
+}
+
+.btn-settings {
+  background-color: var(--search-bar-background);
+  color: var(--text-color);
+  border-radius: 5px;
+  border: solid 1px rgba(109, 109, 109, 0.5568627451);
+  height: 25px;
+  width: 25px;
+  margin-left: auto;
+  margin-right: 10px;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.btn-settings svg {
+  transition: transform 0.2s;
+}
+.btn-settings svg:hover {
+  transform: rotate(90deg);
+}
+
+#btn-settings-id-svg-close {
+  display: none;
+  justify-content: center;
+  align-item: center;
+}
+
+#btn-settings-id-svg-open {
+  display: flex;
+  justify-content: center;
+  align-item: center;
 }
 
 /* --- Firefox --- */
@@ -430,6 +463,159 @@ footer {
 }
 .lang_select label:nth-child(4):has(input:checked) ~ .selection {
   transform: translateX(262.5px);
+}
+
+.horizontalSelectorSize2 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  background-color: var(--footer-color);
+  color: var(--text-color);
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(53, 52, 52, 0.226);
+}
+.horizontalSelectorSize2 input {
+  display: none;
+}
+.horizontalSelectorSize2 label {
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  font-size: 14px;
+}
+.horizontalSelectorSize2 .selection {
+  display: none;
+  position: absolute;
+  height: 100%;
+  width: calc(100% / 2);
+  z-index: 0;
+  left: 0;
+  top: 0;
+  transition: 0.15s ease;
+}
+.horizontalSelectorSize2 label:has(input:checked) {
+  color: #fff;
+}
+.horizontalSelectorSize2 label:has(input:checked) ~ .selection {
+  background-color: var(--btn-color);
+  display: inline-block;
+}
+.horizontalSelectorSize2 label:nth-child(1):has(input:checked) ~ .selection {
+  transform: translateX(calc(100% * 0));
+}
+.horizontalSelectorSize2 label:nth-child(2):has(input:checked) ~ .selection {
+  transform: translateX(calc(100% * 1));
+}
+
+.horizontalSelectorSize3 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  background-color: var(--footer-color);
+  color: var(--text-color);
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(53, 52, 52, 0.226);
+}
+.horizontalSelectorSize3 input {
+  display: none;
+}
+.horizontalSelectorSize3 label {
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  font-size: 14px;
+}
+.horizontalSelectorSize3 .selection {
+  display: none;
+  position: absolute;
+  height: 100%;
+  width: calc(100% / 3);
+  z-index: 0;
+  left: 0;
+  top: 0;
+  transition: 0.15s ease;
+}
+.horizontalSelectorSize3 label:has(input:checked) {
+  color: #fff;
+}
+.horizontalSelectorSize3 label:has(input:checked) ~ .selection {
+  background-color: var(--btn-color);
+  display: inline-block;
+}
+.horizontalSelectorSize3 label:nth-child(1):has(input:checked) ~ .selection {
+  transform: translateX(calc(100% * 0));
+}
+.horizontalSelectorSize3 label:nth-child(2):has(input:checked) ~ .selection {
+  transform: translateX(calc(100% * 1));
+}
+.horizontalSelectorSize3 label:nth-child(3):has(input:checked) ~ .selection {
+  transform: translateX(calc(100% * 2));
+}
+
+.horizontalSelectorSize4 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  background-color: var(--footer-color);
+  color: var(--text-color);
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(53, 52, 52, 0.226);
+}
+.horizontalSelectorSize4 input {
+  display: none;
+}
+.horizontalSelectorSize4 label {
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  font-size: 14px;
+}
+.horizontalSelectorSize4 .selection {
+  display: none;
+  position: absolute;
+  height: 100%;
+  width: calc(100% / 4);
+  z-index: 0;
+  left: 0;
+  top: 0;
+  transition: 0.15s ease;
+}
+.horizontalSelectorSize4 label:has(input:checked) {
+  color: #fff;
+}
+.horizontalSelectorSize4 label:has(input:checked) ~ .selection {
+  background-color: var(--btn-color);
+  display: inline-block;
+}
+.horizontalSelectorSize4 label:nth-child(1):has(input:checked) ~ .selection {
+  transform: translateX(calc(100% * 0));
+}
+.horizontalSelectorSize4 label:nth-child(2):has(input:checked) ~ .selection {
+  transform: translateX(calc(100% * 1));
+}
+.horizontalSelectorSize4 label:nth-child(3):has(input:checked) ~ .selection {
+  transform: translateX(calc(100% * 2));
+}
+.horizontalSelectorSize4 label:nth-child(4):has(input:checked) ~ .selection {
+  transform: translateX(calc(100% * 3));
 }
 
 .quizList {
@@ -591,6 +777,87 @@ footer {
     display: none;
   }
 }
+#settings-menu {
+  display: none;
+  width: 100%;
+}
+#settings-menu #settings-content {
+  padding-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px;
+  padding-left: 2px;
+  padding-bottom: 50px;
+}
+#settings-menu #settings-content h1, #settings-menu #settings-content p, #settings-menu #settings-content h3 {
+  padding-left: 0px;
+}
+#settings-menu #settings-content #warning-beta-settings {
+  border-left: solid 5px #cab33c;
+  padding-left: 10px;
+  margin-top: 25px;
+}
+#settings-menu #settings-content #warning-beta-settings span {
+  display: flex;
+  align-items: center;
+  color: #cab33c;
+}
+#settings-menu #settings-content #warning-beta-settings p {
+  text-align: left;
+  font-size: small;
+}
+
+.switch {
+  position: relative;
+  height: 1.5rem;
+  width: 3rem;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 9999px;
+  background-color: rgba(100, 116, 139, 0.377);
+  transition: all 0.3s ease;
+}
+
+.switch:checked {
+  background-color: var(--footer-contrib-color);
+}
+
+.switch::before {
+  position: absolute;
+  content: "";
+  left: -0.1rem;
+  top: -0.1rem;
+  display: block;
+  height: 1.6rem;
+  width: 1.6rem;
+  cursor: pointer;
+  border: 1px solid rgba(100, 116, 139, 0.527);
+  border-radius: 9999px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 3px 10px rgba(100, 116, 139, 0.327);
+  transition: all 0.3s ease;
+}
+
+.switch:hover::before {
+  box-shadow: 0 0 0px 8px rgba(0, 0, 0, 0.15);
+}
+
+.switch:checked:hover::before {
+  box-shadow: 0 0 0px 8px rgba(77, 175, 80, 0.15);
+}
+
+.switch:checked:before {
+  transform: translateX(100%);
+  border-color: var(--footer-contrib-color);
+}
+
+.settings-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 * {
   font-family: "Momo Trust Display", "Mochiy Pop One", sans-serif;
   font-weight: 500;

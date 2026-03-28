@@ -33,12 +33,6 @@ async function loadJSON() {
 
 const data = await loadJSON();
 
-// Map init
-const map = L.map("map", { minZoom: 3, maxZoom: 8 }).setView(
-  [48.8566, 2.3522],
-  3
-); 
-
 let dist;
 let listCity;
 if(learningID == -1){
@@ -62,38 +56,69 @@ else{
 // ****************************
 // *Dark/Light mode + map load*
 // ****************************
+let tilesLayer;
 let lineColor;
 if (
   window.matchMedia &&
   window.matchMedia("(prefers-color-scheme: dark)").matches
 ) {
-    lineColor = "white"
-    document.getElementById('menu').style.color = '#ffffff'
-    document.getElementById('map').style.backgroundColor = '#000000ff'
-    document.body.style.backgroundColor = '#1a1a1aff'
+  lineColor = "#fff"
+  document.getElementById("menu").style.color = "#ffffff";
+  document.getElementById("map").style.backgroundColor = "rgb(18, 18, 18)";
+  document.body.style.backgroundColor = "#1a1a1aff";
 
-  L.tileLayer(
-    "https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png",
-    {
-      attribution: "© OpenStreetMap, © CartoDB, Made by @Jimmxyz on github",
-      maxZoom: 18,
-      noWrap: true,
-    }
-  ).addTo(map);
+  tilesLayer = [
+                    'https://a.basemaps.cartocdn.com/rastertiles/dark_nolabels/{z}/{x}/{y}.png',
+                    'https://b.basemaps.cartocdn.com/rastertiles/dark_nolabels/{z}/{x}/{y}.png',
+                    'https://c.basemaps.cartocdn.com/rastertiles/dark_nolabels/{z}/{x}/{y}.png'
+                ]
 } else {
-        lineColor = "black"
-        document.getElementById('menu').style.color = '#000000ff'
-        document.getElementById('map').style.backgroundColor = '#ffffffff'
-        document.body.style.backgroundColor = '#ffffffff'
+  lineColor = "#000"
+  document.getElementById("menu").style.color = "#000000ff";
+  document.getElementById("map").style.backgroundColor = "rgb(244, 244, 244)";
+  document.body.style.backgroundColor = "#ffffffff";
 
-  L.tileLayer(
-    "https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}.png",
-    {
-      attribution: "© OpenStreetMap, © CartoDB, Made by @Jimmxyz on github",
-      maxZoom: 18,
-      noWrap: true,
-    }
-  ).addTo(map);
+  tilesLayer = [
+                    'https://a.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}.png',
+                    'https://b.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}.png',
+                    'https://c.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}.png'
+                ]
+}
+
+
+const map = new maplibregl.Map({
+    container: 'map',
+    style: {
+        version: 8,
+        sources: {
+            carto: {
+                type: 'raster',
+                tiles: tilesLayer,
+                tileSize: 256,
+                attribution: '© <a href="https://carto.com/">CARTO</a> © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | Created by <a href="https://github.com/Jimmxyz">@Jimmxyz</a>'
+            }
+        },
+        layers: [
+            {
+                id: 'carto-base',
+                type: 'raster',
+                source: 'carto'
+            }
+        ]
+    },
+    zoom: 1,
+    center: [150.16546137527212, -35.017179237129994],
+    pitch: 0,
+    maxPitch: 85,
+    canvasContextAttributes: { antialias: true }
+});
+map.dragRotate.disable();
+map.keyboard.disable();
+map.touchZoomRotate.disableRotation();
+if(localStorage.getItem('SETTINGS_MAPS_RENDER3D') != "false"){
+  map.on('style.load', () => {
+     map.setProjection({ type: 'globe' });
+  });
 }
 
 // *******************
@@ -122,20 +147,23 @@ document.getElementById("cityName").innerText = listCity[posilist].name;
 
 // When click
 map.on("click", function (e) {
-  if(playable == false || play == false){
-    return
+  if (playable === false || play === false) {
+    return;
   }
+
   document.getElementById("btnP").disabled = false;
-  const { lat, lng } = e.latlng;
+
+  const { lat, lng } = e.lngLat;
   posilat = lat;
   posilng = lng;
+
   if (marker) {
-    marker.setLatLng(e.latlng);
+    marker.setLngLat([lng, lat]).addTo(map);
   } else {
-    marker = L.marker(e.latlng).addTo(map);
+    marker = new maplibregl.Marker({ color: "#3190d2" })
+      .setLngLat([lng, lat])
+      .addTo(map);
   }
-  marker.addTo(map);
-  console.log("Posi selected :", lat, lng);
 });
 
 let play = true
@@ -154,23 +182,33 @@ document.getElementById("btnP").addEventListener("click", () => {
     }
     play = true
     if(lastIsFail){
-      map.removeLayer(playerGuess);
-      map.removeLayer(truePosition);
-      map.removeLayer(line);
-      L.marker([listCity[posilist - 1].lat, listCity[posilist - 1].lng], {
-        icon: util.redIcon,
-      })
-      .addTo(map)
-      .bindPopup(`<b>${listCity[posilist - 1].name}</b>`)
-      lastIsFail = false
+      if (playerGuess) playerGuess.remove();
+      if (truePosition) truePosition.remove();
+
+      if (map.getLayer("guess-line")) {
+        map.removeLayer("guess-line");
+      }
+      if (map.getSource("guess-line")) {
+        map.removeSource("guess-line");
+      }
+
+      const city = listCity[posilist - 1];
+
+      new maplibregl.Marker({ color: "#d32f2f" })
+        .setLngLat([city.lng, city.lat])
+        .setPopup(
+          new maplibregl.Popup().setHTML(`<b>${city.name}</b>`)
+        )
+        .addTo(map);
+        lastIsFail = false
     }
     document.getElementById("btnP").disabled = true;
     document.getElementById("btnP").innerText = "Proposer cette position";
     document.getElementById("cityName").innerText = listCity[posilist].name;
-    map.setView(
-  [48.8566, 2.3522],
-  3
-); 
+    map.flyTo({
+  center: [listCity[posilist - 1].lng, listCity[posilist - 1].lat], // [lng, lat]
+  zoom: 3
+});
   }
 });
 
@@ -229,44 +267,87 @@ document.getElementById("back").addEventListener("click", () => {
 
 
 function revealGood() {
-  L.marker([listCity[posilist].lat, listCity[posilist].lng], {
-    icon: util.greenIcon,
-  })
+  const city = listCity[posilist];
+
+  new maplibregl.Marker({ color: "#32da49" })
+    .setLngLat([city.lng, city.lat])
+    .setPopup(new maplibregl.Popup().setHTML(`<b>${city.name}</b>`))
     .addTo(map)
-    .bindPopup(`<b>${listCity[posilist].name}</b>`)
-    .openPopup();
-  map.setView([listCity[posilist].lat, listCity[posilist].lng], 6);
-  map.removeLayer(marker);
+
+  map.flyTo({
+    center: [city.lng, city.lat],
+    zoom: 6
+  });
+
+  if (marker) marker.remove();
 }
 
 function revealSemiGood() {
-  L.marker([listCity[posilist].lat, listCity[posilist].lng], {
-    icon: util.orangeIcon,
-  })
+  const city = listCity[posilist];
+
+  new maplibregl.Marker({ color: "#d3732f" })
+    .setLngLat([city.lng, city.lat])
+    .setPopup(new maplibregl.Popup().setHTML(`<b>${city.name}</b>`))
     .addTo(map)
-    .bindPopup(`<b>${listCity[posilist].name}</b>`)
-    .openPopup();
-  map.setView([listCity[posilist].lat, listCity[posilist].lng], 6);
-  map.removeLayer(marker);
+
+  map.flyTo({
+    center: [city.lng, city.lat],
+    zoom: 6
+  });
+
+  if (marker) marker.remove();
 }
 
 function reveal() {
-  lastIsFail = true
-  playerGuess = L.marker([marker._latlng.lat, marker._latlng.lng], {
-    icon: util.redIcon,
-  })
+  lastIsFail = true;
+
+  const guess = marker.getLngLat();
+  const city = listCity[posilist];
+
+  playerGuess = new maplibregl.Marker({ color: "#d32f2f" })
+    .setLngLat([guess.lng, guess.lat])
+    .setPopup(new maplibregl.Popup().setHTML(`<b>Votre proposition</b>`))
     .addTo(map)
-    .bindPopup(`<b>Votre proposition</b>`)
-    .openPopup();
-  truePosition = L.marker([listCity[posilist].lat, listCity[posilist].lng], {
-    icon: util.greenIcon,
-  })
+
+  truePosition = new maplibregl.Marker({ color: "#32da49" })
+    .setLngLat([city.lng, city.lat])
+    .setPopup(new maplibregl.Popup().setHTML(`<b>${city.name}</b>`))
     .addTo(map)
-    .bindPopup(`<b>${listCity[posilist].name}</b>`)
-    .openPopup();
-  line = L.polyline([[marker._latlng.lat, marker._latlng.lng], [listCity[posilist].lat, listCity[posilist].lng]], {color: lineColor,dashArray: '10, 10'}).addTo(map);
-  map.fitBounds(line.getBounds());
-  map.removeLayer(marker);
+
+  const lineGeoJSON = {
+    type: "Feature",
+    geometry: {
+      type: "LineString",
+      coordinates: [
+        [guess.lng, guess.lat],
+        [city.lng, city.lat]
+      ]
+    }
+  };
+
+  map.addSource("guess-line", {
+    type: "geojson",
+    data: lineGeoJSON
+  });
+
+  map.addLayer({
+    id: "guess-line",
+    type: "line",
+    source: "guess-line",
+    paint: {
+      "line-color": lineColor,
+      "line-width": 3,
+      "line-dasharray": [2, 2]
+    }
+  });
+
+  const bounds = new maplibregl.LngLatBounds()
+    .extend([guess.lng, guess.lat])
+    .extend([city.lng, city.lat]);
+
+  map.fitBounds(bounds, { padding: 40 });
+
+  if (marker) marker.remove();
 }
 
 function distKm(lat1, lon1, lat2, lon2) {
@@ -285,15 +366,17 @@ function distKm(lat1, lon1, lat2, lon2) {
 
 function showResult() {
   if(lastIsFail){
-      map.removeLayer(playerGuess);
-      map.removeLayer(truePosition);
-      map.removeLayer(line);
-      L.marker([listCity[posilist - 1].lat, listCity[posilist - 1].lng], {
-        icon: util.redIcon,
-      })
-      .addTo(map)
-      .bindPopup(`<b>${listCity[posilist - 1].name}</b>`)
-      lastIsFail = false
+      if (playerGuess) playerGuess.remove();
+      if (truePosition) truePosition.remove();
+      if (map.getLayer("guess-line")) map.removeLayer("guess-line");
+      if (map.getSource("guess-line")) map.removeSource("guess-line");
+
+      const city = listCity[posilist - 1];
+
+      new maplibregl.Marker({ color: "red" })
+  .setLngLat([city.lng, city.lat])
+  .setPopup(new maplibregl.Popup().setHTML(`<b>${city.name}</b>`))
+  .addTo(map);
     }
   document.getElementById("menu").style.display = "none";
   document.getElementById("map").style.width = "60%";
@@ -372,8 +455,10 @@ function showResult() {
             "#" + color;
         }
   //document.getElementById('logo').innerHTML = ''
-  map.invalidateSize();
-  map.setMinZoom(2);
+  map.flyTo({
+    center: [listCity[0].lng, listCity[0].lat],
+    zoom: 1.5
+  });
 }
 
 document.getElementById("continueMenu").addEventListener("click", () => {

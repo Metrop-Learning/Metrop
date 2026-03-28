@@ -97,6 +97,9 @@ const map = new maplibregl.Map({
     maxPitch: 85,
     canvasContextAttributes: { antialias: true }
 });
+map.dragRotate.disable();
+map.keyboard.disable();
+map.touchZoomRotate.disableRotation();
 map.on('style.load', () => {
      map.setProjection({ type: 'globe' });
 });
