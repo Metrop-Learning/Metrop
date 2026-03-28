@@ -4,7 +4,7 @@ import * as util from "./city/asset/common.js"
 import * as trad from "./trad/trad.js"
 
 const ver =  [0,7,6,"c"]
-const verDate = [2026,3,11]
+const verDate = [2026,3,28]
 const verAPI = [0,5]
 
 if(localStorage.getItem("lastVersionUsed")){
