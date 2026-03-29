@@ -6,6 +6,11 @@
             "FRA": {
                 "content": "Data:France.map",
                 "namefr":"France",
+                "nameen":"France",
+                "namejp":"フランス",
+                "nameit":"Francia",
+                "namees":"Francia",
+                "nameeo":"Francio",
                 "population":"69 082 000",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg",
                 "get": {
@@ -193,6 +198,11 @@
             "DEU": {
                 "content": "Data:Germany.map",
                 "namefr":"Allemagne",
+                "nameen":"Germany",
+                "namejp":"ドイツ",
+                "nameit":"Germania",
+                "namees":"Alemania",
+                "nameeo":"Germanio",
                 "population":"83 577 140",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg",
                 "get":{
@@ -251,6 +261,11 @@
                 "population":"9 048 900",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/0/08/Flag_of_Switzerland_%28Pantone%29.svg",
                 "namefr":"Suisse",
+                "nameen":"Switzerland",
+                "namejp":"スイス",
+                "nameit":"Svizzera",
+                "namees":"Suiza",
+                "nameeo":"Svislando",
                 "get":{
                     "UR":{
                         "content":"Data:Uri.map"
@@ -335,6 +350,11 @@
             "ITA": {
                 "content": "Data:Italy.map",
                 "namefr":"Italie",
+                "nameen":"Italy",
+                "namejp":"イタリア",
+                "nameit":"Italia",
+                "namees":"Italia",
+                "nameeo":"Italio",
                 "population":"58 934 177",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/0/03/Flag_of_Italy.svg",
                 "get":{
@@ -405,6 +425,11 @@
                 "population":"49 077 984",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg",
                 "namefr":"Espagne",
+                "nameen":"Spain",
+                "namejp":"スペイン",
+                "nameit":"Spagna",
+                "namees":"España",
+                "nameeo":"Hispanio",
                 "get":{
                     "AN":{
                         "content":"Data:Spain/Andalusia.map"
@@ -468,6 +493,11 @@
             "PRT":{
                 "content":"Data:Portugal.map",
                 "namefr":"Portugal",
+                "nameen":"Portugal",
+                "namejp":"ポルトガル",
+                "nameit":"Portogallo",
+                "namees":"Portugal",
+                "nameeo":"Portugalio",
                 "population":"10 639 726",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/a/a8/Flag_of_Portugal_%28official%29.svg"
             },
@@ -476,6 +506,11 @@
                 "population":"68 350 000",
                 "flag":"https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg",
                 "namefr":"Royaume-Uni",
+                "nameen":"United Kingdom",
+                "namejp":"イギリス",
+                "nameit":"Regno Unito",
+                "namees":"Reino Unido",
+                "nameeo":"Unuiĝinta Reĝlando",
                 "get":{
                     "ENG":{
                         "content":"Data:England.map"
@@ -491,13 +526,13 @@
                     }
                 }
             },
-            "IMN":{
+            "UKC:IMN":{
                 "content":"Data:Isle of Man.map"
             },
-            "JEY":{
+            "UKC:JEY":{
                 "content":"Data:Jersey.map"
             },
-            "GGY":{
+            "UKC:GGY":{
                 "content":"Data:Guernsey.map"
             },
             "IRL":{

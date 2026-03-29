@@ -1,0 +1,63 @@
+{
+  "listFlag":[
+    {
+      "name":"Bruxelles",
+      "id":"EU-BEL-BRU"
+    },
+    {
+      "name":"Anvers",
+      "id":"EU-BEL-VLG-VAN"
+    },
+    {
+      "name":"Limbourg",
+      "id":"EU-BEL-VLG-VLI"
+    },
+    {
+      "name":"Flandre-Orientale",
+      "id":"EU-BEL-VLG-VOV"
+    },
+    {
+      "name":"Brabant flamand",
+      "id":"EU-BEL-VLG-VBR"
+    },
+    {
+      "name":"Flandre-Occidentale",
+      "id":"EU-BEL-VLG-VWV"
+    },
+    {
+      "name":"Brabant wallon",
+      "id":"EU-BEL-WAL-WBR"
+    },
+    {
+      "name":"Hainaut",
+      "id":"EU-BEL-WAL-WHT"
+    },
+    {
+      "name":"Liège",
+      "id":"EU-BEL-WAL-WLG"
+    },
+    {
+      "name":"Luxembourg",
+      "id":"EU-BEL-WAL-WLX"
+    },
+    {
+      "name":"Namur",
+      "id":"EU-BEL-WAL-WNA"
+    }
+  ],
+  "cardInfo":{
+    "Title":"Les Provinces de Belgique",
+    "Text":"Les 11 Provinces de Belgique",
+    "lang":"FR",
+    "pictureURL":"None",
+    "setInfo":"EU-BEL",
+    "option":{
+            "tryMax":1,
+            "EliminateSelected":true
+        }
+  },
+  "type":[
+    "fromFlag",
+    "fromName"
+  ]
+}

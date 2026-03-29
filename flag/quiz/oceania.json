@@ -1,0 +1,83 @@
+{
+  "listFlag":[
+    {
+      "name":"Australie",
+      "id":"OC-AU"
+    },
+    {
+      "name":"Nouvelle-Zélande",
+      "id":"OC-NZ"
+    },
+    {
+      "name":"Îles Cook",
+      "id":"OC-COK"
+    },
+    {
+      "name":"Fidji",
+      "id":"OC-FJI"
+    },
+    {
+      "name":"Kiribati",
+      "id":"OC-KIR"
+    },
+    {
+      "name":"Îles Marshall",
+      "id":"OC-MHL"
+    },
+    {
+      "name":"États fédérés de Micronésie",
+      "id":"OC-FSM"
+    },
+    {
+      "name":"Nauru",
+      "id":"OC-NRU"
+    },
+    {
+      "name":"Niue",
+      "id":"OC-NIU"
+    },
+    {
+      "name":"Palaos",
+      "id":"OC-PLW"
+    },
+    {
+      "name":"Papouasie-Nouvelle-Guinée",
+      "id":"OC-PNG"
+    },
+    {
+      "name":"Îles Salomon",
+      "id":"OC-SLB"
+    },
+    {
+      "name":"Samoa",
+      "id":"OC-WSM"
+    },
+    {
+      "name":"Tonga",
+      "id":"OC-TON"
+    },
+    {
+      "name":"Tuvalu",
+      "id":"OC-TUV"
+    },
+    {
+      "name":"Vanuatu",
+      "id":"OC-VUT"
+    }
+  ],
+  "cardInfo":{
+    "Title":"Les pays d'océanie",
+    "Text":"Les 6 États et les 3 territoires intérieurs et 6 territoires extérieurs de l’Australie (à l’exception du Territoire antarctique australien, qui est contesté à l’international).",
+    "lang":"FR",
+    "pictureURL":"None",
+    "setInfo":"OC",
+    "option":{
+            "tryMax":2,
+            "EliminateSelected":true
+        }
+  },
+  "type":[
+    "fromFlag",
+    "fromName"
+  ]
+}

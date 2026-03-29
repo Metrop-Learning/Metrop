@@ -20,6 +20,14 @@ let base;
         });
         window.location.replace(`./city/name/index.html?${params.toString()}`);
       }
+      function fromFlag(jsonName) {
+        const params = new URLSearchParams({
+          json: jsonName,
+          learningID: -1,
+          return: base,
+        });
+        window.location.replace(`./flag/fromFlag/index.html?${params.toString()}`);
+      }
       function guessIt(jsonName) {
         const params = new URLSearchParams({
           json: jsonName,

@@ -1,0 +1,221 @@
+#flagArea {
+    height: 65vh;
+    width: 100%;
+    border-radius: 10px;
+}
+@media (max-width: 768px) {
+    #flagArea{
+        height: 55vh;
+    }
+}
+*{
+    font-family: "Momo Trust Display", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+}
+.btn {
+    background-color: rgb(81, 81, 227);
+    border: 0;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: normal;
+    font-variation-settings:
+        "wdth" 100,
+        "YTLC" 500;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease,
+        opacity 0.3s ease;
+}
+
+@media (prefers-color-scheme: light) {
+    .btn {
+        background-color: rgb(81, 81, 227);
+        color: white;
+    }
+    #loading {
+    color: rgb(0, 0, 0);
+}
+body{
+    background-color: rgb(255, 255, 255);
+}
+#flagArea{
+    background-color: rgb(236, 236, 236);
+}
+#nameArea{
+    background-color: rgb(224, 224, 224);
+    color: rgb(0, 0, 0);
+}
+}
+
+@media (prefers-color-scheme: dark) {
+    .btn {
+        background-color: rgb(44, 44, 150);
+        color: rgb(230, 230, 230);
+    }
+    #loading {
+    color: rgb(255, 255, 255);
+}
+#nameArea{
+    background-color: rgb(51, 51, 51);
+    color: rgb(255, 255, 255);
+}
+body{
+    background-color: rgb(26, 26, 26);
+}
+#flagArea{
+    background-color: rgb(36, 36, 36);
+}
+}
+
+.btn:hover:not(:disabled) {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+    filter: grayscale(60%);
+}
+@media (prefers-color-scheme: light) {
+    progress {
+  accent-color: rgb(81, 81, 227);
+}
+#resultContent{
+    color: #000;
+}
+}
+
+@media (prefers-color-scheme: dark) {
+    progress {
+  accent-color: rgb(44, 44, 150);
+}
+#resultContent{
+    color: #fff;
+}
+}
+
+#nameArea{
+    margin-top: 50px;
+    border: 0px;
+    border-radius: 5px;
+    padding: 5px;
+    padding-right: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#nameArea:hover {
+    transform: scale(1.1) !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+#nameArea:focus{
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border: 5px solid rgb(81, 81, 227);
+    outline: none;
+}
+
+#intArea {
+    visibility: hidden;
+  display: flex;          
+  align-items: center;    
+  gap: 8px;               
+}
+
+h6{
+    margin: 0px;
+}
+
+#resultArea{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: none;
+}
+svg{
+    fill: currentColor;
+}
+
+.btnMenu {
+    background-color: rgb(81, 81, 227);
+    width: auto;
+    border: 0;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    font-style: normal;
+    font-size: larger;
+    font-variation-settings:
+        "wdth" 100,
+        "YTLC" 500;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+    display: flex;              /* Aligne les éléments sur une même ligne */
+    align-items: center;        /* Centre verticalement SVG + texte */
+    gap: 8px;    
+    cursor: pointer; 
+}
+.btnMenu:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+@media (prefers-color-scheme: dark) {
+    .btnMenu {
+        background-color: rgb(44, 44, 150); 
+        color: rgb(230, 230, 230);
+    }
+}
+@media (prefers-color-scheme: light) {
+    .btnMenu {
+        background-color: rgb(81, 81, 227);
+        color: white;
+    }
+}
+
+table {
+        margin-top: 50px;
+        border-collapse: collapse;
+        margin: 0 auto;
+        width: 50vw;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      thead {
+        background: #616161;
+        color: #fff;
+      }
+      th,
+      td {
+        padding: 10px 12px;
+        text-align: left;
+        border-bottom: 1px solid #eee;
+        font-size: 14px;
+      }
+
+.btnList{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#flag{
+    max-height: 50%;
+    max-width: 50%;
+    width: auto;
+    height: auto;
+}
+#flagArea{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

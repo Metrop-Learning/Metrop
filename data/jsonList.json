@@ -79,7 +79,14 @@
         "ONUmember.json",
         "ONUmemberAndObserver.json"
     ],
-    "flag":{
-
-    }
+    "flag":[
+        "EuropeanUnion.json",
+        "NorthAmerica.json",
+        "oceania.json",
+        "EuropeanCountry.json",
+        "MiddleEast.json",
+        "SouthAmerica.json",
+        "SouthEasternAsia.json",
+        "belgiumProvinces.json"
+    ]
 }
