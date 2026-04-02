@@ -134,9 +134,6 @@ for(let i = 0; i < cardList.length; i++){
 cardList = []
 const promisesCountry = data.country.map(country => cityListSetUp(country, "country"));
 listCountryQuizInfo = await Promise.all(promisesCountry);
-//for(let i = 0; i < data.country.length; i++){
-//    listCountryQuizInfo.push(await cityListSetUp(data.country[i],"country"));
-//}
 console.log(cardList[0])
 document.getElementById('nbrQuizCountry').innerText =  cardList.length + " quiz"
 if(cardList.length > 10){

@@ -371,6 +371,20 @@ footer {
   align-item: center;
 }
 
+.shimmer {
+  background: linear-gradient(to right, var(--card-background-color) 8%, var(--header-top-color) 18%, var(--card-background-color) 33%);
+  background-size: 400%;
+  animation: shimmer 1.2s infinite ease;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
 /* --- Firefox --- */
 * {
   scrollbar-width: thin;
