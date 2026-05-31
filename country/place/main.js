@@ -47,7 +47,7 @@ if (!isNaN(0) && 0 >= 0 && 0 <= document.getElementById('prgs').max) {
 }
 
 
-import dataBorder from '../boundary.json' with { type: "json" };
+import dataBorder from 'https://metrop-learning.github.io/metrop.geo.database/boundaries.json' with { type: "json" };
 
 const map = L.map("map",  { minZoom: 3, maxZoom: 10 }).setView([46.5, 2.5], 6);
 
@@ -217,7 +217,7 @@ async function addABoundarie(link, ite) {
 }
   if (link.split(':')[0] == "useInstead") {
     if (link.split(':')[1] == "OSMB") {
-      tlink = "../OSMB/" + link.split(':')[2];
+      tlink = "https://metrop-learning.github.io/metrop.geo.database/boundaries/" + link.split(':')[2];
     }
     document.getElementById("loadedR").innerText = "Fetching resource: " + link.split(':')[2] + " from " + link.split(':')[2]  + " local file"
   } else {

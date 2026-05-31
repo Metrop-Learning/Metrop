@@ -1,11 +1,17 @@
 import data from './data/jsonList.json' with { type: "json" };
-import dataBorder from './country/boundary.json' with { type:"json"}
+import dataBorder from 'https://metrop-learning.github.io/metrop.geo.database/boundaries.json' with { type:"json"}
 import * as util from "./city/asset/common.js"
 import * as trad from "./trad/trad.js"
 
-const ver =  [0,7,6,"d"]
-const verDate = [2026,3,30]
+const ver =  [0,7,6,"e"]
+const verDate = [2026,5,31]
+const verDatabase =  dataBorder["DB:INFO"].VER
+console.log(verDatabase)
+const verDatabaseDate = dataBorder["DB:INFO"].DATE
+
 const verAPI = [0,5]
+
+const langSys = "FR"
 
 if(localStorage.getItem("lastVersionUsed")){
     let verS = localStorage.getItem("lastVersionUsed").split(".")
@@ -45,7 +51,7 @@ catch{
 
 
 
-document.getElementById('verText').innerHTML = "Metrop Version " + ver[0] + "." + ver[1] + "." + ver[2] + "." + ver[3] + " (API : " + verAPI[0] + "." + verAPI[1] + ")<br><br>Updated the : " + verDate[0] + " / "+verDate[1]+" / " + verDate[2]
+document.getElementById('verText').innerHTML = "🌍 Metrop Version " + ver[0] + "." + ver[1] + "." + ver[2] + "." + ver[3] + " (API : " + verAPI[0] + "." + verAPI[1] + ")<br><br>Updated the : " + verDate[0] + " / "+verDate[1]+" / " + verDate[2] +"<br><br>🗺️ Metrop Geo Database Version : " + verDatabase[0] + "." + verDatabase[1] + "." + verDatabase[2] + "<br><br>Updated the : " + verDatabaseDate[0] + "/" + verDatabaseDate[1] + "/" + verDatabaseDate[2]
 console.info("Metrop ver\n"+ver[0]+"."+ver[1]+"."+ver[2]+"."+ver[3]+"\nMetrop API ver\n"+verAPI[0]+"."+verAPI[1])
 
 if(!localStorage.getItem("DEBUG_STATUT")){
@@ -59,8 +65,8 @@ else if (localStorage.getItem("DEBUG_STATUT") == "true"){
     document.getElementById('containerMainInfo').className = "containMainInfoDEBUG"
 }
 
-let listCountryQuizInfo = []
-let listCityQuizInfo = []
+let listCountryQuizInfo = [];
+let listCityQuizInfo = [];
 
 let settingsOpen = false;
 //Set up city
@@ -69,6 +75,7 @@ let tempCardList;
 let tempCard;
 const promisesCity = data.city.map(city => cityListSetUp(city, "city"));
 listCityQuizInfo = await Promise.all(promisesCity);
+listCityQuizInfo = listCityQuizInfo.filter(element => element !== undefined);
 //for(let i = 0; i < data.city.length; i++){
 //    listCityQuizInfo.push(await cityListSetUp(data.city[i],"city"));
 //}
@@ -134,6 +141,7 @@ for(let i = 0; i < cardList.length; i++){
 cardList = []
 const promisesCountry = data.country.map(country => cityListSetUp(country, "country"));
 listCountryQuizInfo = await Promise.all(promisesCountry);
+listCountryQuizInfo = listCountryQuizInfo.filter(element => element !== undefined);
 console.log(cardList[0])
 document.getElementById('nbrQuizCountry').innerText =  cardList.length + " quiz"
 if(cardList.length > 10){
@@ -263,7 +271,27 @@ async function cityListSetUp(nameJson,type){
                 console.warn('METROP DATA API\n---\nDATA MISSING : "Text"\nIN : '+ nameJson +' \n---\nText are not needed but recomended. The text will be "No Text".\n---\nDocumentation : https://github.com/Metrop-Learning/Metrop/blob/main/documentaion/data.md\n---', obj);
             }
             if ('lang' in obj.cardInfo) {
-                //GOOD
+                if(typeof(obj.cardInfo.lang) == "string"){
+                    if(obj.cardInfo.lang == langSys){
+                        //GOOD
+                    }
+                    else if(localStorage.getItem("SETTINGS_LANG_ONLYSELECTED") == "true"){
+                        return
+                    }
+                }
+                else{
+                    try{
+                        if(langSys in obj.cardInfo.lang){
+                            //GOOD
+                        }
+                        else if(localStorage.getItem("SETTINGS_LANG_ONLYSELECTED") == "true"){
+                                return
+                        }
+                    }
+                    catch{
+                        return
+                    }
+                }
             } else {
                 //NOT GOOD
                 console.warn('METROP DATA API\n---\nDATA MISSING : "lang"\nIN : '+ nameJson +' \n---\nlang are needed. The lang will be set to "EN".\n---\nDocumentation : https://github.com/Metrop-Learning/Metrop/blob/main/documentaion/data.md\n---', obj);
@@ -711,6 +739,7 @@ document.getElementById("btn-settings-id").addEventListener("click", () => {
         }
         else{
             document.getElementById('menu').style.display = "none"
+            document.getElementById('searchResult').style.display = "none"
             document.getElementById('settings-menu').style.display = "flex"
             settingsOpen = true
             document.getElementById('btn-settings-id-svg-close').style.display = 'flex'
@@ -720,6 +749,21 @@ document.getElementById("btn-settings-id").addEventListener("click", () => {
             } else{
                 document.getElementById('3dglobe').checked = true
             }
+            if(localStorage.getItem("SETTINGS_MAPS_INCLINATECAM") == "true"){
+                document.getElementById('inclinateCam').checked = true
+            } else{
+                document.getElementById('inclinateCam').checked = false
+            }
+            if(localStorage.getItem("SETTINGS_LANG_ONLYSELECTED") == "false"){
+                document.getElementById('onlyQuizInTheSelectedLanguage').checked = false
+            } else{
+                document.getElementById('onlyQuizInTheSelectedLanguage').checked = true
+            }
+            if (localStorage.getItem("DEBUG_STATUT") == "true"){
+                document.getElementById('betaFeathures').checked = true
+            } else{
+                document.getElementById('betaFeathures').checked = false
+            }
         }
 })
 
@@ -728,5 +772,39 @@ document.getElementById('3dglobe').addEventListener("change", () => {
         localStorage.setItem("SETTINGS_MAPS_RENDER3D","false")
     } else{
         localStorage.setItem("SETTINGS_MAPS_RENDER3D","true")
+    }
+});
+
+document.getElementById('inclinateCam').addEventListener("change", () => {
+    if(document.getElementById('inclinateCam').checked == true){
+        localStorage.setItem("SETTINGS_MAPS_INCLINATECAM","true")
+    } else{
+        localStorage.setItem("SETTINGS_MAPS_INCLINATECAM","false")
+    }
+});
+
+document.getElementById('onlyQuizInTheSelectedLanguage').addEventListener("change", () => {
+    if(document.getElementById('onlyQuizInTheSelectedLanguage').checked == false){
+        localStorage.setItem("SETTINGS_LANG_ONLYSELECTED","false")
+    } else{
+        localStorage.setItem("SETTINGS_LANG_ONLYSELECTED","true")
+    }
+});
+
+document.getElementById('betaFeathures').addEventListener("change", () => {
+    if(document.getElementById('betaFeathures').checked == true){
+        if(confirm("Metrop a besoin de redémarer voullez vous continuer ?")){
+            localStorage.setItem("DEBUG_STATUT","true")
+            window.location.reload()
+        } else {
+            document.getElementById('betaFeathures').checked = false
+        }
+    } else{
+        if(confirm("Metrop a besoin de redémarer voullez vous continuer ?")){
+            localStorage.setItem("DEBUG_STATUT","false")
+            window.location.reload()
+        } else {
+            document.getElementById('betaFeathures').checked = true
+        }
     }
 });

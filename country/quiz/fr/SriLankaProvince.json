@@ -1,0 +1,56 @@
+{
+  "listCountry":[
+    {
+      "name":"Province du Centre",
+      "id":"AS-LKA-CP"
+    },
+    {
+      "name":"Province de l'Est",
+      "id":"AS-LKA-EP"
+    },
+    {
+      "name":"Province du Nord",
+      "id":"AS-LKA-NP"
+    },
+    {
+      "name":"Province du Sud",
+      "id":"AS-LKA-SP"
+    },
+    {
+      "name":"Province de l'Ouest",
+      "id":"AS-LKA-WP"
+    },
+    {
+      "name":"Province du Nord-Ouest",
+      "id":"AS-LKA-NW"
+    },
+    {
+      "name":"Province du Centre-Nord",
+      "id":"AS-LKA-NC"
+    },
+    {
+      "name":"Province d'Uva",
+      "id":"AS-LKA-UP"
+    },
+    {
+      "name":"Province de Sabaragamuwa",
+      "id":"AS-LKA-SG"
+    }
+  ],
+  "cardInfo":{
+    "Title":"Les Provinces du Sri Lanka",
+    "Text":"Les 9 Provinces du Sri Lanka",
+    "lang":"FR",
+    "pictureURL":"None",
+    "setInfo":"AS-LKA",
+    "option":{
+            "tryMax":1,
+            "EliminateSelected":true
+        }
+  },
+  "type":[
+    "placeTerritory",
+    "shadowTerritory",
+    "guessFromPosiTerritory"
+  ]
+}

@@ -49,7 +49,7 @@ for(let i = 0; i < listFlag.length; i++){
   document.getElementById('nameArea').appendChild(option)
 }
 
-import dataBorder from '../../country/boundary.json' with { type: "json" };
+import dataBorder from 'https://metrop-learning.github.io/metrop.geo.database/boundaries.json' with { type: "json" };
 
 function getFlag(id){
   let deep;

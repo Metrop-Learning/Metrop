@@ -1,0 +1,32 @@
+{
+  "listCountry":[
+    {
+      "name":"Région de Bruxelles-Capitale",
+      "id":"EU-BEL-BRU"
+    },
+    {
+      "name":"Région flamande",
+      "id":"EU-BEL-VLG"
+    },
+    {
+      "name":"Région wallonne",
+      "id":"EU-BEL-WAL"
+    }
+  ],
+  "cardInfo":{
+    "Title":"Les Région de Belgique",
+    "Text":"Les 3 Région de Belgique (Ne pas confondre avec les Communautés de Belgique)",
+    "lang":"FR",
+    "pictureURL":"None",
+    "setInfo":"EU-BEL",
+    "option":{
+            "tryMax":1,
+            "EliminateSelected":true
+        }
+  },
+  "type":[
+    "placeTerritory",
+    "shadowTerritory",
+    "guessFromPosiTerritory"
+  ]
+}

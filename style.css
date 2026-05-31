@@ -800,7 +800,8 @@ footer {
   margin-left: auto;
   margin-right: auto;
   width: 700px;
-  padding-left: 2px;
+  padding-left: 15px;
+  padding-right: 15px;
   padding-bottom: 50px;
 }
 #settings-menu #settings-content h1, #settings-menu #settings-content p, #settings-menu #settings-content h3 {
@@ -813,6 +814,7 @@ footer {
 }
 #settings-menu #settings-content #warning-beta-settings span {
   display: flex;
+  gap: 5px;
   align-items: center;
   color: #cab33c;
 }

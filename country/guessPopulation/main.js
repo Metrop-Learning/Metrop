@@ -1,4 +1,4 @@
-import dataBorder from '../boundary.json' with { type: "json" };
+import dataBorder from 'https://metrop-learning.github.io/metrop.geo.database/boundaries.json' with { type: "json" };
 
 let countryList = []
 let alreadyChoosenCouuntry = []

@@ -1,0 +1,44 @@
+{
+  "listCountry":[
+    {
+      "name":"Australie-Méridionale",
+      "id":"OC-AU-SA"
+    },
+    {
+      "name":"Australie-Occidentale",
+      "id":"OC-AU-WA"
+    },
+    {
+      "name":"Nouvelle-Galles du Sud",
+      "id":"OC-AU-NGS"
+    },
+    {
+      "name":"Queensland",
+      "id":"OC-AU-QLD"
+    },
+    {
+      "name":"Tasmanie",
+      "id":"OC-AU-TAS"
+    },
+    {
+      "name":"Victoria",
+      "id":"OC-AU-VIC"
+    }
+  ],
+  "cardInfo":{
+    "Title":"Les États de l'Australie",
+    "Text":"Les 6 États de l’Australie.",
+    "lang":"FR",
+    "pictureURL":"None",
+    "setInfo":"OC-AU",
+    "option":{
+            "tryMax":2,
+            "EliminateSelected":true
+        }
+  },
+  "type":[
+    "placeTerritory",
+    "shadowTerritory",
+    "guessFromPosiTerritory"
+  ]
+}

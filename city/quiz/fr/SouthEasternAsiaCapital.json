@@ -1,0 +1,82 @@
+{
+  "listCity": [
+  {
+    "name": "Jakarta",
+    "country": "Indonésie",
+    "lat": -6.208763,
+    "lng": 106.845599
+  },
+  {
+    "name": "Manille",
+    "country": "Philippines",
+    "lat": 14.599512,
+    "lng": 120.984222
+  },
+  {
+    "name": "Hanoï",
+    "country": "Vietnam",
+    "lat": 21.027764,
+    "lng": 105.834160
+  },
+  {
+    "name": "Bangkok",
+    "country": "Thaïlande",
+    "lat": 13.756331,
+    "lng": 100.501765
+  },
+  {
+    "name": "Naypyidaw",
+    "country": "Myanmar",
+    "lat": 19.763306,
+    "lng": 96.078510
+  },
+  {
+    "name": "Kuala Lumpur",
+    "country": "Malaisie",
+    "lat": 3.139003,
+    "lng": 101.686855
+  },
+  {
+    "name": "Phnom Penh",
+    "country": "Cambodge",
+    "lat": 11.556374,
+    "lng": 104.928209
+  },
+  {
+    "name": "Vientiane",
+    "country": "Laos",
+    "lat": 17.975705,
+    "lng": 102.633103
+  },
+  {
+    "name": "Singapour",
+    "country": "Singapour",
+    "lat": 1.352083,
+    "lng": 103.819836
+  },
+  {
+    "name": "Dili",
+    "country": "Timor oriental",
+    "lat": -8.556856,
+    "lng": 125.560314
+  },
+  {
+    "name": "Bandar Seri Begawan",
+    "country": "Brunei",
+    "lat": 4.903052,
+    "lng": 114.939821
+  }
+],
+  "cardInfo":{
+    "Title":"Les capital des pays d'Asie du Sud Est",
+    "Text":"Les capital des pays d'Asie du Sud Est",
+    "lang":"FR",
+    "setInfo":"AS",
+    "pictureURL":"None"
+  },
+  "type":[
+    "place",
+    "name",
+    "guess"
+  ]
+}

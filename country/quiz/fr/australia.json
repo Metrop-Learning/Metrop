@@ -1,0 +1,80 @@
+{
+  "listCountry":[
+    {
+      "name":"Australie-Méridionale",
+      "id":"OC-AU-SA"
+    },
+    {
+      "name":"Australie-Occidentale",
+      "id":"OC-AU-WA"
+    },
+    {
+      "name":"Nouvelle-Galles du Sud",
+      "id":"OC-AU-NGS"
+    },
+    {
+      "name":"Queensland",
+      "id":"OC-AU-QLD"
+    },
+    {
+      "name":"Tasmanie",
+      "id":"OC-AU-TAS"
+    },
+    {
+      "name":"Victoria",
+      "id":"OC-AU-VIC"
+    },
+    {
+      "name":"Territoire de la capitale australienne",
+      "id":"OC-AU-ACT"
+    },
+    {
+      "name":"Territoire du Nord",
+      "id":"OC-AU-NT"
+    },
+    {
+      "name":"Territoire de la baie de Jervis",
+      "id":"OC-AU-JBT"
+    },
+    {
+      "name":"Île Norfolk",
+      "id":"OC-AU-NFK"
+    },
+    {
+      "name":"Île Christmas",
+      "id":"OC-AU-CXR"
+    },
+    {
+      "name":"Îles Cocos",
+      "id":"OC-AU-CCK"
+    },
+    {
+      "name":"Îles Ashmore-et-Cartier",
+      "id":"OC-AU-ACI"
+    },
+    {
+      "name":"Îles de la mer de Corail",
+      "id":"OC-AU-CSI"
+    },
+    {
+      "name":"Îles Heard-et-MacDonald",
+      "id":"OC-AU-HMD"
+    }
+  ],
+  "cardInfo":{
+    "Title":"Les États et Territoires de l'Australie",
+    "Text":"Les 6 États et les 3 territoires intérieurs et 6 territoires extérieurs de l’Australie (à l’exception du Territoire antarctique australien, qui est contesté à l’international).",
+    "lang":"FR",
+    "pictureURL":"None",
+    "setInfo":"OC-AU",
+    "option":{
+            "tryMax":2,
+            "EliminateSelected":true
+        }
+  },
+  "type":[
+    "placeTerritory",
+    "shadowTerritory",
+    "guessFromPosiTerritory"
+  ]
+}

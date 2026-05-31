@@ -1,0 +1,40 @@
+{
+  "listCountry":[
+    {
+      "name":"Afrique du Sud",
+      "id":"AF-ZAF"
+    },
+    {
+      "name":"Namibie",
+      "id":"AF-NAM"
+    },
+    {
+      "name":"Botswana",
+      "id":"AF-BWA"
+    },
+    {
+      "name":"Lesotho",
+      "id":"AF-LSO"
+    },
+    {
+      "name":"Eswatini",
+      "id":"AF-SWZ"
+    }
+  ],
+  "cardInfo":{
+    "Title":"Les Pays d'Afrique Australe",
+    "Text":"Les 5 Pays d’Afrique Australe.",
+    "lang":"FR",
+    "setInfo":"AF",
+    "pictureURL":"None",
+    "option":{
+            "tryMax":1,
+            "EliminateSelected":true
+        }
+  },
+  "type":[
+    "placeTerritory",
+    "shadowTerritory",
+    "guessFromPosiTerritory"
+  ]
+}

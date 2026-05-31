@@ -1,0 +1,48 @@
+{
+  "listCountry":[
+    {
+      "name":"Île de Java",
+      "id":"AS-IDN-SP:ISL-JAV"
+    },
+    {
+      "name":"Kalimantan (Île de Bornéo)",
+      "id":"AS-IDN-SP:ISL-KAL"
+    },
+    {
+      "name":"Archipel des Petites îles de la Sonde",
+      "id":"AS-IDN-SP:ISL-LSI"
+    },
+    {
+      "name":"Archipel des Moluques",
+      "id":"AS-IDN-SP:ISL-MAK"
+    },
+    {
+      "name":"Île de Sulawesi (ou Célèbes)",
+      "id":"AS-IDN-SP:ISL-SUL"
+    },
+    {
+      "name":"Île de Sumatra",
+      "id":"AS-IDN-SP:ISL-SUM"
+    },
+    {
+      "name":"Île de Nouvelle-Guinée (partie occidentale)",
+      "id":"AS-IDN-SP:ISL-WNG"
+    }
+  ],
+  "cardInfo":{
+    "Title":"Les îles et archipels de l’Indonésie",
+    "Text":"Les principales îles et les principaux archipels d’Indonésie",
+    "lang":"FR",
+    "pictureURL":"None",
+    "setInfo":"AS-IDN",
+    "option":{
+            "tryMax":2,
+            "EliminateSelected":true
+        }
+  },
+  "type":[
+    "placeTerritory",
+    "shadowTerritory",
+    "guessFromPosiTerritory"
+  ]
+}

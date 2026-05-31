@@ -1,0 +1,76 @@
+{
+  "listCountry":[
+    {
+      "name":"Attique",
+      "id":"EU-GRC-AT-ATQ"
+    },
+    {
+      "name":"Macédoine-Orientale-et-Thrace",
+      "id":"EU-GRC-MT-AMT"
+    },
+    {
+      "name":"Macédoine-Centrale",
+      "id":"EU-GRC-MT-KEM"
+    },
+    {
+      "name":"Macédoine-Occidentale",
+      "id":"EU-GRC-EO-DYM"
+    },
+    {
+      "name":"Épire",
+      "id":"EU-GRC-EO-IEO"
+    },
+    {
+      "name":"Thessalie",
+      "id":"EU-GRC-TC-THE"
+    },
+    {
+      "name":"Grèce-Centrale",
+      "id":"EU-GRC-TC-STE"
+    },
+    {
+      "name":"Îles Ioniennes",
+      "id":"EU-GRC-PI-ION"
+    },
+    {
+      "name":"Grèce-Occidentale",
+      "id":"EU-GRC-PI-DYE"
+    },
+    {
+      "name":"Péloponnèse",
+      "id":"EU-GRC-PI-PEL"
+    },
+    {
+      "name":"Égée-Méridionale",
+      "id":"EU-GRC-EG-NAI"
+    },
+    {
+      "name":"Égée-Septentrionale",
+      "id":"EU-GRC-EG-VAI"
+    },
+    {
+      "name":"Crète",
+      "id":"EU-GRC-CR-KRI"
+    },
+    {
+      "name":"Communauté monastique du mont Athos",
+      "id":"EU-GRC-MA-AYO"
+    }
+  ],
+  "cardInfo":{
+    "Title":"Les Périphérie de la Grèce",
+    "Text":"Les 13 diocèses décentralisés de la Grèce et la Communauté monastique du mont Athos",
+    "lang":"FR",
+    "pictureURL":"None",
+    "setInfo":"EU-GRC",
+    "option":{
+            "tryMax":1,
+            "EliminateSelected":true
+        }
+  },
+  "type":[
+    "placeTerritory",
+    "shadowTerritory",
+    "guessFromPosiTerritory"
+  ]
+}
