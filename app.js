@@ -2,8 +2,16 @@ import data from './data/jsonList.json' with { type: "json" };
 import dataBorder from 'https://metrop-learning.github.io/metrop.geo.database/boundaries.json' with { type:"json"}
 import * as util from "./city/asset/common.js"
 import * as trad from "./trad/trad.js"
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
 
-const ver =  [0,7,6,"e"]
+
+// --- WARNING ---
+// Supabase init
+
+const supabase = createClient('https://jzpamrnoigzrsrzweesi.supabase.co', 'sb_publishable_iGQxLRwCBtqjls75aH99Dw_8_dp28fe')
+
+
+const ver =  [0,7,6,"f"]
 const verDate = [2026,5,31]
 const verDatabase =  dataBorder["DB:INFO"].VER
 console.log(verDatabase)
@@ -31,6 +39,7 @@ if(localStorage.getItem("lastVersionUsed")){
 else{
     document.getElementById("welcomeHeader").style.display = 'block';
     localStorage.setItem("lastVersionUsed",ver[0] + "." + ver[1] + "." + ver[2] + "." + ver[3])
+    const { error: errorFirst } = await supabase.rpc('increment_first');
 }
 
 
@@ -670,13 +679,14 @@ function searchPreparation(textResearch){
 
 
 
-function TodayQuiz(){
+async function TodayQuiz(){
     let jsonName_quiz = localStorage.getItem("TODAY_QUIZ")
     let date_quiz = localStorage.getItem("TODAY_QUIZ_DATE")
     let today = new Date()
     let obj;
     today = today.toLocaleDateString('sv-SE');
     if (!jsonName_quiz || date_quiz < today){
+        const { error: errorConnection } = await supabase.rpc('increment_connection');
         let lQc = listCountryQuizInfo.length
         let lQv = listCityQuizInfo.length
         let choosen;

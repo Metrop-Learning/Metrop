@@ -77,8 +77,7 @@
         "fr/ireland/ProvincesIreland.json",
         "fr/ireland/TraditianalCountiesIreland.json",
         "fr/ONUmember.json",
-        "fr/ONUmemberAndObserver.json",
-        "jp/EuropeanUnionEEA.json"
+        "fr/ONUmemberAndObserver.json"
     ],
     "flag":[
         "fr/EuropeanUnion.json",
