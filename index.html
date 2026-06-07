@@ -17,7 +17,7 @@
     />
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Mochiy+Pop+One&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     <script src="./app.js" type="module"></script>
-    <script src="./main.js"></script>
+    <script src="./main.js" defer></script>
     <title>Metrop</title>
   </head>
   <body>
@@ -270,6 +270,11 @@
           <p>Caméra orientable <span style="font-size: smaller;">(peut être gênante)</span></p>
           <input id="inclinateCam" type="checkbox" class="switch">
         </div>
+    <br><br><br><h1>Personalisation</h1><hr/>
+        <div class="settings-line">
+          <p>Afficher les images des quiz dans la liste</p>
+          <input id="showImg" type="checkbox" class="switch">
+        </div>
     <br><br><br><h1>Autres</h1><hr/>
         <div class="settings-line">
           <p>Utiliser les fonctionnalité beta <span style="font-size: smaller;">(fortement déconseiller)</span></p>
@@ -305,6 +310,17 @@
         <br><br><br><h1>Mentions légales</h1><hr/>
         <h3 style="font-size: smaller; text-align: left;">Éditeur du site : Jimmy (speudonyme)<br><br>Contact : @jimmxyz sur github<br><br>Editeur soumis au lois Française.<br><br>Hébergement: Github Inc.<br><br>Adresse de l'hébergeur :  88 Colin P. Kelly Jr. Street San Francisco, CA 94107 États-Unis<br><br>Aucune donnée n'est transmise à Metrop ni à des tiers, à l'exception d'un compteur de visites anonyme envoyé à Supabase (notre hébergeur de base de données) uniquement dans le but de statistiques de fréquentation. Aucune information personnelle n'est associée à ce compteur. Cependant, certaines données non personnelles peuvent être enregistrées dans le stockage local de votre navigateur afin de garantir le bon fonctionnement du site.</h3>
       </div>
+    </div>
+    <div id="popupMainInfoQuiz">
+        <div id="cardInfoPopUp_MainBox">
+            <img id="cardInfoPopUp_imgFlag">
+            <span id="cardInfoPopUp_exitBtn" class="btn-exit"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e3e3e3"><path d="M480-424 284-228q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536-480l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480-424Z"></path></svg></span>
+            <h1 id="cardInfoPopUp_title"></h1>
+            <h2 id="cardInfoPopUp_shortResume"></h2>
+            <h3 id="cardInfoPopUp_longResume"></h3>
+            <p id="cardInfoPopUp_info_lenght"><span>Nombres d'elements : </span><span id="cardInfoPopUp_info_lenght_txt"></span></p>
+            <div id="cardInfoPopUp_listGameMode"></div>
+        </div>
     </div>
     <script>
       var drop = document.getElementById("dropzone");

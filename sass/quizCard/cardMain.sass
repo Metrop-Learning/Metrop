@@ -2,6 +2,9 @@
 @use "./cardFooter"
 @use "./cardHeader"
 
+:root
+    --img-show: none
+
 .card
     height: 520px
     min-width: 240px
@@ -19,6 +22,7 @@
     flex-shrink: 0
     position: relative
     background-color: var(--card-background-color)
+    border: solid 2px var(--header-top-color)
 
 /* <- IMG */
 .cardImage
@@ -29,7 +33,7 @@
     border-radius: 10px
     text-overflow: ellipsis
     white-space: nowrap
-    word-wrap: break-word
+    display: var(--img-show)
     overflow: hidden
 
 
