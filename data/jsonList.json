@@ -77,7 +77,8 @@
         "fr/ireland/ProvincesIreland.json",
         "fr/ireland/TraditianalCountiesIreland.json",
         "fr/ONUmember.json",
-        "fr/ONUmemberAndObserver.json"
+        "fr/ONUmemberAndObserver.json",
+        "fr/malaysia.json"
     ],
     "flag":[
         "fr/EuropeanUnion.json",
@@ -87,6 +88,7 @@
         "fr/MiddleEast.json",
         "fr/SouthAmerica.json",
         "fr/SouthEasternAsia.json",
-        "fr/belgiumProvinces.json"
+        "fr/belgiumProvinces.json",
+        "fr/MalaysiaStatesAndTerritories.json"
     ]
 }

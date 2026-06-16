@@ -45,7 +45,7 @@ if (!isNaN(0) && 0 >= 0 && 0 <= document.getElementById('prgs').max) {
 }
 
 for(let i = 0; i < listFlag.length; i++){
-  let option = new Option(data.listFlag[i].name, data.listFlag[i].id)
+  let option = new Option(data.listFlag[i].name ?? getNameFromId(data.listFlag[i].id), data.listFlag[i].id)
   document.getElementById('nameArea').appendChild(option)
 }
 
@@ -258,4 +258,24 @@ function showResult() {
           document.getElementById("tid" + i).style.backgroundColor =
             "#" + color;
         }
+}
+
+
+function getNameFromId(id){
+    let deep;
+    const [continent, country, region, subregion] = id.split("-");
+    if (continent && dataBorder[continent]) {
+      deep = dataBorder[continent];
+    }
+    if (deep?.get && country && deep.get[country]) {
+      deep = deep.get[country];
+    }
+    if (deep?.get && region && deep.get[region]) {
+      deep = deep.get[region];
+    }
+    if (deep?.get && subregion && deep.get[subregion]) {
+      deep = deep.get[subregion];
+    }
+    const link = deep.namefr;
+    return link
 }

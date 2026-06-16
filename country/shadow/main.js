@@ -237,7 +237,7 @@ map.whenReady(() => {
 });
 
 for(let i = 0; i < listCountry.length; i++){
-  let option = new Option(data.listCountry[i].name, data.listCountry[i].id)
+  let option = new Option(data.listCountry[i].name ?? getNameFromId(data.listCountry[i].id), data.listCountry[i].id)
   document.getElementById('nameArea').appendChild(option)
 }
 
@@ -548,3 +548,22 @@ document.getElementById("continueMenu").addEventListener("click", () => {
 document.getElementById("retryMenu").addEventListener("click", () => {
   window.location.reload()
 });
+
+function getNameFromId(id){
+    let deep;
+    const [continent, country, region, subregion] = id.split("-");
+    if (continent && dataBorder[continent]) {
+      deep = dataBorder[continent];
+    }
+    if (deep?.get && country && deep.get[country]) {
+      deep = deep.get[country];
+    }
+    if (deep?.get && region && deep.get[region]) {
+      deep = deep.get[region];
+    }
+    if (deep?.get && subregion && deep.get[subregion]) {
+      deep = deep.get[subregion];
+    }
+    const link = deep.namefr;
+    return link
+}

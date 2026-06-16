@@ -1,0 +1,36 @@
+{
+  "listCountry":[
+    {"id":"AS-MYS-KUL"},
+    {"id":"AS-MYS-SGR"},
+    {"id":"AS-MYS-JHR"},
+    {"id":"AS-MYS-MLK"},
+    {"id":"AS-MYS-NSN"},
+    {"id":"AS-MYS-SBH"},
+    {"id":"AS-MYS-SWK"},
+    {"id":"AS-MYS-KTN"},
+    {"id":"AS-MYS-TGN"},
+    {"id":"AS-MYS-PHG"},
+    {"id":"AS-MYS-KDH"},
+    {"id":"AS-MYS-PJY"},
+    {"id":"AS-MYS-PLS"},
+    {"id":"AS-MYS-PRK"},
+    {"id":"AS-MYS-PNG"},
+    {"id":"AS-MYS-LBN"}
+  ],
+  "cardInfo":{
+    "Title":"Les États et Territoire de Malaisie",
+    "Text":"Les 13 États et 3 Territoire Fédéraux de Malaisie",
+    "lang":"FR",
+    "setInfo":"AS-MYS",
+    "pictureURL":"https://upload.wikimedia.org/wikipedia/commons/7/7e/Kuala_lumpur_panorama_from_charas.jpg",
+    "option":{
+            "tryMax":1,
+            "EliminateSelected":true
+        }
+  },
+  "type":[
+    "placeTerritory",
+    "shadowTerritory",
+    "guessFromPosiTerritory"
+  ]
+}

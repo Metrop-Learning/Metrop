@@ -142,7 +142,7 @@ let selected = -1
 let actual = 0
 let geojsonLayer = [];
 let circleTeri = []
-document.getElementById('countryName').innerText = listCountry[actual].name
+document.getElementById('countryName').innerText = listCountry[actual].name ?? getNameFromId(listCountry[actual].id)
 
 async function addABoundarie(link, ite) {
   let tlink;
@@ -401,7 +401,7 @@ function reset(){
   //window.location.replace(returned + "/index.html?" + params);
   return
   }
-  document.getElementById('countryName').innerText = listCountry[actual].name
+  document.getElementById('countryName').innerText = listCountry[actual].name ?? getNameFromId(listCountry[actual].id)
   selectedLayer = null;
   if (!isNaN(actual+1) && actual+1 >= 0 && actual+1 <= document.getElementById('prgs').max) {
     document.getElementById('prgs').value = actual + 1;
@@ -640,4 +640,23 @@ function getIsTheBestScore(hightScore,score){
   if(score > hightScore){
 
   }
+}
+
+function getNameFromId(id){
+    let deep;
+    const [continent, country, region, subregion] = id.split("-");
+    if (continent && dataBorder[continent]) {
+      deep = dataBorder[continent];
+    }
+    if (deep?.get && country && deep.get[country]) {
+      deep = deep.get[country];
+    }
+    if (deep?.get && region && deep.get[region]) {
+      deep = deep.get[region];
+    }
+    if (deep?.get && subregion && deep.get[subregion]) {
+      deep = deep.get[subregion];
+    }
+    const link = deep.namefr;
+    return link
 }
