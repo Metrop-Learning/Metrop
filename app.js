@@ -11,8 +11,8 @@ import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js
 const supabase = createClient('https://jzpamrnoigzrsrzweesi.supabase.co', 'sb_publishable_iGQxLRwCBtqjls75aH99Dw_8_dp28fe')
 
 
-const ver =  [0,7,7,"c"]
-const verDate = [2026,6,7]
+const ver =  [0,7,7,"d"]
+const verDate = [2026,6,24]
 const verDatabase =  dataBorder["DB:INFO"].VER
 const verDatabaseDate = dataBorder["DB:INFO"].DATE
 

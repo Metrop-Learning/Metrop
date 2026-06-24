@@ -1,0 +1,68 @@
+/* Code from https://github.com/ante87/dottedWorldMap */
+body {
+    margin:0px;
+}
+svg {
+    min-width:1000px;
+    min-height:500px;
+    max-width:auto;
+    max-height:auto;
+    position:relative;
+}
+.content {
+    height:80%;
+    width:100%;
+    overflow: hidden;
+}
+.subcontent{
+    height:20%;
+    width:100%;
+    overflow: hidden;
+}
+
+*{
+    font-family: "Momo Trust Display", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+}
+
+p{
+    opacity: 0.5;
+    font-size: 0.5cqh;
+}
+h1{
+    font-size: 4cqh;
+}
+h2{
+    font-size: 2cqh;
+}
+a{
+    font-size: 1.5cqh;
+}
+a:hover{
+    opacity: 0.75;
+}
+
+@media (prefers-color-scheme: dark) {
+    *{
+        color: rgb(255, 255, 255);
+    }
+    body{
+        background-color: #1e1e1e;
+    }
+    svg circle {
+        fill:#4c4c4c;
+    }
+}
+@media (prefers-color-scheme: light){
+    *{
+        color: rgb(0, 0, 0);
+    }
+    body{
+        background-color: #f2f2f2;
+    }
+    svg circle {
+        fill:#bbbbbb;
+    }
+}
