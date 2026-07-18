@@ -1,43 +1,58 @@
 @use "../color"
-@use "./cardFooter"
-@use "./cardHeader"
 
 :root
     --img-show: none
 
 .card
-    height: 520px
-    min-width: 240px
-    text-overflow: ellipsis
-    white-space: nowrap
-    word-wrap: break-word
-    overflow: hidden
-    white-space: normal
-    display: flex
-    flex-direction: row 
-    align-items: center 
-    padding: 1.5%
-    border-radius: 10px
-    gap: 20px
-    flex-shrink: 0
-    position: relative
+    height: 200px
+    border: 2px solid var(--header-top-color)
     background-color: var(--card-background-color)
-    border: solid 2px var(--header-top-color)
-
-/* <- IMG */
-.cardImage
-    max-height: 100%
-    flex: 1
-    aspect-ratio: 1/1
-    height: 100%
     border-radius: 10px
-    text-overflow: ellipsis
-    white-space: nowrap
-    display: var(--img-show)
-    overflow: hidden
+    text-align: left
+    position: relative
 
+    //shadow
+    box-shadow: inset 0px -15px 40px -40px var(--btn-color-outline)
 
-/* for smartphone and small screen */
-@media (max-width: 768px)
-    .cardImage
-        display: none
+    .flagCard
+        margin-top: 20px
+        margin-left: 20px
+        height: 30px
+        width: auto
+    .titleCard
+        text-align: left
+        margin-left: 20px
+        margin-right: 20px
+    .exploreCard
+        position: absolute
+        display: flex
+        justify-content: center
+        align-items: center
+        gap: 8px
+        bottom: 20px
+        left: 50%
+        transform: translate(-50%, 0%)
+        z-index: 80
+        svg
+            fill: var(--text-color)
+    transition: border 0.3s ease, background 0.3s ease, box-shadow 0.3s ease
+
+.card:hover
+    cursor: pointer
+    border: 2px solid var(--card-background-color)
+    background-color: var(--header-top-color)
+    box-shadow: inset 0px -70px 40px -30px var(--btn-color-outline)
+
+.menuCards
+    display: none
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+    gap: 16px
+    padding: 10px
+    @media (max-width: 768px)
+        padding-bottom: 70px
+#card_all
+    display: grid
+#card_search
+    margin-top: 10px
+    padding: 0px
+    padding-bottom: 70px

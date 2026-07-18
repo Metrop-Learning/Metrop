@@ -1,0 +1,65 @@
+@use "./var.scss";
+.autocomplete{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: none;
+    input[type=text] {
+        font-size: large;
+        padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f1f1f1;
+      width: calc(100% - 4px);
+      height: calc(100% - 4px);
+      color: var.$text;
+      background-color: var.$btnSecondColor;
+      cursor: text;
+      border-radius: 10px;
+      border: 2px solid var.$btnSecondOutline;
+      transition: background-color,border-color 0.2s ease;
+      text-align: center;
+      &:hover{
+          background-color: var.$btnSecondOutline;
+          border-color: var.$btnSecondColor;
+      }
+      outline: none;
+    }
+    .autocomplete-items {
+      max-height: 40vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+      position: absolute;
+      background-color: var.$btnSecondColor;
+      border: 2px solid var.$btnSecondOutline;
+      border-radius: 10px;
+      z-index: 99;
+      color: var.$text;
+      /*position the autocomplete items to be the same width as the container:*/
+      bottom: calc(100% + 5px);
+      top: auto;
+      left: 0;
+      right: 0;
+    }
+    .autocomplete-items div {
+      padding: 10px;
+      cursor: pointer;
+      background-color: var.$btnSecondColor;
+      border-bottom: 2px solid var.$btnSecondOutline;
+      &:last-of-type {
+        border-bottom: none; /* Enlève la bordure du tout dernier élément en bas */
+      }
+    }
+    .autocomplete-items div:hover {
+      /*when hovering an item:*/
+      background-color: var.$btnSecondOutline;
+    }
+    .autocomplete-active {
+      /*when navigating through the items using the arrow keys:*/
+      background-color: var.$btnMainColor !important;
+      color: #ffffff;
+    }
+}

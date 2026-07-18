@@ -11,14 +11,14 @@ import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js
 const supabase = createClient('https://jzpamrnoigzrsrzweesi.supabase.co', 'sb_publishable_iGQxLRwCBtqjls75aH99Dw_8_dp28fe')
 
 
-const ver =  [0,7,7,"d"]
+const ver =  [0,8,0,"a"]
 const verDate = [2026,6,24]
 const verDatabase =  dataBorder["DB:INFO"].VER
 const verDatabaseDate = dataBorder["DB:INFO"].DATE
 
 const verAPI = [0,5]
 
-const langSys = "FR"
+const langSys = "fr"
 
 if(localStorage.getItem("lastVersionUsed")){
     let verS = localStorage.getItem("lastVersionUsed").split(".")
@@ -284,7 +284,7 @@ async function cityListSetUp(nameJson,type){
             }
             if ('lang' in obj.cardInfo) {
                 if(typeof(obj.cardInfo.lang) == "string"){
-                    if(obj.cardInfo.lang == langSys){
+                    if(obj.cardInfo.lang.toLowerCase() == langSys){
                         //GOOD
                     }
                     else if(localStorage.getItem("SETTINGS_LANG_ONLYSELECTED") == "true"){

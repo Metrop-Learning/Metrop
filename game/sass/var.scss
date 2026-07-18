@@ -1,0 +1,11 @@
+@use "../../sass/color.sass";
+
+$background: var(--background-game);
+$map: var(--map-background);
+$text: var(--text-color);
+$invertext: var(--invert-color);
+$btnMainColor: var(--btn-color);
+$white: var(--btn-text-color);
+$btnMainOutline: var(--btn-color-outline);
+$btnSecondColor: var(--card-background-color);
+$btnSecondOutline: var(--header-top-color);

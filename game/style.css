@@ -1,0 +1,624 @@
+@charset "UTF-8";
+@media (prefers-color-scheme: light) {
+  :root {
+    --scroll-bar-color: rgba(255,255,255 ,0.5);
+    --header-red-color: #bf5d5d;
+    --header-top-color: #dddddd;
+    --text-color: #000;
+    --invert-color: #fff;
+    --main-color-backg: #ffffff6e;
+    --search-bar-background: #bebebe;
+    --footer-contrib-color: rgba(81, 81, 227, 0.8);
+    --footer-color: #dcdcdc;
+    --btn-color: rgb(81, 81, 227);
+    --btn-color-outline: rgb(121, 121, 236);
+    --btn-text-color: #fff;
+    --card-background-color: #cccccc;
+    --background-game: rgb(255, 255, 255);
+    --map-background: #f4f4f4;
+    --green-background: #62ba55;
+    --green-outside: #76ad56;
+    --red-background: #c55b5b;
+    --red-outside: #e17878;
+    --orange-background: #c5795b;
+    --orange-outside: #e19678;
+    --orange-color: #d3921a;
+    --red-color: #a53b3b;
+    --green-color: #4d9142;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --scroll-bar-color: rgba(0,0,0 ,0.5);
+    --header-red-color: #ab4747;
+    --header-top-color: #393939;
+    --text-color: #fff;
+    --invert-color: #000;
+    --main-color-backg: #0000006e;
+    --search-bar-background: #0e0e0e60;
+    --footer-contrib-color: rgba(81, 81, 227, 0.8);
+    --btn-color-outline: rgb(121, 121, 236);
+    --footer-color: #07030a;
+    --btn-color: rgb(44, 44, 150);
+    --btn-text-color: rgb(230,230,230);
+    --card-background-color: #1e1e1e;
+    --background-game: rgb(26,26,26);
+    --map-background: #121212;
+    --green-background: #3b8031;
+    --green-outside: #76ad56;
+    --red-background: #9e4545;
+    --red-outside: #793838;
+    --orange-background: #be6733;
+    --orange-outside: #774426;
+    --orange-color: #e9ae40;
+    --red-color: #e45555;
+    --green-color: #62ba55;
+  }
+}
+#simpleActionBar, #selectNameActionBar, #lessonActionBar, #showAnswer {
+  display: none;
+}
+
+#answerField {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: x-large;
+  color: var(--text-color);
+  background-color: var(--card-background-color);
+  border-radius: 10px;
+  border: 2px solid var(--header-top-color);
+}
+
+@property --total {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 100;
+}
+@property --percent {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+#actionBar {
+  flex-shrink: 0;
+}
+
+.lineGrid {
+  width: calc(100% - 40px);
+  height: auto;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.lineGrid button {
+  height: 100%;
+}
+.lineGrid {
+  gap: 5px;
+}
+
+.topline {
+  display: flex;
+  height: 40px;
+  gap: 5px;
+}
+.topline button {
+  flex-shrink: 0;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+  background-color: var(--card-background-color);
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px solid var(--header-top-color);
+  transition: background-color, border-color 0.2s ease;
+}
+.topline button:hover {
+  background-color: var(--header-top-color);
+  border-color: var(--card-background-color);
+}
+.topline .errorTextArea {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: smaller;
+  color: var(--text-color);
+  background-color: var(--card-background-color);
+  border-radius: 10px;
+  border: 2px solid var(--header-top-color);
+}
+
+.progressLine {
+  height: 10px;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  background: linear-gradient(to right, var(--btn-color) calc(var(--percent) / var(--total) * 100%), var(--card-background-color) calc(var(--percent) / var(--total) * 100%)) padding-box, linear-gradient(to right, var(--btn-color-outline) calc(var(--percent) / var(--total) * 100%), var(--header-top-color) calc(var(--percent) / var(--total) * 100%)) border-box;
+  transition: --percent 0.3s ease;
+}
+
+.line {
+  display: flex;
+  height: 80px;
+  width: 100%;
+  gap: 5px;
+}
+.line .mainButton, .line .continueBtn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  flex-grow: 1;
+  background-color: var(--btn-color);
+  color: var(--btn-text-color);
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px solid var(--btn-color-outline);
+  transition: background-color, border-color 0.2s ease;
+}
+.line .mainButton:hover, .line .continueBtn:hover {
+  background-color: var(--btn-color-outline);
+  border-color: var(--btn-color);
+}
+.line .mainButton:disabled, .line .continueBtn:disabled {
+  opacity: 0.75;
+  pointer-events: none;
+}
+.line .skipBtn {
+  flex-shrink: 0;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--card-background-color);
+  color: var(--text-color);
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px solid var(--header-top-color);
+  transition: background-color, border-color 0.2s ease;
+}
+.line .skipBtn:hover {
+  background-color: var(--header-top-color);
+  border-color: var(--card-background-color);
+}
+.line .lessonNext {
+  background-color: var(--btn-color);
+  color: var(--btn-text-color);
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px solid var(--btn-color-outline);
+  transition: background-color, border-color 0.2s ease;
+}
+.line .lessonNext:hover {
+  background-color: var(--btn-color-outline);
+  border-color: var(--btn-color);
+}
+.line .lessonNext {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+.line .lessonBack {
+  background-color: var(--card-background-color);
+  color: var(--text-color);
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px solid var(--header-top-color);
+  transition: background-color, border-color 0.2s ease;
+}
+.line .lessonBack:hover {
+  background-color: var(--header-top-color);
+  border-color: var(--card-background-color);
+}
+.line .lessonBack {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+.line .nameArea {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: x-large;
+  color: var(--text-color);
+  background-color: var(--card-background-color);
+  border-radius: 10px;
+  border: 2px solid var(--header-top-color);
+}
+
+.autocomplete {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: none;
+}
+.autocomplete input[type=text] {
+  font-size: large;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f1f1f1;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  color: var(--text-color);
+  background-color: var(--card-background-color);
+  cursor: text;
+  border-radius: 10px;
+  border: 2px solid var(--header-top-color);
+  transition: background-color, border-color 0.2s ease;
+  text-align: center;
+}
+.autocomplete input[type=text]:hover {
+  background-color: var(--header-top-color);
+  border-color: var(--card-background-color);
+}
+.autocomplete input[type=text] {
+  outline: none;
+}
+.autocomplete .autocomplete-items {
+  max-height: 40vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: absolute;
+  background-color: var(--card-background-color);
+  border: 2px solid var(--header-top-color);
+  border-radius: 10px;
+  z-index: 99;
+  color: var(--text-color);
+  /*position the autocomplete items to be the same width as the container:*/
+  bottom: calc(100% + 5px);
+  top: auto;
+  left: 0;
+  right: 0;
+}
+.autocomplete .autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: var(--card-background-color);
+  border-bottom: 2px solid var(--header-top-color);
+}
+.autocomplete .autocomplete-items div:last-of-type {
+  border-bottom: none; /* Enlève la bordure du tout dernier élément en bas */
+}
+.autocomplete .autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: var(--header-top-color);
+}
+.autocomplete .autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: var(--btn-color) !important;
+  color: #ffffff;
+}
+
+#errorInfo {
+  display: none;
+  width: calc(100% - 40px);
+  height: 100%;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(202, 74, 74);
+  text-align: center;
+  padding: 20px;
+}
+#errorInfo .homeBtn {
+  gap: 5px;
+  background-color: var(--card-background-color);
+  color: var(--text-color);
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px solid var(--header-top-color);
+  transition: background-color, border-color 0.2s ease;
+}
+#errorInfo .homeBtn:hover {
+  background-color: var(--header-top-color);
+  border-color: var(--card-background-color);
+}
+#errorInfo .homeBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+#loadingScreen {
+  display: none;
+  z-index: 100;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: auto;
+  color: var(--text-color);
+}
+#loadingScreen svg {
+  color: var(--btn-color);
+  height: 100px;
+  width: 100px;
+}
+
+#resultContainer {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+}
+#resultContainer .line {
+  gap: 20px;
+}
+
+#resultPreview {
+  width: 100%;
+  padding-top: 150px;
+  padding-bottom: 50px;
+  min-height: 200px;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: x-large;
+  color: var(--text-color);
+  background-color: var(--card-background-color);
+  border-radius: 10px;
+  border: 2px solid var(--header-top-color);
+}
+#resultPreview #svgContainer {
+  --backgrd: var(--green-background);
+  position: relative;
+  display: inline-block;
+}
+#resultPreview #svgContainer::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0px;
+  height: 0px;
+  box-shadow: 0px 0px 180px 80px var(--backgrd);
+  z-index: 1;
+}
+#resultPreview h1 {
+  z-index: 2;
+}
+
+#tableContainer {
+  width: 100%;
+  height: auto;
+  padding-left: 0;
+  padding-right: 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: x-large;
+  color: var(--text-color);
+  background-color: var(--card-background-color);
+  border-radius: 10px;
+  border: 2px solid var(--header-top-color);
+  overflow: hidden;
+}
+#tableContainer table {
+  flex-grow: 1;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+#tableContainer table tbody tr:first-child {
+  border: none;
+}
+#tableContainer table tbody tr {
+  border-top: 2px solid var(--header-top-color);
+  margin: 0;
+}
+#tableContainer table tbody tr th:first-child {
+  width: 20px;
+  text-align: center;
+  color: var(--header-top-color);
+  padding-right: 20px;
+}
+#tableContainer table tbody tr th {
+  text-align: left;
+}
+#tableContainer table tbody tr .kmCounter {
+  font-size: small;
+  width: 70px;
+}
+#tableContainer table tbody tr .minimalColumn {
+  width: 100px;
+}
+#tableContainer table tbody tr .minimalColumn img {
+  height: 20px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+#tableContainer table tbody tr th:last-child button {
+  background-color: var(--card-background-color);
+  color: var(--text-color);
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px solid var(--header-top-color);
+  transition: background-color, border-color 0.2s ease;
+}
+#tableContainer table tbody tr th:last-child button:hover {
+  background-color: var(--header-top-color);
+  border-color: var(--card-background-color);
+}
+#tableContainer table tbody tr th:last-child button {
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#tableContainer table tbody tr th:last-child {
+  width: 20px;
+}
+
+.retry {
+  background-color: var(--card-background-color);
+  color: var(--text-color);
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px solid var(--header-top-color);
+  transition: background-color, border-color 0.2s ease;
+}
+.retry:hover {
+  background-color: var(--header-top-color);
+  border-color: var(--card-background-color);
+}
+.retry {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.done {
+  background-color: var(--btn-color);
+  color: var(--btn-text-color);
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px solid var(--btn-color-outline);
+  transition: background-color, border-color 0.2s ease;
+}
+.done:hover {
+  background-color: var(--btn-color-outline);
+  border-color: var(--btn-color);
+}
+.done {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body, html {
+  overflow-x: hidden;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-color: var(--background-game);
+}
+
+#mapArea, #flagArea, #mapShadowArea {
+  overflow: hidden;
+  flex-grow: 1;
+  color: var(--text-color);
+  background-color: var(--map-background);
+  border: 2px solid var(--card-background-color);
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: -1px 1px 49px 10px rgba(0, 0, 0, 0.42);
+  -webkit-box-shadow: -1px 1px 49px 10px rgba(0, 0, 0, 0.42);
+  -moz-box-shadow: -1px 1px 49px 10px rgba(0, 0, 0, 0.42);
+}
+
+#flagArea {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#flagArea img {
+  max-height: 50%;
+  max-width: 50%;
+  width: auto;
+  height: auto;
+}
+#flagArea h1 {
+  display: none;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+
+#mapShadowArea {
+  display: none;
+}
+
+#mapArea {
+  --margin-map: 20px;
+}
+
+#map, #mapShadow {
+  background-color: var(--map-background);
+  height: 100%;
+  width: 100%;
+}
+
+@media (max-width: 500px) or (max-height: 500px) {
+  #mapArea, #flagArea, #mapShadowArea {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: var(--margin-map);
+    border-radius: 0;
+  }
+}
+.flexMenu {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+* {
+  font-family: "Momo Trust Display", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.maplibregl-ctrl-attrib {
+  background-color: var(--card-background-color) !important;
+  border: 1px solid var(--header-top-color) !important;
+  color: var(--text-color) !important;
+}
+.maplibregl-ctrl-attrib a {
+  color: var(--text-color) !important;
+}
+
+.maplibregl-ctrl-attrib-button {
+  background-color: var(--card-background-color) !important;
+  color: var(--text-color) !important;
+  background-size: 18px 18px !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 -960 960 960' width='24' fill='%23333333'><path d='M440-280h80v-240h-80v240Zm40-320q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm0 520q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z'/></svg>") !important;
+}
+@media (prefers-color-scheme: dark) {
+  .maplibregl-ctrl-attrib-button {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 -960 960 960' width='24' fill='%23ffffff'><path d='M440-280h80v-240h-80v240Zm40-320q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm0 520q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z'/></svg>") !important;
+  }
+}
+
+#confirmPopUp {
+  display: none;
+}
+
+/*# sourceMappingURL=style.css.map */

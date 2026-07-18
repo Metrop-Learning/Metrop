@@ -1,0 +1,39 @@
+#navbar{
+    display: none;
+    position: fixed;
+    bottom: 0px;
+    z-index: 150;
+    left: 0px;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    background-color: var(--header-top-color);
+    box-shadow: 0 -6px 12px rgba(0, 0, 0, 0.25);
+    button{
+        flex-grow: 1;
+        height: 100%;
+        background-color: transparent;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        color: var(--text-color);
+    }
+}
+
+@media (max-width: 768px){
+    #navbar{
+        display: flex;
+    }
+}
+
+.emptyHomeIcon{
+    display: none;
+}
+.fullSettingsIcon{
+    display: none;
+    color: var(--btn-color-outline);
+}
+.fullHomeIcon{
+    color: var(--btn-color-outline);
+}

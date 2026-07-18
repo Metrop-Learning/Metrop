@@ -1,0 +1,36 @@
+doctype html 
+html
+    head 
+        //info
+        title Metrop
+        meta(charset="UTF-8",name="viewport",content="width=device-width, initial-scale=1.0")
+        // Local Import
+        link(rel="icon",type="image/x-icon",href="../../data/globe-showing-europe-africa-noto-emoji-noanimation.png")
+        link(rel="stylesheet",href="style.css")
+        script(src="./js/main.js",defer,type="module")
+        // Import google font
+        link(rel="stylesheet",href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Mochiy+Pop+One&family=Momo+Trust+Display&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap")
+        // Import Map libre
+        link(rel="stylesheet",href="https://unpkg.com/maplibre-gl@5.20.0/dist/maplibre-gl.css")
+        script(src="https://unpkg.com/maplibre-gl@5.20.0/dist/maplibre-gl.js")
+    body 
+        //full screen
+        include ./pug/loadingAndErrorScreen.pug
+        include ./pug/confirmPopUp.pug
+        //result
+        include ./pug/result.pug
+        //game
+        .flexMenu#flexMenu
+            #mapArea 
+                #map
+            #mapShadowArea
+                #mapShadow
+            #flagArea 
+                img#flagIMG
+                h1#nameFlagEntity
+            #actionBar 
+                include ./pug/simpleActionBar.pug
+                include ./pug/selectNameActionBar.pug
+                include ./pug/lessonActionBar.pug
+                include ./pug/answer.pug
+            include ./pug/errorInfo.pug

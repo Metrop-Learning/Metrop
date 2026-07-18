@@ -14,6 +14,12 @@
     backdrop-filter: blur(5px)
     z-index: 1001
 
+#twoColSide
+    display: flex
+    position: relative
+    margin-top: 135px
+    height: calc(100% - 50px)
+
 #cardInfoPopUp_MainBox
     position: absolute
     top: 50%
@@ -43,11 +49,11 @@
     z-index: 0
 
 #cardInfoPopUp_imgFlag
-    position: relative
+    position: absolute
     height: 50px
     width: auto
-    margin-left: 50px
-    margin-top: 100px
+    left: 50px
+    top: 100px
     border: solid 2px var(--header-top-color)
 
 .btn-exit
@@ -83,7 +89,7 @@
     margin-left: 50px
     padding-left: 0px
     text-align: left
-    width: 50%
+    width: 80%
     min-width: 200px
     max-width: 700px
 
@@ -103,35 +109,82 @@
     text-align: left
 
 #cardInfoPopUp_listGameMode
-    position: absolute
-    bottom: 50px
-    left: 50%
-    transform: translate(-50%, 0%)
+    flex-shrink: 1
     margin: 0
     padding: 15px
     padding-left: 20px
     padding-right: 20px
     display: flex
     align-items: center
-    flex-direction: row
-    justify-content: center
-    height: auto
+    flex-direction: column
+    justify-content: top
+    height: 100%
     width: auto
-    background-color: var(--footer-color)
-    border: solid 2px var(--header-top-color)
-    border-radius: 10px 
+    background-color: var(--main-color-backg)
+    border-left: solid 2px var(--header-top-color)
     gap: 20px
     .btn
-        width: 230px
+        min-width: 230px
+        width: 100%
+
+#infoSide
+    flex-grow: 1
+    margin-top: 20px
+    overflow: hidden
+    height: 100%
 
 @media (max-width: 1100px)
-    #cardInfoPopUp_listGameMode
-        width: 100%
+    #twoColSide
         flex-direction: column
-        bottom: 0
+    #cardInfoPopUp_listGameMode
+        height: auto
+        width: calc( 100% - 40px)
+        border-left: none
+        border-top: solid 2px var(--header-top-color)
     #cardInfoPopUp_MainBox
         width: 100%
         height: 100%
     #cardInfoPopUp_title, #cardInfoPopUp_shortResume, #cardInfoPopUp_longResume, #cardInfoPopUp_info_lenght
         padding-right: 50px
     
+.warning
+    display: none
+    width: calc( 100% - 70px )
+    height: auto
+    background-color: var(--header-top-color)
+    border-radius: 10px
+    overflow: hidden
+    margin-left: 50px
+    margin-right: 20px
+    .warnTitle
+        width: 100%
+        height: auto
+        background-color: var(--red-outside)
+        display: flex
+        justify-content: left
+        align-items: center
+        gap: 5px
+        color: var(--text-color)
+        padding: 5px
+    .warnExplain 
+        text-align: left
+        color: var(--text-color)
+        font-size: small
+        padding: 5px
+    .invlolved 
+        margin-top: 20px
+        color: var(--text-color)
+        .involvedList
+            display: flex
+            justify-content: center
+            align-items: center
+            flex-direction: column
+            padding: 5px
+            .element
+                display: flex
+                justify-content: center
+                align-items: center
+                gap: 5px
+                img
+                    height: 15px
+                    width: auto

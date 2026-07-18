@@ -30,25 +30,96 @@
 #searchField:focus-within
     width: calc( 80% - 192px)
     margin-left: 5%
-
-/* for smartphone and small screen*/
-@media (max-width: 768px)
-    #searchField
-        margin-left: 0px !important
-        width: 90vw !important
-    #searchField:hover
-        scale: 1 !important
-    #searchField:focus-within
-        width: 90vw !important
-
-/* Search Result Area */
-#searchResult
+    
+#search
     display: none
-    margin-top: 20px
+    position: relative
+    width: calc(100wv - 40px)
+    padding: 20px
+    height: calc(100% - 40px)
+    flex-direction: row
 
 #researchEmptyOrError
     color: var(--text-color)
-
-#searchResultCard
+    display: flex
+    width: 100%
+    margin-top: 40px 
     justify-content: center
     align-items: center
+    flex-direction: column 
+    gap: 12px
+    flex-grow: 1
+    span
+        font-size: large
+
+#mobileSearchField
+    //same as searchField
+    gap: 5px
+    margin-left: 0px
+    display: none
+    width: calc(100wv - 40px)
+    height: 25px
+    background-color: var(--card-background-color)
+    cursor: text
+    border-radius: 10px
+    border: 2px solid var(--header-top-color)
+    color: var(--text-color)
+    align-items: center
+    transition:0.2s
+    /* search icon */
+    svg
+        margin-left: 5px
+    #mobileSearchInput
+        background-color: transparent
+        color: var(--text-color)
+        border: none
+        width: 100%
+        text-align: left
+
+    #mobileSearchInput:focus
+        outline: none
+    @media (max-width: 768px)
+            display: flex
+
+#topSearchMenuBar
+    margin-top: 10px
+    position: relative
+    overflow: hidden
+    flex-shrink: 1
+    display: flex
+    justify-content: center
+    align-items: center
+    height: auto
+    width: calc(100wv - 40px)
+    gap: 5px
+    #returnHomeBtn
+        flex-shrink: 0
+        width: 40px
+        height: 40px
+        display: flex
+        align-items: center
+        justify-content: center
+        //style
+        color: var(--text-color)
+        background-color: var(--card-background-color)
+        cursor: pointer
+        border-radius: 10px
+        border: 2px solid var(--header-top-color)
+        transition: background-color,border-color 0.2s ease
+        &:hover
+            background-color: var(--header-top-color)
+            border-color: var(--card-background-color)
+        @media (max-width: 768px)
+            display: none
+    #textInfoField
+        flex-grow: 1
+        height: 40px
+        display: flex
+        justify-content: center
+        align-items: center
+        text-align: center
+        font-size: smaller
+        color: var(--text-color)
+        background-color: var(--card-background-color)
+        border-radius: 10px
+        border: 2px solid var(--header-top-color)

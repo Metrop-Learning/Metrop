@@ -1,0 +1,23 @@
+@use "./var.scss";
+
+#loadingScreen{
+    //flex by default exept for debug
+    display: none; // mean to be flex when displayed
+    z-index: 100;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+
+    height: auto;
+    color: var.$text;
+    svg{
+        color: var.$btnMainColor;
+        height: 100px;
+        width: 100px;
+    }
+}

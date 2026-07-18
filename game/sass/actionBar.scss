@@ -1,0 +1,190 @@
+@use "./var.scss";
+
+//IMPORTANT
+#simpleActionBar, #selectNameActionBar, #lessonActionBar, #showAnswer{
+    display: none;
+}
+
+@mixin mainBtnStyle {
+    background-color: var.$btnMainColor;
+    color: var.$white;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 2px solid var.$btnMainOutline;
+    transition: background-color,border-color 0.2s ease;
+    &:hover{
+        background-color: var.$btnMainOutline;
+        border-color: var.$btnMainColor;
+    }
+}
+
+@mixin secondBtnStyle {
+    background-color: var.$btnSecondColor;
+    color: var.$text;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 2px solid var.$btnSecondOutline;
+    transition: background-color,border-color 0.2s ease;
+    &:hover{
+        background-color: var.$btnSecondOutline;
+        border-color: var.$btnSecondColor;
+    }
+}
+
+#answerField{
+    flex-grow: 1;
+    //style
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: x-large;
+    color: var.$text;
+    background-color: var.$btnSecondColor;
+    border-radius: 10px;
+    border: 2px solid var.$btnSecondOutline;
+}
+
+@property --total {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 100;
+}
+
+@property --percent {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+}
+
+#actionBar{
+    flex-shrink: 0;
+}
+
+.lineGrid{
+    width: calc(100% - 40px);
+    height: auto;
+    margin: 0;
+    padding: 20px;
+    display:flex;
+    flex-direction: column;
+    button{
+        height: 100%;
+    }
+    gap: 5px;
+}
+
+.topline{
+    display: flex;
+    height: 40px;
+    gap: 5px;
+    button{
+        flex-shrink: 0;
+        width: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        //style
+        color: var.$text;
+        background-color: var.$btnSecondColor;
+        cursor: pointer;
+        border-radius: 10px;
+        border: 2px solid var.$btnSecondOutline;
+        transition: background-color,border-color 0.2s ease;
+        &:hover{
+            background-color: var.$btnSecondOutline;
+            border-color: var.$btnSecondColor;
+        }
+    }
+    .errorTextArea{
+        flex-grow: 1;
+        //style
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: smaller;
+        color: var.$text;
+        background-color: var.$btnSecondColor;
+        border-radius: 10px;
+        border: 2px solid var.$btnSecondOutline;
+    }
+}
+
+.progressLine {
+    height: 10px;
+    border-radius: 5px;
+    border: 2px solid transparent; 
+    background: 
+        linear-gradient(
+            to right, 
+            var.$btnMainColor calc((var(--percent) / var(--total)) * 100%), 
+            var.$btnSecondColor calc((var(--percent) / var(--total)) * 100%)
+        ) padding-box,
+        linear-gradient(
+            to right, 
+            var.$btnMainOutline calc((var(--percent) / var(--total)) * 100%), 
+            var.$btnSecondOutline calc((var(--percent) / var(--total)) * 100%)
+        ) border-box;
+    transition: --percent 0.3s ease;
+}
+
+.line{
+    display: flex;
+    height: 80px;
+    width: 100%;
+    gap: 5px;
+    .mainButton, .continueBtn{
+        //content
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        //position
+        flex-grow: 1;
+        @include mainBtnStyle();
+        &:disabled{
+            opacity: 0.75;
+            pointer-events: none;
+        }
+    }
+    .skipBtn{
+        flex-shrink: 0;
+        width: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        //style
+        @include secondBtnStyle();
+    }
+    .lessonNext{
+        @include mainBtnStyle();
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+    }
+    .lessonBack{
+        @include secondBtnStyle();
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+    }
+    .nameArea{
+        flex-grow: 1;
+        //style
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: x-large;
+        color: var.$text;
+        background-color: var.$btnSecondColor;
+        border-radius: 10px;
+        border: 2px solid var.$btnSecondOutline;
+    }
+}

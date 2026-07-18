@@ -1,9 +1,8 @@
 @use "./section/header"
 @use "./section/search"
-@use "./section/dropzone"
-@use "./section/footer"
-@use "./section/todayQuiz"
 @use "./section/popup_quiz"
+@use "./section/navbar.scss"
+@use "./section/hightlight.scss"
 
 @use "./element/btn"
 @use "./element/shimmer"
@@ -12,7 +11,6 @@
 @use "./element/languageSelection"
 @use "./element/horizontalSelector"
 
-@use "./quizCard/quizList"
 @use "./quizCard/cardMain"
 @use "./section/settings"
 
@@ -25,12 +23,12 @@
     text-align: center
 
 body, html 
+    position: relative
     overflow-x: hidden
     height: 100%
     margin: 0
     /* background */
-    background-attachment: fixed
-    background-size: cover
+    background-color: var(--background-game)
 
 h1,h2,h3,h4,h5,p,a
     color: var(--text-color)
@@ -63,16 +61,6 @@ svg
 @media (max-width: 768px)
     html
         scroll-behavior: auto
-
-/* background */
-@media (prefers-color-scheme: light)
-    body, html
-        background: linear-gradient(to bottom,#f2f2f2 0%,#e6e6e6 25%,#ffffff 50%,#e6e6e6 75%,#f2f2f2 100%)
-
-@media (prefers-color-scheme: dark)
-    body, html
-        background: linear-gradient(to bottom,#1e1e1e 0%,#2a2a2a 25%,#333 50%,#2a2a2a 75%,#1e1e1e 100%)
-
 
 /* DELETE THIS LATER */
 #betaElement

@@ -1,7 +1,7 @@
-<h1 align="center"><img src="./data/globe-showing-europe-africa-noto-emoji.gif" width="60">
+<h1 align="center"><img src="./asset/globe-showing-europe-africa-noto-emoji.gif" width="60">
 <picture>
-  <source srcset="./data/name-dark.svg" media="(prefers-color-scheme: dark)" width="200">
-  <img src="./data/name.svg" width="200">
+  <source srcset="./asset/name-dark.svg" media="(prefers-color-scheme: dark)" width="200">
+  <img src="./asset/name.svg" width="200">
 </picture>
 </h1>
 <h3 align="center">
@@ -15,11 +15,7 @@ Metrop est une app web 🇫🇷 Française et open source pour apprendre
 Metrop is a free and open source 🇫🇷 french web app to learn
 
 # Documentation
-Documentation in english :
-[Get Started](./documentation/en/getStarted.md)
-
-Documentation en français :
-[Bien démarrer](./documentation/fr/demarrer.md)
+coming soon
 
 >[!IMPORTANT]
 >🇨🇦 : The various borders are being added little by little. Many are still missing.

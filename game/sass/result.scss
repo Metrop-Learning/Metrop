@@ -1,0 +1,136 @@
+@use "./var.scss";
+@use "./actionBar.scss";
+
+#resultContainer{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    .line {
+        gap: 20px;
+    }
+}
+
+#resultPreview{
+    width: 100%;
+    padding-top: 150px;
+    padding-bottom: 50px;
+    min-height: 200px;
+    height: auto;
+    overflow: hidden;
+    //style
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: x-large;
+    color: var.$text;
+    background-color: var.$btnSecondColor;
+    border-radius: 10px;
+    border: 2px solid var.$btnSecondOutline;
+    #svgContainer{
+        --backgrd: var(--green-background);
+        position: relative;
+        display: inline-block;
+    }
+    #svgContainer::before {
+        content: "";
+        position: absolute;
+        
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+        width: 0px;
+        height: 0px;
+        
+        box-shadow: 0px 0px 180px 80px var(--backgrd);
+        
+        z-index: 1; 
+    }
+    h1{
+        z-index: 2;
+    }
+}
+
+#tableContainer{
+    width: 100%;
+    height: auto;
+    padding-left: 0;
+    padding-right: 0;
+    //style
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: x-large;
+    color: var.$text;
+    background-color: var.$btnSecondColor;
+    border-radius: 10px;
+    border: 2px solid var.$btnSecondOutline;
+    overflow: hidden;
+    table{
+        flex-grow: 1;
+        border-collapse: collapse;
+        table-layout: fixed;
+        tbody{
+            tr:first-child{
+                border: none;
+            }
+            tr{
+                border-top: 2px solid var.$btnSecondOutline;
+                margin: 0;
+                th:first-child {
+                    width: 20px;
+                    text-align: center;
+                    color: var.$btnSecondOutline;
+                    padding-right: 20px;
+                }
+                th{
+                    text-align: left;
+                }
+                .kmCounter{
+                    font-size: small;
+                    width: 70px;
+                }
+                .minimalColumn{
+                    width: 100px;
+                    img{
+                        height: 20px;
+                        width: auto;
+                        object-fit: contain;
+                        display: block;
+                    }
+                }
+                th:last-child{
+                    button{
+                        @include actionBar.secondBtnStyle();
+                        aspect-ratio: 1/1;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    width: 20px;
+                }
+            }
+        }
+    }
+}
+
+.retry{
+    @include actionBar.secondBtnStyle();
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.done{
+    @include actionBar.mainBtnStyle();
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

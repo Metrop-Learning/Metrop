@@ -1,7 +1,10 @@
 @use "../color"
 
+#settings
+  display: none
+
 #settings-menu
-    display: none    
+    display: flex    
     width: 100%
     #settings-content
         padding-top: 25px
@@ -70,3 +73,8 @@
     display: flex
     align-items: center
     justify-content: space-between
+    p
+      flex-grow: 1
+      text-align: left
+    input
+      flex-shrink: 0
