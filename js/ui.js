@@ -146,6 +146,7 @@ document.getElementById('settingsBtnNavBar').addEventListener('click',()=>{
     document.getElementById('mobileSearchInput').value = ""
     document.getElementById('home').style.display = "none"
     document.getElementById('search').style.display = "none"
+    document.getElementById('settings').style.display = "block"
     document.getElementById('searchBtnNavBar').style.color = "var(--text-color)"
     document.querySelector('#homeBtnNavBar .fullHomeIcon').style.display = "none"
     document.querySelector('#homeBtnNavBar .emptyHomeIcon').style.display = "block"
