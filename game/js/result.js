@@ -2,7 +2,7 @@ import {map} from "./theme.js";
 import * as placeTerritory from './renderer/placeTerritoriesManager.js'
 import * as guessTerritory from './renderer/guessFromPosiTerritory.js'
 import * as geojson from './geojson.js'
-import * as data from '../../../asset/dataManager.js'
+import * as data from '../../asset/dataManager.js'
 import * as util from "../../asset/common.js";
 import { nameList } from "./main.js";
 
