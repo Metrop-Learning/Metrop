@@ -15,7 +15,7 @@ import * as lessonFlag from "./renderer/lessonFlag.js"
 import * as lessonCity from "./renderer/lessonCity.js"
 import * as lessonTerritory from "./renderer/lessonTerritory.js"
 import * as geojson from './geojson.js'
-import * as trad from "../../trad/trad.js"
+import * as trad from "../trad/trad.js"
 
 
 document.querySelectorAll('.homeBtn').forEach((e) => {
@@ -35,7 +35,7 @@ export const type = params.get("type");
 
 export const langSys = localStorage.getItem("LANG_SYS") ?? "fr"
 
-await trad.traductAll("../../trad/",langSys)
+await trad.traductAll("../trad/",langSys)
 
 let normalQuit = true;
 
