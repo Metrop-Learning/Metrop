@@ -63,7 +63,7 @@ export async function buildCardList(filter){
                     const flagSrc = data.findElementByPath(main.quizList[i][0].cardInfo.setInfo)?.flag 
                         ?? data.findElementByPath("WD")?.flag;
                     document.getElementById(filter).insertAdjacentHTML('beforeend',
-                        `<div class='card' onclick="explore(${main.quizList[i][1]},${main.quizList[i][2]})"><img class='flagCard' src='${flagSrc}'><p class="titleCard">${main.quizList[i][0].cardInfo.Title}</p><div class="exploreCard">${exploreSVG}<p>${await trad.getTrad("../trad/",main.langSys,"btn-explore")}</p></div></div>`
+                        `<div class='card' onclick="explore(${main.quizList[i][1]},${main.quizList[i][2]})"><img class='flagCard' src='${flagSrc}'><p class="titleCard">${main.quizList[i][0].cardInfo.Title}</p><div class="exploreCard">${exploreSVG}<p>${await trad.getTrad("./trad/",main.langSys,"btn-explore")}</p></div></div>`
                     );
                 }
             } else if (!main.quizList[i][0].cardInfo.lang.includes(main.langSys)){
@@ -72,7 +72,7 @@ export async function buildCardList(filter){
                 const flagSrc = data.findElementByPath(main.quizList[i][0].cardInfo.setInfo)?.flag 
                         ?? data.findElementByPath("WD")?.flag;
                 document.getElementById(filter).insertAdjacentHTML('beforeend',
-                    `<div class='card' onclick="explore(${main.quizList[i][1]},${main.quizList[i][2]})"><img class='flagCard' src='${flagSrc}'><p class="titleCard">${main.quizList[i][0].cardInfo.Title[main.langSys]}</p><div class="exploreCard">${exploreSVG}<p>${await trad.getTrad("../trad/",main.langSys,"btn-explore")}</p></div></div>`
+                    `<div class='card' onclick="explore(${main.quizList[i][1]},${main.quizList[i][2]})"><img class='flagCard' src='${flagSrc}'><p class="titleCard">${main.quizList[i][0].cardInfo.Title[main.langSys]}</p><div class="exploreCard">${exploreSVG}<p>${await trad.getTrad("./trad/",main.langSys,"btn-explore")}</p></div></div>`
                 );
             }
         }
