@@ -35,7 +35,7 @@ export const type = params.get("type");
 
 export const langSys = localStorage.getItem("LANG_SYS") ?? "fr"
 
-await trad.traductAll("../../trad/",langSys)
+await trad.traductAll("../trad/",langSys)
 
 let normalQuit = true;
 
