@@ -1,7 +1,7 @@
 import * as main from "../index.js";
 import * as data from "../asset/dataManager.js";
 import * as util from "../asset/common.js"
-import * as trad from "../trad/trad.js"
+import * as trad from "./trad/trad.js"
 
 const links = document.querySelectorAll("#navBarTop a");
 const indicator = document.querySelector("#navBarTop .indicator");
@@ -63,7 +63,7 @@ export async function buildCardList(filter){
                     const flagSrc = data.findElementByPath(main.quizList[i][0].cardInfo.setInfo)?.flag 
                         ?? data.findElementByPath("WD")?.flag;
                     document.getElementById(filter).insertAdjacentHTML('beforeend',
-                        `<div class='card' onclick="explore(${main.quizList[i][1]},${main.quizList[i][2]})"><img class='flagCard' src='${flagSrc}'><p class="titleCard">${main.quizList[i][0].cardInfo.Title}</p><div class="exploreCard">${exploreSVG}<p>${await trad.getTrad("../trad/",main.langSys,"btn-explore")}</p></div></div>`
+                        `<div class='card' onclick="explore(${main.quizList[i][1]},${main.quizList[i][2]})"><img class='flagCard' src='${flagSrc}'><p class="titleCard">${main.quizList[i][0].cardInfo.Title}</p><div class="exploreCard">${exploreSVG}<p>${await trad.getTrad("./trad/",main.langSys,"btn-explore")}</p></div></div>`
                     );
                 }
             } else if (!main.quizList[i][0].cardInfo.lang.includes(main.langSys)){
@@ -72,7 +72,7 @@ export async function buildCardList(filter){
                 const flagSrc = data.findElementByPath(main.quizList[i][0].cardInfo.setInfo)?.flag 
                         ?? data.findElementByPath("WD")?.flag;
                 document.getElementById(filter).insertAdjacentHTML('beforeend',
-                    `<div class='card' onclick="explore(${main.quizList[i][1]},${main.quizList[i][2]})"><img class='flagCard' src='${flagSrc}'><p class="titleCard">${main.quizList[i][0].cardInfo.Title[main.langSys]}</p><div class="exploreCard">${exploreSVG}<p>${await trad.getTrad("../trad/",main.langSys,"btn-explore")}</p></div></div>`
+                    `<div class='card' onclick="explore(${main.quizList[i][1]},${main.quizList[i][2]})"><img class='flagCard' src='${flagSrc}'><p class="titleCard">${main.quizList[i][0].cardInfo.Title[main.langSys]}</p><div class="exploreCard">${exploreSVG}<p>${await trad.getTrad("./trad/",main.langSys,"btn-explore")}</p></div></div>`
                 );
             }
         }
@@ -247,7 +247,7 @@ export async function searchPreparation(textResearch) {
             return 0;
         });
 
-        document.getElementById('NbResult').innerText = final.length + " " + (final.length > 1 ? await trad.getTrad("../trad/",main.langSys,"results") : await trad.getTrad("../trad/",main.langSys,"result"));
+        document.getElementById('NbResult').innerText = final.length + " " + (final.length > 1 ? await trad.getTrad("./trad/",main.langSys,"results") : await trad.getTrad("./trad/",main.langSys,"result"));
 
         final.forEach(quiz => {
             const flagSrc = data.findElementByPath(quiz[0].cardInfo.setInfo)?.flag ?? data.findElementByPath("WD")?.flag;
@@ -332,7 +332,7 @@ export async function searchPreparation(textResearch) {
 
     finalResults.sort((a, b) => b.points - a.points);
 
-    document.getElementById('textInfoField').innerText = finalResults.length + " " + (finalResults.length > 1 ? await trad.getTrad("../trad/",main.langSys,"results") : await trad.getTrad("../trad/",main.langSys,"result"));
+    document.getElementById('textInfoField').innerText = finalResults.length + " " + (finalResults.length > 1 ? await trad.getTrad("./trad/",main.langSys,"results") : await trad.getTrad("./trad/",main.langSys,"result"));
 
     finalResults.forEach(item => {
         const quiz = item.quiz;
