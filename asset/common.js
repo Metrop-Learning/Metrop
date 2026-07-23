@@ -126,3 +126,5 @@ export function getDistShow(km){
       return Math.floor(km).toLocaleString('fr-FR') + " km"
     }
 }
+
+export const choose = (arr) => arr[Math.floor(Math.random() * arr.length)];

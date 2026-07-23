@@ -1,20 +1,39 @@
 #settings-menu
   #settings-content
-    h1 Paramètres
+    h1(translation_id="info-setting") Paramètres
     hr
     #warning-beta-settings
       span
         svg(xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3")
           path(d="M109-120q-11 0-20-5.5T75-140q-5-9-5.5-19.5T75-180l370-640q6-10 15.5-15t19.5-5q10 0 19.5 5t15.5 15l370 640q6 10 5.5 20.5T885-140q-5 9-14 14.5t-20 5.5H109Zm69-80h604L480-720 178-200Zm330.5-51.5Q520-263 520-280t-11.5-28.5Q497-320 480-320t-28.5 11.5Q440-297 440-280t11.5 28.5Q463-240 480-240t28.5-11.5Zm0-120Q520-383 520-400v-120q0-17-11.5-28.5T480-560q-17 0-28.5 11.5T440-520v120q0 17 11.5 28.5T480-360q17 0 28.5-11.5ZM480-460Z")
-        h1 Attention
-      p Metrop est toujours en beta et certaine des fonctionnalité suivante peuvent ne pas fonctionner corectement.
+        h1(translation_id="beta-warning") Attention
+      p(translation_id="beta-warning-text") Metrop est toujours en beta et certaine des fonctionnalité suivante peuvent ne pas fonctionner corectement.
     
     br
     br
     br
-    h1 Langue
+    h1(translation_id="settings-language") Langue
     hr
-    .settings-line(style="color: var(--text-color);") Bientôt disponible.
+    .settings-line(style="color: var(--text-color);")
+      span("translation_id"="choose-language")
+      select#selectLang(name="language")
+        button
+          selectedcontent
+        option(value="en")
+          img(src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Flag_of_the_United_Kingdom_(1-2).svg") 
+          span English
+        option(value="es") 
+          img(src="https://upload.wikimedia.org/wikipedia/commons/2/24/Flag_of_the_Kingdom_of_Spain.svg")
+          span Español
+        option(value="fr") 
+          img(src="https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg")
+          span Français  
+        option(value="it")
+          img(src="https://upload.wikimedia.org/wikipedia/en/0/03/Flag_of_Italy.svg") 
+          span Italiano
+        option(value="jp") 
+          span(src="https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg")
+          span 日本語
     //-.settings-line
     //-  p Afficher uniquement les quiz disponibles dans ma langue
     //-  input#onlyQuizInTheSelectedLanguage.switch(checked="true" type="checkbox")
@@ -58,25 +77,24 @@
     br
     br
     br
-    h1 Information
+    h1(translation_id="settings-information") Information
     hr
     h3#verText(style="font-size: smaller; text-align: left;")
       | Metrop Version X.X.X.x (API : X.X) 
       br
       | Updated the 10 Febuary 2026
     h3(style="font-size: smaller; text-align: left;")
-      a(href="https://github.com/Metrop-Learning/Metrop") Voir le code ou contribuer ↗
+      a(href="https://github.com/Metrop-Learning/Metrop") See the code or contribute ↗
       br
       br
-      a(href="https://metrop-learning.github.io/Tools-and-Documentation/") Voir la base de données ↗
+      a(href="https://metrop-learning.github.io/Tools-and-Documentation/") See the database ↗
       br
       br
       | Metrop is under MIT lisence.
-    
     br
     br
     br
-    h1 Credit
+    h1(translation_id="settings-credit") Credit
     hr
     h3(style="font-size: smaller; text-align: left;")
       | Created by 
@@ -111,22 +129,26 @@
     br
     br
     br
-    h1 Mentions légales
+    h1(translation_id="settings-legal") Mentions légales
     hr
     h3(style="font-size: smaller; text-align: left;")
-      | Éditeur du site : Jimmy (speudonyme)
+      span(translation_id="legal-editor") 
+      | Jimmy (speudonyme)
       br
       br
-      | Contact : @jimmxyz sur github
+      span(translation_id="legal-contact")
+      | @jimmxyz sur github
       br
       br
-      | Editeur soumis au lois Française.
+      span(translation_id="legal-warning-french-law")
       br
       br
-      | Hébergement: Github Inc.
+      span(translation_id="legal-host-server-name")
+      | Github Inc.
       br
       br
-      | Adresse de l'hébergeur :  88 Colin P. Kelly Jr. Street San Francisco, CA 94107 États-Unis
+      span(translation_id="legal-host-server-adress")
+      | 88 Colin P. Kelly Jr. Street San Francisco, CA 94107 États-Unis
       br
       br
-      | Aucune donnée n'est transmise à Metrop ni à des tiers, à l'exception d'un compteur de visites anonyme envoyé à Supabase (notre hébergeur de base de données) uniquement dans le but de statistiques de fréquentation. Aucune information personnelle n'est associée à ce compteur. Cependant, certaines données non personnelles peuvent être enregistrées dans le stockage local de votre navigateur afin de garantir le bon fonctionnement du site.
+      span(translation_id="legal-confidentiality-notice")

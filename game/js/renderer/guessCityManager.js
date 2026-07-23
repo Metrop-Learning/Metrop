@@ -13,8 +13,6 @@ let correctPosi;
 export let reccords = []
 
 export function init(dataSet, nameList){
-    const dist = util.calculateDifficultyThresholds(dataSet)
-
     let selector = 0;
     let trydone = 0;
     let trymax = 2;

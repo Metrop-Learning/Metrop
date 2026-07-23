@@ -208,6 +208,25 @@
   justify-content: center;
   flex-grow: 1;
 }
+.line .lessonEnd {
+  background-color: var(--btn-color);
+  color: var(--btn-text-color);
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px solid var(--btn-color-outline);
+  transition: background-color, border-color 0.2s ease;
+}
+.line .lessonEnd:hover {
+  background-color: var(--btn-color-outline);
+  border-color: var(--btn-color);
+}
+.line .lessonEnd {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
 .line .lessonBack {
   background-color: var(--card-background-color);
   color: var(--text-color);
@@ -527,7 +546,7 @@ body {
   background-color: var(--background-game);
 }
 
-#mapArea, #flagArea, #mapShadowArea {
+#mapArea, #flagArea, #guessNameArea, #mapShadowArea {
   overflow: hidden;
   flex-grow: 1;
   color: var(--text-color);
@@ -538,6 +557,51 @@ body {
   box-shadow: -1px 1px 49px 10px rgba(0, 0, 0, 0.42);
   -webkit-box-shadow: -1px 1px 49px 10px rgba(0, 0, 0, 0.42);
   -moz-box-shadow: -1px 1px 49px 10px rgba(0, 0, 0, 0.42);
+}
+
+#guessNameArea {
+  display: none;
+  flex-direction: column;
+  overflow-y: auto;
+}
+#guessNameArea .guessNameElement {
+  flex-shrink: 0;
+  margin-left: 2px;
+  margin-right: 2px;
+  width: 100%;
+  height: 40px;
+  margin: 0;
+  padding: 5px;
+  background-color: var(--card-background-color);
+  color: var(--text-color);
+  cursor: pointer;
+  border-top: 2px solid var(--header-top-color);
+  transition: background-color, border-color 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#guessNameArea .guessNameElement .guessNameText {
+  padding: 10px;
+  text-align: left;
+  flex-grow: 1;
+}
+#guessNameArea .guessNameElement .guessNameResult {
+  flex-shrink: 0;
+  margin-right: 15px;
+  color: var(--text-color);
+}
+#guessNameArea .guessNameElement .guessNameResult svg {
+  fill: currentColor;
+}
+#guessNameArea .guessNameElement .guessNameHint {
+  flex-shrink: 0;
+}
+#guessNameArea .guessNameElement:hover {
+  background-color: var(--header-top-color);
+}
+#guessNameArea .guessNameElement:first-child {
+  border: none;
 }
 
 #flagArea {
@@ -590,7 +654,7 @@ body {
 }
 
 * {
-  font-family: "Momo Trust Display", sans-serif;
+  font-family: "Momo Trust Display", "Mochiy Pop One", sans-serif;
   font-weight: 500;
   font-style: normal;
 }

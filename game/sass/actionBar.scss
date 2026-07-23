@@ -166,6 +166,14 @@
         justify-content: center;
         flex-grow: 1;
     }
+    .lessonEnd{
+        @include mainBtnStyle();
+        display: none;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+    }
     .lessonBack{
         @include secondBtnStyle();
         display: flex;

@@ -1,6 +1,7 @@
 import * as main from "../index.js";
 import * as data from "../asset/dataManager.js";
 import * as util from "../asset/common.js"
+import * as trad from "../trad/trad.js"
 
 const links = document.querySelectorAll("#navBarTop a");
 const indicator = document.querySelector("#navBarTop .indicator");
@@ -21,7 +22,9 @@ function moveIndicator(link){
     });
 }
 
-moveIndicator(links[0]);
+export function resetBar(){
+    moveIndicator(links[0]);
+}
 
 links.forEach(link=>{
     link.addEventListener("click", e=>{
@@ -32,7 +35,7 @@ links.forEach(link=>{
 
 const exploreSVG = '<svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="35px"><path d="m335-310 202-58q20-6 34.5-20.5T592-423l58-202q3-11-5.5-19.5T625-650l-202 58q-20 6-34.5 20.5T368-537l-58 202q-3 11 5.5 19.5T335-310Zm145-110q-25 0-42.5-17.5T420-480q0-25 17.5-42.5T480-540q25 0 42.5 17.5T540-480q0 25-17.5 42.5T480-420Zm0 340q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q133 0 226.5-93.5T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160Zm0-320Z"/></svg>'
 
-export function buildCardList(filter){
+export async function buildCardList(filter){
     let allowed_type = ["place","name","guess","placeTerritory","shadowTerritory","guessFromPosiTerritory","fromFlag"];
     if(filter == "card_all"){
         //noting   
@@ -53,11 +56,25 @@ export function buildCardList(filter){
     document.getElementById(filter).innerHTML = ""
     for(let i = 0; i < main.quizList.length; i++){
         if(allowed_type.some(element => main.quizList[i][0].type.includes(element))){
-            const flagSrc = data.findElementByPath(main.quizList[i][0].cardInfo.setInfo)?.flag 
+            if(typeof main.quizList[i][0].cardInfo.lang == "string"){
+                if(main.quizList[i][0].cardInfo.lang.toLowerCase() != main.langSys){
+                    
+                } else {
+                    const flagSrc = data.findElementByPath(main.quizList[i][0].cardInfo.setInfo)?.flag 
                         ?? data.findElementByPath("WD")?.flag;
-            document.getElementById(filter).insertAdjacentHTML('beforeend',
-                `<div class='card' onclick="explore(${main.quizList[i][1]},${main.quizList[i][2]})"><img class='flagCard' src='${flagSrc}'><p class="titleCard">${main.quizList[i][0].cardInfo.Title}</p><div class="exploreCard">${exploreSVG}<p>Explore</p></div></div>`
-            );
+                    document.getElementById(filter).insertAdjacentHTML('beforeend',
+                        `<div class='card' onclick="explore(${main.quizList[i][1]},${main.quizList[i][2]})"><img class='flagCard' src='${flagSrc}'><p class="titleCard">${main.quizList[i][0].cardInfo.Title}</p><div class="exploreCard">${exploreSVG}<p>${await trad.getTrad("../trad/",main.langSys,"btn-explore")}</p></div></div>`
+                    );
+                }
+            } else if (!main.quizList[i][0].cardInfo.lang.includes(main.langSys)){
+                
+            } else {
+                const flagSrc = data.findElementByPath(main.quizList[i][0].cardInfo.setInfo)?.flag 
+                        ?? data.findElementByPath("WD")?.flag;
+                document.getElementById(filter).insertAdjacentHTML('beforeend',
+                    `<div class='card' onclick="explore(${main.quizList[i][1]},${main.quizList[i][2]})"><img class='flagCard' src='${flagSrc}'><p class="titleCard">${main.quizList[i][0].cardInfo.Title[main.langSys]}</p><div class="exploreCard">${exploreSVG}<p>${await trad.getTrad("../trad/",main.langSys,"btn-explore")}</p></div></div>`
+                );
+            }
         }
     }
 }
@@ -189,20 +206,17 @@ document.getElementById('btn-settings-id').addEventListener('click',()=>{
 })
 
 
-export function searchPreparation(textResearch) {
-    // 1. Réinitialisation de l'interface
+export async function searchPreparation(textResearch) {
     document.body.scrollTop = 0;
     
     const errorDiv = document.getElementById('researchEmptyOrError');
-    const resultContainer = document.getElementById('card_search'); // <--- Corrigé ici !
+    const resultContainer = document.getElementById('card_search');
     
     if (errorDiv) errorDiv.style.display = 'none';
     if (resultContainer) resultContainer.innerHTML = "";
 
-    // Sécurité si main.quizList n'est pas encore chargé
     try { main.quizList } catch { return; }
 
-    // 2. Gestion des commandes globales ("all")
     let isCountryAll = textResearch === "r:country:all";
     let isCityAll = textResearch === "r:city:all";
 
@@ -211,12 +225,9 @@ export function searchPreparation(textResearch) {
             ? ["placeTerritory", "shadowTerritory", "guessFromPosiTerritory"]
             : ["place", "name", "guess"];
 
-        // Filtrer la liste globale
         let final = main.quizList.filter(quiz => 
             quiz[0]?.type && allowedTypes.some(type => quiz[0].type.includes(type))
         );
-
-        // Tri (Continent -> Nom du Pays en FR/EN -> Titre du Quiz)
         final.sort((a, b) => {
             if (a[0].continent < b[0].continent) return -1;
             if (a[0].continent > b[0].continent) return 1;
@@ -236,10 +247,8 @@ export function searchPreparation(textResearch) {
             return 0;
         });
 
-        // Affichage du nombre de résultats
-        document.getElementById('NbResult').innerText = final.length + (final.length > 1 ? " résultats" : " résultat");
+        document.getElementById('NbResult').innerText = final.length + " " + (final.length > 1 ? await trad.getTrad("../trad/",main.langSys,"results") : await trad.getTrad("../trad/",main.langSys,"result"));
 
-        // Rendu HTML dans #card_search
         final.forEach(quiz => {
             const flagSrc = data.findElementByPath(quiz[0].cardInfo.setInfo)?.flag ?? data.findElementByPath("WD")?.flag;
             resultContainer.insertAdjacentHTML('beforeend', `
@@ -255,7 +264,6 @@ export function searchPreparation(textResearch) {
         return;
     }
 
-    // 3. Moteur de recherche par mots-clés (Système de points de pertinence)
     let finalResults = [];
     const words = textResearch.split(" ");
 
@@ -267,17 +275,14 @@ export function searchPreparation(textResearch) {
 
         let points = 0;
 
-        // Récupération des données
         const countryData = data.findElementByPath(cardInfo.setInfo);
         
-        // On récupère toutes les traductions du pays sous forme de tableau : ["Nunavut", "Nunavut", ...]
         const countryTranslations = countryData?.name ? Object.values(countryData.name) : [];
         
         const countryID = cardInfo.setInfo || "";
         const title = cardInfo.Title || "";
         const description = cardInfo.Text || ""; 
 
-        // Vérification 1 : Nom du pays proche (+50 pts) - ICI ON CHERCHE DANS TOUTES LES LANGUES
         if (words.some(word => 
             countryTranslations.some(translation => 
                 translation && util.checkDiff(word, translation) <= word.length / 2
@@ -286,41 +291,62 @@ export function searchPreparation(textResearch) {
             points += 50;
         }
 
-        // Vérification 2 : ID du pays exact (+50 pts)
         if (words.some(word => word.toUpperCase() === countryID.toUpperCase())) {
             points += 50;
         }
 
-        // Vérification 3 : Présence dans le Titre du Quiz (+10 pts par mot trouvé)
-        if (words.some(word => title.toLowerCase().includes(word.toLowerCase()))) {
-            points += words.filter(word => title.toLowerCase().includes(word.toLowerCase())).length * 10;
+        const getTextValue = (field) => {
+        if (!field) return '';
+        if (typeof field === 'string') return field;
+        if (typeof field === 'object') {
+            return Object.values(field).filter(val => typeof val === 'string').join(' ');
+        }
+        return '';
+        };
+
+        const titleText = getTextValue(title).toLowerCase();
+        const descriptionText = getTextValue(description).toLowerCase();
+
+        const matchingTitleWords = words.filter(word => 
+            titleText.includes(word.toLowerCase())
+        );
+        points += matchingTitleWords.length * 10;
+
+        const matchingDescWords = words.filter(word => 
+            descriptionText.includes(word.toLowerCase())
+        );
+        points += matchingDescWords.length * 2;
+
+        if(typeof cardInfo.lang == "string"){
+            if(cardInfo.lang.toLowerCase() != main.langSys){
+                continue
+            }
+        } else if (!cardInfo.lang.includes(main.langSys)){
+            continue
         }
 
-        // Vérification 4 : Présence dans la Description (+2 pts par mot trouvé)
-        if (words.some(word => description.toLowerCase().includes(word.toLowerCase()))) {
-            points += words.filter(word => description.toLowerCase().includes(word.toLowerCase())).length * 2;
-        }
-
-        // Si le quiz a cumulé des points, on le garde
         if (points > 0) {
             finalResults.push({ quiz: quiz, points: points });
         }
     }
 
-    // Tri des résultats par score de pertinence décroissant
     finalResults.sort((a, b) => b.points - a.points);
 
-    // Affichage des résultats par mots-clés
-    document.getElementById('textInfoField').innerText = finalResults.length + (finalResults.length > 1 ? " résultats" : " résultat");
+    document.getElementById('textInfoField').innerText = finalResults.length + " " + (finalResults.length > 1 ? await trad.getTrad("../trad/",main.langSys,"results") : await trad.getTrad("../trad/",main.langSys,"result"));
 
-    // Rendu HTML final dans #card_search
     finalResults.forEach(item => {
         const quiz = item.quiz;
         const flagSrc = data.findElementByPath(quiz[0].cardInfo.setInfo)?.flag ?? data.findElementByPath("WD")?.flag;
+        let tilt = ""
+        if(typeof quiz[0].cardInfo.Title == "string"){
+            tilt = quiz[0].cardInfo.Title
+        } else {
+            tilt = quiz[0].cardInfo.Title[main.langSys]
+        }
         resultContainer.insertAdjacentHTML('beforeend', `
             <div class='card' onclick="explore(${quiz[1]}, ${quiz[2]})">
                 <img class='flagCard' src='${flagSrc}'>
-                <p class="titleCard">${quiz[0].cardInfo.Title}</p>
+                <p class="titleCard">${tilt}</p>
                 <div class="exploreCard">${exploreSVG}<p>Explore</p></div>
             </div>
         `);

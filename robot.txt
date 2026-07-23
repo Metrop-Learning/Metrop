@@ -1,4 +1,3 @@
 User-agent: *
-Disallow: /learning_prgm/
-Disallow: /country/
-Disallow: /city/
+Disallow: /game/
+Disallow: /error/

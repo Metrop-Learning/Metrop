@@ -303,6 +303,11 @@ header {
   overflow-x: hidden;
   text-align: left;
 }
+@media (max-width: 1100px) {
+  #cardInfoPopUp_MainBox {
+    height: 100dvh;
+  }
+}
 
 #cardInfoPopUp_MainBox::before {
   content: "";
@@ -402,6 +407,10 @@ header {
   border-left: solid 2px var(--header-top-color);
   gap: 20px;
 }
+#cardInfoPopUp_listGameMode .btn svg {
+  flex-shrink: 0;
+  margin-right: auto;
+}
 #cardInfoPopUp_listGameMode .btn {
   min-width: 230px;
   width: 100%;
@@ -417,8 +426,15 @@ header {
 @media (max-width: 1100px) {
   #twoColSide {
     flex-direction: column;
+    height: auto;
+    overflow-y: hidden;
+  }
+  #infoSide {
+    height: auto;
+    flex-shrink: 0;
   }
   #cardInfoPopUp_listGameMode {
+    flex-shrink: 0;
     height: auto;
     width: calc(100% - 40px);
     border-left: none;
@@ -426,7 +442,6 @@ header {
   }
   #cardInfoPopUp_MainBox {
     width: 100%;
-    height: 100%;
   }
   #cardInfoPopUp_title, #cardInfoPopUp_shortResume, #cardInfoPopUp_longResume, #cardInfoPopUp_info_lenght {
     padding-right: 50px;
@@ -1256,6 +1271,51 @@ header {
 }
 .settings-line input {
   flex-shrink: 0;
+}
+
+select, ::picker(select) {
+  appearance: base-select;
+}
+
+selectedcontent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+selectedcontent span {
+  flex-grow: 1;
+}
+
+select {
+  color: var(--text-color);
+  background-color: var(--card-background-color);
+  border-radius: 10px;
+  border: 2px solid var(--header-top-color);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  padding: 5px;
+  cursor: pointer;
+}
+select:hover {
+  background-color: var(--header-top-color);
+  border-color: var(--card-background-color);
+}
+select option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+select option span {
+  flex-grow: 1;
+}
+select option img, select selectedcontent img {
+  max-height: 10px;
+  width: auto;
+  flex-shrink: 0;
+}
+select::picker(select) {
+  appearance: base-select;
 }
 
 * {

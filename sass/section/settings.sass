@@ -78,3 +78,39 @@
       text-align: left
     input
       flex-shrink: 0
+
+select, ::picker(select)
+  appearance: base-select
+
+selectedcontent
+  display: flex
+  align-items: center
+  justify-content: center
+  gap: 5px
+  span
+      flex-grow: 1
+
+select
+  color: var(--text-color)
+  background-color: var(--card-background-color)
+  border-radius: 10px
+  border: 2px solid var(--header-top-color)
+  transition: background-color 0.2s ease,border-color 0.2s ease
+  padding: 5px
+  cursor: pointer
+  &:hover
+      background-color: var(--header-top-color)
+      border-color: var(--card-background-color)
+  option
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 5px
+    span
+      flex-grow: 1
+  option img, selectedcontent img
+    max-height: 10px
+    width: auto
+    flex-shrink: 0
+  &::picker(select)
+    appearance: base-select
