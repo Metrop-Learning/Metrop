@@ -43,5 +43,14 @@
     "legal-host-server-adress": "ホストの住所：",
     "legal-confidentiality-notice": "データがMetropや第三者に送信されることはありません。ただし、サイトが正常に機能するよう、一部の非個人データがお使いのブラウザのローカルストレージに保存される場合があります。",
     "beta-warning": "ご注意",
-    "beta-warning-text": "Metropはまだベータ版です。以下の機能の一部が正常に動作しない場合があります。"
+    "beta-warning-text": "Metropはまだベータ版です。以下の機能の一部が正常に動作しない場合があります。",
+    "settings-map": "マップ",
+    "settings-lock-territory": "選択済みの国・地域を無効化",
+    "metrop-ver": "アプリのバージョン: ",
+    "metrop-ver-api": "アプリAPIのバージョン: ",
+    "metrop-ver-date": "最新バージョンのリリース日: ",
+    "metrop-app-name": "Metropアプリ",
+    "metrop-license-name": "ライセンス: ",
+    "metrop-geo-id": "データベースID: ",
+    "metrop-geo-ver": "データベースのバージョン: "
 }

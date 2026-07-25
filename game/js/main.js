@@ -50,7 +50,10 @@ if(["place", "placeTerritory"].includes(type)){
 export const config = {
     isTerritoryLock(){
         //To do
-        return false
+        if(localStorage.getItem("GAME_SETTINGS_TERRITORY_LOCK") == "false"){
+            return false
+        }
+        return true
     }
 }
 

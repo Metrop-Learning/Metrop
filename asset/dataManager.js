@@ -127,11 +127,27 @@ export const use = {
         ver(){
             return geodb["DB:INFO"].VER
         },
+        api(){
+            return geodb["DB:INFO"].API_VER
+        },
         date(){
             return geodb["DB:INFO"].DATE
         },
         id(){
             return geodb["DB:INFO"].ID
+        },
+        name(){
+            return geodb["DB:INFO"].NAME[langSys] ?? geodb["DB:INFO"].NAME["en"]
+        },
+        license(){
+            if(typeof geodb["DB:INFO"].LICENSE == "string"){
+                return [geodb["DB:INFO"].LICENSE]
+            } else {
+                return geodb["DB:INFO"].LICENSE
+            }
+        },
+        license_link(){
+            return geodb["DB:INFO"].LICENSE_LINK
         }
     }
 }

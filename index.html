@@ -222,10 +222,51 @@
               <option value="jp"> <span src="https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg"></span><span>日本語</span></option>
             </select>
           </div><br><br><br>
+          <h1 translation_id="settings-map"></h1>
+          <hr>
+          <div class="settings-line">
+            <p translation_id="settings-lock-territory"></p>
+            <input class="switch" checked="true" type="checkbox" settings_id="GAME_SETTINGS_TERRITORY_LOCK" default_settings_value="true">
+          </div><br><br><br>
           <h1 translation_id="settings-information">Information</h1>
           <hr>
-          <h3 id="verText" style="font-size: smaller; text-align: left;">Metrop Version X.X.X.x (API : X.X) <br>Updated the 10 Febuary 2026</h3>
-          <h3 style="font-size: smaller; text-align: left;"><a href="https://github.com/Metrop-Learning/Metrop">See the code or contribute ↗</a><br><br><a href="https://metrop-learning.github.io/Tools-and-Documentation/">See the database ↗</a><br><br>Metrop is under MIT lisence.</h3><br><br><br>
+          <div id="appVerControl">
+            <div class="titleDivVerCtrl">
+              <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px">
+                <path d="M440-183v-274L200-596v274l240 139Zm80 0 240-139v-274L520-457v274Zm-40-343 237-137-237-137-237 137 237 137ZM160-252q-19-11-29.5-29T120-321v-318q0-22 10.5-40t29.5-29l280-161q19-11 40-11t40 11l280 161q19 11 29.5 29t10.5 40v318q0 22-10.5 40T800-252L520-91q-19 11-40 11t-40-11L160-252Zm320-228Z"></path>
+              </svg>
+              <h1 translation_id="metrop-app-name"></h1>
+            </div><br>
+            <div class="lineInfo"><span class="subText" translation_id="metrop-ver"></span><span class="info" id="verText"></span></div><br>
+            <div class="lineInfo"><span class="subText" translation_id="metrop-ver-api"></span><span class="info" id="verApiText"></span></div><br>
+            <div class="lineInfo"><span class="subText" translation_id="metrop-ver-date"></span><span class="info" id="verDateText"></span></div><br>
+            <div class="lineInfo">
+              <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px">
+                <path d="M120-120q-17 0-28.5-11.5T80-160q0-17 11.5-28.5T120-200h320v-447q-26-9-45-28t-28-45H240l110 258q5 11 6 22.5t-1 23.5q-9 46-49.5 71T220-320q-45 0-85.5-25T85-416q-2-12-1-23.5t6-22.5l110-258h-40q-17 0-28.5-11.5T120-760q0-17 11.5-28.5T160-800h207q12-35 43-57.5t70-22.5q39 0 70 22.5t43 57.5h207q17 0 28.5 11.5T840-760q0 17-11.5 28.5T800-720h-40l110 258q5 11 6 22.5t-1 23.5q-9 46-49.5 71T740-320q-45 0-85.5-25T605-416q-2-12-1-23.5t6-22.5l110-258H593q-9 26-28 45t-45 28v447h320q17 0 28.5 11.5T880-160q0 17-11.5 28.5T840-120H120Zm545-320h150l-75-174-75 174Zm-520 0h150l-75-174-75 174Zm335-280q17 0 28.5-11.5T520-760q0-17-11.5-28.5T480-800q-17 0-28.5 11.5T440-760q0 17 11.5 28.5T480-720Z"></path>
+              </svg><span class="subText" translation_id="metrop-license-name"></span><span class="info" id="licenseName"></span>
+            </div><br>
+            <div class="lineInfo"><a id="licenseLink" href=""> </a></div>
+          </div><br>
+          <div id="geoDataVerControl">
+            <div class="titleDivVerCtrl">
+              <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px">
+                <path d="M480-120q-151 0-255.5-46.5T120-280v-400q0-66 105.5-113T480-840q149 0 254.5 47T840-680v400q0 67-104.5 113.5T480-120Zm0-479q89 0 179-25.5T760-679q-11-29-100.5-55T480-760q-91 0-178.5 25.5T200-679q14 30 101.5 55T480-599Zm0 199q42 0 81-4t74.5-11.5q35.5-7.5 67-18.5t57.5-25v-120q-26 14-57.5 25t-67 18.5Q600-528 561-524t-81 4q-42 0-82-4t-75.5-11.5Q287-543 256-554t-56-25v120q25 14 56 25t66.5 18.5Q358-408 398-404t82 4Zm0 200q46 0 93.5-7t87.5-18.5q40-11.5 67-26t32-29.5v-98q-26 14-57.5 25t-67 18.5Q600-328 561-324t-81 4q-42 0-82-4t-75.5-11.5Q287-343 256-354t-56-25v99q5 15 31.5 29t66.5 25.5q40 11.5 88 18.5t94 7Z"></path>
+              </svg>
+              <h1 id="geoDataName"></h1>
+            </div><br>
+            <div class="lineInfo"><span class="subText" translation_id="metrop-geo-id"></span><span class="info" id="geoDataId"></span></div><br>
+            <div class="lineInfo"><span class="subText" translation_id="metrop-geo-ver"></span><span class="info" id="geoDataVer"></span></div><br>
+            <div class="lineInfo"><span class="subText" translation_id="metrop-ver-api"></span><span class="info" id="verApiGeoText"></span></div><br>
+            <div class="lineInfo"><span class="subText" translation_id="metrop-ver-date"></span><span class="info" id="geoDataDate"></span></div><br>
+            <div class="lineInfo">
+              <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px">
+                <path d="M120-120q-17 0-28.5-11.5T80-160q0-17 11.5-28.5T120-200h320v-447q-26-9-45-28t-28-45H240l110 258q5 11 6 22.5t-1 23.5q-9 46-49.5 71T220-320q-45 0-85.5-25T85-416q-2-12-1-23.5t6-22.5l110-258h-40q-17 0-28.5-11.5T120-760q0-17 11.5-28.5T160-800h207q12-35 43-57.5t70-22.5q39 0 70 22.5t43 57.5h207q17 0 28.5 11.5T840-760q0 17-11.5 28.5T800-720h-40l110 258q5 11 6 22.5t-1 23.5q-9 46-49.5 71T740-320q-45 0-85.5-25T605-416q-2-12-1-23.5t6-22.5l110-258H593q-9 26-28 45t-45 28v447h320q17 0 28.5 11.5T880-160q0 17-11.5 28.5T840-120H120Zm545-320h150l-75-174-75 174Zm-520 0h150l-75-174-75 174Zm335-280q17 0 28.5-11.5T520-760q0-17-11.5-28.5T480-800q-17 0-28.5 11.5T440-760q0 17 11.5 28.5T480-720Z"></path>
+              </svg><span class="subText" translation_id="metrop-license-name"></span>
+            </div>
+            <div id="GeolicenseList"></div><br>
+            <div class="lineInfo"><a id="geoDataLList" href=""> </a></div>
+          </div>
+          <h3 style="font-size: smaller; text-align: left;"><a href="https://github.com/Metrop-Learning/Metrop">See the code or contribute ↗</a><br><br><a href="https://metrop-learning.github.io/Tools-and-Documentation/">See the database ↗</a></h3><br><br><br>
           <h1 translation_id="settings-credit">Credit</h1>
           <hr>
           <h3 style="font-size: smaller; text-align: left;">Created by <a href="https://github.com/Jimmxyz">@Jimmxyz</a><br><br>Some of the resources are sourced from <a href="https://wikipedia.org/">Wikipedia</a>/<a href="https://commons.wikimedia.org/">Wikimedia</a> or <a href="https://osm-boundaries.com/">OSMB</a> and <a href="https://www.openstreetmap.org/">OSM</a>. The base maps are form <a href="https://carto.com/">CartoDB</a>.<br><br>Metrop use <a href="https://leafletjs.com/">Leaflet</a> and <a href="https://maplibre.org/">MapLibre</a> (some amazing api) to manage maps.<br><br>The animated logo and the favicon are from the <a href="https://googlefonts.github.io/noto-emoji-animation/">Google Noto Emoji</a> database licensed under <a href="https://creativecommons.org/licenses/by/4.0/legalcode">🅭 CC BY 4.0</a></h3><br><br><br>

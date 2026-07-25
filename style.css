@@ -1318,6 +1318,80 @@ select::picker(select) {
   appearance: base-select;
 }
 
+#appVerControl {
+  color: var(--text-color);
+  background-color: var(--card-background-color);
+  border-radius: 10px;
+  border: 2px solid var(--header-top-color);
+  height: auto;
+  padding: 10px;
+}
+#appVerControl .titleDivVerCtrl {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 7px;
+}
+#appVerControl .subText {
+  text-align: left;
+}
+#appVerControl .info {
+  margin-right: auto;
+}
+#appVerControl .lineInfo {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 15px;
+}
+#appVerControl a {
+  font-size: x-small;
+  opacity: 0.5;
+}
+
+#geoDataVerControl {
+  color: var(--text-color);
+  background-color: var(--card-background-color);
+  border-radius: 10px;
+  border: 2px solid var(--header-top-color);
+  height: auto;
+  padding: 10px;
+}
+#geoDataVerControl .titleDivVerCtrl {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 7px;
+}
+#geoDataVerControl .subText {
+  text-align: left;
+}
+#geoDataVerControl .info {
+  margin-right: auto;
+}
+#geoDataVerControl .lineInfo {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 15px;
+}
+#geoDataVerControl a {
+  font-size: x-small;
+  opacity: 0.5;
+}
+#geoDataVerControl #GeolicenseList {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+  gap: 10px;
+}
+#geoDataVerControl #GeolicenseList span {
+  font-size: small;
+  text-align: left;
+}
+
 * {
   font-family: "Momo Trust Display", "Mochiy Pop One", sans-serif;
   font-weight: 500;

@@ -43,5 +43,14 @@
     "legal-host-server-adress": "Indirizzo dell'host: ",
     "legal-confidentiality-notice": "Nessun dato viene trasmesso a Metrop o a terzi. Tuttavia, alcuni dati non personali potrebbero essere memorizzati nel local storage del tuo browser per garantire il corretto funzionamento del sito.",
     "beta-warning": "Attenzione",
-    "beta-warning-text": "Metrop è ancora in versione beta e alcune delle seguenti funzionalità potrebbero non funzionare correttamente."
+    "beta-warning-text": "Metrop è ancora in versione beta e alcune delle seguenti funzionalità potrebbero non funzionare correttamente.",
+    "settings-map": "Mappa",
+    "settings-lock-territory": "Disabilita paesi/territori già selezionati",
+    "metrop-ver": "Versione dell'app: ",
+    "metrop-ver-api": "Versione API dell'app: ",
+    "metrop-ver-date": "Data di rilascio dell'ultima versione: ",
+    "metrop-app-name": "App Metrop",
+    "metrop-license-name": "Licenza: ",
+    "metrop-geo-id": "ID del database: ",
+    "metrop-geo-ver": "Versione del database: "
 }

@@ -2,17 +2,20 @@ import * as data from "./asset/dataManager.js";
 import * as util from "./asset/common.js"
 import * as trad from "./trad/trad.js"
 
+import * as setting from "./js/settings.js"
 import * as ui from "./js/ui.js"
 
 // INIT
 
-const ver =  [0,8,1,"a"]
-const verDate = [2026,7,23]
+const ver =  [0,8,1,"b"]
+const verDate = [2026,7,25]
+const license_link = "https://metrop-learning.github.io/Metrop/LICENSE"
+const license = "MIT License"
 const verGeoDatabase =  data.use.geo.ver();
 const verGeoDatabaseDate = data.use.geo.date();
 const verGeoDatabaseID = data.use.geo.id();
 
-const verAPI = [0,5]
+const verAPI = [1,0]
 
 export const langSys = localStorage.getItem("LANG_SYS") ?? trad.getLang()
 
@@ -21,10 +24,32 @@ await trad.traductAll("./trad/",langSys)
 
 ui.resetBar()
 
+setting.init()
+
 console.info("Metrop App\n----------\nVER : "+ver[0]+"."+ver[1]+"."+ver[2]+"."+ver[3]+"\nRELEASED : " + verDate[0] + " / " + verDate[1] + " / " + verDate[2] + "\n\n\nGEO DATABASE\n------------\nID : " + verGeoDatabaseID + "\nVER : " + verGeoDatabase[0] + "." + verGeoDatabase[1] + "." + verGeoDatabase[2] + "\nRELEASED : " + verGeoDatabaseDate[0] + " / " + verGeoDatabaseDate[1] + " / " + verGeoDatabaseDate[2] + "\n\n\nMETROP API\n----------\nVER : " + verAPI[0]+"."+verAPI[1])
 
 document.getElementById('verText').innerHTML = "🌍 Metrop Version " + ver[0] + "." + ver[1] + "." + ver[2] + "." + ver[3] + " (API : " + verAPI[0] + "." + verAPI[1] + ")<br><br>Updated the : " + verDate[0] + " / "+verDate[1]+" / " + verDate[2] +"<br><br>🗺️ Metrop Geo Database Version : " + verGeoDatabase[0] + "." + verGeoDatabase[1] + "." + verGeoDatabase[2] + "<br><br>Updated the : " + verGeoDatabaseDate[0] + "/" + verGeoDatabaseDate[1] + "/" + verGeoDatabaseDate[2]
 
+// Info App
+document.getElementById('verText').innerText = `${ver[0]} . ${ver[1]} . ${ver[2]} . ${ver[3]}`
+document.getElementById('verApiText').innerText = `${verAPI[0]} . ${verAPI[1]}`
+document.getElementById('verDateText').innerText = `${verDate[0]} / ${verDate[1]} / ${verDate[2]}`
+document.getElementById('licenseName').innerText = license
+document.getElementById('licenseLink').innerText = license_link
+document.getElementById('licenseLink').href = license_link
+
+// Info Geo Database
+document.getElementById('geoDataId').innerText = data.use.geo.id()
+document.getElementById('geoDataLList').innerText = data.use.geo.license_link()
+document.getElementById("verApiGeoText").innerText = `${data.use.geo.api()[0]} . ${data.use.geo.api()[1]}`
+document.getElementById('geoDataName').innerText = data.use.geo.name()
+document.getElementById('geoDataVer').innerText = `${data.use.geo.ver()[0]} . ${data.use.geo.ver()[1]} . ${data.use.geo.ver()[2]}`
+document.getElementById('geoDataDate').innerText = `${data.use.geo.date()[0]} / ${data.use.geo.date()[1]} / ${data.use.geo.date()[2]}`
+let geoLicense = data.use.geo.license()
+document.getElementById('GeolicenseList').innerHTML = ""
+for(let i = 0; i < geoLicense.length; i++){
+    document.getElementById('GeolicenseList').innerHTML += "<span>"+geoLicense[i]+"</span>"
+}
 
 if(localStorage.getItem("lastVersionUsed")){
     let verS = localStorage.getItem("lastVersionUsed").split(".")
@@ -327,17 +352,3 @@ document.getElementById('cardInfoPopUp_exitBtn').addEventListener('click',()=>{
 
 window.explore = explore;
 window.openquiz = openquiz;
-
-
-
-// Will be move to settings.js once ready
-document.getElementById('selectLang').value = langSys
-
-document.getElementById('selectLang').addEventListener("change",(e)=>{
-    if(confirm("Change language to : " + e.target.value +" ?\nThe page will reload.")){
-        localStorage.setItem("LANG_SYS",e.target.value)
-        window.location.reload()
-    } else{
-        e.target.value = langSys
-    }
-})

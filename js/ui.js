@@ -247,7 +247,7 @@ export async function searchPreparation(textResearch) {
             return 0;
         });
 
-        document.getElementById('NbResult').innerText = final.length + " " + (final.length > 1 ? await trad.getTrad("../trad/",main.langSys,"results") : await trad.getTrad("../trad/",main.langSys,"result"));
+        document.getElementById('NbResult').innerText = final.length + " " + (final.length > 1 ? await trad.getTrad("./trad/",main.langSys,"results") : await trad.getTrad("./trad/",main.langSys,"result"));
 
         final.forEach(quiz => {
             const flagSrc = data.findElementByPath(quiz[0].cardInfo.setInfo)?.flag ?? data.findElementByPath("WD")?.flag;
@@ -332,7 +332,7 @@ export async function searchPreparation(textResearch) {
 
     finalResults.sort((a, b) => b.points - a.points);
 
-    document.getElementById('textInfoField').innerText = finalResults.length + " " + (finalResults.length > 1 ? await trad.getTrad("../trad/",main.langSys,"results") : await trad.getTrad("../trad/",main.langSys,"result"));
+    document.getElementById('textInfoField').innerText = finalResults.length + " " + (finalResults.length > 1 ? await trad.getTrad("./trad/",main.langSys,"results") : await trad.getTrad("./trad/",main.langSys,"result"));
 
     finalResults.forEach(item => {
         const quiz = item.quiz;
