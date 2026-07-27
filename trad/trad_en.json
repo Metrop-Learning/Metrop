@@ -52,5 +52,7 @@
     "metrop-app-name":"Metrop App",
     "metrop-license-name":"License: ",
     "metrop-geo-id":"Database id: ",
-    "metrop-geo-ver":"Database version: "
+    "metrop-geo-ver":"Database version: ",
+    "game-population":"Guess the population",
+    "btn-play":"Play"
 }

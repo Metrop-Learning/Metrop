@@ -16,6 +16,7 @@ import * as lessonCity from "./renderer/lessonCity.js"
 import * as lessonTerritory from "./renderer/lessonTerritory.js"
 import * as geojson from './geojson.js'
 import * as trad from "../../trad/trad.js"
+import * as population from "./renderer/populationGame.js"
 
 
 document.querySelectorAll('.homeBtn').forEach((e) => {
@@ -29,8 +30,8 @@ document.querySelectorAll('.homeBtn').forEach((e) => {
 
 //Get the info
 const params = new URLSearchParams(window.location.search);
-const quizListId = params.get("quizListId");
-const quizId = params.get("quizId");
+const quizListId = params.get("quizListId") ?? "none" ;
+const quizId = params.get("quizId") ?? "none";
 export const type = params.get("type");
 
 export const langSys = localStorage.getItem("LANG_SYS") ?? "fr"
@@ -45,6 +46,8 @@ if(["place", "placeTerritory"].includes(type)){
     document.getElementById('selectNameActionBar').style.display= "flex";
 } else if (["lessonCity", "lessonTerritories", "lessonFlag"].includes(type)){
     document.getElementById('lessonActionBar').style.display= "flex";
+} else if(type == "populationGame"){
+    document.getElementById('mapArea').style.display = "none"
 }
 
 export const config = {
@@ -61,6 +64,14 @@ export const config = {
 //     Quiz list init    //
 //=======================//
 
+export let nameList
+
+if(type == "populationGame"){
+    let bundle = data.createPopulationBundle()
+    bundle = util.shuffle(bundle)
+    population.init(bundle)
+} 
+else {
 let quiz;
 
 try{
@@ -101,7 +112,7 @@ console.info("Quiz used : '" + quiz.cardInfo.Title+"'")
 
 let quizListElement = util.shuffle(quiz.list)
 
-export let nameList = await data.use.nameList(quizListElement)
+nameList = await data.use.nameList(quizListElement)
 
 if(type == "place"){
     placeCity.init(quizListElement,nameList)
@@ -166,4 +177,7 @@ document.querySelectorAll('.reportBtn').forEach((e) => {
 
 if(type != "name"){
     datalistHTML.autocomplete(document.getElementById("autoNaming"), nameList);
+}
+
+
 }

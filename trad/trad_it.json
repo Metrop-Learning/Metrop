@@ -52,5 +52,7 @@
     "metrop-app-name": "App Metrop",
     "metrop-license-name": "Licenza: ",
     "metrop-geo-id": "ID del database: ",
-    "metrop-geo-ver": "Versione del database: "
+    "metrop-geo-ver": "Versione del database: ",
+    "game-population": "Indovina la popolazione",
+    "btn-play": "Gioca"
 }

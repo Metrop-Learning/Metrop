@@ -153,3 +153,124 @@ body{
 #confirmPopUp{
     display: none;
 }
+
+#populationGrid {
+    gap: 8px;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+
+    .menu {    
+        flex-shrink: 0;
+        
+        color: var.$text;
+        background-color: var.$btnSecondColor;
+        border-radius: 10px;
+        border: 2px solid var.$btnSecondOutline;
+    }
+
+    .imgP{
+        height: 70px;
+        width: auto;
+    }
+
+    .up {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex-grow: 1;
+
+        color: var.$text;
+        background-color: var.$btnSecondColor;
+        border-radius: 10px;
+        border: 2px solid var.$btnSecondOutline;
+        transition: background-color 0.2s ease, border-color 0.2s ease;
+        &:not(.disable-hover):hover{
+            background-color: var.$btnSecondOutline !important;
+            border-color: var.$btnSecondColor !important;
+            cursor: pointer;
+        }
+    }
+
+    .down {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex-grow: 1;
+
+        color: var.$text;
+        background-color: var.$btnSecondColor;
+        border-radius: 10px;
+        border: 2px solid var.$btnSecondOutline;
+        transition: background-color 0.2s ease, border-color 0.2s ease;
+        &:not(.disable-hover):hover{
+            background-color: var.$btnSecondOutline !important;
+            border-color: var.$btnSecondColor !important;
+            cursor: pointer;
+        }
+    }
+}
+
+#populationGrid {
+    .up.win,
+    .down.win {
+        background-color: var(--green-background);
+        border-color: var(--green-outside);
+    }
+
+    .up.lose,
+    .down.lose {
+        background-color: var(--red-background);
+        border-color: var(--red-outside);
+    }
+}
+
+
+.btnPC{
+    flex-shrink: 0;
+    display: none;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    color: var.$white;
+    gap: 8px;
+    background-color: var.$btnMainColor;
+        cursor: pointer;
+        border-radius: 10px;
+        border: 2px solid var.$btnMainOutline;
+        transition: background-color 0.2s ease, border-color 0.2s ease;
+        &:not(.disable-hover):hover{
+            background-color: var.$btnMainOutline !important;
+            border-color: var.$btnMainColor !important;
+        }
+}
+
+.score{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+}
+
+.btnFail{
+    flex-shrink: 0;
+    display: none;
+    width: 100%;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    color: var.$white;
+    background-color: var.$btnMainColor;
+        cursor: pointer;
+        border-radius: 10px;
+        border: 2px solid var.$btnMainOutline;
+        transition: background-color 0.2s ease, border-color 0.2s ease;
+        &:not(.disable-hover):hover{
+            background-color: var.$btnMainOutline !important;
+            border-color: var.$btnMainColor !important;
+        }
+}

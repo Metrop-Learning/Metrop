@@ -7,8 +7,8 @@ import * as ui from "./js/ui.js"
 
 // INIT
 
-const ver =  [0,8,1,"b"]
-const verDate = [2026,7,25]
+const ver =  [0,8,1,"c"]
+const verDate = [2026,7,27]
 const license_link = "https://metrop-learning.github.io/Metrop/LICENSE"
 const license = "MIT License"
 const verGeoDatabase =  data.use.geo.ver();
@@ -346,9 +346,17 @@ function openquiz(nb,num,type) {
   window.location.assign(`./game/index.html?${params.toString()}`);
 }
 
+function playGames(type) {
+  const params = new URLSearchParams({
+    type: type,
+  });
+  window.location.assign(`./game/index.html?${params.toString()}`);
+}
+
 document.getElementById('cardInfoPopUp_exitBtn').addEventListener('click',()=>{
     document.getElementById('popupMainInfoQuiz').style.display = 'none'
 })
 
 window.explore = explore;
 window.openquiz = openquiz;
+window.playGames = playGames;

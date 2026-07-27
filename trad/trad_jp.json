@@ -52,5 +52,7 @@
     "metrop-app-name": "Metropアプリ",
     "metrop-license-name": "ライセンス: ",
     "metrop-geo-id": "データベースID: ",
-    "metrop-geo-ver": "データベースのバージョン: "
+    "metrop-geo-ver": "データベースのバージョン: ",
+    "game-population": "人口を当てよう",
+    "btn-play": "プレイ"
 }

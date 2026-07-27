@@ -240,3 +240,79 @@ export function findElementByPath(fullCodeString) {
   }
   return current;
 }
+
+
+
+export function createPopulationBundle(containers = "all") {
+  const results = [];
+
+  const technicalKeys = new Set([
+    "get",
+    "name",
+    "population",
+    "flag"
+  ]);
+
+  const filters =
+    containers === "all"
+      ? null
+      : Array.isArray(containers)
+        ? containers
+        : [containers];
+  function traverse(node, path = []) {
+    if (!node || typeof node !== "object") return;
+
+    if (node.population !== undefined && node.name) {
+      const code = path.join("-");
+      const level = path.length;
+
+      let matches = false;
+
+      if (filters === null) {
+        matches = level === 2;
+      } else {
+
+        matches = filters.some(filter => {
+  const child = code.startsWith(filter + "-");
+
+  return child;
+});
+      }
+
+      if (matches) {
+        const name = node.name?.[langSys];
+
+        if (name !== undefined) {
+          results.push({
+            name,
+            population: node.population,
+            flag: node.flag ?? null
+          });
+        }
+      }
+    }
+
+    for (const key in node) {
+  if (!Object.prototype.hasOwnProperty.call(node, key))
+    continue;
+  if (
+    key === "name" ||
+    key === "population" ||
+    key === "flag"
+  ) {
+    continue;
+  }
+  if (key === "get") {
+
+    traverse(node[key], path);
+    continue;
+  }
+
+  traverse(node[key], [...path, key]);
+}
+  }
+
+  traverse(geodb);
+
+  return results;
+}

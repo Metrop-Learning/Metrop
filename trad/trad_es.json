@@ -52,5 +52,7 @@
     "metrop-app-name": "Aplicación Metrop",
     "metrop-license-name": "Licencia: ",
     "metrop-geo-id": "ID de la base de datos: ",
-    "metrop-geo-ver": "Versión de la base de datos: "
+    "metrop-geo-ver": "Versión de la base de datos: ",
+    "game-population": "Adivina la población",
+    "btn-play": "Jugar"
 }

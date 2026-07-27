@@ -1121,6 +1121,11 @@ header {
   position: relative;
   box-shadow: inset 0px -15px 40px -40px var(--btn-color-outline);
 }
+.card .svgCard {
+  color: var(--text-color);
+  margin-top: 20px;
+  margin-left: 20px;
+}
 .card .flagCard {
   margin-top: 20px;
   margin-left: 20px;
