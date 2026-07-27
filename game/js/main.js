@@ -69,6 +69,7 @@ export let nameList
 if(type == "populationGame"){
     let bundle = data.createPopulationBundle()
     bundle = util.shuffle(bundle)
+    document.getElementById('populationGrid').style.display = "flex"
     population.init(bundle)
 } 
 else {
