@@ -699,11 +699,28 @@ body {
   flex-direction: column;
 }
 #populationGrid .menu {
+  gap: 5px;
   flex-shrink: 0;
+  display: flex;
+  width: 100%;
+}
+#populationGrid .menu button {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--text-color);
   background-color: var(--card-background-color);
+  cursor: pointer;
   border-radius: 10px;
   border: 2px solid var(--header-top-color);
+  transition: background-color, border-color 0.2s ease;
+}
+#populationGrid .menu button:hover {
+  background-color: var(--header-top-color);
+  border-color: var(--card-background-color);
 }
 #populationGrid .imgP {
   height: 70px;
@@ -779,6 +796,12 @@ body {
   justify-content: center;
   align-items: center;
   height: 40px;
+  box-sizing: border-box;
+  flex-grow: 1;
+  color: var(--text-color);
+  background-color: var(--card-background-color);
+  border-radius: 10px;
+  border: 2px solid var(--header-top-color);
 }
 
 .btnFail {

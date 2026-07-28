@@ -28,6 +28,13 @@ document.querySelectorAll('.homeBtn').forEach((e) => {
     })
 })
 
+
+document.querySelectorAll('.reportBtn').forEach((e) => {
+    e.addEventListener('click',()=>{
+        alert("Report is not available yet")
+    })
+})
+
 //Get the info
 const params = new URLSearchParams(window.location.search);
 const quizListId = params.get("quizListId") ?? "none" ;
@@ -169,12 +176,6 @@ window.addEventListener('beforeunload', function (e) {
       return message; // Firefox
     }
 });
-
-document.querySelectorAll('.reportBtn').forEach((e) => {
-    e.addEventListener('click',()=>{
-        alert("Report is not available yet")
-    })
-})
 
 if(type != "name"){
     datalistHTML.autocomplete(document.getElementById("autoNaming"), nameList);
