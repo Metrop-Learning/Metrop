@@ -2,8 +2,13 @@ import * as data from '../../../asset/dataManager.js'
 import * as util from "../../../asset/common.js";
 import * as ui from '../ui.js';
 import * as resultManager from "../result.js";
+import * as trad from "../../../trad/trad.js"
+import { langSys } from '../main.js';
 
-export function init(dataSet, nameList){
+export async function init(dataSet, nameList){
+
+    let tryTrad = await trad.getTrad("../trad/",langSys,"try-left")
+    
     document.getElementById('mapArea').style.display = "none";
     document.getElementById('flagArea').style.display = "flex";
 
@@ -39,7 +44,7 @@ export function init(dataSet, nameList){
             }else {
                 trydone++;
                 if(trydone < trymax){
-                    document.querySelectorAll('.errorTextArea').forEach((e)=>{e.style.setProperty('color', "var(--orange-color)"); e.innerText = ("Try left : " + (trymax-trydone))});
+                    document.querySelectorAll('.errorTextArea').forEach((e)=>{e.style.setProperty('color', "var(--orange-color)"); e.innerText = (tryTrad + " " +(trymax-trydone))});
                     return
                 } else{
                     document.getElementById('nameFlagEntity').innerText = nameList[selector]

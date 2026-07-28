@@ -54,5 +54,6 @@
     "metrop-geo-id": "ID del database: ",
     "metrop-geo-ver": "Versione del database: ",
     "game-population": "Indovina la popolazione",
-    "btn-play": "Gioca"
+    "btn-play": "Gioca",
+    "try-left":"Tentativi rimanenti:"
 }

@@ -5,9 +5,11 @@ import * as ui from '../ui.js';
 import * as theme from '../theme.js';
 import { map } from '../theme.js';
 import * as resultManager from "../result.js";
+import * as trad from "../../../trad/trad.js"
+import { langSys } from '../main.js';
 
 export async function init(dataSet, nameList){
-
+    let tryLeft = await trad.getTrad("../trad/",langSys,"try-left")
     
 
     const mapShadow = new maplibregl.Map({
@@ -100,7 +102,7 @@ export async function init(dataSet, nameList){
             }else {
                 trydone++;
                 if(trydone < trymax){
-                    document.querySelectorAll('.errorTextArea').forEach((e)=>{e.style.setProperty('color', "var(--orange-color)"); e.innerText = ("Try left : " + (trymax-trydone))});
+                    document.querySelectorAll('.errorTextArea').forEach((e)=>{e.style.setProperty('color', "var(--orange-color)"); e.innerText = (tryLeft + " " + (trymax-trydone))});
                     return
                 } else{
                     document.getElementById('selectNameActionBar').style.display = 'none';

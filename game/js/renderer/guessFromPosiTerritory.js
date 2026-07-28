@@ -5,6 +5,7 @@ import * as ui from '../ui.js';
 import * as util from "../../../asset/common.js";
 import * as main from "../main.js";
 import * as resultManager from "../result.js";
+import * as trad from "../../../trad/trad.js"
 
 export let countryGeoPolySelected = null
 export let selector = 0;
@@ -12,6 +13,7 @@ export let boundsScheme;
 export let geoInfo;
 
 export async function init(quizListElement,nameList){
+    let tryLeft = await trad.getTrad("../trad/",main.langSys,"try-left")
     document.getElementById('mapArea').style.display = "none";
     document.getElementById('selectNameActionBar').style.display = "none";
     document.getElementById('loadingScreen').style.display = "flex";
@@ -97,7 +99,7 @@ export async function init(quizListElement,nameList){
             }else {
                 trydone++;
                 if(trydone < trymax){
-                    document.querySelectorAll('.errorTextArea').forEach((e)=>{e.style.setProperty('color', "var(--orange-color)"); e.innerText = ("Try left : " + (trymax-trydone))});
+                    document.querySelectorAll('.errorTextArea').forEach((e)=>{e.style.setProperty('color', "var(--orange-color)"); e.innerText = (tryLeft + " " +(trymax-trydone))});
                     return
                 } else{
                     document.getElementById('selectNameActionBar').style.display = 'none';

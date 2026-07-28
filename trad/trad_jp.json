@@ -54,5 +54,6 @@
     "metrop-geo-id": "データベースID: ",
     "metrop-geo-ver": "データベースのバージョン: ",
     "game-population": "人口を当てよう",
-    "btn-play": "プレイ"
+    "btn-play": "プレイ",
+    "try-left":"残り試行回数："
 }

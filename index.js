@@ -7,8 +7,8 @@ import * as ui from "./js/ui.js"
 
 // INIT
 
-const ver =  [0,8,1,"c"]
-const verDate = [2026,7,27]
+const ver =  [0,8,1,"d"]
+const verDate = [2026,7,28]
 const license_link = "https://metrop-learning.github.io/Metrop/LICENSE"
 const license = "MIT License"
 const verGeoDatabase =  data.use.geo.ver();

@@ -54,5 +54,6 @@
     "metrop-geo-id":"Database id: ",
     "metrop-geo-ver":"Database version: ",
     "game-population":"Guess the population",
-    "btn-play":"Play"
+    "btn-play":"Play",
+    "try-left":"Try left:"
 }

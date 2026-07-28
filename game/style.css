@@ -391,7 +391,7 @@
 
 #resultPreview {
   width: 100%;
-  padding-top: 150px;
+  padding-top: 100px;
   padding-bottom: 50px;
   min-height: 200px;
   height: auto;
@@ -534,6 +534,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#prcnt {
+  margin: 0;
 }
 
 body, html {
