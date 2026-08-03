@@ -1,5 +1,5 @@
-let geoDatabaseLink = localStorage.getItem("LINK_DATABASE_GEO") ?? "https://metrop-learning.github.io/metrop.geo.database/"
-let quizDatabaseLink = localStorage.getItem("LINK_DATABASE_QUIZ") ?? "https://metrop-learning.github.io/metrop.quiz.database/" // JSON.stringify(['http...'])
+let geoDatabaseLink = localStorage.getItem("LINK_DATABASE_GEO") ?? "https://database.metrop-geo.fr/geo/"
+let quizDatabaseLink = localStorage.getItem("LINK_DATABASE_QUIZ") ?? "https://database.metrop-geo.fr/quiz/" // JSON.stringify(['http...'])
 
 const langSys = localStorage.getItem("LANG_SYS") ?? "fr"
 

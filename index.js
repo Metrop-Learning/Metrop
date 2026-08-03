@@ -1,3 +1,7 @@
+if(window.location == "https://metrop-learning.github.io/Metrop/"){
+    window.location = "https://app.metrop-geo.fr/"
+}
+
 import * as data from "./asset/dataManager.js";
 import * as util from "./asset/common.js"
 import * as trad from "./trad/trad.js"
@@ -9,7 +13,7 @@ import * as ui from "./js/ui.js"
 
 const ver =  [0,8,1,"d"]
 const verDate = [2026,7,28]
-const license_link = "https://metrop-learning.github.io/Metrop/LICENSE"
+const license_link = "https://app.metrop-geo.fr/LICENSE"
 const license = "MIT License"
 const verGeoDatabase =  data.use.geo.ver();
 const verGeoDatabaseDate = data.use.geo.date();
