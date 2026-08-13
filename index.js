@@ -11,8 +11,8 @@ import * as ui from "./js/ui.js"
 
 // INIT
 
-const ver =  [0,8,1,"d"]
-const verDate = [2026,7,28]
+const ver =  [0,8,1,"e"]
+const verDate = [2026,8,13]
 const license_link = "https://app.metrop-geo.fr/LICENSE"
 const license = "MIT License"
 const verGeoDatabase =  data.use.geo.ver();
@@ -22,7 +22,6 @@ const verGeoDatabaseID = data.use.geo.id();
 const verAPI = [1,0]
 
 export const langSys = localStorage.getItem("LANG_SYS") ?? trad.getLang()
-
 
 await trad.traductAll("./trad/",langSys)
 
@@ -235,10 +234,33 @@ function animateFLIP(widget, toFullscreen) {
 
 // nb = quizlist
 //num = quiz
+
+
+let likeStatus = false
+let likeActualCardId = []
+
 async function explore(nb,num){
+
   document.getElementById('popupMainInfoQuiz').style.display = 'block'
   const obj = await data.getQuizList.getAQuiz(nb,num)
   if (obj == undefined) return
+
+  likeActualCardId = [data.getQuizList.id(nb),obj.cardInfo.card_key_id]
+
+  const exist = likeList.some(
+    subArr => JSON.stringify(subArr) === JSON.stringify(likeActualCardId)
+  );
+
+  if(exist){
+      likeStatus = true
+      document.querySelector("#cardInfoPopUp_likeBtn #like_off").style.display = "none"
+      document.querySelector("#cardInfoPopUp_likeBtn #like_on").style.display = "block"
+  } else {
+      likeStatus = false
+      document.querySelector("#cardInfoPopUp_likeBtn #like_off").style.display = "block"
+      document.querySelector("#cardInfoPopUp_likeBtn #like_on").style.display = "none"
+  }
+
   if(typeof obj.cardInfo.Title == "string"){
     document.getElementById('cardInfoPopUp_title').innerText = obj.cardInfo.Title
   } else {
@@ -364,3 +386,83 @@ document.getElementById('cardInfoPopUp_exitBtn').addEventListener('click',()=>{
 window.explore = explore;
 window.openquiz = openquiz;
 window.playGames = playGames;
+
+let likeList = JSON.parse(localStorage.getItem("LIKES_LIST") ?? "[]")
+
+const params = new URLSearchParams(window.location.search);
+const link_quizId = params.get("lkq") ?? "none";
+const link_quizListId = params.get("lklq") ?? "none";
+if(link_quizId != "none" && link_quizListId != "none"){
+    openSpecificQuiz(link_quizListId,link_quizId)
+    //delete the params to avoids an infinite reload of the card
+    const url = new URL(window.location.href);
+    url.searchParams.delete("lkq");
+    url.searchParams.delete("lklq");
+    window.history.replaceState({}, document.title, url.pathname + url.search);
+}
+
+
+// Like function
+function openSpecificQuiz(quizListId,quizId){
+    for(let i = 0; i < quizList.length; i ++){
+        if(data.getQuizList.id(quizList[i][1]) != quizListId){continue}
+        //lang verif
+        if(typeof quizList[i][0].cardInfo.lang == "string"){
+            if(quizList[i][0].cardInfo.lang.toLowerCase() != langSys){continue}
+        } else {
+            if(!quizList[i][0].cardInfo.lang.includes(langSys)){continue}
+        }
+        if(quizList[i][0].cardInfo.card_key_id == quizId){
+            explore(quizList[i][1],quizList[i][2])
+        }
+    }
+}
+
+const shareBtn = document.getElementById('cardInfoPopUp_shareBtn');
+
+shareBtn.addEventListener('click', async () => {
+  const baseUrl = "https://app.metrop-geo.fr/";
+  const url = new URL(baseUrl);
+  url.searchParams.set("lkq", likeActualCardId[1]);
+  url.searchParams.set("lklq", likeActualCardId[0]);
+  
+  const shareData = {
+    title: 'Metrop',
+    url: url.href
+  };
+  if (navigator.share) {
+    try {
+      await navigator.share(shareData);
+    } catch (err) {
+    }
+  }
+  else {
+    try {
+      await navigator.clipboard.writeText(shareData.url);
+      alert('Lien copié dans le presse-papier !');
+    } catch (err) {
+      alert('Impossible de copier le lien.');
+    }
+  }
+});
+
+const likeBtn = document.getElementById('cardInfoPopUp_likeBtn');
+
+likeBtn.addEventListener('click', async () => {
+    likeStatus = !likeStatus
+    if(likeStatus){
+        likeList.push(likeActualCardId)
+        localStorage.setItem("LIKES_LIST",JSON.stringify(likeList));
+        document.querySelector("#cardInfoPopUp_likeBtn #like_off").style.display = "none"
+        document.querySelector("#cardInfoPopUp_likeBtn #like_on").style.display = "block"
+    } else {
+        likeList = likeList.filter(
+          subArr => JSON.stringify(subArr) !== JSON.stringify(likeActualCardId)
+        );
+        localStorage.setItem("LIKES_LIST",JSON.stringify(likeList));
+        document.querySelector("#cardInfoPopUp_likeBtn #like_off").style.display = "block"
+        document.querySelector("#cardInfoPopUp_likeBtn #like_on").style.display = "none"
+    }
+});
+
+console.log(await trad.getTrad("./trad/",langSys,"category-likes"))

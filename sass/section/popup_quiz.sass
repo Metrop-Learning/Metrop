@@ -35,6 +35,15 @@
     @media (max-width: 1100px)
         height: 100dvh
 
+#cardInfoPopUp_MainBox::-webkit-scrollbar
+  display: none
+
+#cardInfoPopUp_MainBox
+    -ms-overflow-style: none
+    scrollbar-width: none
+    overflow-y: scroll
+
+
 #cardInfoPopUp_MainBox::before
     content: ""
     position: absolute
@@ -77,6 +86,51 @@
         transition: transform 0.2s
     svg:hover
         transform: rotate(90deg)
+
+.btn-share
+    background-color: var(--search-bar-background)
+    color: var(--text-color)
+    border-radius: 5px
+    border: solid 1px #6d6d6d8e
+    height: 25px
+    width: 25px
+    position: absolute
+    top: 10px
+    right: 45px
+    padding: 0px
+    display: flex
+    justify-content: center
+    align-items: center
+    cursor: pointer
+    svg
+        transition: transform 0.2s
+    svg:active
+        transform: scale(0.5)
+
+.btn-like
+    background-color: var(--search-bar-background)
+    color: var(--text-color)
+    border-radius: 5px
+    border: solid 1px #6d6d6d8e
+    height: 25px
+    width: 25px
+    position: absolute
+    top: 10px
+    right: 80px
+    padding: 0px
+    display: flex
+    justify-content: center
+    align-items: center
+    cursor: pointer
+    #like_on
+        display: none
+        color: var(--red-color)
+    #like_off
+        display: none
+    svg
+        transition: transform 0.2s
+    svg:active
+        transform: scale(0.5)
 
 #cardInfoPopUp_title
     font-size: 25px
