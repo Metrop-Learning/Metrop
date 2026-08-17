@@ -11,7 +11,7 @@ import * as ui from "./js/ui.js"
 
 // INIT
 
-const ver =  [0,8,1,"e"]
+const ver =  [0,8,1,"f"]
 const verDate = [2026,8,13]
 const license_link = "https://app.metrop-geo.fr/LICENSE"
 const license = "MIT License"
@@ -387,7 +387,7 @@ window.explore = explore;
 window.openquiz = openquiz;
 window.playGames = playGames;
 
-let likeList = JSON.parse(localStorage.getItem("LIKES_LIST") ?? "[]")
+export let likeList = JSON.parse(localStorage.getItem("LIKES_LIST") ?? "[]")
 
 const params = new URLSearchParams(window.location.search);
 const link_quizId = params.get("lkq") ?? "none";
@@ -403,7 +403,7 @@ if(link_quizId != "none" && link_quizListId != "none"){
 
 
 // Like function
-function openSpecificQuiz(quizListId,quizId){
+function searchSpecificQuiz(quizListId,quizId){
     for(let i = 0; i < quizList.length; i ++){
         if(data.getQuizList.id(quizList[i][1]) != quizListId){continue}
         //lang verif
@@ -413,9 +413,14 @@ function openSpecificQuiz(quizListId,quizId){
             if(!quizList[i][0].cardInfo.lang.includes(langSys)){continue}
         }
         if(quizList[i][0].cardInfo.card_key_id == quizId){
-            explore(quizList[i][1],quizList[i][2])
+            return [quizList[i][1],quizList[i][2]]
         }
     }
+}
+
+function openSpecificQuiz(quizListId,quizId){
+    let squiz = searchSpecificQuiz(quizListId,quizId);
+    explore(squiz[0],squiz[1])
 }
 
 const shareBtn = document.getElementById('cardInfoPopUp_shareBtn');
@@ -465,4 +470,4 @@ likeBtn.addEventListener('click', async () => {
     }
 });
 
-console.log(await trad.getTrad("./trad/",langSys,"category-likes"))
+console.log(likeList)

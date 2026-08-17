@@ -12,6 +12,7 @@
     "category-city": "Cities",
     "category-flag": "Flags",
     "category-game": "Games",
+    "category-likes": "Favorite",
     "btn-explore": "Explore",
     "choose-language": "Choose your language:",
     "validate": "Confirm",
@@ -55,5 +56,9 @@
     "metrop-geo-ver":"Database version: ",
     "game-population":"Guess the population",
     "btn-play":"Play",
-    "try-left":"Try left:"
+    "try-left":"Try left:",
+    "placeHolderCards-like-title":"No favorited quizzes yet",
+    "placeHolderCards-like-text":"Start liking quizzes to build your collection!",
+    "placeHolderCards-card-title":"No quizzes found in this category",
+    "placeHolderCards-card-text":"There should usually be at least one here, which might indicate a connection issue, a temporary bug, or that no quizzes have been added yet. Try switching to a different category or changing your language!"
 }

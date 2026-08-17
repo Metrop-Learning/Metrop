@@ -54,6 +54,37 @@ export async function buildCardList(filter){
                     `<div class='card' onclick="playGames('populationGame')">${icons}<p class="titleCard">${await trad.getTrad("./trad/",main.langSys,"game-population")}</p><div class="exploreCard">${playSVG}<p>${await trad.getTrad("./trad/",main.langSys,"btn-play")}</p></div></div>`
                 );
         return
+    } else if (filter == "card_likes"){
+        document.getElementById(filter).innerHTML = ""
+        allowed_type = [];
+        let nbLike = 0;
+        document.getElementById('no_likes').style.display = "none";
+        for(let i = 0; i < main.quizList.length; i ++){
+            if(!main.likeList.some(([a, b]) => a === data.getQuizList.id(main.quizList[i][1]) && b === main.quizList[i][0].cardInfo.card_key_id)){continue}
+            //lang verif
+            if(typeof main.quizList[i][0].cardInfo.lang == "string"){
+                if(main.quizList[i][0].cardInfo.lang.toLowerCase() != main.langSys){continue}
+                nbLike++
+                const flagSrc = data.findElementByPath(main.quizList[i][0].cardInfo.setInfo)?.flag 
+                    ?? data.findElementByPath("WD")?.flag;
+                document.getElementById(filter).insertAdjacentHTML('beforeend',
+                    `<div class='card' onclick="explore(${main.quizList[i][1]},${main.quizList[i][2]})"><img class='flagCard' src='${flagSrc}'><p class="titleCard">${main.quizList[i][0].cardInfo.Title}</p><div class="exploreCard">${exploreSVG}<p>${await trad.getTrad("./trad/",main.langSys,"btn-explore")}</p></div></div>`
+                );
+            } else {
+                if(!main.quizList[i][0].cardInfo.lang.includes(main.langSys)){continue}
+                nbLike++
+                const flagSrc = data.findElementByPath(main.quizList[i][0].cardInfo.setInfo)?.flag 
+                    ?? data.findElementByPath("WD")?.flag;
+            document.getElementById(filter).insertAdjacentHTML('beforeend',
+                `<div class='card' onclick="explore(${main.quizList[i][1]},${main.quizList[i][2]})"><img class='flagCard' src='${flagSrc}'><p class="titleCard">${main.quizList[i][0].cardInfo.Title[main.langSys]}</p><div class="exploreCard">${exploreSVG}<p>${await trad.getTrad("./trad/",main.langSys,"btn-explore")}</p></div></div>`
+            );
+            }
+        }
+        if(nbLike == 0){
+            document.getElementById('card_likes').style.display = "none";
+            document.getElementById('no_likes').style.display = "flex";
+        }
+        return
     }
     try{
         main.quizList

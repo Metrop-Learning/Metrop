@@ -12,6 +12,7 @@
     "category-city": "Città",
     "category-flag": "Bandiere",
     "category-game": "Giochi",
+    "category-likes": "Preferiti",
     "btn-explore": "Esplora",
     "choose-language": "Scegli la tua lingua:",
     "validate": "Conferma",
@@ -55,5 +56,9 @@
     "metrop-geo-ver": "Versione del database: ",
     "game-population": "Indovina la popolazione",
     "btn-play": "Gioca",
-    "try-left":"Tentativi rimanenti:"
+    "try-left":"Tentativi rimanenti:",
+    "placeHolderCards-like-title": "Nessun quiz preferito al momento",
+    "placeHolderCards-like-text": "Inizia a mettere «mi piace» ai quiz per creare la tua collezione!",
+    "placeHolderCards-card-title": "Nessun quiz trovato in questa categoria",
+    "placeHolderCards-card-text": "Di solito dovrebbe essercene almeno uno qui, il che potrebbe indicare un problema di connessione, un errore temporaneo o che non è ancora stato aggiunto alcun quiz. Prova a passare a un'altra categoria o a cambiare lingua!"
 }

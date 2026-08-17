@@ -12,6 +12,7 @@
     "category-city": "Ciudades",
     "category-flag": "Banderas",
     "category-game": "Juegos",
+    "category-likes": "Favoritos",
     "btn-explore": "Explorar",
     "choose-language": "Elige tu idioma:",
     "validate": "Validar",
@@ -55,5 +56,9 @@
     "metrop-geo-ver": "Versión de la base de datos: ",
     "game-population": "Adivina la población",
     "btn-play": "Jugar",
-    "try-left":"Intentos restantes:"
+    "try-left":"Intentos restantes:",
+    "placeHolderCards-like-title": "Aún no hay quizzes favoritos",
+    "placeHolderCards-like-text": "¡Empieza a dar «me gusta» a los quizzes para crear tu colección!",
+    "placeHolderCards-card-title": "No se encontraron quizzes en esta categoría",
+    "placeHolderCards-card-text": "Por lo general, debería haber al menos uno aquí, lo que podría indicar un problema de conexión, un error temporal o que aún no se han añadido quizzes. ¡Intenta cambiar de categoría o de idioma!"
 }

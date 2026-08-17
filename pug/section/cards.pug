@@ -13,3 +13,14 @@
 #card_game.menuCards 
     each _ in Array(12)
         .cardLoader.shimmer
+#card_likes.menuCards 
+    each _ in Array(12)
+        .cardLoader.shimmer
+#no_likes.placeHolderCardsList 
+    <svg xmlns="http://www.w3.org/2000/svg" height="60px" viewBox="0 -960 960 960" width="60px" fill="#e3e3e3"><path d="M160-620q0 30 10.5 57t37.5 61.5q27 34.5 73 82.5t117 120q4 4 8.5 2.5t5.5-6.5l19-177q-52 0-83-40.5T331-610l38-133q-16-8-33.5-12.5T300-760q-58 0-99 41t-41 99Zm640 0q0-58-41-99t-99-41q-11 0-22 1.5t-22 5.5l-24 73q45 12 66.5 53.5T666-540l-52 175q-2 5 3.5 8.5T628-358q55-56 89-93.5t52.5-66Q788-546 794-569t6-51Zm-134 80Zm-335-70Zm122.5 459q-13.5-5-24.5-15-109-96-177-161.5t-106.5-115Q107-492 93.5-533T80-620q0-92 64-156t156-64q66 0 116 25.5t36 73.5l-37 130q-5 20 6.5 35.5T453-560h67l-26 254q-1 8 6.5 9t9.5-6l74-245q6-20-6-36t-32-16h-66l61-181q11-35 46-47t73-12q92 0 156 64t64 156q0 44-16 87t-55.5 95q-39.5 52-106 117.5T534-166q-11 10-25 15t-28 5q-14 0-27.5-5Z"/></svg>
+    h1(translation_id="placeHolderCards-like-title") No favorited quizzes yet 
+    p(translation_id="placeHolderCards-like-text") Start liking quizzes to build your collection!
+#no_cards.placeHolderCardsList
+    <svg xmlns="http://www.w3.org/2000/svg" height="60px" viewBox="0 -960 960 960" width="60px" fill="#e3e3e3"><path d="m780-163-55 55q-12 11-28.5 11.5T668-108q-12-12-12-28.5t12-28.5l56-55-56-55q-12-12-12-28.5t12-28.5q12-12 28.5-12t28.5 12l55 56 55-56q12-12 28.5-12t28.5 12q12 12 12 28.5T892-275l-55 55 55 55q11 12 11.5 28.5T892-108q-12 12-28.5 12T835-108l-55-55ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q84 0 157 32t127 86.5q54 54.5 85 127T880-481q0 17-12.5 29T838-440q-16 0-27-11.5T800-480q0-20-2.5-40t-7.5-40H654q3 20 4.5 40t1.5 40q0 17-12 28.5T619-440q-17 0-28-11.5T580-480q0-20-1.5-40t-4.5-40H386q-3 20-4.5 40t-1.5 40q0 20 1.5 40t4.5 40h134q17 0 28.5 11.5T560-360q0 17-11.5 28.5T520-320H404q12 43 31 82.5t45 75.5q18 0 35.5-2t35.5-4q17-4 30.5 5t17.5 26q4 17-5 30t-26 17q-23 5-44 7.5T480-80ZM170-400h136q-3-20-4.5-40t-1.5-40q0-20 1.5-40t4.5-40H170q-5 20-7.5 40t-2.5 40q0 20 2.5 40t7.5 40Zm34-240h118q9-37 22.5-72.5T376-782q-55 18-99 54.5T204-640Zm172 462q-18-34-31.5-69.5T322-320H204q29 51 73 87.5t99 54.5Zm28-462h152q-12-43-31-82.5T480-798q-26 36-45 75.5T404-640Zm234 0h118q-29-51-73-87.5T584-782q18 34 31.5 69.5T638-640Z"/></svg> 
+    h1(translation_id="placeHolderCards-card-title") No quizzes found in this category 
+    p(translation_id="placeHolderCards-card-text") There should usually be at least one here, which might indicate a connection issue, a temporary bug, or that no quizzes have been added yet. Try switching to a different category or changing your language!

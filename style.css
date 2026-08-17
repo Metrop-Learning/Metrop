@@ -848,6 +848,29 @@ header {
   border-color: var(--card-background-color);
 }
 
+.placeHolderCardsList {
+  width: calc(100% - 20px);
+  height: 400px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color);
+  padding: 10px;
+}
+.placeHolderCardsList svg {
+  fill: currentColor;
+}
+.placeHolderCardsList p {
+  font-size: small;
+  text-align: center;
+}
+.placeHolderCardsList h1 {
+  margin-top: 10px;
+  font-size: x-large;
+  text-align: center;
+}
+
 .btn {
   color: var(--text-color);
   background-color: var(--card-background-color);

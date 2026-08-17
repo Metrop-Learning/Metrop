@@ -12,6 +12,7 @@
     "category-city": "都市",
     "category-flag": "国旗",
     "category-game": "ゲーム",
+    "category-likes": "お気に入り",
     "btn-explore": "探索",
     "choose-language": "言語を選択:",
     "validate": "決定",
@@ -55,5 +56,9 @@
     "metrop-geo-ver": "データベースのバージョン: ",
     "game-population": "人口を当てよう",
     "btn-play": "プレイ",
-    "try-left":"残り試行回数："
+    "try-left":"残り試行回数：",
+    "placeHolderCards-like-title": "お気に入りのクイズはまだありません",
+    "placeHolderCards-like-text": "クイズに「いいね」してコレクションを作りましょう！",
+    "placeHolderCards-card-title": "このカテゴリーにはクイズが見つかりませんでした",
+    "placeHolderCards-card-text": "通常はここの少なくとも1つのクイズが表示されます。接続の問題、一時的な不具合、またはまだクイズが追加されていない可能性があります。別のカテゴリーに切り替えるか、言語を変更してみてください！"
 }

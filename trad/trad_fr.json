@@ -12,6 +12,7 @@
     "category-city": "Villes",
     "category-flag": "Drapeaux",
     "category-game": "Jeux",
+    "category-likes": "Favoris",
     "btn-explore": "Explorer",
     "choose-language": "Choisissez votre langue :",
     "validate": "Valider",
@@ -55,5 +56,9 @@
     "metrop-geo-ver": "Version de la base de données : ",
     "game-population": "Devinez la population",
     "btn-play": "Jouer",
-    "try-left":"Essais restants :"
+    "try-left":"Essais restants :",
+    "placeHolderCards-like-title": "Aucun quiz favori pour l'instant",
+    "placeHolderCards-like-text": "Commencez à aimer des quiz pour créer votre collection !",
+    "placeHolderCards-card-title": "Aucun quiz trouvé dans cette catégorie",
+    "placeHolderCards-card-text": "Il devrait généralement y en avoir au moins un ici, ce qui peut indiquer un problème de connexion, un bug temporaire ou qu'aucun quiz n'a encore été ajouté. Essayez de changer de catégorie ou de langue !"
 }
