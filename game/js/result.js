@@ -47,8 +47,13 @@ export async function show(type,result,dataset){
             document.getElementById("tbody").insertAdjacentHTML('beforeend', 
                 '<tr id="element' + i + '"><th style="color:'+colorVar+';">' + (i+1) + '</th><th>'+result[i].name+'</th><th><button id="btnResultNb'+i+'">'+svgImgBtn+'</button></th></tr>'
             );
-        } else if (["fromFlag"].includes(type)){
-            let flagImg = data.findElementByPath(dataset[i].id).flag 
+        } else if (["fromFlag","fromName"].includes(type)){
+            let flagImg;
+            if(type == "fromFlag"){
+                flagImg = data.findElementByPath(dataset[i].id).flag 
+            } else{
+                flagImg = result[i].flag 
+            }
             document.getElementById("tbody").insertAdjacentHTML('beforeend', 
                 '<tr id="element' + i + '"><th style="color:'+colorVar+';">' + (i+1) + '</th><th class="minimalColumn"><img src="'+flagImg+'"></th><th>'+result[i].name+'</th><th></th></tr>'
             );

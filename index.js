@@ -11,7 +11,7 @@ import * as ui from "./js/ui.js"
 
 // INIT
 
-const ver =  [0,8,1,"f"]
+const ver =  [0,8,2,"a"]
 const verDate = [2026,8,13]
 const license_link = "https://app.metrop-geo.fr/LICENSE"
 const license = "MIT License"
@@ -359,6 +359,9 @@ async function explore(nb,num){
   }
   if(obj.type.includes("fromFlag")){
       buttonWillAdded += '<button class="btn" style="font-size: medium;" onclick="openquiz('+nb+","+num+",'fromFlag'"+')"><svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#e3e3e3"><path d="M500-572ZM208.5-128.63Q200-137.25 200-150v-620q0-12.75 8.63-21.38Q217.25-800 230-800h218q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H260v251h292q10.5 0 18.75 6T581-466l14 62h145v-44q0-12.75 8.68-21.38 8.67-8.62 21.5-8.62 12.82 0 21.32 8.62 8.5 8.63 8.5 21.38v74q0 12.75-8.62 21.37Q782.75-344 770-344H568q-10.5 0-18.75-6T539-367l-14-62H260v279q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63Zm654-729.87Q919-802 919-721t-56.5 137.5Q806-527 725-527t-137.5-56.5Q531-640 531-721t56.5-137.5Q644-915 725-915t137.5 56.5ZM698-692l-45-45q-6-6-14-6t-14 6q-6 6-6 14t6 14l52 52q9 9 21 9t21-9l106-107q6-5.82 6-13.91T825-792q-6-6-14-6t-14 6l-99 100Z"/></svg>'+await trad.getTrad("./trad/",langSys,"btn-with-flag")+'</button>';
+  }
+  if(obj.type.includes("fromName")){
+      buttonWillAdded += '<button class="btn" style="font-size: medium;" onclick="openquiz('+nb+","+num+",'fromName'"+')"><svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#e3e3e3"><path d="M200-120v-680h360l16 80h224v400H520l-16-80H280v280h-80Zm300-440Zm86 160h134v-240H510l-16-80H280v240h290l16 80Z"/></svg>'+await trad.getTrad("./trad/",langSys,"btn-with-flag-name")+'</button>';
   }
   document.getElementById('cardInfoPopUp_listGameMode').innerHTML = buttonWillAdded
 }

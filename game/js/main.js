@@ -11,6 +11,7 @@ import * as name from './renderer/nameManager.js'
 import * as shadowTerritory from './renderer/shadowTerritory.js'
 import * as guessCity from './renderer/guessCityManager.js'
 import * as fromFlag from './renderer/fromFlagManager.js'
+import * as fromName from './renderer/fromNameManager.js'
 import * as lessonFlag from "./renderer/lessonFlag.js"
 import * as lessonCity from "./renderer/lessonCity.js"
 import * as lessonTerritory from "./renderer/lessonTerritory.js"
@@ -47,7 +48,7 @@ await trad.traductAll("../trad/",langSys)
 
 let normalQuit = true;
 
-if(["place", "placeTerritory"].includes(type)){
+if(["place", "placeTerritory","fromName"].includes(type)){
     document.getElementById('simpleActionBar').style.display= "flex";
 } else if (["guess", "shadowTerritory", "guessFromPosiTerritory","fromFlag","name"].includes(type)){
     document.getElementById('selectNameActionBar').style.display= "flex";
@@ -132,6 +133,10 @@ if (type === "placeTerritory") {
 
 if (type === "fromFlag") {
     fromFlag.init(quizListElement,nameList)
+}
+
+if (type === "fromName") {
+    fromName.init(quizListElement,nameList)
 }
 
 if (type === "guessFromPosiTerritory") {

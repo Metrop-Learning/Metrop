@@ -610,21 +610,86 @@ body {
 
 #flagArea {
   display: none;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  padding: 20px;
+  overflow-y: auto;
 }
-#flagArea img {
-  max-height: 50%;
-  max-width: 50%;
-  width: auto;
-  height: auto;
-}
-#flagArea h1 {
+#flagArea > h1 {
   display: none;
   width: 100%;
   text-align: center;
   padding: 10px;
+  font-size: clamp(1.2rem, 3vw, 2.5rem);
+  flex-shrink: 0;
+}
+#flagArea .flag-grid {
+  display: none;
+  grid-template-columns: repeat(auto-fit, minmax(clamp(60px, 12vw, 140px), 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+#flagArea .flag-grid > * {
+  width: 100%;
+  height: auto;
+  max-height: 20vh;
+  object-fit: contain;
+  justify-self: center;
+  align-self: center;
+}
+#flagArea .flag-grid > *:hover {
+  cursor: pointer;
+  border: solid 2px var(--text-color);
+  box-sizing: border-box;
+}
+#flagArea .flag-grid .selected {
+  cursor: pointer;
+  border: solid 2px var(--btn-color-outline);
+  box-shadow: 0 0 30px var(--btn-color-outline);
+  transition: box-shadow 0.2s ease-in-out;
+}
+#flagArea .flag-grid .selected:hover {
+  box-shadow: 0 0 60px var(--btn-color-outline);
+}
+#flagArea .flag-grid .selected {
+  box-sizing: border-box;
+}
+#flagArea .flag-grid .good {
+  cursor: pointer;
+  border: solid 2px var(--green-color);
+  box-shadow: 0 0 30px var(--green-color);
+  transition: box-shadow 0.2s ease-in-out;
+}
+#flagArea .flag-grid .good:hover {
+  box-shadow: 0 0 60px var(--green-color);
+}
+#flagArea .flag-grid .good {
+  box-sizing: border-box;
+}
+#flagArea .flag-grid .miss {
+  cursor: pointer;
+  border: solid 2px var(--orange-color);
+  box-shadow: 0 0 30px var(--orange-color);
+  transition: box-shadow 0.2s ease-in-out;
+}
+#flagArea .flag-grid .miss:hover {
+  box-shadow: 0 0 60px var(--orange-color);
+}
+#flagArea .flag-grid .miss {
+  box-sizing: border-box;
+}
+#flagArea .flag-grid .fail {
+  cursor: pointer;
+  border: solid 2px var(--red-color);
+  box-shadow: 0 0 30px var(--red-color);
+  transition: box-shadow 0.2s ease-in-out;
+}
+#flagArea .flag-grid .fail:hover {
+  box-shadow: 0 0 60px var(--red-color);
+}
+#flagArea .flag-grid .fail {
+  box-sizing: border-box;
 }
 
 #mapShadowArea {
