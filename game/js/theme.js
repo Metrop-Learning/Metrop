@@ -1,41 +1,17 @@
-// Theme map init (to be change to custom)
-const darkTiles = [
-    'https://a.basemaps.cartocdn.com/rastertiles/dark_nolabels/{z}/{x}/{y}.png',
-    'https://b.basemaps.cartocdn.com/rastertiles/dark_nolabels/{z}/{x}/{y}.png',
-    'https://c.basemaps.cartocdn.com/rastertiles/dark_nolabels/{z}/{x}/{y}.png'
-];
+// This is the carto public api key
+import { CARTO_KEY } from '../../env.js';
 
-const lightTiles = [
-    'https://a.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}.png',
-    'https://b.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}.png',
-    'https://c.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}.png'
-];
+// URLs des styles vectoriels CARTO sans labels
+const darkStyleUrl = `https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json?key=${CARTO_KEY}`;
+const lightStyleUrl = `https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json?key=${CARTO_KEY}`;
 
-// Init tiles
+// Initialisation de la détection du thème système
 const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-let tilesLayer = mediaQuery.matches ? darkTiles : lightTiles;
 
-// Map init
+// Initialisation de MapLibre
 export const map = new maplibregl.Map({
     container: 'map',
-    style: {
-        version: 8,
-        sources: {
-            carto: {
-                type: 'raster',
-                tiles: tilesLayer,
-                tileSize: 256,
-                attribution: '© <a href="https://carto.com/">CARTO</a> © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }
-        },
-        layers: [
-            {
-                id: 'carto-base',
-                type: 'raster',
-                source: 'carto'
-            }
-        ]
-    },
+    style: mediaQuery.matches ? darkStyleUrl : lightStyleUrl,
     zoom: 1,
     center: [150.16546137527212, -35.017179237129994],
     pitch: 0,
@@ -44,34 +20,87 @@ export const map = new maplibregl.Map({
     attributionControl: false
 });
 
-// Controll management
+// Masque les calques de texte/labels natifs du style vectoriel CARTO
+function hideLabels(mapInstance) {
+    const style = mapInstance.getStyle();
+    if (style && style.layers) {
+        style.layers.forEach((layer) => {
+            if (layer.type === 'symbol') {
+                mapInstance.setLayoutProperty(layer.id, 'visibility', 'none');
+            }
+        });
+    }
+}
+
+// Gestion des contrôles de navigation
 map.dragRotate.disable();
 map.keyboard.disable();
 map.touchZoomRotate.disableRotation();
 map.addControl(new maplibregl.AttributionControl(), 'top-left');
-//Broken control :
-//map.addControl(new maplibregl.FullscreenControl(), 'top-right');
 
+// Configuration de la projection globe et masquage des labels au chargement
 map.on('style.load', () => {
-     map.setProjection({ type: 'globe' });
+    map.setProjection({ type: 'globe' });
+    hideLabels(map);
 });
 
-
-// Dynamic theme
+// Écouteur de changement de thème dynamique (Préserve vos calques GeoJSON)
 mediaQuery.addEventListener('change', (e) => {
-    const baseSource = map.getSource('carto');
-    
-    if (baseSource) {
-        if (e.matches) {
-            baseSource.setTiles(darkTiles);
-        } else {
-            baseSource.setTiles(lightTiles);
-        }
+    const newStyleUrl = e.matches ? darkStyleUrl : lightStyleUrl;
+
+    // 1. Sauvegarde des sources et calques GeoJSON personnalisés actuels
+    const currentStyle = map.getStyle();
+    const customSources = {};
+    const customLayers = [];
+
+    if (currentStyle && currentStyle.sources) {
+        Object.keys(currentStyle.sources).forEach(sourceId => {
+            // Sauvegarde uniquement vos sources personnalisées (pas celles de CARTO)
+            if (sourceId !== 'carto' && sourceId !== 'carto-vector') {
+                customSources[sourceId] = currentStyle.sources[sourceId];
+            }
+        });
     }
+
+    if (currentStyle && currentStyle.layers) {
+        currentStyle.layers.forEach(layer => {
+            // Sauvegarde uniquement les calques liés à vos sources GeoJSON
+            if (layer.source && customSources[layer.source]) {
+                customLayers.push(layer);
+            }
+        });
+    }
+
+    // 2. Application du nouveau style vectoriel
+    map.setStyle(newStyleUrl);
+
+    // 3. Restauration de la configuration et de vos calques GeoJSON
+    map.once('style.load', () => {
+        map.setProjection({ type: 'globe' });
+        hideLabels(map);
+
+        // Réinjection des sources GeoJSON
+        Object.keys(customSources).forEach(sourceId => {
+            if (!map.getSource(sourceId)) {
+                map.addSource(sourceId, customSources[sourceId]);
+            }
+        });
+
+        // Réinjection des calques GeoJSON
+        customLayers.forEach(layer => {
+            if (!map.getLayer(layer.id)) {
+                map.addLayer(layer);
+            }
+        });
+
+        // Mise à jour des couleurs pour le nouveau thème
+        borderColor.updateLayers(e.matches, map);
+    });
 });
 
+// Gestion des couleurs pour vos GeoJSON
 export const borderColor = {
-    updateLayers(isDark,mapDiv=map) {
+    updateLayers(isDark, mapDiv = map) {
         const colorFill = isDark ? this.darkMainFill : this.lightMainFill;
         const colorBorder = isDark ? this.darkMainBorder : this.lightMainBorder;
 
@@ -112,18 +141,20 @@ export const borderColor = {
             ['coalesce', ['get', 'borderColor'], colorBorder]          
         ];
 
-        // Application aux calques Maplibre
-        mapDiv.setPaintProperty('territories-fill', 'fill-color', fillExpression);
-        mapDiv.setPaintProperty('territories-circles-fill', 'fill-color', fillExpression);
-        mapDiv.setPaintProperty('territories-line', 'line-color', lineExpression);
-        mapDiv.setPaintProperty('territories-circles-line', 'line-color', lineExpression);
+        // Application aux calques MapLibre s'ils existent dans la carte
+        if (mapDiv.getLayer('territories-fill')) {
+            mapDiv.setPaintProperty('territories-fill', 'fill-color', fillExpression);
+            mapDiv.setPaintProperty('territories-circles-fill', 'fill-color', fillExpression);
+            mapDiv.setPaintProperty('territories-line', 'line-color', lineExpression);
+            mapDiv.setPaintProperty('territories-circles-line', 'line-color', lineExpression);
+        }
     },
-    init(mapDiv=map) {
+    init(mapDiv = map) {
         const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-        this.updateLayers(mediaQuery.matches,mapDiv);
+        this.updateLayers(mediaQuery.matches, mapDiv);
 
         mediaQuery.addEventListener('change', (e) => {
-            this.updateLayers(e.matches,mapDiv);
+            this.updateLayers(e.matches, mapDiv);
         });
     },
     darkMainFill: "rgb(180, 180, 180)",
@@ -155,4 +186,4 @@ export const borderColor = {
     dark_ignore_border: "rgb(46, 46, 46)",
     light_ignore_fill: "rgb(187, 187, 187)",
     light_ignore_border: "rgb(184, 184, 184)",
-}
+};

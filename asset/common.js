@@ -120,6 +120,20 @@ export function calculateDifficultyThresholds(cityList) {
 }
 
 export function getDistShow(km){
+    if(localStorage.getItem("SETTINGS_UNITS_SYSTEM") == "US.c.u"){
+      // US.c.units
+      let feet = Math.floor(km * 1000 * 3.28084)
+      if(feet <= 3000){
+        return Math.floor(feet).toLocaleString('en-US') + " ft"
+      }
+      let yard = Math.floor(km * 1000 * 1.09361)
+      if(yard <= 10000){
+        return Math.floor(yard).toLocaleString('en-US') + " yd"
+      }
+      let miles = Math.floor(km * 0.621371)
+      return Math.floor(miles).toLocaleString('en-US') + " mi"
+    }
+    //metric
     if(km < 10){
       return Math.floor(km * 1000).toLocaleString('fr-FR') + " m"
     } else {
