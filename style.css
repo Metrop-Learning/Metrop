@@ -388,6 +388,80 @@ header {
   transform: scale(0.5);
 }
 
+.btn-delete {
+  background-color: var(--search-bar-background);
+  color: var(--text-color);
+  border-radius: 5px;
+  border: solid 1px rgba(109, 109, 109, 0.5568627451);
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  top: 10px;
+  right: 80px;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.btn-delete svg:hover {
+  color: var(--red-color);
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+.btn-modify {
+  background-color: var(--search-bar-background);
+  color: var(--text-color);
+  border-radius: 5px;
+  border: solid 1px rgba(109, 109, 109, 0.5568627451);
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  top: 10px;
+  right: 45px;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
 .btn-like {
   background-color: var(--search-bar-background);
   color: var(--text-color);

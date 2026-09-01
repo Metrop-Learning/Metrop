@@ -98,19 +98,33 @@ export async function buildCardList(filter){
                 if(main.quizList[i][0].cardInfo.lang.toLowerCase() != main.langSys){
                     
                 } else {
+                    const customElementSVG = `
+                    <div id="customElement" style="display: ${data.quizdb[main.quizList[i][1]]["LOCAL"]==true ? 'block' : 'none'}; position: absolute; top: 10px; right: 10px; z-index: 10; pointer-events: none; color: var(--footer-contrib-color);">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+                        <path d="M615-490.5Q685-501 745-520q20-8 37.5 5t17.5 34v286q0 25-14.5 45.5T748-120q-57 19-127.5 29.5T480-80q-70 0-140.5-10.5T212-120q-23-9-37.5-29.5T160-195v-286q0-21 17.5-34t37.5-5q60 19 130 29.5T480-480q65 0 135-10.5ZM593-833q47 47 47 113t-47 113q-47 47-113 47t-113-47q-47-47-47-113t47-113q47-47 113-47t113 47Z"/>
+                        </svg>
+                    </div>
+                    `;
                     const flagSrc = data.findElementByPath(main.quizList[i][0].cardInfo.setInfo)?.flag 
                         ?? data.findElementByPath("WD")?.flag;
                     document.getElementById(filter).insertAdjacentHTML('beforeend',
-                        `<div class='card' onclick="explore(${main.quizList[i][1]},${main.quizList[i][2]})"><img class='flagCard' src='${flagSrc}'><p class="titleCard">${main.quizList[i][0].cardInfo.Title}</p><div class="exploreCard">${exploreSVG}<p>${await trad.getTrad("./trad/",main.langSys,"btn-explore")}</p></div></div>`
+                        `<div class='card' onclick="explore(${main.quizList[i][1]},${main.quizList[i][2]})"><img class='flagCard' src='${flagSrc}'><p class="titleCard">${main.quizList[i][0].cardInfo.Title}</p><div class="exploreCard">${exploreSVG}<p>${await trad.getTrad("./trad/",main.langSys,"btn-explore")}</p></div>${customElementSVG}</div>`
                     );
                 }
             } else if (!main.quizList[i][0].cardInfo.lang.includes(main.langSys)){
                 
             } else {
+                const customElementSVG = `
+                    <div id="customElement" style="display: ${data.quizdb[main.quizList[i][1]]["LOCAL"]==true ? 'block' : 'none'}; position: absolute; top: 10px; right: 10px; z-index: 10; pointer-events: none; color: var(--footer-contrib-color);">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+                        <path d="M615-490.5Q685-501 745-520q20-8 37.5 5t17.5 34v286q0 25-14.5 45.5T748-120q-57 19-127.5 29.5T480-80q-70 0-140.5-10.5T212-120q-23-9-37.5-29.5T160-195v-286q0-21 17.5-34t37.5-5q60 19 130 29.5T480-480q65 0 135-10.5ZM593-833q47 47 47 113t-47 113q-47 47-113 47t-113-47q-47-47-47-113t47-113q47-47 113-47t113 47Z"/>
+                        </svg>
+                    </div>
+                    `;
                 const flagSrc = data.findElementByPath(main.quizList[i][0].cardInfo.setInfo)?.flag 
                         ?? data.findElementByPath("WD")?.flag;
                 document.getElementById(filter).insertAdjacentHTML('beforeend',
-                    `<div class='card' onclick="explore(${main.quizList[i][1]},${main.quizList[i][2]})"><img class='flagCard' src='${flagSrc}'><p class="titleCard">${main.quizList[i][0].cardInfo.Title[main.langSys]}</p><div class="exploreCard">${exploreSVG}<p>${await trad.getTrad("./trad/",main.langSys,"btn-explore")}</p></div></div>`
+                    `<div class='card' onclick="explore(${main.quizList[i][1]},${main.quizList[i][2]})"><img class='flagCard' src='${flagSrc}'><p class="titleCard">${main.quizList[i][0].cardInfo.Title[main.langSys]}</p><div class="exploreCard">${exploreSVG}<p>${await trad.getTrad("./trad/",main.langSys,"btn-explore")}</p></div>${customElementSVG}</div>`
                 );
             }
         }

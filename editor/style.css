@@ -1,0 +1,293 @@
+@media (prefers-color-scheme: light) {
+  :root {
+    --scroll-bar-color: rgba(255,255,255 ,0.5);
+    --header-red-color: #bf5d5d;
+    --header-top-color: #dddddd;
+    --text-color: #000;
+    --invert-color: #fff;
+    --main-color-backg: #ffffff6e;
+    --search-bar-background: #bebebe;
+    --footer-contrib-color: rgba(81, 81, 227, 0.8);
+    --footer-color: #dcdcdc;
+    --btn-color: rgb(81, 81, 227);
+    --btn-color-outline: rgb(121, 121, 236);
+    --btn-text-color: #fff;
+    --card-background-color: #cccccc;
+    --background-game: rgb(255, 255, 255);
+    --map-background: #f4f4f4;
+    --green-background: #62ba55;
+    --green-outside: #76ad56;
+    --red-background: #c55b5b;
+    --red-outside: #e17878;
+    --orange-background: #c5795b;
+    --orange-outside: #e19678;
+    --orange-color: #d3921a;
+    --red-color: #a53b3b;
+    --green-color: #4d9142;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --scroll-bar-color: rgba(0,0,0 ,0.5);
+    --header-red-color: #ab4747;
+    --header-top-color: #393939;
+    --text-color: #fff;
+    --invert-color: #000;
+    --main-color-backg: #0000006e;
+    --search-bar-background: #0e0e0e60;
+    --footer-contrib-color: rgba(81, 81, 227, 0.8);
+    --btn-color-outline: rgb(121, 121, 236);
+    --footer-color: #07030a;
+    --btn-color: rgb(44, 44, 150);
+    --btn-text-color: rgb(230,230,230);
+    --card-background-color: #1e1e1e;
+    --background-game: rgb(26,26,26);
+    --map-background: #121212;
+    --green-background: #3b8031;
+    --green-outside: #76ad56;
+    --red-background: #9e4545;
+    --red-outside: #793838;
+    --orange-background: #be6733;
+    --orange-outside: #774426;
+    --orange-color: #e9ae40;
+    --red-color: #e45555;
+    --green-color: #62ba55;
+  }
+}
+body, html {
+  overflow-x: hidden;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-color: var(--map-background);
+  padding: 10px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) minmax(200px, 400px);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 8px;
+}
+body #mapArea {
+  grid-column: span 3;
+  grid-row: span 5;
+  background-color: var(--map-background);
+  border: 2px solid var(--header-top-color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+body #navbarEditor {
+  grid-column: 4;
+  grid-row: span 5;
+  width: 100%;
+  background-color: var(--background-game);
+  border: 2px solid var(--header-top-color);
+  border-radius: 10px;
+}
+
+#map {
+  background-color: var(--map-background);
+  height: 100%;
+  width: 100%;
+}
+
+#navbarEditor {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+#navbarEditor input[type=text],
+#navbarEditor input[type=number],
+#navbarEditor select {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 2px solid var(--header-top-color);
+  background-color: var(--background-game);
+  color: var(--text-color);
+  box-sizing: border-box;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+#navbarEditor input[type=text]:focus,
+#navbarEditor input[type=number]:focus,
+#navbarEditor select:focus {
+  border-color: var(--btn-color);
+}
+#navbarEditor label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--text-color);
+}
+#navbarEditor .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+#navbarEditor #topArea {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--header-top-color);
+  flex-shrink: 0;
+}
+#navbarEditor #topArea h1 {
+  font-size: 1.4rem;
+  margin: 0 0 16px 0;
+  color: var(--text-color);
+  padding-right: 48px;
+}
+#navbarEditor #topArea .actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+#navbarEditor #topArea .actions button {
+  flex: 1;
+}
+#navbarEditor #listOfElement {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  overflow-y: auto;
+  padding-top: 16px;
+  padding-bottom: 60px;
+}
+#navbarEditor #listOfElement .element {
+  padding: 12px;
+  border-radius: 12px;
+  border: 2px solid var(--header-top-color);
+  background-color: var(--map-background);
+}
+#navbarEditor #listOfElement .element .coords-group {
+  display: flex;
+  gap: 8px;
+}
+#navbarEditor #listOfElement .element .coords-group .form-group {
+  flex: 1;
+}
+#navbarEditor #listOfElement .element .element-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+#navbarEditor #listOfElement .element .element-actions .btn-map-select {
+  flex: 1;
+}
+#navbarEditor #listOfElement .btn-add {
+  margin-top: 8px;
+}
+#navbarEditor .btn-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--btn-color);
+  color: var(--btn-text-color);
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px solid var(--btn-color-outline);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+#navbarEditor .btn-main:hover {
+  background-color: var(--btn-color-outline);
+  border-color: var(--btn-color);
+}
+#navbarEditor .btn-main {
+  padding: 10px 14px;
+  font-weight: 600;
+}
+#navbarEditor .btn-secondary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--card-background-color);
+  color: var(--text-color);
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px solid var(--header-top-color);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+#navbarEditor .btn-secondary:hover {
+  background-color: var(--header-top-color);
+  border-color: var(--card-background-color);
+}
+#navbarEditor .btn-secondary {
+  padding: 10px 14px;
+}
+#navbarEditor .btn-full {
+  width: 100%;
+}
+#navbarEditor .btn-square {
+  aspect-ratio: 1/1;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+#navbarEditor .buttonRed {
+  background-color: var(--red-background);
+  border: 2px solid var(--red-outside);
+}
+#navbarEditor .buttonRed:hover {
+  background-color: var(--red-outside);
+  border: 2px solid var(--red-background);
+}
+#navbarEditor .buttonRed {
+  height: 49px;
+  width: 49px;
+}
+#navbarEditor .btn-floating-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--card-background-color);
+  color: var(--text-color);
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px solid var(--header-top-color);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+#navbarEditor .btn-floating-top:hover {
+  background-color: var(--header-top-color);
+  border-color: var(--card-background-color);
+}
+#navbarEditor .btn-floating-top {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 10;
+}
+#navbarEditor .btn-floating-bottom {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+* {
+  font-family: "Momo Trust Display", "Mochiy Pop One", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+#toBeCloned {
+  display: none;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,87 @@
+doctype html 
+html
+    head 
+        //info
+        title Metrop Editor
+        meta(charset="UTF-8",name="viewport",content="width=device-width, initial-scale=1.0")
+        // Local Import
+        link(rel="icon",type="image/x-icon",href="../asset/globe-showing-europe-africa-noto-emoji-noanimation.png")
+        link(rel="stylesheet",href="style.css")
+        script(src="./js/main.js",defer,type="module")
+        // Import google font
+        link(rel="stylesheet",href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Mochiy+Pop+One&family=Momo+Trust+Display&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap")
+        // Import Map libre
+        link(rel="stylesheet",href="https://unpkg.com/maplibre-gl@5.20.0/dist/maplibre-gl.css")
+        script(src="https://unpkg.com/maplibre-gl@5.20.0/dist/maplibre-gl.js")
+    body 
+        #mapArea
+            #map
+        #navbarEditor
+            button.btn-square.btn-floating-top.homeBtn
+                svg(xmlns="http://www.w3.org/2000/svg", height="25px", viewBox="0 -960 960 960", width="25px")
+                    path(fill="currentColor", d="M240-200h120v-200q0-17 11.5-28.5T400-440h160q17 0 28.5 11.5T600-400v200h120v-360L480-740 240-560v360Zm-80 0v-360q0-19 8.5-36t23.5-28l240-180q21-16 48-16t48 16l240 180q15 11 23.5 28t8.5 36v360q0 33-23.5 56.5T720-120H560q-17 0-28.5-11.5T520-160v-200h-80v200q0 17-11.5 28.5T400-120H240q-33 0-56.5-23.5T160-200Zm320-270Z")
+        
+
+            #topArea 
+                h1 Metrop Editor
+                
+                .form-group
+                    label(for="projectName") Quiz Title
+                    input#projectName(type="text" placeholder="Missing Title")
+                
+                .form-group
+                    label(for="projectDesc") Quiz Description
+                    input#projectDesc(type="text" placeholder="Missing Description")
+
+                .form-group
+                    label(for="languageSelect") Language
+                    select#languageSelect
+                        option(value="en") English
+                        option(value="es") Español
+                        option(value="fr") Français
+                        option(value="it") Italiano
+                        option(value="jp") 日本語
+
+                .actions
+                    button.btn-main#saveBtn 
+                        svg(xmlns="http://www.w3.org/2000/svg", height="25px", viewBox="0 -960 960 960", width="25px")
+                            path(fill="currentColor", d="M840-680v480q0 33-23.5 56.5T760-120H200q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h480l160 160Zm-80 34L646-760H200v560h560v-446ZM565-275q35-35 35-85t-35-85q-35-35-85-35t-85 35q-35 35-35 85t35 85q35 35 85 35t85-35ZM240-560h360v-160H240v160Zm-40-86v446-560 114Z")
+                        span Save
+                    button.btn-secondary#downloadBtn 
+                        svg(xmlns="http://www.w3.org/2000/svg", height="25px", viewBox="0 -960 960 960", width="25px")
+                            path(fill="currentColor", d="m720-120 160-160-56-56-64 64v-167h-80v167l-64-64-56 56 160 160ZM560 0v-80h320V0H560ZM240-160q-33 0-56.5-23.5T160-240v-560q0-33 23.5-56.5T240-880h280l240 240v121h-80v-81H480v-200H240v560h240v80H240Zm0-80v-560 560Z")
+                        span Download
+
+            #listOfElement 
+                
+
+                button.btn-main.btn-full.btn-add#addACity
+                    svg(xmlns="http://www.w3.org/2000/svg", height="25px", viewBox="0 -960 960 960", width="25px")
+                        path(fill="currentColor", d="M440-280h80v-160h160v-80H520v-160h-80v160H280v80h160v160Zm40 200q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z")
+                    span Add a new element
+
+            button.btn-secondary.btn-square.btn-floating-bottom#scrollBotom(aria-label="Add")
+                svg(xmlns="http://www.w3.org/2000/svg", height="25px", viewBox="0 -960 960 960", width="25px")
+                    path(fill="currentColor", d="M480-80 200-360l56-56 184 183v-647h80v647l184-184 56 57L480-80Z")
+        #toBeCloned 
+            .element 
+                    .form-group
+                        label City Name
+                        input(type="text" placeholder="Missing Name")
+                    
+                    .coords-group
+                        .form-group
+                            label Lat
+                            input#lat(type="number" step="any" placeholder="Missing Lat")
+                        .form-group
+                            label Lng
+                            input#lng(type="number" step="any" placeholder="Missing Lng")
+                            
+                    .element-actions
+                        button.btn-secondary.btn-square.buttonRed
+                            svg(xmlns="http://www.w3.org/2000/svg", height="25px", viewBox="0 -960 960 960", width="25px")
+                                path(fill="currentColor", d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z")
+                        button.btn-secondary.btn-map-select 
+                            svg(xmlns="http://www.w3.org/2000/svg", height="25px", viewBox="0 -960 960 960", width="25px")
+                                path(fill="currentColor", d="M340-420h58l156-157-57-57-157 156v58Zm243-186 28-28q5-5 5-10.5t-5-10.5l-36-36q-5-5-10.5-5t-10.5 5l-28 28 57 57ZM480-186q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z")
+                            span Select by placing on map

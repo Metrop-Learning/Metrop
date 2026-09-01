@@ -32,7 +32,10 @@ export function lang(lang){
 }
 
 export function getLang(){
-    console.log("Language nav: " + navigator.language)
+    if(navigator.language == "en-US"){
+      //auto detect
+      localStorage.setItem('SETTINGS_UNITS_SYSTEM', "US.c.u");
+    }
     let supportedLangs = {
             "fr":"fr",
             "en":"en",

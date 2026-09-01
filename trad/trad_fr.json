@@ -61,5 +61,8 @@
     "placeHolderCards-like-title": "Aucun quiz favori pour l'instant",
     "placeHolderCards-like-text": "Commencez à aimer des quiz pour créer votre collection !",
     "placeHolderCards-card-title": "Aucun quiz trouvé dans cette catégorie",
-    "placeHolderCards-card-text": "Il devrait généralement y en avoir au moins un ici, ce qui peut indiquer un problème de connexion, un bug temporaire ou qu'aucun quiz n'a encore été ajouté. Essayez de changer de catégorie ou de langue !"
+    "placeHolderCards-card-text": "Il devrait généralement y en avoir au moins un ici, ce qui peut indiquer un problème de connexion, un bug temporaire ou qu'aucun quiz n'a encore été ajouté. Essayez de changer de catégorie ou de langue !",
+    "units-config-title": "Unités de mesure",
+    "units-config-metric-option": "Système métrique",
+    "units-config-us-imperial-option": "Système d'unités usuelles américaines"
 }

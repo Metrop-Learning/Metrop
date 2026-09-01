@@ -1,5 +1,5 @@
 let geoDatabaseLink = localStorage.getItem("LINK_DATABASE_GEO") ?? "https://database.metrop-geo.fr/geo/"
-let quizDatabaseLink = localStorage.getItem("LINK_DATABASE_QUIZ") ?? "https://database.metrop-geo.fr/quiz/" // JSON.stringify(['http...'])
+let quizDatabaseLink = localStorage.getItem("LINK_DATABASE_QUIZ") ?? JSON.stringify(["localdb","https://database.metrop-geo.fr/quiz/"])
 
 const langSys = localStorage.getItem("LANG_SYS") ?? "fr"
 
@@ -22,9 +22,19 @@ async function initQuizList(){
     } catch (e) {
       listQuiz = [quizDatabaseLink];
     }
-    for (let i = 0; i < listQuiz.length; i++){
-        quizdb.push(await get("dbinfo.json",listQuiz[0]))
+    if(!listQuiz.includes("localdb")){
+        listQuiz.unshift("localdb");
     }
+    for (let i = 0; i < listQuiz.length; i++){
+        if(listQuiz[i] == "localdb"){
+            const rawList = localStorage.getItem("LOCALDB_QUIZLIST");
+            let keysList = rawList ? JSON.parse(rawList) : [];
+            quizdb.push({"ID": "metrop.local.database","QUIZ_LIST":keysList,"SHOWCASE_GROUP":[],"LOCAL":true})
+            continue
+        }
+        quizdb.push(await get("dbinfo.json",listQuiz[i]))
+    }
+    console.log(quizdb)
 }
 
 async function initGeoDB(){
@@ -50,7 +60,24 @@ export const getQuizList = {
         return quizdb[nb].ID
     },
     async getAQuiz(nb,num){
-        return await get(quizdb[nb].QUIZ_LIST[num],listQuiz[nb] + "content/");
+        if(quizdb[nb]["LOCAL"] == true){
+            const rawData = localStorage.getItem("LOCALDB_QUIZDATA");
+            let dataStore = {};
+
+            if (rawData) {
+                try {
+                    dataStore = JSON.parse(rawData);
+                } catch (error) {
+                    console.error("Error parsing json :", error);
+                    dataStore = {};
+                }
+            }
+            const rawList = localStorage.getItem("LOCALDB_QUIZLIST");
+            let keysList = rawList ? JSON.parse(rawList) : [];
+            return dataStore[keysList[num]]
+        } else {
+            return await get(quizdb[nb].QUIZ_LIST[num],listQuiz[nb] + "content/");
+        }
     }
 }
 

@@ -1,0 +1,255 @@
+@use "var.scss";
+
+body,html{
+    overflow-x: hidden;
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-color: var.$map;
+    padding: 10px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) minmax(200px, 400px);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 8px;
+    
+    #mapArea {
+        grid-column: span 3;
+        grid-row: span 5;
+        background-color: var.$map;
+        border: 2px solid var.$btnSecondOutline;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    #navbarEditor {
+        grid-column: 4;
+        grid-row: span 5;
+        width: 100%;
+        background-color: var.$background;
+        border: 2px solid var.$btnSecondOutline;
+        border-radius: 10px;
+    }
+}
+
+#map{
+    background-color: var.$map;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+
+@mixin mainBtnStyle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background-color: var.$btnMainColor;
+    color: var.$white;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 2px solid var.$btnMainOutline;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    &:hover {
+        background-color: var.$btnMainOutline;
+        border-color: var.$btnMainColor;
+    }
+}
+
+@mixin secondBtnStyle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background-color: var.$btnSecondColor;
+    color: var.$text;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 2px solid var.$btnSecondOutline;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    &:hover {
+        background-color: var.$btnSecondOutline;
+        border-color: var.$btnSecondColor;
+    }
+}
+
+#navbarEditor {
+    position: relative; // Nécessaire pour le positionnement des boutons flottants
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+    overflow: hidden; // Le défilement est géré uniquement par #listOfElement
+
+    // Champs de saisie
+    input[type="text"],
+    input[type="number"],
+    select {
+        width: 100%;
+        padding: 8px 12px;
+        border-radius: 8px;
+        border: 2px solid var.$btnSecondOutline;
+        background-color: var.$background;
+        color: var.$text;
+        box-sizing: border-box;
+        font-size: 0.9rem;
+        outline: none;
+        transition: border-color 0.2s ease;
+
+        &:focus {
+            border-color: var.$btnMainColor;
+        }
+    }
+
+    label {
+        display: block;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 4px;
+        color: var.$text;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 12px;
+    }
+
+    // Zone Supérieure (fixe)
+    #topArea {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 16px;
+        border-bottom: 2px solid var.$btnSecondOutline;
+        flex-shrink: 0;
+
+        h1 {
+            font-size: 1.4rem;
+            margin: 0 0 16px 0;
+            color: var.$text;
+            padding-right: 48px; // Évite que le titre ne chevauche le bouton flottant du haut
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 8px;
+
+            button {
+                flex: 1;
+            }
+        }
+    }
+
+    // Zone Défilante
+    #listOfElement {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        flex: 1;
+        overflow-y: auto; // Rend cette zone défilante
+        padding-top: 16px;
+        padding-bottom: 60px; // Espace réservé pour éviter de masquer le bas avec le bouton flottant
+
+        .element {
+            padding: 12px;
+            border-radius: 12px;
+            border: 2px solid var.$btnSecondOutline;
+            background-color: var.$map;
+
+            .coords-group {
+                display: flex;
+                gap: 8px;
+
+                .form-group {
+                    flex: 1;
+                }
+            }
+
+            .element-actions {
+                display: flex;
+                gap: 8px;
+                margin-top: 8px;
+
+                .btn-map-select {
+                    flex: 1;
+                }
+            }
+        }
+
+        .btn-add {
+            margin-top: 8px;
+        }
+    }
+
+    // Styles des boutons avec mixins
+    .btn-main {
+        @include mainBtnStyle;
+        padding: 10px 14px;
+        font-weight: 600;
+    }
+
+    .btn-secondary {
+        @include secondBtnStyle;
+        padding: 10px 14px;
+    }
+
+    .btn-full {
+        width: 100%;
+    }
+
+    // Bouton carré parfait
+    .btn-square {
+        aspect-ratio: 1 / 1;
+        width: 42px;
+        height: 42px;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+
+    .buttonRed{
+        background-color: var(--red-background);
+        border: 2px solid var(--red-outside);
+        &:hover{
+            background-color: var(--red-outside);
+            border: 2px solid var(--red-background);
+        }
+        height: 49px;
+        width: 49px;
+    }
+
+    // Positionnement des boutons flottants
+    .btn-floating-top {
+        @include secondBtnStyle;
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        z-index: 10;
+    }
+
+    .btn-floating-bottom {
+        position: absolute;
+        bottom: 16px;
+        right: 16px;
+        z-index: 10;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+}
+
+*{
+    font-family: "Momo Trust Display","Mochiy Pop One", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+#toBeCloned{
+    display: none;
+}

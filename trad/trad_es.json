@@ -61,5 +61,8 @@
     "placeHolderCards-like-title": "Aún no hay quizzes favoritos",
     "placeHolderCards-like-text": "¡Empieza a dar «me gusta» a los quizzes para crear tu colección!",
     "placeHolderCards-card-title": "No se encontraron quizzes en esta categoría",
-    "placeHolderCards-card-text": "Por lo general, debería haber al menos uno aquí, lo que podría indicar un problema de conexión, un error temporal o que aún no se han añadido quizzes. ¡Intenta cambiar de categoría o de idioma!"
+    "placeHolderCards-card-text": "Por lo general, debería haber al menos uno aquí, lo que podría indicar un problema de conexión, un error temporal o que aún no se han añadido quizzes. ¡Intenta cambiar de categoría o de idioma!",
+    "units-config-title": "Unidades de medida",
+    "units-config-metric-option": "Sistema métrico",
+    "units-config-us-imperial-option": "Sistema del sistema técnico estadounidense"
 }

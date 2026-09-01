@@ -11,8 +11,8 @@ import * as ui from "./js/ui.js"
 
 // INIT
 
-const ver =  [0,8,2,"b"]
-const verDate = [2026,8,26]
+const ver =  [0,8,3,"a"]
+const verDate = [2026,9,1]
 const license_link = "https://app.metrop-geo.fr/LICENSE"
 const license = "MIT License"
 const verGeoDatabase =  data.use.geo.ver();
@@ -238,6 +238,7 @@ function animateFLIP(widget, toFullscreen) {
 
 let likeStatus = false
 let likeActualCardId = []
+let numModif = 0;
 
 async function explore(nb,num){
 
@@ -246,6 +247,7 @@ async function explore(nb,num){
   if (obj == undefined) return
 
   likeActualCardId = [data.getQuizList.id(nb),obj.cardInfo.card_key_id]
+  numModif = num
 
   const exist = likeList.some(
     subArr => JSON.stringify(subArr) === JSON.stringify(likeActualCardId)
@@ -274,12 +276,24 @@ async function explore(nb,num){
   }
   document.getElementById('cardInfoPopUp_info_lenght_txt').innerText = obj.list.length
   document.getElementById('cardInfoPopUp_imgFlag').src = data.findElementByPath(obj.cardInfo.setInfo)?.flag ?? data.findElementByPath("WD")?.flag
-  let pict = obj.cardInfo.pictureURL
+  let pict = obj.cardInfo.pictureURL ?? "None"
   if (pict == "None"){ pict = "https://upload.wikimedia.org/wikipedia/commons/9/97/ISS-42_Waning_sun.jpg" }
   document.getElementById('cardInfoPopUp_MainBox').style.setProperty(
     '--bg-image-bg-card',
     'url("'+ pict +'")'
   );
+
+  if(data.quizdb[nb]["LOCAL"]==true){
+    document.getElementById('cardInfoPopUp_likeBtn').style.display = "none"
+    document.getElementById('cardInfoPopUp_shareBtn').style.display = "none"
+    document.getElementById('cardInfoPopUp_deleteBtn').style.display = "flex"
+    document.getElementById('cardInfoPopUp_modifyBtn').style.display = "flex"
+  } else{
+    document.getElementById('cardInfoPopUp_likeBtn').style.display = "flex"
+    document.getElementById('cardInfoPopUp_shareBtn').style.display = "flex"
+    document.getElementById('cardInfoPopUp_deleteBtn').style.display = "none"
+    document.getElementById('cardInfoPopUp_modifyBtn').style.display = "none"
+  }
 
   if("conflic_type" in obj.cardInfo){
     if(obj.cardInfo.conflic_type.includes("exi")){
@@ -452,6 +466,30 @@ shareBtn.addEventListener('click', async () => {
       alert('Impossible de copier le lien.');
     }
   }
+});
+
+const modifyBtn = document.getElementById('cardInfoPopUp_modifyBtn');
+
+modifyBtn.addEventListener('click', async () => {
+  const rawList = localStorage.getItem("LOCALDB_QUIZLIST");
+  let keysList = rawList ? JSON.parse(rawList) : [];
+  const isLocalhost = Boolean(
+    window.location.hostname === 'localhost' ||
+    window.location.hostname === '127.0.0.1' ||
+    window.location.hostname === '[::1]'
+  );
+
+  const baseUrl = isLocalhost 
+    ? `${window.location.origin}/Metrop/editor/` 
+    : "https://app.metrop-geo.fr/editor/";
+
+  const url = new URL(baseUrl);
+  
+  if (keysList[numModif]) {
+    url.searchParams.set("file", keysList[numModif]);
+  }
+  
+  window.location.assign(url);
 });
 
 const likeBtn = document.getElementById('cardInfoPopUp_likeBtn');
