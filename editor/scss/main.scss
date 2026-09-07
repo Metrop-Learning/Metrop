@@ -245,9 +245,29 @@ body {
 }
 
 *{
-    font-family: "Momo Trust Display","Mochiy Pop One", sans-serif;
+    font-family: "Momo Trust Display", sans-serif;
     font-weight: 500;
     font-style: normal;
+    text-align: center;
+    &:lang(eo){
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 800;
+        #titleNameMetrop{
+            font-family: "Momo Trust Display", sans-serif;
+            font-weight: 500;
+        }
+    }
+    &:lang(ja){
+        font-family: "Momo Trust Display","Mochiy Pop One", sans-serif;
+    }
+    &:lang(ko){
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 700;
+        #titleNameMetrop{
+            font-family: "Momo Trust Display", sans-serif;
+            font-weight: 500;
+        }
+    }
 }
 
 #toBeCloned{

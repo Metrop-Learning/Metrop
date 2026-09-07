@@ -13,6 +13,11 @@ export async function traductAll(path,codeLang){
     trad_el.forEach(el => {
       el.innerText = trad_file[el.getAttribute('translation_id')]
     });
+    if(codeLang == "jp"){
+      document.documentElement.lang = "ja";
+    } else{
+      document.documentElement.lang = codeLang;
+    }
 }
 
 export async function getTrad(path,codeLang,transId){
@@ -23,7 +28,7 @@ export async function getTrad(path,codeLang,transId){
 }
 
 export function lang(lang){
-  if(["fr","en","jp","es","it"].includes(lang)){
+  if(["fr","en","jp","es","it","eo","ko","de"].includes(lang)){
     localStorage.setItem("LANG_SYS",lang)
     window.location.reload()
   } else {
@@ -41,7 +46,12 @@ export function getLang(){
             "en":"en",
             "es":"es",
             "it":"it",
-            "ja":"jp"
+            "ko":"ko",
+            "kr":"ko",
+            "ja":"jp",
+            "jp":"jp",
+            "de":"de",
+            "eo":"eo",
     }
 
     const primaryLang = navigator.language.split('-')[0].toLowerCase();

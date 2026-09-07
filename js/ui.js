@@ -48,6 +48,7 @@ export async function buildCardList(filter){
     } else if (filter == "card_flag"){
         allowed_type = ["fromFlag"];
     } else if (filter == "card_game"){
+        document.getElementById("no_cards").style.display = "none"
         allowed_type = [];
         document.getElementById(filter).innerHTML = ""
         let icons = '<svg class="svgCard" xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="35px" fill="#e3e3e3"><path d="M40-240q-17 0-28.5-11.5T0-280v-23q0-43 44-70t116-27q13 0 25 .5t23 2.5q-14 21-21 44t-7 48v65H40Zm240 0q-17 0-28.5-11.5T240-280v-25q0-32 17.5-58.5T307-410q32-20 76.5-30t96.5-10q53 0 97.5 10t76.5 30q32 20 49 46.5t17 58.5v25q0 17-11.5 28.5T680-240H280Zm500 0v-65q0-26-6.5-49T754-397q11-2 22.5-2.5t23.5-.5q72 0 116 26.5t44 70.5v23q0 17-11.5 28.5T920-240H780Zm-455-80h311q-10-20-55.5-35T480-370q-55 0-100.5 15T325-320ZM160-440q-33 0-56.5-23.5T80-520q0-34 23.5-57t56.5-23q34 0 57 23t23 57q0 33-23 56.5T160-440Zm640 0q-33 0-56.5-23.5T720-520q0-34 23.5-57t56.5-23q34 0 57 23t23 57q0 33-23 56.5T800-440Zm-320-40q-50 0-85-35t-35-85q0-51 35-85.5t85-34.5q51 0 85.5 34.5T600-600q0 50-34.5 85T480-480Zm0-80q17 0 28.5-11.5T520-600q0-17-11.5-28.5T480-640q-17 0-28.5 11.5T440-600q0 17 11.5 28.5T480-560Zm1 240Zm-1-280Z"/></svg>'
@@ -56,6 +57,7 @@ export async function buildCardList(filter){
                 );
         return
     } else if (filter == "card_likes"){
+        document.getElementById("no_cards").style.display = "none"
         document.getElementById(filter).innerHTML = ""
         allowed_type = [];
         let nbLike = 0;
@@ -92,6 +94,7 @@ export async function buildCardList(filter){
         return
     }
     document.getElementById(filter).innerHTML = ""
+    let card_count = 0
     for(let i = 0; i < main.quizList.length; i++){
         if(allowed_type.some(element => main.quizList[i][0].type.includes(element))){
             if(typeof main.quizList[i][0].cardInfo.lang == "string"){
@@ -110,6 +113,7 @@ export async function buildCardList(filter){
                     document.getElementById(filter).insertAdjacentHTML('beforeend',
                         `<div class='card' onclick="explore(${main.quizList[i][1]},${main.quizList[i][2]})"><img class='flagCard' src='${flagSrc}'><p class="titleCard">${main.quizList[i][0].cardInfo.Title}</p><div class="exploreCard">${exploreSVG}<p>${await trad.getTrad("./trad/",main.langSys,"btn-explore")}</p></div>${customElementSVG}</div>`
                     );
+                    card_count++;
                 }
             } else if (!main.quizList[i][0].cardInfo.lang.includes(main.langSys)){
                 
@@ -126,8 +130,14 @@ export async function buildCardList(filter){
                 document.getElementById(filter).insertAdjacentHTML('beforeend',
                     `<div class='card' onclick="explore(${main.quizList[i][1]},${main.quizList[i][2]})"><img class='flagCard' src='${flagSrc}'><p class="titleCard">${main.quizList[i][0].cardInfo.Title[main.langSys]}</p><div class="exploreCard">${exploreSVG}<p>${await trad.getTrad("./trad/",main.langSys,"btn-explore")}</p></div>${customElementSVG}</div>`
                 );
+                card_count++;
             }
         }
+    }
+    if(card_count == 0){
+        document.getElementById("no_cards").style.display = "flex"
+    } else {
+        document.getElementById("no_cards").style.display = "none"
     }
 }
 

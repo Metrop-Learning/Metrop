@@ -11,7 +11,7 @@ import * as ui from "./js/ui.js"
 
 // INIT
 
-const ver =  [0,8,3,"a"]
+const ver =  [0,8,4,"a"]
 const verDate = [2026,9,1]
 const license_link = "https://app.metrop-geo.fr/LICENSE"
 const license = "MIT License"

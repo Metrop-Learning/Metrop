@@ -19,12 +19,18 @@
       select#selectLang(name="language")
         button
           selectedcontent
+        option(value="de") 
+          img(src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg")
+          span Deutsch
         option(value="en")
           img(src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Flag_of_the_United_Kingdom_(1-2).svg") 
           span English
         option(value="es") 
           img(src="https://upload.wikimedia.org/wikipedia/commons/2/24/Flag_of_the_Kingdom_of_Spain.svg")
           span Español
+        option(value="eo") 
+          img(src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Flag_of_Esperanto.svg")
+          span Esperanto
         option(value="fr") 
           img(src="https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg")
           span Français  
@@ -32,8 +38,11 @@
           img(src="https://upload.wikimedia.org/wikipedia/en/0/03/Flag_of_Italy.svg") 
           span Italiano
         option(value="jp") 
-          span(src="https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg")
+          img(src="https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg")
           span 日本語
+        option(value="ko") 
+          img(src="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg")
+          span 한국어
     //-.settings-line
     //-  p Afficher uniquement les quiz disponibles dans ma langue
     //-  input#onlyQuizInTheSelectedLanguage.switch(checked="true" type="checkbox")
