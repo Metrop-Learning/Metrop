@@ -43,7 +43,6 @@
     "legal-warning-french-law": "Editor sujeto a la legislación francesa.",
     "legal-host-server-name": "Proveedor de alojamiento: ",
     "legal-host-server-adress": "Dirección del alojamiento: ",
-    "legal-confidentiality-notice": "No se transmite ningún dato a Metrop ni a terceros. Sin embargo, ciertos datos no personales pueden almacenarse en el almacenamiento local de su navegador para garantizar el correcto funcionamiento del sitio.",
     "beta-warning": "Atención",
     "beta-warning-text": "Metrop aún se encuentra en fase beta y es posible que algunas de las siguientes funciones no funcionen correctamente.",
     "settings-map": "Mapa",
@@ -64,5 +63,10 @@
     "placeHolderCards-card-text": "Por lo general, debería haber al menos uno aquí, lo que podría indicar un problema de conexión, un error temporal o que aún no se han añadido quizzes. ¡Intenta cambiar de categoría o de idioma!",
     "units-config-title": "Unidades de medida",
     "units-config-metric-option": "Sistema métrico",
-    "units-config-us-imperial-option": "Sistema del sistema técnico estadounidense"
+    "units-config-us-imperial-option": "Sistema del sistema técnico estadounidense",
+    "settings-beta-title": "Activar funciones beta",
+    "settings-beta-warning": "(Altamente no recomendado)",
+    "settings-other": "Otros",
+    "privacy-btn": "Política de privacidad",
+    "mention-btn": "Aviso legal"
 }

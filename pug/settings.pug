@@ -85,16 +85,16 @@
     //-  p Afficher les images des quiz dans la liste
     //-  input#showImg.switch(type="checkbox")
     //-
-    //-br
-    //-br
-    //-br
-    //-h1 Autres
-    //-hr
-    //-.settings-line
-    //-  p
-    //-    | Utiliser les fonctionnalité beta 
-    //-    span(style="font-size: smaller;") (fortement déconseiller)
-    //-  input#betaFeathures.switch(type="checkbox")
+    br
+    br
+    br
+    h1(translation_id="settings-other") Autres
+    hr
+    .settings-line
+      p
+        span(translation_id="settings-beta-title") Use beta feathures 
+        span(style="font-size: smaller; margin-left:10px;" translation_id="settings-beta-warning") (fortement déconseiller)
+      input.switch(checked="true" type="checkbox" settings_id="GAME_SETTINGS_BETA" default_settings_value="false")
     
     br
     br
@@ -181,16 +181,20 @@
       a(href="https://osm-boundaries.com/") OSMB
       |  and 
       a(href="https://www.openstreetmap.org/") OSM
-      | . The base maps are form 
+      | . The base maps are from 
       a(href="https://carto.com/") CartoDB
       | .
       br
       br
-      | Metrop use 
+      | Metrop uses 
       a(href="https://leafletjs.com/") Leaflet
       |  and 
       a(href="https://maplibre.org/") MapLibre
       |  (some amazing api) to manage maps.
+      br
+      | Metrop also use 
+      a(href="https://countries.dev/") countries.dev 
+      | to get cities info (in the editor).
       br
       br
       | The animated logo and the favicon are from the 
@@ -203,24 +207,14 @@
     br
     h1(translation_id="settings-legal") Mentions légales
     hr
-    h3(style="font-size: smaller; text-align: left;")
-      span(translation_id="legal-editor") 
-      | Jimmy (speudonyme)
-      br
-      br
-      span(translation_id="legal-contact")
-      | @jimmxyz sur github
-      br
-      br
-      span(translation_id="legal-warning-french-law")
-      br
-      br
-      span(translation_id="legal-host-server-name")
-      | OVHcloud SAS
-      br
-      br
-      span(translation_id="legal-host-server-adress")
-      | 2 rue Kellermann - 59100 Roubaix - France 
-      br
-      br
-      span(translation_id="legal-confidentiality-notice")
+    br
+    button.btn#privacyBtn 
+      svg(xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3")
+        path(d="M480-164q97-30 162-118.5T718-480H480v-315l-240 90v207q0 7 2 18h238v316Zm-13 79q-6-1-12-3-135-45-215-166.5T160-516v-189q0-25 14.5-45t37.5-29l240-90q14-5 28-5t28 5l240 90q23 9 37.5 29t14.5 45v189q0 140-80 261.5T505-88q-6 2-12 3t-13 1q-7 0-13-1Z")
+      span(translation_id="privacy-btn") See the privacy policy 
+    br
+    button.btn#mentionBtn 
+      svg(xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3")
+        path(d="M240-80q-50 0-85-35t-35-85v-40q0-33 23.5-56.5T200-320h40v-480q0-33 23.5-56.5T320-880h440q33 0 56.5 23.5T840-800v600q0 50-35 85t-85 35H240Zm480-80q17 0 28.5-11.5T760-200v-600H320v480h280q33 0 56.5 23.5T680-240v40q0 17 11.5 28.5T720-160ZM400-600q-17 0-28.5-11.5T360-640q0-17 11.5-28.5T400-680h280q17 0 28.5 11.5T720-640q0 17-11.5 28.5T680-600H400Zm0 120q-17 0-28.5-11.5T360-520q0-17 11.5-28.5T400-560h280q17 0 28.5 11.5T720-520q0 17-11.5 28.5T680-480H400ZM240-160h360v-80H200v40q0 17 11.5 28.5T240-160Zm0 0h-40 400-360Z")
+      span(translation_id="mention-btn") See the legal mention
+        

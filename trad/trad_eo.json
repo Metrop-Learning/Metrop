@@ -43,7 +43,6 @@
     "legal-warning-french-law": "Eldoninto estas submetita al la franca juro.",
     "legal-host-server-name": "Gastejisto: ",
     "legal-host-server-adress": "Adreso de la gastejisto: ",
-    "legal-confidentiality-notice": "Neniuj datumoj estas sendataj al Metrop aŭ al triaj partioj. Tamen, certaj ne-personaj datumoj povas esti konservataj en la loka memoro de via retumilo por certigi la ĝustan funkciadon de la retejo.",
     "beta-warning": "Averto",
     "beta-warning-text": "Metrop estas ankoraŭ en beta-versio, kaj kelkaj el la sekvaj funkcioj eble ne funkcios ĝuste.",
     "settings-map": "Mapo",
@@ -64,5 +63,10 @@
     "placeHolderCards-card-text": "Normale devus esti almenaŭ unu ĉi tie. Ĉi tio eble indikas konektan problemon, provizoran cimon, aŭ ke neniu kvizo ankoraŭ estis aldonita. Provu ŝanĝi kategorion aŭ lingvon!",
     "units-config-title": "Mezurunuoj",
     "units-config-metric-option": "Metra sistemo",
-    "units-config-us-imperial-option": "Usona kutima sistemo"
+    "units-config-us-imperial-option": "Usona kutima sistemo",
+    "settings-beta-title": "Aktivigi betaajn funkciojn",
+    "settings-beta-warning": "(Tre malkonsilinde)",
+    "settings-other": "Alia",
+    "privacy-btn": "Privateca politiko",
+    "mention-btn": "Leĝaj informoj"
 }

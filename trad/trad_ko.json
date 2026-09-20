@@ -43,7 +43,6 @@
     "legal-warning-french-law": "게시자는 프랑스 법률의 적용을 받습니다.",
     "legal-host-server-name": "호스팅 제공업체: ",
     "legal-host-server-adress": "호스트 주소: ",
-    "legal-confidentiality-notice": "어떠한 데이터도 Metrop이나 제3자에게 전송되지 않습니다. 다만, 웹사이트가 정상적으로 작동하도록 일부 비개인적 데이터가 브라우저의 로컬 스토리지에 저장될 수 있습니다.",
     "beta-warning": "주의",
     "beta-warning-text": "Metrop은 아직 베타 버전이며, 일부 기능이 정상적으로 작동하지 않을 수 있습니다.",
     "settings-map": "지도",
@@ -64,5 +63,10 @@
     "placeHolderCards-card-text": "일반적으로 최소 하나의 퀴즈가 있어야 합니다. 연결 문제, 일시적인 오류 또는 아직 추가된 퀴즈가 없기 때문일 수 있습니다. 다른 카테고리로 전환하거나 언어를 변경해 보세요!",
     "units-config-title": "측정 단위",
     "units-config-metric-option": "미터법",
-    "units-config-us-imperial-option": "미국 관습 단위계"
+    "units-config-us-imperial-option": "미국 관습 단위계",
+    "settings-beta-title": "베타 기능 활성화",
+    "settings-beta-warning": "(적극 권장하지 않음)",
+    "settings-other": "기타",
+    "privacy-btn": "개인정보 처리방침",
+    "mention-btn": "법적 고지"
 }

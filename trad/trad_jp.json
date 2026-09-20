@@ -43,7 +43,6 @@
     "legal-warning-french-law": "発行者はフランス法に準拠します。",
     "legal-host-server-name": "ホスティングプロバイダー：",
     "legal-host-server-adress": "ホストの住所：",
-    "legal-confidentiality-notice": "データがMetropや第三者に送信されることはありません。ただし、サイトが正常に機能するよう、一部の非個人データがお使いのブラウザのローカルストレージに保存される場合があります。",
     "beta-warning": "ご注意",
     "beta-warning-text": "Metropはまだベータ版です。以下の機能の一部が正常に動作しない場合があります。",
     "settings-map": "マップ",
@@ -64,5 +63,10 @@
     "placeHolderCards-card-text": "通常はここの少なくとも1つのクイズが表示されます。接続の問題、一時的な不具合、またはまだクイズが追加されていない可能性があります。別のカテゴリーに切り替えるか、言語を変更してみてください！",
     "units-config-title": "計量単位",
     "units-config-metric-option": "メートル法",
-    "units-config-us-imperial-option": "米国慣用単位"
+    "units-config-us-imperial-option": "米国慣用単位",
+    "settings-beta-title": "ベータ機能を有効にする",
+    "settings-beta-warning": "（強く非推奨）",
+    "settings-other": "その他",
+    "privacy-btn": "プライバシーポリシー",
+    "mention-btn": "法的通知"
 }

@@ -11,7 +11,7 @@ import * as ui from "./js/ui.js"
 
 // INIT
 
-const ver =  [0,8,4,"a"]
+const ver =  [0,8,4,"b"]
 const verDate = [2026,9,1]
 const license_link = "https://app.metrop-geo.fr/LICENSE"
 const license = "MIT License"
@@ -277,17 +277,15 @@ async function explore(nb,num){
   document.getElementById('cardInfoPopUp_info_lenght_txt').innerText = obj.list.length
   document.getElementById('cardInfoPopUp_imgFlag').src = data.findElementByPath(obj.cardInfo.setInfo)?.flag ?? data.findElementByPath("WD")?.flag
   let pict = obj.cardInfo.pictureURL ?? "None"
-  if (pict == "None"){ pict = "https://upload.wikimedia.org/wikipedia/commons/9/97/ISS-42_Waning_sun.jpg" }
-  document.getElementById('cardInfoPopUp_MainBox').style.setProperty(
-    '--bg-image-bg-card',
-    'url("'+ pict +'")'
-  );
 
   if(data.quizdb[nb]["LOCAL"]==true){
     document.getElementById('cardInfoPopUp_likeBtn').style.display = "none"
     document.getElementById('cardInfoPopUp_shareBtn').style.display = "none"
     document.getElementById('cardInfoPopUp_deleteBtn').style.display = "flex"
     document.getElementById('cardInfoPopUp_modifyBtn').style.display = "flex"
+    if(pict == "None"){
+        pict = "https://upload.wikimedia.org/wikipedia/commons/2/29/Sunset_from_Internation_space_station.jpg"
+    }
   } else{
     document.getElementById('cardInfoPopUp_likeBtn').style.display = "flex"
     document.getElementById('cardInfoPopUp_shareBtn').style.display = "flex"
@@ -295,6 +293,14 @@ async function explore(nb,num){
     document.getElementById('cardInfoPopUp_modifyBtn').style.display = "none"
   }
 
+  if (pict == "None"){ pict = "https://upload.wikimedia.org/wikipedia/commons/9/97/ISS-42_Waning_sun.jpg" }
+  document.getElementById('cardInfoPopUp_MainBox').style.setProperty(
+    '--bg-image-bg-card',
+    'url("'+ pict +'")'
+  );
+
+
+  //NEED TO CHANGE
   if("conflic_type" in obj.cardInfo){
     if(obj.cardInfo.conflic_type.includes("exi")){
         document.getElementById('exi').style.display = "block"
@@ -492,6 +498,37 @@ modifyBtn.addEventListener('click', async () => {
   window.location.assign(url);
 });
 
+const deleteBtn = document.getElementById('cardInfoPopUp_deleteBtn');
+
+deleteBtn.addEventListener('click', async () => {
+  const rawList = localStorage.getItem("LOCALDB_QUIZLIST");
+  let keysList = rawList ? JSON.parse(rawList) : [];
+  if (keysList[numModif]) {
+    //get info
+    const rawData = localStorage.getItem("LOCALDB_QUIZDATA");
+    let dataStore = {};
+
+    if (rawData) {
+        try {
+            dataStore = JSON.parse(rawData);
+        } catch (error) {
+            console.error("Error parsing json :", error);
+            dataStore = {};
+        }
+    }
+    //asking
+    if(!confirm("You are deleting a quiz.\n\nThis action IS NOT REVERSIBLE.\n(we recommand to download the quiz before deleting it)\n\nAre you sure ?")){return}
+    // deleting...
+    delete dataStore[keysList[numModif]]
+    keysList.splice(numModif, 1);
+    //deleted, now saving
+    localStorage.setItem("LOCALDB_QUIZDATA", JSON.stringify(dataStore));
+    localStorage.setItem("LOCALDB_QUIZLIST", JSON.stringify(keysList));
+    //reload
+
+  }
+});
+
 const likeBtn = document.getElementById('cardInfoPopUp_likeBtn');
 
 likeBtn.addEventListener('click', async () => {
@@ -510,5 +547,13 @@ likeBtn.addEventListener('click', async () => {
         document.querySelector("#cardInfoPopUp_likeBtn #like_on").style.display = "none"
     }
 });
+
+function openLegalPage(documentType) {
+    const url = new URL("./legal/index.html", window.location.href);
+    url.searchParams.set("begin", documentType);
+    window.open(url.toString(), '_blank');
+}
+document.getElementById("privacyBtn").addEventListener('click', () => openLegalPage('privacy'));
+document.getElementById("mentionBtn").addEventListener('click', () => openLegalPage('legal'));
 
 console.log(likeList)

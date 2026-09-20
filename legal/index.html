@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metrop</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">    <script type="module">
+    import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
+    async function loadLegalContent() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const begin = urlParams.get('begin') || 'legal';
+
+  const langSys = localStorage.getItem('LANG_SYS') || 'en';
+
+  const fileName = `${begin}_${langSys}.md`;
+
+  try {
+    const response = await fetch(fileName);
+    
+    if (!response.ok) {
+      throw new Error(`Impossible to load the file ${fileName} (Statut : ${response.status})`);
+    }
+
+    const markdownText = await response.text();
+    const contentElement = document.getElementById('legalContentMarkdown');
+    if (contentElement) {
+      contentElement.innerHTML = marked.parse(markdownText);
+    }
+  } catch (error) {
+    console.error("Error while loading : ", error);
+    const contentElement = document.getElementById('legalContentMarkdown');
+    if (contentElement) {
+      contentElement.innerHTML = "<p>Error while loading...</p>";
+    }
+  }
+}
+document.addEventListener('DOMContentLoaded', loadLegalContent);
+    </script>
+</head>
+<body>
+    <div id="legalContentMarkdown"></div>
+</body>
+</html>

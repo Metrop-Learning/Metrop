@@ -46,11 +46,84 @@ document.getElementById('languageSelect').addEventListener("change",(e)=>{
 
 let activeSelectionElement = null;
 
-map.on('click', (e) => {
+async function getCities(lat,lng,range=1){
+    let response = await fetch(`https://countries.dev/cities/near?lat=${lat}&lng=${lng}&limit=${range}`);
+    let info = await response.json();
+    let cities = "none"
+    let lastLevel = "none"
+    for(let i = 0; i < info.length; i++){
+        if(info[i].featureCode == "PPL" && lastLevel == "none"){
+            cities = info[i].name
+            lastLevel = "PPL"
+        }
+        else if(info[i].featureCode == "PPLA2" && (lastLevel == "PPL" || lastLevel == "none")){
+            cities = info[i].name
+            lastLevel = "PPLA2"
+        }
+        else if(info[i].featureCode == "PPLA" && (lastLevel == "PPLA2" || lastLevel == "PPL" || lastLevel == "none")){
+            cities = info[i].name
+            lastLevel = "PPLA"
+        }
+        else if(info[i].featureCode == "PPLC" && (lastLevel == "PPLA" || lastLevel == "PPLA2" || lastLevel == "PPL" || lastLevel == "none")){
+            cities = info[i].name
+            lastLevel = "PPLC"
+            return cities
+        }
+    }
+    if(cities == "none"){
+        if(range == 1){
+            range = 5
+        }
+        if (range > 100){
+            return "ERROR:NO CITIES"
+        }
+        cities = getCities(lat,lng,range*2)
+    }
+    return cities
+}
+
+async function getCitiesCoord(name,range=1){
+    let response = await fetch(`https://countries.dev/cities?q=${name}&limit=${range}`);
+    let info = await response.json();
+    let cities = []
+    let lastLevel = "none"
+    for(let i = 0; i < info.length; i++){
+        if(info[i].featureCode == "PPL" && lastLevel == "none"){
+            cities = [info[i].latitude,info[i].longitude]
+            lastLevel = "PPL"
+        }
+        else if(info[i].featureCode == "PPLA2" && (lastLevel == "PPL" || lastLevel == "none")){
+            cities = [info[i].latitude,info[i].longitude]
+            lastLevel = "PPLA2"
+        }
+        else if(info[i].featureCode == "PPLA" && (lastLevel == "PPLA2" || lastLevel == "PPL" || lastLevel == "none")){
+            cities = [info[i].latitude,info[i].longitude]
+            lastLevel = "PPLA"
+        }
+        else if(info[i].featureCode == "PPLC" && (lastLevel == "PPLA" || lastLevel == "PPLA2" || lastLevel == "PPL" || lastLevel == "none")){
+            cities = [info[i].latitude,info[i].longitude]
+            lastLevel = "PPLC"
+            return cities
+        }
+    }
+    if(cities == []){
+        if(range == 1){
+            range = 5
+        }
+        if (range > 100){
+            return "ERROR:NO CITIES"
+        }
+        cities = getCities(name,range*2)
+    }
+    return cities
+}
+
+map.on('click', async (e) => {
     if (!activeSelectionElement) return;
     const { lat, lng } = e.lngLat;
     activeSelectionElement.setCoordinates(lat, lng);
     map.getCanvas().style.cursor = '';
+    activeSelectionElement.setName(await getCities(lat,lng));
     activeSelectionElement = null;
 });
 
@@ -135,6 +208,27 @@ function createAnElement(elementAlreadyExisting){
             popup.setHTML(`<h3>${nameVal}</h3>`);
             Object.assign(elementsMap.get(currentId), {name:nameVal});
         });
+        nameInput.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+                nameInput.blur();
+            }
+        });
+        nameInput.addEventListener("blur", async () => {
+            if(latInput.value == "" && lngInput.value == ""){
+                let coordNew = await getCitiesCoord(nameVal)
+                coords[0] = coordNew[0];
+                latInput.value = coordNew[0]
+                coords[1] = coordNew[1];
+                lngInput.value = coordNew[1]
+                Object.assign(elementsMap.get(currentId), {lat:coords[0]});
+                Object.assign(elementsMap.get(currentId), {lng:coords[1]});
+                updateMarker();
+                map.flyTo({
+                    center: [coords[1], coords[0]],
+                    essential: true
+                });
+            }
+        });
     }
     deleteBtn.addEventListener("click", () => {
         if (marker) {
@@ -160,10 +254,19 @@ function createAnElement(elementAlreadyExisting){
 
         updateMarker();
     };
+    const setName = (name) => {
+        if(nameInput.value == ""){
+            nameInput.value = name
+            nameVal = name
+            popup.setHTML(`<h3>${nameVal}</h3>`);
+            Object.assign(elementsMap.get(currentId), {name:nameVal});
+        };
+    };
 
     mapSelectBtn.addEventListener("click", () => {
         activeSelectionElement = {
-            setCoordinates: setCoordinates
+            setCoordinates: setCoordinates,
+            setName: setName
         };
 
         map.getCanvas().style.cursor = 'crosshair';

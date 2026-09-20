@@ -33,7 +33,11 @@
     overflow-x: hidden
     text-align: left
     @media (max-width: 1100px)
-        height: 100dvh
+        width: calc(100% - 4px)
+        height: calc(100dvh - 4px)
+        top: 0
+        left: 0
+        transform: translate(0%, 0%)
 
 #cardInfoPopUp_MainBox::-webkit-scrollbar
   display: none
@@ -250,27 +254,31 @@
     flex-grow: 1
     margin-top: 20px
     overflow: hidden
+    display: flex
     height: 100%
+    flex-direction: column
 
 @media (max-width: 1100px)
     #twoColSide
         flex-direction: column
         height: auto
+        min-height: 100%
         overflow-y: hidden 
+
     #infoSide
         height: auto
-        flex-shrink: 0
+        flex-grow: 1
+        display: flex
+        flex-direction: column
+
     #cardInfoPopUp_listGameMode
         flex-shrink: 0
         height: auto
-        width: calc( 100% - 40px)
+        width: calc(100% - 40px)
         border-left: none
         border-top: solid 2px var(--header-top-color)
-        padding-bottom: 200px
-    #cardInfoPopUp_MainBox
-        width: 100%
-    #cardInfoPopUp_title, #cardInfoPopUp_shortResume, #cardInfoPopUp_longResume, #cardInfoPopUp_info_lenght
-        padding-right: 50px
+        padding-bottom: 20px
+        justify-content: flex-end
     
 .warning
     display: none
