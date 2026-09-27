@@ -89,6 +89,20 @@ body{
     flex-shrink: 0;
   }
 
+  #flagDisplay {
+    display: none; //should be flex when displayed
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    #flagIMG{
+        max-width: 70%;
+        max-height: 50%;
+        width: auto;
+        height: auto;
+    }
+  }
+
   .flag-grid {
     display: none;
     grid-template-columns: repeat(auto-fit, minmax(clamp(60px, 12vw, 140px), 1fr)); 

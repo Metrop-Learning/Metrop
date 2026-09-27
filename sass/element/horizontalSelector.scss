@@ -2,18 +2,21 @@
 
 // credit : https://uiverse.io/Pradeepsaranbishnoi/slimy-warthog-37
 
-.horizontalSelector{
+.horizontalSelector {
     :focus {
         outline: 0;
         border-color: var(--btn-color);
         box-shadow: 0 0 0 4px var(--footer-contrib-color);
     }
+    
     div {
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       margin-top: 0.5rem;
       justify-content: center;
+      width: 100%;
     }
+
     input[type="radio"] {
       clip: rect(0 0 0 0);
       clip-path: inset(100%);
@@ -23,14 +26,23 @@
       white-space: nowrap;
       width: 1px;
     }
+
     input[type="radio"]:checked + span {
       box-shadow: 0 0 0 0.0625em var(--btn-color);
       background-color: var(--footer-contrib-color);
       z-index: 1;
       color: #fff;
     }
+
+    label {
+      flex: 1 1 0%;
+      min-width: 0;
+      display: flex;
+    }
+
     label span {
       display: block;
+      width: 100%;
       cursor: pointer;
       background-color: var(--card-background-color);
       padding: 0.375em .75em;
@@ -41,9 +53,14 @@
       color: var(--text-color);
       text-align: center;
       transition: background-color .2s ease;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
+
     label:first-child span {
       border-radius: .375em 0 0 .375em;
+      margin-left: 0;
     }
 
     label:last-child span {

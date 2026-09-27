@@ -57,7 +57,7 @@
       input.switch(checked="true" type="checkbox" settings_id="GAME_SETTINGS_TERRITORY_LOCK" default_settings_value="true")
     .settings-line
       p(translation_id="units-config-title")
-      .horizontalSelector#unitSelector
+    .horizontalSelector#unitSelector
         div
           label
             input(type="radio", name="units", checked)
@@ -159,10 +159,19 @@
       .lineInfo
         a#geoDataLList(href="") 
     h3(style="font-size: smaller; text-align: left;")
-      a(href="https://github.com/Metrop-Learning/Metrop") See the code or contribute ↗
+      button.btn(onclick="window.location.assign('https://github.com/Metrop-Learning/Metrop')")
+        svg(xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3")
+          path(d="m558-144 238-74q-5-9-14.5-15.5T760-240H558q-27 0-43-2t-33-8l-57-19q-16-5-23-20t-2-31q5-16 19.5-23.5T450-346l42 14q17 5 38.5 8t58.5 4h11q0-11-6.5-21T578-354l-234-86h-64v220l278 76Zm-21 78-257-72q-8 26-31.5 42T200-80h-80q-33 0-56.5-23.5T40-160v-280q0-33 23.5-56.5T120-520h224q7 0 14 1.5t13 3.5l235 87q33 12 53.5 42t20.5 66h80q50 0 85 33t35 87q0 22-11.5 34.5T833-145L583-67q-11 4-23 4t-23-3Zm-417-94h80v-280h-80v280Zm490.5-317.5Q596-483 584-494L474-602q-31-30-52.5-66.5T400-748q0-55 38.5-93.5T532-880q32 0 60 13.5t48 36.5q20-23 48-36.5t60-13.5q55 0 93.5 38.5T880-748q0 43-21 79.5T807-602L696-494q-12 11-26.5 16.5T640-472q-15 0-29.5-5.5ZM640-552l109-107q19-19 35-40.5t16-48.5q0-22-15-37t-37-15q-14 0-26.5 5.5T700-778l-29 35q-12 14-31 14t-31-14l-29-35q-9-11-21.5-16.5T532-800q-22 0-37 15t-15 37q0 27 16 48.5t35 40.5l109 107Zm0-154Z")
+        span Contribute to Metrop
       br
+      button.btn(onclick="window.location.assign('https://github.com/Metrop-Learning/Metrop')")
+        svg(xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3")
+          path(d="M200-800v241-1 400-640 200-200Zm0 720q-33 0-56.5-23.5T120-160v-640q0-33 23.5-56.5T200-880h287q16 0 30.5 6t25.5 17l194 194q11 11 17 25.5t6 30.5v28q0 17-11.5 28T720-540q-17 0-28.5-11.5T680-580v-20H520q-17 0-28.5-11.5T480-640v-160H200v640h220q17 0 28.5 11.5T460-120q0 17-11.5 28.5T420-80H200Zm531-149q29-29 29-71t-29-71q-29-29-71-29t-71 29q-29 29-29 71t29 71q29 29 71 29t71-29ZM864-57q-17 0-28-11l-80-80q-21 14-45.5 21t-50.5 7q-75 0-127.5-52.5T480-300q0-75 52.5-127.5T660-480q75 0 127.5 52.5T840-300q0 26-7 50.5T812-204l80 80q11 11 11 28t-11 28q-11 11-28 11Z")
+        span See the source code
       br
-      a(href="https://metrop-learning.github.io/Tools-and-Documentation/") See the database ↗
+      .thanks
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-240ZM224-378q62-31 126-46.5T480-440q4 0 7-.5t7 .5q17 4 25.5 19t3.5 32q-5 17-19.5 23.5T472-360q-54-3-107.5 12.5T260-306q-9 5-14.5 14t-5.5 20v32h266q20 0 30 12.5t10 27.5q0 15-10 27.5T506-160H240q-33 0-56.5-23.5T160-240v-32q0-34 17.5-62.5T224-378Zm143-149q-47-47-47-113t47-113q47-47 113-47t113 47q47 47 47 113t-47 113q-47 47-113 47t-113-47Zm169.5-56.5Q560-607 560-640t-23.5-56.5Q513-720 480-720t-56.5 23.5Q400-673 400-640t23.5 56.5Q447-560 480-560t56.5-23.5ZM480-640Zm236 248q20-20 36.5-34t45.5-14q37 0 59.5 25.5T880-357q0 15-6 30t-18 27L744-188q-12 12-28 12t-28-12L576-300q-13-13-18.5-28t-5.5-30q0-32 23-57t59-25q28 0 44 13t38 35Z"/></svg>
+        p Thank you for using Metrop
     br
     br
     br
@@ -217,4 +226,7 @@
       svg(xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3")
         path(d="M240-80q-50 0-85-35t-35-85v-40q0-33 23.5-56.5T200-320h40v-480q0-33 23.5-56.5T320-880h440q33 0 56.5 23.5T840-800v600q0 50-35 85t-85 35H240Zm480-80q17 0 28.5-11.5T760-200v-600H320v480h280q33 0 56.5 23.5T680-240v40q0 17 11.5 28.5T720-160ZM400-600q-17 0-28.5-11.5T360-640q0-17 11.5-28.5T400-680h280q17 0 28.5 11.5T720-640q0 17-11.5 28.5T680-600H400Zm0 120q-17 0-28.5-11.5T360-520q0-17 11.5-28.5T400-560h280q17 0 28.5 11.5T720-520q0 17-11.5 28.5T680-480H400ZM240-160h360v-80H200v40q0 17 11.5 28.5T240-160Zm0 0h-40 400-360Z")
       span(translation_id="mention-btn") See the legal mention
+    br
+    br
+    br
         

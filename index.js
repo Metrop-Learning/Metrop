@@ -11,13 +11,24 @@ import * as ui from "./js/ui.js"
 
 // INIT
 
-const ver =  [0,8,4,"b"]
-const verDate = [2026,9,1]
+const ver =  [0,8,4,"c"]
+const verDate = [2026,9,27]
 const license_link = "https://app.metrop-geo.fr/LICENSE"
 const license = "MIT License"
 const verGeoDatabase =  data.use.geo.ver();
 const verGeoDatabaseDate = data.use.geo.date();
 const verGeoDatabaseID = data.use.geo.id();
+
+function displayConsoleImage() {
+  const palette = atob("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").match(/[\s\S]{4}/g).map(grp=>"#"+[...grp].map(c=>c.charCodeAt(0).toString(16).padStart(2,"0")).join(""));
+  const consoleString = "0<!8*0<19!14*0917!17*0816!20*0615!12*03!8*0514!24*0413!25*0413!26*0312!27*0312!29*1!30*1!30*1!30*1!30*1!30*1!30*1!30*1!30*1!30*1!30*12!12*03!15*12!12*03!15*13!12*04!11*0313!2*03!22*0314!24*0415!22*0516!20*0617!18*0719!14*091<!8*0<1".replace(/!(\d+)\*/g, (_, n) => '02'.repeat(+n)).split('').map(b=>{return b==='0'?'%c':b==='1'?'\n':''.padEnd((b.codePointAt(0)-49)*2,' ')}).join('');
+  const paletteMap = "ĀāĂăĄąĆćĈĀĉĊċČčĎďĐđĒēĔĕĖĀėĘęĚěĜĝĞğĠġĢģĤĥĦħĀĨĩĪīĬĭĮįİıĲĢĳĴĵĶķĸĹĺĀĻļĽľĿŀŁłŃńŅğņŇňŉŊŋŌōŎĀŏŐĐőŒœŔŕŖŗĵŘřķŚśŜŝŞşŠšŢţĀŤťőŦŧŨũŪŚūŪŬŭŮůŰűŲųŴŵŶŷŸŹĀźŻőżŽžſƀƁƂƃƄƅƆƇƈƉƊƋƌƍƎƏƐƑƒĀƓƔőčƕƖƗƘƙƚƛƜƝƞƟƠơƢƣƤƥƦƧƨƩƪƫĀƬƭƮƯưƱƲƳƴƵƶőƷƸƹƺƻƼƥƽƾƿǀǁǂǃǄǅĀǆǇǈǉőǊǋǌǍǎǏǐǑǒǓǔǕǖǗǘǙǚǛǜǝǞǟǠǡĀǢǣǤǥǦǧǨǩǪǫǬǭǮǯǰǱǲǳǴǵǶǷǸǹǺǻǼǽǾǿȀȁȂȃȄȅȆȇȈȉȊȋȌȍȎȏȐȑȒȓȔȕȖȗȘșȚțȜȝȞȟȠȡȢȣȤȥȦȧȨȩȋȪȫȬȭȮȯȰƿȱȲȳȴȵȶȷȸȹȺȻȼȽĴȾȿɀɁɂɃɄɅɆɇȬȪɈɉɊɋɌɍɎɏɐɑɒɓɔɕɖɗɘǼəŚɚɛɜɝɞɟɠɡɢɣȓɤɥɦɧɨɎɩɪɫɬɭɮɯɰɱɲɳɴƗɵĤɶɷɸŞɹɺɻɼɽɡɾȨɿʀʁʂʃʄʅʆʇʈʉʊʋʌʍʎʏʐŇŚʑʒʓʔʕʖʗʘʙʚʛʜʝʞʟʠʡʢʣʤʥʦʧʨʩʪʫʬʭņķʮĵʯʰʱʲʳʴʵʶʷʸʹʺʻɓʼʽʾʿˀˁ˂˃˄˅ˆˇķˈĴˉĢˊˋņˌˍˎˏːˑ˒˓˔˕˖Ā˗˘˙˚˛˜˝˞˟ˠɵĵņˡˢǟˣˤ˥˦˧˨˩˪˫ˬ˭Āˮ˯˰˱˲˳˴˵˶˷˸˹ņĶˉ˺˻˼˽˾˿̀́̂̃̄̅Ā̆̇̈̉̊̋̌̍̎̏̐Ĵņ̛̖̗̘̙̑̒̓̔̕̚Ā̜̝̞̟̠ʻ˚̡̢˹̣ɴň̤ģ̨̥̦̩̪̫̬̭̮̆Ā̴̵̶̷̸̯̰̱̲̳̹̺̻̼̇̽̾̿̀́͂̓̈́ͅĀ͇͈̫͉͆͊˫͍͎͋͌͏͓͔͕͖͙͐͑͒͗͘Ā͚͕ͅʆ̞͉͛ͣ̃ͤͥͦͧ͜͟͢͝͞͠͡ĀͨͩͪͫͬͭͮͯͰͱͲͳʹ͵͉Ͷͷ͸Ā͹ͺͻͼͽ;ɭͤͽͿ΀˖΁΂Ā΃΄΅Ά·ΈΉΊĀ".split('').map(c=>c.codePointAt(0)-256);
+  console.info(consoleString, ...paletteMap.map(a=>'background: '+palette[a]));
+}
+
+//Thanks to : https://nebev.github.io/console-art/
+
+displayConsoleImage()
 
 const verAPI = [1,0]
 
@@ -44,6 +55,7 @@ document.getElementById('licenseLink').href = license_link
 // Info Geo Database
 document.getElementById('geoDataId').innerText = data.use.geo.id()
 document.getElementById('geoDataLList').innerText = data.use.geo.license_link()
+document.getElementById('geoDataLList').href = data.use.geo.license_link()
 document.getElementById("verApiGeoText").innerText = `${data.use.geo.api()[0]} . ${data.use.geo.api()[1]}`
 document.getElementById('geoDataName').innerText = data.use.geo.name()
 document.getElementById('geoDataVer').innerText = `${data.use.geo.ver()[0]} . ${data.use.geo.ver()[1]} . ${data.use.geo.ver()[2]}`

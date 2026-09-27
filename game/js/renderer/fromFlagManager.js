@@ -11,6 +11,7 @@ export async function init(dataSet, nameList){
     
     document.getElementById('mapArea').style.display = "none";
     document.getElementById('flagArea').style.display = "flex";
+    document.getElementById('flagDisplay').style.display = "flex";
 
     let selector = 0;
     let reccords = []

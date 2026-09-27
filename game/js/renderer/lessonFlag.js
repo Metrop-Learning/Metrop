@@ -5,6 +5,7 @@ import * as ui from '../ui.js';
 export function init(dataSet, nameList){
     document.getElementById('mapArea').style.display = "none";
     document.getElementById('flagArea').style.display = "flex";
+    document.getElementById('flagDisplay').style.display = "flex";
 
     ui.progress.update(0);
 
