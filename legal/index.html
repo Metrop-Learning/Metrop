@@ -11,9 +11,16 @@
   const urlParams = new URLSearchParams(window.location.search);
   const begin = urlParams.get('begin') || 'legal';
 
+  const url = urlParams.get('url')
+
   const langSys = localStorage.getItem('LANG_SYS') || 'en';
 
-  const fileName = `${begin}_${langSys}.md`;
+  let fileName;
+  if(url){
+    fileName = `${url}`;
+  } else{
+    fileName = `${begin}_${langSys}.md`;
+  }
 
   try {
     const response = await fetch(fileName);

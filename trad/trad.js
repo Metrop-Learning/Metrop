@@ -1,17 +1,22 @@
+let langFile = null
+
 export async function traductAll(path,codeLang){
-    const response = await fetch(path + "trad_" + codeLang + ".json");
-    const trad_file = await response.json();
+    if (langFile == null){
+      const response = await fetch(path + "trad_" + codeLang + ".json");
+      const trad_file = await response.json();
+      langFile = trad_file
+    }
     //spécial translation
     try{
-      document.getElementById('searchInput').placeholder = trad_file["id-search-placeholder"]
-      document.getElementById('mobileSearchInput').placeholder = trad_file["id-search-placeholder"]
+      document.getElementById('searchInput').placeholder = langFile["id-search-placeholder"]
+      document.getElementById('mobileSearchInput').placeholder = langFile["id-search-placeholder"]
     } catch{
       //nothing
     }
     //all translation :
     const trad_el = document.querySelectorAll('*[translation_id]');
     trad_el.forEach(el => {
-      el.innerText = trad_file[el.getAttribute('translation_id')]
+      el.innerText = langFile[el.getAttribute('translation_id')]
     });
     if(codeLang == "jp"){
       document.documentElement.lang = "ja";
@@ -21,10 +26,13 @@ export async function traductAll(path,codeLang){
 }
 
 export async function getTrad(path,codeLang,transId){
-    const response = await fetch(path + "trad_" + codeLang + ".json");
-    const trad_file = await response.json();
+    if (langFile == null){
+      const response = await fetch(path + "trad_" + codeLang + ".json");
+      const trad_file = await response.json();
+      langFile = trad_file
+    }
     //spécial translation
-    return trad_file[transId]
+    return langFile[transId]
 }
 
 export function lang(lang){

@@ -68,5 +68,13 @@
     "settings-beta-warning": "(Fortemente sconsigliato)",
     "settings-other": "Altro",
     "privacy-btn": "Informativa sulla privacy",
-    "mention-btn": "Note legali"
+    "mention-btn": "Note legali",
+    "category-custom": "Personalizzato",
+    "placeHolderCards-custom-title": "Nessun quiz personalizzato presente",
+    "placeHolderCards-custom-text": "Inizia a creare i tuoi quiz per arricchire la tua collezione!",
+    "create-new-quiz-type-city": "Nuovo quiz sulle città",
+    "create-new-quiz-type-country": "Nuovo quiz su paesi/territori",
+    "btn-metrop-contribute": "Contribuisci a Metrop",
+    "btn-metrop-see-code": "Vedi il codice sorgente",
+    "metrop-thanks": "Grazie per aver usato Metrop"
 }

@@ -68,5 +68,13 @@
     "settings-beta-warning": "(Tre malkonsilinde)",
     "settings-other": "Alia",
     "privacy-btn": "Privateca politiko",
-    "mention-btn": "Leĝaj informoj"
+    "mention-btn": "Leĝaj informoj",
+    "category-custom": "Propratagordita",
+    "placeHolderCards-custom-title": "Ankoraŭ neniu kreaĵkvizo",
+    "placeHolderCards-custom-text": "Komencu krei viajn proprajn kvizojn por konstrui vian kolekton!",
+    "create-new-quiz-type-city": "Nova urba kvizo",
+    "create-new-quiz-type-country": "Nova lando/teritoria kvizo",
+    "btn-metrop-contribute": "Kontribui al Metrop",
+    "btn-metrop-see-code": "Vidi la fontkodon",
+    "metrop-thanks": "Dankon pro la uzo de Metrop"
 }

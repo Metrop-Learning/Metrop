@@ -68,5 +68,13 @@
     "settings-beta-warning": "(적극 권장하지 않음)",
     "settings-other": "기타",
     "privacy-btn": "개인정보 처리방침",
-    "mention-btn": "법적 고지"
+    "mention-btn": "법적 고지",
+    "category-custom": "사용자 지정",
+    "placeHolderCards-custom-title": "아직 생성된 퀴즈가 없습니다",
+    "placeHolderCards-custom-text": "나만의 퀴즈를 만들어 컬렉션을 채워보세요!",
+    "create-new-quiz-type-city": "새 도시 퀴즈",
+    "create-new-quiz-type-country": "새 국가/영토 퀴즈",
+    "btn-metrop-contribute": "Metrop에 기여하기",
+    "btn-metrop-see-code": "소스 코드 보기",
+    "metrop-thanks": "Metrop를 이용해 주셔서 감사합니다"
 }

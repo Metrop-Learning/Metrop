@@ -8,6 +8,9 @@ const indicator = document.querySelector("#navBarTop .indicator");
 
 function moveIndicator(link){
     document.querySelectorAll('.menuCards').forEach((e)=>{
+        if(e == document.getElementById('card_customMenu')){
+            return
+        }
         e.style.display = "none"
         e.innerHTML = '<div class="cardLoader shimmer"></div>'.repeat(12);
     })
@@ -38,7 +41,13 @@ const playSVG = '<svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="
 
 export async function buildCardList(filter){
     document.getElementById('no_likes').style.display = "none";
+    document.getElementById("no_custom").style.display = "none"
     let allowed_type = ["place","name","guess","placeTerritory","shadowTerritory","guessFromPosiTerritory","fromFlag"];
+    if(filter == "card_custom"){
+        document.getElementById("card_customMenu").style.display = "grid"
+    } else {
+        document.getElementById("card_customMenu").style.display = "none"
+    }
     if(filter == "card_all"){
         //noting   
     } else if (filter == "card_country"){
@@ -87,6 +96,74 @@ export async function buildCardList(filter){
             document.getElementById('no_likes').style.display = "flex";
         }
         return
+    } else if (filter == "card_custom") {
+        document.getElementById("no_cards").style.display = "none";
+        document.getElementById(filter).innerHTML = "";
+
+        // 1. On identifie directement les index de début/fin des bases "LOCAL === true"
+        let localRanges = [];
+        let idStart = 0;
+        
+        for (let i = 0; i < data.quizdb.length; i++) {
+            let listLength = data.quizdb[i]["QUIZ_LIST"].length;
+            if (data.quizdb[i]["LOCAL"] === true) {
+                localRanges.push({ start: idStart, end: idStart + listLength - 1 });
+            }
+            idStart += listLength;
+        }
+
+        let nbCustom = 0;
+        let tradBtn = await trad.getTrad("./trad/", main.langSys, "btn-explore");
+
+        // 2. On parcourt chaque élément de main.quizList en vérifiant s'il appartient à une plage "local"
+        for (let posiSearch = 0; posiSearch < main.quizList.length; posiSearch++) {
+            
+            // Est-ce que cet index fait partie d'une base locale ?
+            let isInLocalDB = localRanges.some(range => posiSearch >= range.start && posiSearch <= range.end);
+            
+            if (!isInLocalDB) continue; // Si ce n'est pas du local, on passe au suivant en toute sécurité
+
+            let cardInfo = main.quizList[posiSearch][0]?.cardInfo;
+            if (!cardInfo) continue;
+
+            let cardLang = cardInfo.lang;
+            let isValidLang = false;
+
+            // Vérification de la langue
+            if (typeof cardLang == "string") {
+                if (cardLang.toLowerCase() === main.langSys) isValidLang = true;
+            } else if (Array.isArray(cardLang) || typeof cardLang == "object") {
+                if (cardLang.includes(main.langSys)) isValidLang = true;
+            }
+
+            // Si la langue correspond, on génère le HTML
+            if (isValidLang) {
+                nbCustom++;
+                const flagSrc = data.findElementByPath(cardInfo.setInfo)?.flag ?? data.findElementByPath("WD")?.flag;
+                
+                const titleText = (typeof cardLang == "string") 
+                    ? cardInfo.Title 
+                    : cardInfo.Title[main.langSys];
+
+                document.getElementById(filter).insertAdjacentHTML('beforeend',
+                    `<div class='card' onclick="explore(${main.quizList[posiSearch][1]},${main.quizList[posiSearch][2]})">
+                        <img class='flagCard' src='${flagSrc}'>
+                        <p class="titleCard">${titleText}</p>
+                        <div class="exploreCard">${exploreSVG}<p>${tradBtn}</p></div>
+                    </div>`
+                );
+            }
+        }
+
+        if (nbCustom === 0) {
+            document.getElementById('card_custom').style.display = "none";
+            document.getElementById('no_custom').style.display = "flex";
+        } else {
+            document.getElementById('card_custom').style.display = "grid";
+            document.getElementById('no_custom').style.display = "none";
+        }
+        
+        return;
     }
     try{
         main.quizList

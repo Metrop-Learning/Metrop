@@ -11,7 +11,7 @@ import * as ui from "./js/ui.js"
 
 // INIT
 
-const ver =  [0,8,4,"c"]
+const ver =  [0,8,4,"d"]
 const verDate = [2026,9,27]
 const license_link = "https://app.metrop-geo.fr/LICENSE"
 const license = "MIT License"
@@ -50,12 +50,19 @@ document.getElementById('verApiText').innerText = `${verAPI[0]} . ${verAPI[1]}`
 document.getElementById('verDateText').innerText = `${verDate[0]} / ${verDate[1]} / ${verDate[2]}`
 document.getElementById('licenseName').innerText = license
 document.getElementById('licenseLink').innerText = license_link
-document.getElementById('licenseLink').href = license_link
+
+const urlAppLicense = new URL("./legal/index.html", window.location.href);
+urlAppLicense.searchParams.set("url", "../LICENSE");
+document.getElementById('licenseLink').href = urlAppLicense.toString()
 
 // Info Geo Database
 document.getElementById('geoDataId').innerText = data.use.geo.id()
 document.getElementById('geoDataLList').innerText = data.use.geo.license_link()
-document.getElementById('geoDataLList').href = data.use.geo.license_link()
+
+const urlGeoLicense = new URL("./legal/index.html", window.location.href);
+urlGeoLicense.searchParams.set("url", data.use.geo.license_link());
+document.getElementById('geoDataLList').href = urlGeoLicense.toString()
+
 document.getElementById("verApiGeoText").innerText = `${data.use.geo.api()[0]} . ${data.use.geo.api()[1]}`
 document.getElementById('geoDataName').innerText = data.use.geo.name()
 document.getElementById('geoDataVer').innerText = `${data.use.geo.ver()[0]} . ${data.use.geo.ver()[1]} . ${data.use.geo.ver()[2]}`
@@ -64,6 +71,10 @@ let geoLicense = data.use.geo.license()
 document.getElementById('GeolicenseList').innerHTML = ""
 for(let i = 0; i < geoLicense.length; i++){
     document.getElementById('GeolicenseList').innerHTML += "<span>"+geoLicense[i]+"</span>"
+}
+
+if(localStorage.getItem("GAME_SETTINGS_BETA") == "true"){
+    document.getElementById('betaId_CustomMenu').style.display = "block"
 }
 
 if(localStorage.getItem("lastVersionUsed")){

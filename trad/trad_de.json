@@ -68,5 +68,13 @@
     "settings-beta-warning": "(Nicht empfohlen)",
     "settings-other": "Andere",
     "privacy-btn": "Datenschutzerklärung",
-    "mention-btn": "Impressum"
+    "mention-btn": "Impressum",
+    "category-custom": "Benutzerdefiniert",
+    "placeHolderCards-custom-title": "Noch kein eigenes Quiz vorhanden",
+    "placeHolderCards-custom-text": "Erstelle deine eigenen Quizze, um deine Sammlung aufzubauen!",
+    "create-new-quiz-type-city": "Neues Städte-Quiz",
+    "create-new-quiz-type-country": "Neues Länder-/Territorien-Quiz",
+    "btn-metrop-contribute": "Zu Metrop beitragen",
+    "btn-metrop-see-code": "Quellcode ansehen",
+    "metrop-thanks": "Vielen Dank für die Nutzung von Metrop"
 }

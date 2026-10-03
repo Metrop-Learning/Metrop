@@ -68,5 +68,13 @@
     "settings-beta-warning": "（強く非推奨）",
     "settings-other": "その他",
     "privacy-btn": "プライバシーポリシー",
-    "mention-btn": "法的通知"
+    "mention-btn": "法的通知",
+    "category-custom": "カスタム",
+    "placeHolderCards-custom-title": "カスタムクイズはまだありません",
+    "placeHolderCards-custom-text": "オリジナルのクイズを作成してコレクションを増やしましょう！",
+    "create-new-quiz-type-city": "新しい都市クイズ",
+    "create-new-quiz-type-country": "新しい国・地域クイズ",
+    "btn-metrop-contribute": "Metropに貢献する",
+    "btn-metrop-see-code": "ソースコードを見る",
+    "metrop-thanks": "Metropをご利用いただきありがとうございます"
 }

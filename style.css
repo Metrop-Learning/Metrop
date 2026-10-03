@@ -1165,6 +1165,31 @@ header {
 .card .exploreCard svg {
   fill: var(--text-color);
 }
+.card .largeSvgCenter {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card .largeSvgCenter svg {
+  width: 50px;
+  height: 50px;
+  fill: var(--text-color);
+  color: var(--text-color);
+}
+.card .textCenter {
+  position: absolute;
+  top: 68%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 80%;
+  margin: 0;
+  color: var(--text-color);
+}
 .card {
   transition: border 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
 }
@@ -1186,6 +1211,11 @@ header {
   .menuCards {
     padding-bottom: 70px;
   }
+}
+
+#card_customMenu {
+  border-bottom: 2px solid var(--header-top-color);
+  margin-bottom: 20px;
 }
 
 #card_all {
@@ -1521,10 +1551,11 @@ svg {
 #legalContentMarkdown h1, #legalContentMarkdown h2 {
   padding: 0;
 }
-#legalContentMarkdown p, #legalContentMarkdown h2 {
+#legalContentMarkdown p, #legalContentMarkdown h2, #legalContentMarkdown h3 {
   text-align: left;
 }
 #legalContentMarkdown li {
+  text-align: left;
   color: var(--text-color);
 }
 
